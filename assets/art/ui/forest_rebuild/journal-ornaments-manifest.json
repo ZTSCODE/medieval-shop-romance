@@ -1,0 +1,20 @@
+{
+  "generator": "built-in image_gen",
+  "usage": "Relationship journal decorations; standalone alpha assets, displayed preserving aspect ratio",
+  "assets": [
+    {
+      "file": "journal-flower-v1.png",
+      "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b6fe-cf65-7113-a5d3-14e77529c035/exec-806c8903-252f-4a97-823a-967cd564b6b2.png",
+      "size": [1024, 1536],
+      "prompt": "Single isolated upright pressed botanical sprig with small dusty blue five-petal flowers on olive stems. Flat hand painted gouache, muted pigment, uncropped silhouette. Transparent background, no paper, frame, text or shadow.",
+      "corner_alpha": 0
+    },
+    {
+      "file": "journal-ribbon-v1.png",
+      "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b6fe-cf65-7113-a5d3-14e77529c035/exec-afdd1d4b-86b5-4ed4-9f90-194fd62a495a.png",
+      "size": [2188, 719],
+      "prompt": "Single isolated faded terracotta cloth ribbon tied into a small loose bow with long flowing tails to the right. Flat matte gouache, low saturation clay pink, transparent background, full uncropped object, no paper or text.",
+      "corner_alpha": 0
+    }
+  ]
+}

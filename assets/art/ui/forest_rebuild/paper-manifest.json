@@ -1,0 +1,32 @@
+{
+  "generator": "builtin image_gen",
+  "actual_size": [
+    1254,
+    1254
+  ],
+  "texture_period_logical": 256,
+  "border_corner_logical": 8,
+  "border_source": 96,
+  "assets": [
+    {
+      "id": "light",
+      "prompt": "Generate ONE production game texture asset, square 2048x2048 if possible. Reference image is style only: take ONLY the warm ivory cream paper material of its cards. Seamlessly tileable in both X and Y, uniform illumination and uniform mean color to edges, full bleed opaque texture no border no objects no writing. Flat handpainted gouache paper with restrained visible short soft dry-brush fibers, cream ivory base #e3dfc9, subtle pale warm grey mottling, fine crisp painterly texture, not photographic fibers, not noisy gravel, no green tint, no bevels no shadows no fold lines. This is a material tile for a 4K game, not a screenshot.",
+      "source": "Generated images are saved to C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0b6fd-fa3a-7482-8ee5-4b3b1d8a67d3 as C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0b6fd-fa3a-7482-8ee5-4b3b1d8a67d3\\exec-6643332a-2aeb-4501-a4e3-422279af4600.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "dark",
+      "prompt": "Generate ONE seamless square 2048 texture asset. Reference is style only, extract ONLY dark warm charcoal paper feel of right sidebar. Full bleed opaque uniform #353630 charcoal brown grey, subtle crisp short dry gouache brush fibers and restrained graphite mottling, seamless repeat X and Y with uniform edges. Flat thin dyed paper not stone not cloth not noise. No borders no writing no objects no gradient no lighting shadows. Independent material for 4K UI.",
+      "source": "Generated images are saved to C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0b6fd-fa3a-7482-8ee5-4b3b1d8a67d3 as C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0b6fd-fa3a-7482-8ee5-4b3b1d8a67d3\\exec-49dd3e6b-06f0-4283-9e65-075205c026ac.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "light_edge",
+      "prompt": "Generate ONE blank square sheet for game UI nine-slice edges. Transparent background 透明背景, genuine PNG alpha outside paper. Flat front facing warm ivory cream handmade gouache paper average #e3dfc9, matching cream cards of reference. Sheet occupies from x=64 y=64 to x=960 y=960 on1024 square, generous transparent margin. Almost rectangular with tiny uneven handcut edge variations 2-5pixels and small softened squared corners, no large notches no wavy silhouette. Interior opaque evenly colored, very delicate crisp dry-brush fibers. NO text, ornament, illustrated object, shadows, bevel, fold, layered paper, perspective. Edges near straight for modular repeat. One sheet only.",
+      "source": "Generated images are saved to C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0b6fd-fa3a-7482-8ee5-4b3b1d8a67d3 as C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0b6fd-fa3a-7482-8ee5-4b3b1d8a67d3\\exec-b6a51ed3-67ff-404d-b05b-144f70594637.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "dark_edge",
+      "prompt": "Generate ONE blank square sheet for game UI nine-slice edges. Transparent background 透明背景, genuine PNG alpha outside paper. Flat front facing warm dark charcoal grey brown handmade gouache paper average #353630, matching sidebar of reference. Sheet occupies from x=64 y=64 to x=960 y=960 on1024 square, generous transparent margin. Almost rectangular with tiny uneven handcut edge variations 2-5pixels and small softened squared corners, no large notches no wavy silhouette. Interior opaque evenly colored subtle crisp dry-brush fibers. NO text, ornament, illustrated object, shadows, bevel, fold, layered paper, perspective. Edges near straight for modular repeat. One sheet only.",
+      "source": "Generated images are saved to C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0b6fd-fa3a-7482-8ee5-4b3b1d8a67d3 as C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0b6fd-fa3a-7482-8ee5-4b3b1d8a67d3\\exec-5bead4e2-4b6c-4215-8343-2a8f25e42980.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    }
+  ]
+}

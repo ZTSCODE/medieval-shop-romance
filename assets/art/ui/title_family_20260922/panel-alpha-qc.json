@@ -1,0 +1,42 @@
+{
+  "pause-sheet.png": {
+    "size": [
+      1058,
+      1486
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      72,
+      78,
+      992,
+      1422
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 252
+  },
+  "system-sheet.png": {
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      37,
+      82,
+      1221,
+      1176
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 253
+  }
+}

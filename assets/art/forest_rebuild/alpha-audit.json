@@ -1,0 +1,98 @@
+[
+  {
+    "height": 1448,
+    "transparentSamples": 11746,
+    "file": "ancient-tree.png",
+    "opaqueSamples": 22,
+    "width": 1086,
+    "partialSamples": 12848
+  },
+  {
+    "height": 1254,
+    "transparentSamples": 10744,
+    "file": "backpack.png",
+    "opaqueSamples": 14,
+    "width": 1254,
+    "partialSamples": 13891
+  },
+  {
+    "height": 1254,
+    "transparentSamples": 12843,
+    "file": "broadleaf.png",
+    "opaqueSamples": 28,
+    "width": 1254,
+    "partialSamples": 11778
+  },
+  {
+    "height": 724,
+    "transparentSamples": 0,
+    "file": "distant-river.png",
+    "opaqueSamples": 24752,
+    "width": 2172,
+    "partialSamples": 0
+  },
+  {
+    "height": 1254,
+    "transparentSamples": 16579,
+    "file": "distant-village.png",
+    "opaqueSamples": 12,
+    "width": 1254,
+    "partialSamples": 8058
+  },
+  {
+    "height": 1254,
+    "transparentSamples": 0,
+    "file": "earth-tile.png",
+    "opaqueSamples": 24649,
+    "width": 1254,
+    "partialSamples": 0
+  },
+  {
+    "height": 1254,
+    "transparentSamples": 0,
+    "file": "forest-floor-tile.png",
+    "opaqueSamples": 24649,
+    "width": 1254,
+    "partialSamples": 0
+  },
+  {
+    "height": 1254,
+    "transparentSamples": 16849,
+    "file": "lantern.png",
+    "opaqueSamples": 6,
+    "width": 1254,
+    "partialSamples": 7794
+  },
+  {
+    "height": 1254,
+    "transparentSamples": 16670,
+    "file": "rocks.png",
+    "opaqueSamples": 5,
+    "width": 1254,
+    "partialSamples": 7974
+  },
+  {
+    "height": 1254,
+    "transparentSamples": 13321,
+    "file": "travel-map.png",
+    "opaqueSamples": 6,
+    "width": 1254,
+    "partialSamples": 11322
+  },
+  {
+    "height": 1254,
+    "transparentSamples": 17728,
+    "file": "whiteflowers.png",
+    "opaqueSamples": 18,
+    "width": 1254,
+    "partialSamples": 6903
+  },
+  {
+    "height": 1254,
+    "transparentSamples": 14231,
+    "file": "wooden-mug.png",
+    "opaqueSamples": 8,
+    "width": 1254,
+    "partialSamples": 10410
+  }
+]

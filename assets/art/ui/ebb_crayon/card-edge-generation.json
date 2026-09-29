@@ -1,0 +1,6 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Generate ONE production GAME UI card perimeter texture. Transparent background (透明背景), genuine RGBA transparency. A single slender upright card outline frame, 3:5 width-height aspect, centered with only small uniform outside transparent margin. Flat pure warm white neutral pigment, monochrome so game can tint it; NO colored hue. Outer shape almost rectangular with minimally softened tight corners, very subtle wax crayon grain and slight handdrawn unevenness at one-pixel scale, fine restrained line, NOT torn paper, no thick rough jagged lumps. Blank completely transparent center, no fill, no illustration, no title bar, no text, no symbols, no shadow, no paper grain panel. This is reusable fixed-corner nine-slice border art: straight long edges clean continuous 5px white crayon stroke, corner geometry subtle and consistent, entire frame fully visible. Crisp flat graphic digital game UI material, tightly cropped frame filling90% of image. Grayscale white on true transparent background, no checkerboard painted into image.",
+  "source": "exec-40fad315-5747-4d50-83de-3dabcb44520d.png",
+  "usage": "独立透明中性蜡笔边缘，固定尺度分段重复绘制；内部纯色不透明卡身由运行时着色"
+}

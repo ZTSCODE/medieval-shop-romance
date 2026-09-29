@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/view/table_manual_plant_3d.gd" id="1_manual"]
+[ext_resource type="Texture2D" path="res://assets/art/forest_rebuild/editable/broadleaf.png" id="2_plant"]
+
+[node name="ManualPlant" type="Node3D"]
+script = ExtResource("1_manual")
+plant_texture = ExtResource("2_plant")

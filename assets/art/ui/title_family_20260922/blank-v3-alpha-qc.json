@@ -1,0 +1,42 @@
+{
+  "system-blank-v3.png": {
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      30,
+      31,
+      1228,
+      1222
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      1,
+      0
+    ],
+    "center_alpha": 252
+  },
+  "journal-blank-v3.png": {
+    "size": [
+      1751,
+      898
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      15,
+      45,
+      1737,
+      857
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 253
+  }
+}

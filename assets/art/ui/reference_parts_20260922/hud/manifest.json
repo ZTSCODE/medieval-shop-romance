@@ -1,0 +1,53 @@
+{
+  "status": "candidate",
+  "mode": "builtin_image_gen",
+  "only_original_reference": "outputs/ui-smoke-brown-suite-20260919/02-table.png",
+  "reference_crops": {
+    "axis": [
+      1530,
+      110,
+      1640,
+      397
+    ],
+    "recipe": [
+      1538,
+      409,
+      1640,
+      513
+    ],
+    "relationship": [
+      1538,
+      529,
+      1640,
+      630
+    ],
+    "avatar": [
+      1530,
+      645,
+      1646,
+      836
+    ]
+  },
+  "assets": {
+    "axis": {
+      "prompt": "Recreate precisely the one specific hand-painted game UI component shown in the supplied ORIGINAL CONCEPT CROP, as a standalone game asset. Transparent background 透明背景 true alpha outside the component. The source crop includes environmental pixels around its outside; remove all that scenery. Flat thin painted paper, subdued charcoal gray brown, fine restrained short directional crayon/gouache strokes, mostly quiet matte interior, thin softly uneven paper edges with small clipped rounded corners. Keep color and edge design very close to this exact crop: interior almost black warm charcoal, narrow slightly lighter low-contrast outer paper rim about 3 percent width, a tiny dark under-edge only, NOT wood, stone, bevel, metal, cracked rock, bright frame, large brush blotches or noisy distressed stains. Preserve the shape/proportions and restrained soft painterly edge. No extra invented decorations. High native resolution, clean and readable, no blur filter. Entire component centered with less than 2 percent transparent outside margin. Extract/repaint ONLY the long vertical charcoal PAPER BACKGROUND from this time-axis crop. Remove the sun, moon, all dots and vertical line, leaving continuous natural paper texture. No characters or symbols or text anywhere. Make a single thin complete tall paper strip, width:height 1:2.8, 1024x2868 requested. Keep a very subtle low-contrast narrow dark under-edge at bottom and right. Do not add a header cap, horizontal seam, bottom base or centered backing strip.",
+      "file": "axis-paper-candidate.png",
+      "source": "C:/Users/ZTCUS/.codex/generated_images/01a0c58b-4eeb-7202-8391-07938764eaca/exec-dcabd7be-5306-435a-9125-4ef45516961c.png"
+    },
+    "recipe": {
+      "prompt": "Recreate precisely the one specific hand-painted game UI component shown in the supplied ORIGINAL CONCEPT CROP, as a standalone game asset. Transparent background 透明背景 true alpha outside the component. The source crop includes environmental pixels around its outside; remove all that scenery. Flat thin painted paper, subdued charcoal gray brown, fine restrained short directional crayon/gouache strokes, mostly quiet matte interior, thin softly uneven paper edges with small clipped rounded corners. Keep color and edge design very close to this exact crop: interior almost black warm charcoal, narrow slightly lighter low-contrast outer paper rim about 3 percent width, a tiny dark under-edge only, NOT wood, stone, bevel, metal, cracked rock, bright frame, large brush blotches or noisy distressed stains. Preserve the shape/proportions and restrained soft painterly edge. No extra invented decorations. High native resolution, clean and readable, no blur filter. Entire component centered with less than 2 percent transparent outside margin. Repaint this small nearly square recipe button: exact dark paper background with the warm ivory flat primitive pictogram of a shallow bowl and a diagonal spoon, tiny steam/dot accent. Keep icon around the upper-middle exactly like crop, but REMOVE the Chinese label below. No letters or words anywhere. The bottom 25 percent remains quiet empty dark paper, for separately rendered text if needed. Preserve the bowl's broad flat ellipse and short bowl base, spoon tilts up toward the right. One single component, width:height .95:1, request1024x1080.",
+      "file": "recipe-button-candidate.png",
+      "source": "C:/Users/ZTCUS/.codex/generated_images/01a0c58b-4eeb-7202-8391-07938764eaca/exec-3f187714-6956-428a-8c24-0660c0a0fcff.png"
+    },
+    "relationship": {
+      "prompt": "Recreate precisely the one specific hand-painted game UI component shown in the supplied ORIGINAL CONCEPT CROP, as a standalone game asset. Transparent background 透明背景 true alpha outside the component. The source crop includes environmental pixels around its outside; remove all that scenery. Flat thin painted paper, subdued charcoal gray brown, fine restrained short directional crayon/gouache strokes, mostly quiet matte interior, thin softly uneven paper edges with small clipped rounded corners. Keep color and edge design very close to this exact crop: interior almost black warm charcoal, narrow slightly lighter low-contrast outer paper rim about 3 percent width, a tiny dark under-edge only, NOT wood, stone, bevel, metal, cracked rock, bright frame, large brush blotches or noisy distressed stains. Preserve the shape/proportions and restrained soft painterly edge. No extra invented decorations. High native resolution, clean and readable, no blur filter. Entire component centered with less than 2 percent transparent outside margin. Repaint this small nearly square relationship button: exact dark paper background with two warm ivory simplified human silhouettes, round heads, tapered shoulders and torso, side by side. Keep icon near upper-middle exactly like crop, but REMOVE the Chinese label below. No letters or words anywhere. The bottom25 percent remains quiet empty dark paper. One single component, width:height .95:1, request1024x1080.",
+      "file": "relationship-button-candidate.png",
+      "source": "C:/Users/ZTCUS/.codex/generated_images/01a0c58b-4eeb-7202-8391-07938764eaca/exec-6078ab12-3ed0-40d3-9493-2c6539a5ef16.png"
+    },
+    "avatar": {
+      "prompt": "Recreate precisely the one specific hand-painted game UI component shown in the supplied ORIGINAL CONCEPT CROP, as a standalone game asset. Transparent background 透明背景 true alpha outside the component. The source crop includes environmental pixels around its outside; remove all that scenery. Flat thin painted paper, subdued charcoal gray brown, fine restrained short directional crayon/gouache strokes, mostly quiet matte interior, thin softly uneven paper edges with small clipped rounded corners. Keep color and edge design very close to this exact crop: interior almost black warm charcoal, narrow slightly lighter low-contrast outer paper rim about 3 percent width, a tiny dark under-edge only, NOT wood, stone, bevel, metal, cracked rock, bright frame, large brush blotches or noisy distressed stains. Preserve the shape/proportions and restrained soft painterly edge. No extra invented decorations. High native resolution, clean and readable, no blur filter. Entire component centered with less than 2 percent transparent outside margin. Repaint ONLY this narrow portrait holder, REMOVE the person AND the Chinese name. Portrait whole paper width:height .57:1, request1536x2694. The top24 percent is a dark muted ash-brown continuous header with subtle short painted strokes and NO text. The lower76 percent is a light warm gray-beige opaque inset paper area for a portrait later, with a narrow uneven lighter paper lip at left,right,bottom. Keep this exact structural composition and soft slightly imperfect thin silhouette. Center must stay fully OPAQUE matte light paper, not transparent hole. No person, face, hat, silhouette, icon, symbols, writing, flowers or extra decoration. Do not turn this into the tall dark time-axis paper.",
+      "file": "avatar-frame-candidate.png",
+      "source": "C:/Users/ZTCUS/.codex/generated_images/01a0c58b-4eeb-7202-8391-07938764eaca/exec-d962dbf1-f28a-4d86-8946-66ef099bdfef.png"
+    }
+  }
+}

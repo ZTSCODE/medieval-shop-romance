@@ -1,0 +1,187 @@
+key,zh_CN,en
+SETTINGS_HDR,HDR,HDR
+SETTINGS_ON,开,On
+SETTINGS_OFF,关,Off
+SETTINGS_HDR_RENDERER_UNSUPPORTED,当前渲染模式不支持 HDR,HDR is unavailable in the current renderer
+SETTINGS_HDR_DEVICE_UNSUPPORTED,请使用支持 HDR 的屏幕并在系统中开启 HDR,Enable HDR in your system on a supported display
+SETTINGS_HDR_OUTPUT_UNAVAILABLE,HDR 输出未能开启,HDR output could not be enabled
+PAUSE_RESUME,继续,Continue
+PAUSE_NEW_JOURNEY,开始新旅程,Start a new journey
+HUD_TIME_PAUSE,暂停时间,Pause time
+HUD_TIME_RESUME,继续时间,Resume time
+HUD_TIME_SPEED_1,1 倍速,1× speed
+HUD_TIME_SPEED_3,3 倍速,3× speed
+HUD_TIME_SPEED_TOGGLE,切换 1 倍速与 3 倍速,Toggle 1× and 3× speed
+HUD_TIME_SPEED_ONE,1×,1×
+HUD_TIME_STATE_PAUSED,暂停,Paused
+HUD_TIME_CYCLE,点击切换：暂停 → 正常 → 三倍速,Click to cycle: paused → normal → 3×
+HUD_TIME_SPEED_THREE,3×,3×
+HUD_TIME_PAUSE_ICON,Ⅱ,Ⅱ
+HUD_TIME_RESUME_ICON,▶,▶
+JOURNAL_REL_STAGE_FORMAT,关系阶段：%s,Relationship stage: %s
+JOURNAL_REL_STAGE_MET,初识,Acquainted
+JOURNAL_REL_STAGE_AGREED,约定见面,Meeting agreed
+JOURNAL_REL_STAGE_CONTACT,固定联系,Regular contact
+JOURNAL_REL_STAGE_PRIVATE,私下相处,Time together
+JOURNAL_REL_STORY_PROGRESS,已读剧情 %d / %d,Stories seen %d / %d
+DIALOGUE_CHOOSE_REPLY,你会怎么说？,What do you say?
+DIALOGUE_NARRATOR,旅途,Journey
+SETTINGS_UI_SCALE,界面比例,UI scale
+SETTINGS_UI_SCALE_AUTO,自动,Auto
+SETTINGS_UI_SCALE_PERCENT,%d%%,%d%%
+SETTINGS_UI_SCALE_HINT,仅调整界面大小；不改变棋盘和卡牌大小，也不叠加系统缩放。,Changes interface size only; board and cards stay the same. OS scaling is not applied again.
+JOURNAL_DISCOVERED,已发现,Discovered
+JOURNAL_FIRST_MEETING,初次相遇 · 第 %d 天,First meeting · Day %d
+GAME_TITLE_3D,卡牌小店 · 3D 棋盘,Card Shop · 3D Table
+GAME_TITLE,卡牌小店,Card Shop
+SESSION_DAY_FORMAT,第 %d 天,Day %d
+SESSION_PAUSED,暂停,Paused
+SESSION_RESUME,继续游戏,Resume
+SESSION_QUIT,退出游戏,Quit game
+CUSTOMER_LANE_LABEL,客人,Guests
+SHOP_BOARD_LABEL,店内,Shop floor
+CUSTOMER_LANE_CLOSED_HINT,主角与商店组合，开店迎客,Stack your card with the shop to open
+CUSTOMER_LANE_OPEN_HINT,等待客人,Waiting for guests
+SHOP_OPENED,商店开始营业,Shop opened
+SHOP_CLOSED,商店已打烊,Shop closed
+SHOP_BOUGHT,进货成功,Goods purchased
+SHOP_LIQUIDATED,出售完成，收到金币 ×1,Sold for Coins ×1
+SHOP_SOLD,成交，收到金币 ×2,Order served for Coins ×2
+SHOP_CUSTOMER_LEFT,客人等候太久，离开了,A guest left after waiting too long
+SHOP_TABLE_FULL,桌面已满，请先腾出位置,Make room on the board first
+SHOP_INVALID_DROP,这些卡牌暂时无法组合,These cards cannot be combined
+CUSTOMER_PATIENCE_NORMAL,耐心 %d 秒,Patience: %d s
+CUSTOMER_PATIENCE_LOW,%d 秒后离开,Leaves in %d s
+MARKET_SUPPLY_TITLE,货源,Supply
+MARKET_SELL_TITLE,出售,Sell
+MARKET_SUPPLY_PRICE,1 金币 → 1 商品,1 Coin → 1 Goods
+MARKET_SELL_PRICE,1 商品 → 1 金币,1 Goods → 1 Coin
+MARKET_SUPPLY_HINT,拖入金币，购买商品,Drop coins to buy goods
+MARKET_SELL_HINT,拖入商品，立即出售,Drop goods to sell
+MARKET_RELEASE_BUY,松手购买 · 使用 1 张金币,Release to buy · Pay 1 coin
+MARKET_RELEASE_SELL,松手出售 · 卖出 1 张商品,Release to sell · Sell 1 goods
+MARKET_WRONG_CARD,此卡牌不能用于这项交易,This card cannot be traded here
+MENU_SAVE_LOAD,保存与读取,Save & load
+MENU_SETTINGS,设置,Settings
+MENU_RECIPES,已发现配方,Discovered recipes
+MENU_NPCS,人物关系,Relationships
+MENU_BACK,返回,Back
+MENU_CONFIRM,确认,Confirm
+MENU_CANCEL,取消,Cancel
+SETTINGS_DISPLAY,显示,Display
+SETTINGS_WINDOW_MODE,窗口模式,Window mode
+SETTINGS_WINDOWED,窗口,Windowed
+SETTINGS_BORDERLESS,无边框全屏,Borderless fullscreen
+SETTINGS_FULLSCREEN,全屏,Fullscreen
+SETTINGS_AUDIO,音频,Audio
+SETTINGS_MASTER,主音量,Master
+SETTINGS_MUSIC,音乐,Music
+SETTINGS_MUSIC_HINT,暂未加入背景音乐,No background music yet
+SETTINGS_SFX,音效,Sound effects
+SETTINGS_MUTE,静音,Mute
+SETTINGS_LANGUAGE,语言,Language
+SETTINGS_LANGUAGE_ZH,中文,中文
+SETTINGS_LANGUAGE_EN,English,English
+SETTINGS_VOLUME_FORMAT,%d%%,%d%%
+SETTINGS_SAVED,设置已保存,Settings saved
+SETTINGS_INVALID_VALUE,设置值无效，已保留原设置。,Invalid setting. Previous settings were kept.
+SETTINGS_READ_FAILED,无法读取设置，已使用默认设置。,Could not read settings. Defaults are in use.
+SETTINGS_WRITE_FAILED,设置未能保存，请检查文件夹是否可写。,Could not save settings. Check folder access.
+SAVE_SLOT_AUTO,自动存档,Autosave
+SAVE_SLOT_MANUAL,手动存档 %d,Save slot %d
+SAVE_SLOT_EMPTY,空存档,Empty slot
+SAVE_SLOT_INVALID,存档不可读取,Unreadable save
+SAVE_SLOT_SUMMARY,第 %d 天 · %d 张卡牌,Day %d · %d cards
+SAVE_SLOT_RECOVERED,已从备份恢复,Recovered from backup
+SAVE_ACTION,保存,Save
+LOAD_ACTION,读取,Load
+SAVE_OVERWRITE_TITLE,覆盖存档,Overwrite save
+SAVE_OVERWRITE_BODY,覆盖“%s”？该槽位的旧进度将被替换。,Overwrite “%s”? The progress in this slot will be replaced.
+LOAD_CONFIRM_TITLE,读取存档,Load save
+LOAD_CONFIRM_BODY,读取“%s”？当前未保存的进度将被替换。,Load “%s”? Unsaved progress will be replaced.
+SAVE_INVALID_SLOT,存档槽位无效。,Invalid save slot.
+SAVE_INVALID_DATA,当前进度无法保存，请重试。,This progress could not be saved. Please try again.
+SAVE_NOT_FOUND,未找到该存档。,This save was not found.
+SAVE_READ_FAILED,无法读取存档，当前进度已保留。,Could not read the save. Current progress was kept.
+SAVE_WRITE_FAILED,存档未能写入，请检查文件夹是否可写。,Could not write the save. Check folder access.
+SAVE_CORRUPT,存档内容损坏，当前进度已保留。,The save is damaged. Current progress was kept.
+SAVE_UNSUPPORTED_VERSION,此存档版本暂不支持，当前进度已保留。,This save version is not supported. Current progress was kept.
+SAVE_TOO_LARGE,存档文件过大，无法读取。,The save file is too large to load.
+SAVE_RECOVERED,已读取可用备份存档。,A usable backup save was loaded.
+SAVE_SUCCESS,游戏已保存。,Game saved.
+SAVE_IN_PROGRESS,正在保存…,Saving…
+LOAD_IN_PROGRESS,正在读取…,Loading…
+LOAD_SUCCESS,存档已读取。,Save loaded.
+JOURNAL_RECIPES_EMPTY,完成卡牌组合后，发现的配方会记录在这里。,Complete card combinations to record discovered recipes here.
+JOURNAL_NPCS_EMPTY,开店迎接客人，遇见的人物会记录在这里。,Open the shop to meet people and record them here.
+SAVE_TIMESTAMP_FORMAT,%04d-%02d-%02d %02d:%02d,%04d-%02d-%02d %02d:%02d
+QUIT_SAVE_FAILED_TITLE,保存未完成,Save incomplete
+QUIT_SAVE_FAILED_BODY,部分进度或设置未能保存。仍要退出吗？,Some progress or settings could not be saved. Quit anyway?
+QUIT_WITHOUT_SAVE,仍然退出,Quit anyway
+JOURNAL_RECIPES_BUTTON,配方  R,Recipes  R
+JOURNAL_NPCS_BUTTON,人物关系  N,People  N
+JOURNAL_CLOSE,收起,Close
+JOURNAL_LIVE_HINT,查看时经营继续 · Esc 收起记录页,The shop keeps running · Esc closes this journal
+OPENING_CONTINUE,继续,Continue
+OPENING_ENTER,走进树林,Enter the woods
+OPENING_PAGE_FORMAT,%d / %d,%d / %d
+OPENING_EXPLORE_WORKING,正在探索,Exploring
+MENU_NEW_JOURNEY,新的旅程,New journey
+NEW_JOURNEY_CONFIRM_TITLE,开始新的旅程,Start a new journey
+NEW_JOURNEY_CONFIRM_BODY,重新经历开场？当前进度和自动存档将被替换，手动存档会保留。,Begin again from the opening? Current progress and the autosave will be replaced. Manual saves will be kept.
+WINDOW_CLOSE,关闭,Close
+WINDOW_DRAG_HINT,拖动标题栏移动窗口,Drag the title bar to move this window.
+DIALOGUE_CONTINUE,继续,Continue
+DIALOGUE_FINISH,结束交谈,End conversation
+DIALOGUE_HINT,点击文字框或按空格继续,Click the text box or press Space to continue
+MAIN_MENU_CONTINUE,继续旅程,Continue
+MAIN_MENU_LOAD,读取旅程,Load journey
+MAIN_MENU_QUIT,退出游戏,Quit game
+MAIN_MENU_NO_SAVE,还没有可以继续的旅程。,No journey to continue yet.
+MAIN_MENU_SAVED,旅程已经保存。,Journey saved.
+NAME_ENTRY_TITLE,你的名字,Your name
+NAME_ENTRY_PROMPT,人们该怎样称呼你？,What should people call you?
+NAME_ENTRY_RESUME_PROMPT,留下你的名字，然后继续旅程。,"Leave your name, then continue your journey."
+NAME_ENTRY_PLACEHOLDER,旅途中使用的名字,Name used on your journey
+NAME_ENTRY_CONFIRM,就叫这个名字,Use this name
+NAME_ENTRY_CANCEL,返回,Back
+NAME_ENTRY_REQUIRED,请输入一个名字。,Enter a name.
+NAME_ENTRY_TOO_LONG,名字过长。,Name is too long.
+NAME_ENTRY_INVALID,名字不能包含换行或隐藏控制字符。,Names cannot contain line breaks or hidden control characters.
+NAME_ENTRY_COUNT_FORMAT,%d / %d,%d / %d
+MENU_RETURN_MAIN,返回主菜单,Return to title
+HUD_CLOCK_FORMAT,%02d:%02d,%02d:%02d
+HUD_DAY_TIME_FORMAT,第 %d 天 · %s,Day %d · %s
+PLAYER_DEFAULT_NAME,旅人,Traveler
+CUSTOMER_ORDER_FORMAT,商品 ×%d → 金币 ×%d,Goods ×%d → Coins ×%d
+SETTINGS_RESOLUTION,窗口分辨率,Window resolution
+SETTINGS_RESOLUTION_FORMAT,%d × %d,%d × %d
+SETTINGS_RESOLUTION_NATIVE,%d × %d（跟随显示器）,%d × %d (monitor native)
+HUD_RECIPES_SHORT,配方,Recipes
+HUD_RELATIONS_SHORT,关系,Relationships
+DIALOGUE_SHORT_HINT,空格继续,Space to continue
+FOREST_TABLE_TITLE,旅途,Journey
+JOURNAL_STORY_HINT,把相遇记在这里。,Keep a record of those you meet.
+JOURNAL_NOTE_TITLE,旅途记录,Travel notes
+JOURNAL_NOTE_BODY,把发现记在路上。,Keep your discoveries along the way.
+JOURNAL_MEETING_HEADING,初次相遇,First meeting
+CARD_LOCATION_CATEGORY,地点,Location
+CARD_CUSTOMER_TITLE,客人 %02d,Guest %02d
+CARD_CUSTOMER_CATEGORY,顾客,Customer
+RECIPE_INPUTS,消耗,Consumes
+RECIPE_REUSABLE,保留,Kept
+RECIPE_OUTPUTS,产出,Produces
+RECIPE_COMPONENT_FORMAT,%s × %d,%s × %d
+RECIPE_LINE_FORMAT,%s：%s,%s: %s
+RECIPE_COMPONENT_SEPARATOR,、,", "
+NPC_AFFECTION_FORMAT,好感度 %d / %d,Affection %d / %d
+NPC_VISITS_FORMAT,见面 %d 次 · 交付 %d 次,%d encounters · %d orders served
+NPC_LAST_SEEN_FORMAT,最近见面：第 %d 天,Last seen: day %d
+CARD_RESOURCE_CATEGORY,资源,Resource
+CARD_TALK_HINT,与“你”组合交谈,Stack with You to talk
+CUSTOMER_ORDER_PATIENCE,{item} · {seconds}s,{item} · {seconds}秒
+MARKET_ITEM,{name} ×{count},{name} ×{count}
+MARKET_QUOTE,{give} → {receive},{give} → {receive}
+MARKET_REMAINING,{count} orders left today,今日还收 {count} 份
+MARKET_SELECT,Click to browse · drag cards to trade,点击切换 · 拖入卡牌交易
+MARKET_SEPARATOR, + , + 

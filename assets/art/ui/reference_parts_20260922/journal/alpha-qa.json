@@ -1,0 +1,226 @@
+[
+  {
+    "file": "journal-close-candidate-v1.png",
+    "size": [
+      1737,
+      906
+    ],
+    "mode": "RGBA",
+    "alpha_bbox": [
+      0,
+      8,
+      1721,
+      906
+    ],
+    "alpha_core_bbox": [
+      142,
+      212,
+      1611,
+      734
+    ],
+    "core_ratio": 2.8142,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_fraction": 0.53782,
+    "edge_nonzero": 25,
+    "edge_core": 0
+  },
+  {
+    "file": "journal-close-candidate-v2.png",
+    "size": [
+      1738,
+      905
+    ],
+    "mode": "RGBA",
+    "alpha_bbox": [
+      25,
+      3,
+      1708,
+      905
+    ],
+    "alpha_core_bbox": [
+      75,
+      64,
+      1673,
+      866
+    ],
+    "core_ratio": 1.9925,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_fraction": 0.21619,
+    "edge_nonzero": 173,
+    "edge_core": 0
+  },
+  {
+    "file": "journal-outer-candidate-v1.png",
+    "size": [
+      1751,
+      898
+    ],
+    "mode": "RGBA",
+    "alpha_bbox": [
+      47,
+      0,
+      1706,
+      898
+    ],
+    "alpha_core_bbox": [
+      53,
+      44,
+      1700,
+      856
+    ],
+    "core_ratio": 2.0283,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_fraction": 0.15287,
+    "edge_nonzero": 45,
+    "edge_core": 0
+  },
+  {
+    "file": "journal-selected-row-candidate-v1.png",
+    "size": [
+      1708,
+      921
+    ],
+    "mode": "RGBA",
+    "alpha_bbox": [
+      0,
+      7,
+      1704,
+      921
+    ],
+    "alpha_core_bbox": [
+      58,
+      201,
+      1651,
+      733
+    ],
+    "core_ratio": 2.9944,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_fraction": 0.4547,
+    "edge_nonzero": 3,
+    "edge_core": 0
+  },
+  {
+    "file": "journal-selected-row-candidate-v2.png",
+    "size": [
+      1731,
+      909
+    ],
+    "mode": "RGBA",
+    "alpha_bbox": [
+      26,
+      0,
+      1713,
+      883
+    ],
+    "alpha_core_bbox": [
+      30,
+      31,
+      1705,
+      878
+    ],
+    "core_ratio": 1.9776,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_fraction": 0.10598,
+    "edge_nonzero": 19,
+    "edge_core": 0
+  },
+  {
+    "file": "journal-title-candidate-v1.png",
+    "size": [
+      1994,
+      789
+    ],
+    "mode": "RGBA",
+    "alpha_bbox": [
+      0,
+      37,
+      1964,
+      766
+    ],
+    "alpha_core_bbox": [
+      103,
+      247,
+      1892,
+      529
+    ],
+    "core_ratio": 6.344,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_fraction": 0.68238,
+    "edge_nonzero": 21,
+    "edge_core": 0
+  },
+  {
+    "file": "journal-title-candidate-v2.png",
+    "size": [
+      1932,
+      814
+    ],
+    "mode": "RGBA",
+    "alpha_bbox": [
+      0,
+      4,
+      1890,
+      814
+    ],
+    "alpha_core_bbox": [
+      40,
+      125,
+      1885,
+      653
+    ],
+    "core_ratio": 3.4943,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_fraction": 0.41349,
+    "edge_nonzero": 265,
+    "edge_core": 0
+  },
+  {
+    "file": "journal-title-candidate-v3.png",
+    "size": [
+      2199,
+      715
+    ],
+    "mode": "RGBA",
+    "alpha_bbox": [
+      0,
+      7,
+      2183,
+      699
+    ],
+    "alpha_core_bbox": [
+      21,
+      123,
+      2179,
+      649
+    ],
+    "core_ratio": 4.1027,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_fraction": 0.28328,
+    "edge_nonzero": 2,
+    "edge_core": 0
+  }
+]

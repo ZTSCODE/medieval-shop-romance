@@ -1,0 +1,66 @@
+{
+  "mode": "built_in_imagegen",
+  "quality_parameter_exposed": false,
+  "selected_reference": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/outputs/ui-exploration-v7/parchment-rose-aligned.png",
+  "assets": {
+    "paper_tile": {
+      "prompt": "Use case: stylized-concept. Production 2D game UI asset: one seamless square paper FILL texture, no edges or objects. Reference image is ONLY the chosen pale blush-pink and rose-cream hand-painted paper style, not its layout, typography, or background. Generate a square 1024x1024 opaque texture that fills every pixel to all four edges. Pale warm rose-cream base approximately #ead1c8 with delicate irregular dry-brush strokes of blush #d9b6af and warm ivory #f4e4d6. Visible short tapered painterly bristle marks in loose interleaved directions, restrained contrast with broad calm areas for text. It must be a genuinely seamlessly tileable material in both x and y: paint shapes continue across opposite edges; no vignette, no overall light gradient, no border, no isolated large feature that repeats conspicuously. Flat illustrated pigment, not photographed paper fibers, no bump lighting or paper thickness. Avoid green, sage, olive, teal; keep warm PINK. No text, no shadows, no framing, no noise-only or blurry water stain texture. Full opaque square, no transparent pixels.",
+      "refs": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/outputs/ui-exploration-v7/parchment-rose-aligned.png"
+      ],
+      "original": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0a453-4f38-76a2-b350-a6919bec81d1\\exec-ce3832cb-d454-4d4c-b015-8e8fb3c2b1d7.png",
+      "file": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/paper_tile.png",
+      "sha256": "7D06468E0B20C95E46C6143FCECC41BA172FD90ED61A85F1170D73F8957E4208",
+      "size": [
+        1254,
+        1254
+      ],
+      "center_alpha": 255
+    },
+    "back_tile": {
+      "prompt": "Use case: stylized-concept. One separate production UI asset: seamless square UNDER-PAPER fill texture. Image1 is approved paper UI STYLE and palette reference only. Image2 is the matching pale foreground paper fill. Generate its muted dusty ROSE under-paper counterpart: warm dusty pink base #c99790 with soft rose-peach #d5aaa0 and muted rose #b98d88 visible hand-painted short bristle strokes. This is the colored back sheet seen peeking behind the cream-pink foreground, it should be distinctly deeper pink but gentle and flat. One 1024 square completely opaque material filling every pixel edge to edge. Seamless tile in both axes, matching opposite edges. Small irregular interleaved pigment marks, brush detail with broad quiet patches, NO shadows, NO global gradient or vignette. No photograph, no paper fibers, no thick cardboard. No borders, no shapes, no text, no transparency, no UI arrangement. Absolutely NO green/sage/olive/teal.",
+      "refs": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/outputs/ui-exploration-v7/parchment-rose-aligned.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/paper_tile.png"
+      ],
+      "original": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0a453-4f38-76a2-b350-a6919bec81d1\\exec-b922dab4-43e6-4f7a-a10b-2cbdf03ae221.png",
+      "file": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/back_tile.png",
+      "sha256": "9CFD6195461B076609D867D2F89B1F000D7FDAB025EC9830E8CDAE816B4960A4",
+      "size": [
+        1254,
+        1254
+      ],
+      "center_alpha": 255
+    },
+    "paper_border": {
+      "prompt": "Use case: stylized-concept. ONE independently generated game UI asset, a hollow 9-slice paper BORDER on 透明背景 / true transparent background. Image1 is locked approved pink parchment style and natural minor wear; Image2 is the separately made foreground fill texture you must match. Do NOT reproduce the whole reference layout. Generate one SQUARE cream-blush paper rim, viewed dead flat front-on, centered with a clean large transparent rectangular hole in the middle. Canvas 1024x1024. Outer paper shape approximately x64..960,y64..960, each edge basically straight but with delicate short relaxed waving and tiny worn notches, subtle imperfect corners. Inner transparent hole approximately x210..814,y210..814, feather only a narrow few pixels on its inner edge to blend over the independent fill; wide enough fully opaque rim. This is a thin flat paper sheet frame, NOT a picture frame / wood / raised object. Rim coloration pale warm PINK #ead1c8, restrained visible bristle marks matching Image2. One very thin broken warm ivory ink outline inset about 55px from outer edge, modest turned corners like selected concept, no ornaments or motifs. Edges halfway along each side have matching level, width, color and stroke flow so straight edge segments can repeat seamlessly; corners fit their adjacent horizontal and vertical edge strips. Must have fully transparent pixels outside and INSIDE central hole. No other sheets, no drop shadows, no text, no name tabs, no buttons, no background checkerboard painted in. Avoid green or yellow cast, thick folds, regular sawteeth, large dents/protrusions, shiny beveled lines. Preserve soft tiny paper wear. One asset only.",
+      "refs": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/outputs/ui-exploration-v7/parchment-rose-aligned.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/paper_tile.png"
+      ],
+      "original": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0a453-4f38-76a2-b350-a6919bec81d1\\exec-3014d64b-d28f-4f1b-bffb-c15cd000ffb2.png",
+      "file": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/paper_border.png",
+      "sha256": "809826DE795C37CCA1443FFE55C47F06954D2176B89DB0D252BDB169EDEDBBDB",
+      "size": [
+        1254,
+        1254
+      ],
+      "center_alpha": 0
+    },
+    "slip_border": {
+      "prompt": "Use case: stylized-concept. Generate ONE standalone small-paper border component for game UI name labels and buttons, 透明背景 / transparent background, including transparent central hole. Approved Image1 is the pink parchment UI style; Image2 is its matching pale fill. Flat front-on square 1024x1024 atlas-compatible border asset. A thin nearly rectangular cream-blush sheet with relaxed slightly wavy edges, small worn corners and a few fine fiber nicks; major shape simple, no big bites or protrusions. Outer paper x70..954 y70..954; rectangular central transparent hole x270..754 y270..754. The four sides are wide uniform bands of opaque paper, pale rose-peach #e6c4b7 matching the SMALL NAME SLIP AND CONTINUE BUTTON in Image1, subtle warm ivory short painted bristle marks. Very fine dark dusty-rose contour on outermost underside only, NO white decorative inset outline (this simpler paper differs from the main panel). Straight middle segments must be consistent so they join seamlessly to neighboring copies and corners. No text, no button icons, no scene, no thick shadow, no bevel, no physical paper thickness, no additional papers. Keep slightly organic small edge wear of the selected reference, not regular rounded pill button. NO green. It is a hollow frame only; preserve true alpha outside and in the middle; do not paint a checkerboard.",
+      "refs": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/outputs/ui-exploration-v7/parchment-rose-aligned.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/paper_tile.png"
+      ],
+      "original": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0a453-4f38-76a2-b350-a6919bec81d1\\exec-bc8a83cf-bb25-4010-9c4b-046633746948.png",
+      "file": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/slip_border.png",
+      "sha256": "642563F6805FAEB5006111F79FF82E97A074BA39AE1FA169935F78235DF4B005",
+      "size": [
+        1254,
+        1254
+      ],
+      "center_alpha": 0
+    }
+  }
+}

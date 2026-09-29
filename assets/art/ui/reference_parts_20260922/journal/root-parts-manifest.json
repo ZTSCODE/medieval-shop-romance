@@ -1,0 +1,27 @@
+{
+  "status": "candidate",
+  "method": "builtin imagegen",
+  "inputs": [
+    [
+      "journal-normal-row",
+      "relation_normal",
+      "Reconstruct this exact existing small hand-painted UI paper strip as an isolated production asset, not a redesign. Preserve the actual silhouette, grey olive color, subtle short broad directional brush marks, and very thin irregular darker edge of the attached original crop. Remove the portrait, leaf stamp and Chinese text; fill their places by continuing the surrounding painted surface. No new decoration. Preserve the exact original width to height ratio 262:139. Thin opaque paper center, transparent background 透明背景 around the complete edge. No bevel, no stone or wood material, no grey bright worn band, no title-plaque double backplate. Output only ONE component tightly framed, original shape intact, maximum native resolution."
+    ],
+    [
+      "journal-detail-paper",
+      "relation_detail",
+      "Extract and reconstruct just the existing deep charcoal brown paper backing from this original UI crop, preserving its exact thin painted contour and subtle thin lighter outer lip, sparse broad gouache stroke shapes and dark color. Remove the foreground text, portrait glimpse at far left, town image, close button and sprig / separator lines; these will be separate engine UI elements. Fill only these cleared areas with the same painted paper. Keep an uninterrupted flat center. Actual width to height 425:484, opaque entire paper interior, transparent background 透明背景 outside. No thick grey rough stone border, no extra layer sticking out, no shine. Maximum native resolution single component."
+    ],
+    [
+      "recipe-paper",
+      "recipe_outer",
+      "Reconstruct the exact original underlying hand-painted brown recipe paper component from this crop. Preserve outer contour, delicate thin irregular dark edge with a slight lighter inner lip, original rich dark smoky umber color, its closely spaced SMALL AND MEDIUM directional painterly brush marks, and original dark low contrast botanical silhouettes near top right and bottom left. Remove ALL foreground cards, header paper/heading, list rows, title tab, separator stem and closing button, all text. These objects will be separate parts. Continue the surrounding surface behind removed objects without changing style. Do not use the large diagonal wall-plaster brush or grey thick eroded frame of a generic title plaque. Exact paper width to height 1135:571, almost rectangular with very subtle hand painted paper corners. Opaque paper interior and transparent background 透明背景 outside, complete contour, no attached wooden table or scene. ONE complete production background component at maximum native resolution, not whole UI screenshot."
+    ]
+  ],
+  "pixel_gate": "not_passed",
+  "sources": [
+    "exec-653795d3-1693-4e40-a1ad-3f8462ac09d5.png",
+    "exec-a4d57b6a-eedf-4149-9de9-964831c7beef.png",
+    "exec-f57e2904-2ac1-40c6-b4c5-daca5a06e04d.png"
+  ]
+}

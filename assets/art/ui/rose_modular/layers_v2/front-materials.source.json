@@ -1,0 +1,65 @@
+{
+  "generator": "built_in_imagegen",
+  "quality_parameter_exposed": false,
+  "reference": "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png",
+  "assets": {
+    "shape_card": {
+      "prompt": "Use case: precise-object-edit. Extract one pure SHAPE MASK for modular 2D game UI from the supplied approved concept. Target: ONLY the long portrait FRONT paper sheet on the LEFT, underneath its small name tag. Preserve that front sheet's exact kind of silhouette: near-rectangular tall paper, relaxed almost straight sides, tiny softly chipped corners and fine shallow irregular wear, NO large protrusions or deep bites. Do not include any backing sheets, label, text, ink border, paper texture or lighting. Output the whole single sheet as SOLID PURE WHITE RGBA(255,255,255,255), no internal grayscale. Outside is 透明背景 / genuine fully transparent background alpha0. Antialias only the outermost silhouette pixels. Center on a 1024x1536 canvas, overall white silhouette about x100..924, y80..1456 (ratio approximately 0.60). Fixed orthographic front view, not perspective, not folded, not thick. The tiny contour variation must resemble the reference's front sheet rather than generic perfectly straight UI rounded corners. Only ONE WHITE SHAPE, all other pixels transparent. This is a material mask, not a paper illustration, no shadows or color or vignette.",
+      "refs": [
+        "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png"
+      ],
+      "original": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0a453-4f38-76a2-b350-a6919bec81d1\\exec-0f1ea7f3-8af2-4584-9af3-42eae9a07e48.png",
+      "file": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/shape_card.png"
+    },
+    "shape_dialogue": {
+      "prompt": "Use case: precise-object-edit. Extract ONLY THE FRONT HORIZONTAL DIALOGUE PAPER silhouette from the RIGHT of the attached approved UI concept as a material SHAPE MASK. Preserve its actual quiet, relaxed, nearly rectangular contour: gently softened tiny irregular worn corners, very shallow wavering of long sides, subtle natural wear. The larger stepped outline of the reference comes from OTHER backing papers: do not include those, the top name tab or bottom-right button in this front-sheet mask. No large lumpy protrusions, no ragged sawteeth. One single fully unfolded front paper silhouette, wide ratio about 3.5:1. Suggested transparent canvas1792x768; white paper body approximately x64..1728,y140..615. Output pure solid WHITE opaque inside this shape. Everything outside is 透明背景 / fully transparent alpha0. NO paper texture, no cream color, no text, no outlined border, no shadow, no gradients. Antialias only the very outer contour. Exact flat orthographic view. This is one isolated alpha mask for a layered material, not an illustration or complete UI.",
+      "refs": [
+        "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png"
+      ],
+      "original": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0a453-4f38-76a2-b350-a6919bec81d1\\exec-3a7b64dd-90c4-45eb-af9d-9cffcdcfea8d.png",
+      "file": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/shape_dialogue.png"
+    },
+    "brush_tile": {
+      "prompt": "Use case: stylized-concept. One separately generated seamlessly TILEABLE GRAYSCALE BRUSH TEXTURE for the paper shown in this approved UI. The reference is ONLY a guide to brushwork frequency and material character, not colors or layout. The quiet cream paper in the reference has thin overlapping short dry-brush bristle marks, subtly varied lengths, a mostly downward or slightly slanted soft painted rhythm, and spacious calm fields. Preserve that gentle painted feel. Generate a square 1024x1024 full-bleed fully OPAQUE neutral grayscale texture, pale gray to off-white range roughly 180..255, average about230. No pink/color because each layer will be independently colored in Godot. No outer sheet silhouette or edges. Seamless opposite-edge continuity in both directions, no central vignette, no repeating identifiable symbol. Delicate faint broad pigment variations underneath clear fine bristle strokes, low contrast. No dense herringbone, no chevrons, no X brush pattern, no mirrored motifs, no crosshatching, no weave/fabric, no wrinkled photo-paper, no speckled noise-only surface. No borders, shadows, text, objects or transparency. It should read as the selected hand-painted paper when tinted warm cream, at the natural scale of the reference, not an artificial repeating wallpaper.",
+      "refs": [
+        "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png"
+      ],
+      "original": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0a453-4f38-76a2-b350-a6919bec81d1\\exec-50f2fd10-9633-4db1-88fd-c1c7a0b5ae94.png",
+      "file": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/brush_tile.png"
+    },
+    "ink_dialogue": {
+      "prompt": "Use case: precise-object-edit. Produce one independent decorative INK MASK for a layered paper UI. Image1 is the approved concept: copy only the delicate broken ivory inset outline inside its right-hand dialogue paper. Image2 is the already generated dialogue SHAPE MASK and fixes registration. Output canvas EXACTLY 1916x821, same orientation as image2. The paper occupies approximately x90..1840,y196..628; draw its inset outline about36 pixels inward, x128..1802,y230..594. Only the outline is solid WHITE with natural fine brush alpha, and the ENTIRE remainder of the image, inside and outside the outline, is 透明背景 / transparent alpha0. Do not draw a white filled paper, gray background or vignette. The line is thin 3-5px at this raw resolution, gently uneven ink, softly turned subtle two-step corners, occasional short breaks exactly like the supplied approved UI rather than a perfect vector rectangle. Keep large clear central space. NO paper shape fill, no texture, no shadows, no name label, no button, no text, no ornate symbols, no glow. This is a single white-on-transparent stroke mask that will be independently tinted cream, not a complete UI asset.",
+      "refs": [
+        "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/shape_dialogue.png"
+      ],
+      "original": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0a453-4f38-76a2-b350-a6919bec81d1\\exec-634a9c01-e0bf-4944-9a9e-bfc11864c140.png",
+      "file": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/ink_dialogue.png"
+    },
+    "shadow_card": {
+      "prompt": "Use case: precise-object-edit. Generate ONLY a faint cast-SHADOW MASK for the supplied white paper silhouette. Use its exact 1024x1536 canvas and fixed registration: the card paper occupies x115..911,y96..1432. Do not move, resize or redesign the underlying contour. The output contains NO white paper face. Interior of the original paper footprint is transparent, because the paper will be composited separately. Put only a very thin softly feathered neutral-black shadow just outside its original right and bottom edges, with a little at lower left, only about6 raw pixels offset down and3 right, blur radius about8 rawpixels. Actual RGBA must be BLACK RGB with soft alpha roughly0.05..0.35, fading toalpha0. Entire exterior beyond a short 18px rim must be 透明背景 / fully transparent. No solid background, no white glow, no fakecheckerboard, no paper texture, no text, no framing rectangle, no long dramatic shadow. This is a single independent shadow-opacity mask for very light flat paper. Keep the canvas exactly1024x1536 and the same original paper registration.",
+      "refs": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/shape_card.png"
+      ],
+      "original": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0a453-4f38-76a2-b350-a6919bec81d1\\exec-c22d37ab-32ae-4fbe-8dfb-bb72742b5784.png",
+      "file": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/shadow_card.png"
+    },
+    "ink_card": {
+      "prompt": "Use case: precise-object-edit. Create an isolated WHITE INK MASK for the subtle worn corner brush marks on the LEFT tall card in approved reference image1. Image2 is that card's registered shape mask. Preserve EXACTLY1024x1536 canvas; its paper occupies x115..911,y96..1432. All pixels outside the delicate painted marks, INCLUDING the whole center, are transparent alpha0 (透明背景 / transparent background). Output ONLY a few thin imperfect warm-white-looking brush marks in pure white so the game can tint them: a tiny broken upper-left corner bracket near(170,150), a very subdued partial upper-right stroke, a small faded lower-left turn, and the more visible lower-right short curved corner stroke near(860,1360). Each 2-4px thin stroke is hand-painted and softly broken, modest length80..150rawpixels. The reference card does not have a bright complete rectangular frame; leave the long middle stretches mostly EMPTY. Do not draw any sheet silhouette, fill, texture, shadow, text, label, button, scene or glow. This is just a sparse corner-decoration opacity mask registered to image2, not a complete paper.",
+      "refs": [
+        "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/shape_card.png"
+      ],
+      "original": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0a453-4f38-76a2-b350-a6919bec81d1\\exec-083aa5ba-1278-44c4-b58c-b17dc91c4749.png",
+      "file": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/ink_card.png"
+    },
+    "shadow_dialogue": {
+      "prompt": "Use case: precise-object-edit. Output ONLY an independent thin paper SHADOW MASK for the supplied dialogue silhouette. Preserve the EXACT1916x821 canvas and registration. Paper shape reference occupies x90..1840,y196..628; do not redesign or reposition that contour. The original paper interior must be transparent alpha0, because a separate paper layer will cover it. Draw only a fine, softly feathered neutral BLACK-opacity rim just under the lower/right edge, with a little at lower-left, casting 4rawpixels downward and2right; narrow blur about6rawpixels, transparent beyond15rawpixels from the original silhouette. Very light flat-paper contact shadow, not thick cardboard. Real RGBA: black RGB, soft alpha roughly0.04..0.3; outside 透明背景 / fully transparent alpha0. No white paper, no paper color or texture, no text, no glow, no gray opaque background, no long displaced silhouette. One shadow mask image; canvas and underlying paper anchor identical to supplied input.",
+      "refs": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/shape_dialogue.png"
+      ],
+      "original": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0a453-4f38-76a2-b350-a6919bec81d1\\exec-36e658fe-4ac1-4c43-974b-29e4130bd967.png",
+      "file": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/shadow_dialogue.png"
+    }
+  }
+}

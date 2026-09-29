@@ -1,0 +1,31 @@
+{
+  "asset": "meadow-earth-v2.png",
+  "method": "built-in image_gen",
+  "intent": "generate",
+  "prompt": "Use case: stylized-concept. Create ONE production game ground albedo texture, square 2048x2048, opaque full bleed. New art direction: clear flat irregular painted polygon patches, inspired by Book of Travels ground painting. This is ground UNDER separate meadow vegetation, with NO depicted plants. The ground is an interlocking loose mosaic of moss-grey olive, grey sage, khaki dusty earth, muted pale clay and subdued brownish green. Distinct broad flat COLOR SHAPES with cut-brush angular jagged outlines, some crisp edges and some gently dry-brushed edges, mostly solid pigment within each shape, subtle overlapping gouache brush marks, a few sparse thin short flat-brush dashes. Medium sized asymmetric shapes, never a geometric grid. Crisp at pixel scale and clear at game scale. The image must NOT look like plaster, stone texture, smooth cloudy noise, blended blurry oil paint, blurry camouflage, photographic grit, canvas weave, or grainy procedural noise. No lumps, cracks, 3D relief, directional highlights, object shadows, grass blades, leaves, flowers, trees, objects, vignette or light gradient. Quiet narrow mid value range but enough separation between neighbouring flat shapes to be legible. Truly orthographic top down. SEAMLESS TILEABLE left/right and top/bottom; complete color shapes and sparse marks wrap precisely across opposite edges. No framed preview, no grid, no seams, no text, no transparency, no background beyond texture. Single clean tiling diffuse color texture.",
+  "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b632-ec74-7da2-9964-6f149dd45ad6/exec-3e4965a3-5022-4c40-a2d1-dcc706b2d2fc.png",
+  "reference_urls": [
+    "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1152340/ss_a01086f87841598625fa3ee06d8332304db79a84.1920x1080.jpg?t=1776671089"
+  ],
+  "reference_note": "Art direction supplied by parent from inspected official Steam screenshot.",
+  "requested_size": [
+    2048,
+    2048
+  ],
+  "actual_size": [
+    1254,
+    1254
+  ],
+  "pixel_format": "RGB 24-bit opaque",
+  "sha256": "46851BB88D202B0FA9DA1935334F2DA51CB2E03AEB75F30A9239130BA88AA5B0",
+  "visual_inspection": "Crisp broad irregular cut-brush olive-sage-khaki color patches, sparse short brush dashes. No objects, cast shadows, vignette, photographic noise or blurry cloudy blending.",
+  "edge_rgb_mae_255": {
+    "left_right": 4.821637426900589,
+    "top_bottom": 3.7807017543859707
+  },
+  "limitations": [
+    "Built-in generated 1254 square despite requested 2048; preserved native dimensions without resampling.",
+    "Edge pixels are near-matched rather than mathematically identical. Direct-repeat runtime visual verification required."
+  ],
+  "postprocessing": "None. Generated original copied unchanged."
+}

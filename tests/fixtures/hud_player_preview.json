@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "module_id": "hud_preview",
+  "cards": {
+    "card.hud_preview.hero": {
+      "id": "card.hud_preview.hero",
+      "module_id": "hud_preview",
+      "kind": "hero",
+      "category": "character",
+      "name_key": "HUD_PREVIEW_PLAYER_NAME",
+      "detail_key": "HUD_PREVIEW_PLAYER_NAME",
+      "unique": true,
+      "protected": true,
+      "sellable": false,
+      "art_path": "res://assets/art/ui/hud_20260929/player-preview-reference.png",
+      "portrait_region": [
+        0.9234449760765551,
+        0.5982996811902231,
+        0.056818181818181816,
+        0.1275239107332625
+      ]
+    }
+  },
+  "recipes": {},
+  "npcs": {}
+}

@@ -1,0 +1,163 @@
+{
+  "date": "2026-09-17",
+  "mode": "built-in image_gen",
+  "reference": {
+    "used_path": "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-a06e6cfa-e7f7-4e61-a0ec-683531e5a46f.png",
+    "archived_path": "work/references/paper-v3-flat-reference.png",
+    "sha256": "AE2A765C45AD0FEE23DD42B252502910BE87856E6038C8394211C6455C03D345"
+  },
+  "assets": [
+    {
+      "name": "card_face.png",
+      "order": 1,
+      "prompt": "资产用途：一张完整实心的卡牌纸底，供游戏把插画和标题叠在上面。参考图片仅用于材质与画法：只看右侧大纸页和底部三个小纸按钮的浅色、平面水粉干刷处理，忽略左侧棕色框、所有文字、图标、物品和风景。使用这张输入作为唯一视觉参考。浅灰象牙色、很淡的鼠尾草灰绿；有克制的低对比垂直水粉干刷痕，像画出来的一小片草纸，不是纸张照片。二维平面，无厚度，无侧边层叠，无卷角，无折痕，无浮雕，无斜角，无暗色描边，无投影，无环境光晕。边缘基本平直，四角基本直角，仅轻微手绘不齐；不能圆润、不能破洞、不能撕烂、不能粗毛边。表面大面积干净，无文字、无图案、无符号。纸片之外真实PNG alpha透明背景，不要白色背景、棋盘格、地面或整张UI截图。每张图只生成一个组件，不得拼图或合集。只画一个竖向长方形纸片，卡身宽高比14:23，对应112×184卡牌；完整居中，四周少量透明留白。最重要：纸片从四条外边直到中央每处都是连续实心浅灰象牙纸，实体内完全不透明，尽量alpha255；绝对不许做成挖空的相框、透明窗口、镂空框或只剩边缘。不要在内部划分标题栏/图片栏，不画内边框。所有纸面只保留很淡平面干刷纹理，没有任何内孔。纸外透明、纸内实心。",
+      "refs": [
+        "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-a06e6cfa-e7f7-4e61-a0ec-683531e5a46f.png"
+      ],
+      "source": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0ac74-51c9-7b21-9c13-cc238e760559\\exec-268e407f-bd2d-48c8-a961-549aa6d4cafd.png",
+      "destination": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/paper_v3_flat/card_face.png",
+      "audit": {
+        "name": "card_face.png",
+        "source_size": [
+          979,
+          1606
+        ],
+        "region": [
+          61,
+          71,
+          863,
+          1475
+        ],
+        "visible_aspect": 0.5850847457627119,
+        "connected_pixels": 1264994,
+        "component_count": 1,
+        "min_alpha": 0,
+        "max_alpha": 255,
+        "transparent_pixels": 264372,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "center_alpha": 253,
+        "inner_alpha_range": [
+          250,
+          253
+        ],
+        "inner_alpha_mean": 252.16744498946784,
+        "inner_transparent_pixels": 0
+      },
+      "hashes": {
+        "source_sha256": "EBCAA01629FEF65BCAF6084DB9A4BCF4CF8B6F5A4C7D83607F08E7FF7B726DFB",
+        "asset_sha256": "EBCAA01629FEF65BCAF6084DB9A4BCF4CF8B6F5A4C7D83607F08E7FF7B726DFB",
+        "binary_unchanged": true,
+        "format": "Format32bppArgb"
+      }
+    },
+    {
+      "name": "dialogue_panel.png",
+      "order": 2,
+      "prompt": "资产用途：游戏画面底部的一张横向对话纸底，单独一个组件。参考图片仅用于材质与画法：只看右侧大纸页和底部三个小纸按钮的浅色、平面水粉干刷处理，忽略左侧棕色框、所有文字、图标、物品和风景。使用这张输入作为唯一视觉参考。浅灰象牙色、很淡的鼠尾草灰绿；有克制的低对比垂直水粉干刷痕，像画出来的一小片草纸，不是纸张照片。二维平面，无厚度，无侧边层叠，无卷角，无折痕，无浮雕，无斜角，无暗色描边，无投影，无环境光晕。边缘基本平直，四角基本直角，仅轻微手绘不齐；不能圆润、不能破洞、不能撕烂、不能粗毛边。表面大面积干净，无文字、无图案、无符号。纸片之外真实PNG alpha透明背景，不要白色背景、棋盘格、地面或整张UI截图。每张图只生成一个组件，不得拼图或合集。一个非常扁的横长方形平面纸片，纸片可见主体宽高约5:1，完整居中，四边有透明留白；画布若只能3:1，则把5:1纸片居中放在3:1透明画布内，不要把纸片变厚。保留90%以上完全干净的浅灰象牙内容区，中央从左到右连续实心，不镂空。最多在最外缘有一条非常轻的灰绿干笔边线，不出现任何装饰角和厚框。它应像一张轻轻贴上去的平直纸片，没有真实投影、厚度和翘角。",
+      "refs": [
+        "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-a06e6cfa-e7f7-4e61-a0ec-683531e5a46f.png"
+      ],
+      "source": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0ac74-51c9-7b21-9c13-cc238e760559\\exec-76a0885b-dbfb-4d27-aa24-bcd51a62a41e.png",
+      "destination": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/paper_v3_flat/dialogue_panel.png",
+      "audit": {
+        "name": "dialogue_panel.png",
+        "source_size": [
+          2073,
+          758
+        ],
+        "region": [
+          77,
+          225,
+          1922,
+          355
+        ],
+        "visible_aspect": 5.414084507042253,
+        "connected_pixels": 677995,
+        "component_count": 1,
+        "min_alpha": 0,
+        "max_alpha": 255,
+        "transparent_pixels": 881666,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "center_alpha": 253,
+        "inner_alpha_range": [
+          249,
+          254
+        ],
+        "inner_alpha_mean": 252.77526064836994,
+        "inner_transparent_pixels": 0
+      },
+      "hashes": {
+        "source_sha256": "A7B302F90F5DC8C441D070C5163DFCB4E897F9B7FF012B6C025CE6A5829DD356",
+        "asset_sha256": "A7B302F90F5DC8C441D070C5163DFCB4E897F9B7FF012B6C025CE6A5829DD356",
+        "binary_unchanged": true,
+        "format": "Format32bppArgb"
+      }
+    },
+    {
+      "name": "dialogue_button.png",
+      "order": 4,
+      "prompt": "只生成一个空白平面纸质对话按钮。唯一参考是输入截图右侧纸页底部的小纸片，忽略所有字、图案、左侧棕框和场景。物体是规整但略带手绘直边的横向矩形，必须宽4、高1（4:1）：上下边的距离是左右边距离的四分之一；例如实体纸片1600×400，而不是5:1的细长条。请让主体在画布中央占宽约80%、高约55%，四周为真正alpha透明留白。浅灰象牙、略带淡鼠尾草色，纸面完全实心不透明，只有很低对比的纵向水粉干刷平面色痕；不是照片纹理。纸轻而薄到看不出任何侧面：无厚度、无背纸、无卷角、无折痕、无浮雕、无阴影、无环境光晕、无暗边框。四角基本直角，不圆润、不破烂、不做撕纸缺口，不画内边线。中央大面积干净空白，绝无文字、数字、符号、其他UI部件。只输出这一张单个按钮PNG，纸片以外透明，不能合集和拼图。",
+      "refs": [
+        "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-a06e6cfa-e7f7-4e61-a0ec-683531e5a46f.png"
+      ],
+      "source": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0ac74-51c9-7b21-9c13-cc238e760559\\exec-552d966f-61da-497d-bde1-e5b42fad7149.png",
+      "destination": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/paper_v3_flat/dialogue_button.png",
+      "audit": {
+        "name": "dialogue_button.png",
+        "source_size": [
+          1983,
+          793
+        ],
+        "region": [
+          107,
+          178,
+          1770,
+          437
+        ],
+        "visible_aspect": 4.050343249427917,
+        "connected_pixels": 772763,
+        "component_count": 1,
+        "min_alpha": 0,
+        "max_alpha": 255,
+        "transparent_pixels": 790633,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "center_alpha": 253,
+        "inner_alpha_range": [
+          252,
+          254
+        ],
+        "inner_alpha_mean": 253.00069213063563,
+        "inner_transparent_pixels": 0
+      },
+      "hashes": {
+        "source_sha256": "CA210A8F9389C86309F884B0AF2E6E9472761616647A2126923A55F5E690CE90",
+        "asset_sha256": "CA210A8F9389C86309F884B0AF2E6E9472761616647A2126923A55F5E690CE90",
+        "binary_unchanged": true,
+        "format": "Format32bppArgb"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "name": "dialogue_button.png",
+      "reason": "First visible aspect was 4.90:1; regenerated to 4.05:1.",
+      "source": "C:\\Users\\ZTCUS\\.codex\\generated_images\\01a0ac74-51c9-7b21-9c13-cc238e760559\\exec-ab684d66-fdff-4f08-93f8-a030529b875a.png",
+      "prompt": "资产用途：放在对话纸底上的一小块无字按钮纸片，单独一个组件。参考图片仅用于材质与画法：只看右侧大纸页和底部三个小纸按钮的浅色、平面水粉干刷处理，忽略左侧棕色框、所有文字、图标、物品和风景。使用这张输入作为唯一视觉参考。浅灰象牙色、很淡的鼠尾草灰绿；有克制的低对比垂直水粉干刷痕，像画出来的一小片草纸，不是纸张照片。二维平面，无厚度，无侧边层叠，无卷角，无折痕，无浮雕，无斜角，无暗色描边，无投影，无环境光晕。边缘基本平直，四角基本直角，仅轻微手绘不齐；不能圆润、不能破洞、不能撕烂、不能粗毛边。表面大面积干净，无文字、无图案、无符号。纸片之外真实PNG alpha透明背景，不要白色背景、棋盘格、地面或整张UI截图。每张图只生成一个组件，不得拼图或合集。一个小而平直的横向长方形纸片，可见主体宽高约4:1，居中，透明边距适中；不要做成整张窗口、页签合集或长卷轴。纸片是单层平面水粉块，浅灰象牙，比对话底色仅略亮一点点；很淡的鼠尾草干刷痕、规整直边和微弱手绘差异。不要画边框、不画卷角、不画背纸和影子。中间是完整实心干净空白，便于叠加短文字。"
+    }
+  ]
+}

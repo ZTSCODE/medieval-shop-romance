@@ -1,0 +1,120 @@
+{
+  "axis-paper-candidate.png": {
+    "size": [
+      749,
+      2098
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      73,
+      50,
+      679,
+      2049
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 253
+  },
+  "recipe-button-candidate.png": {
+    "size": [
+      1221,
+      1289
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      65,
+      60,
+      1159,
+      1234
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 253
+  },
+  "relationship-button-candidate.png": {
+    "size": [
+      1221,
+      1288
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      38,
+      38,
+      1186,
+      1258
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 252
+  },
+  "avatar-frame-candidate.png": {
+    "size": [
+      947,
+      1660
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      37,
+      18,
+      915,
+      1637
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 252
+  },
+  "sun-glyph.png": {
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      117,
+      90,
+      1136,
+      1140
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "moon-glyph.png": {
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      298,
+      268,
+      963,
+      990
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

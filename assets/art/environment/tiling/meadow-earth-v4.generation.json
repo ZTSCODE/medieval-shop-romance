@@ -1,0 +1,31 @@
+{
+  "asset": "meadow-earth-v4.png",
+  "method": "built-in image_gen with actual user reference image",
+  "intent": "style-transfer",
+  "prompt": "Use case: style-transfer / game material. The attached image is the ACTUAL STYLE AND COLOR REFERENCE. Study ONLY the painted ground in its bottom third, then redraw that surface as ONE seamless square 2048x2048 top-down game ground texture. Preserve that specific bottom-foreground paint language: broad curved tongue-shaped and wave-shaped interlocking olive green gouache strokes, rounded tapering ends, flowing asymmetric scallops, overlapping thick flat paint color areas, very gently graded pigment inside some broad strokes. Use the reference's actual rich olive green, deep yellow-green and warm green colors, NOT desaturated grey substitutes. Vary stroke sizes and directions naturally: clusters of large long sweeping tongues surrounded by medium rounded dabs and some small strokes. Occasional narrow warm golden khaki earth gaps between green strokes, about 8 percent exposed earth, irregular thin gaps without a central path. This must visibly look like the foreground ground painting of the supplied image, NOT generic camouflage, angular polygons, tiny grain, hair scratches, plaster, oil impasto, photographic grass or blurry clouds. All strokes describe FLAT painted ground, do not paint standing leaves, bushes, grass tufts, flowers, rocks, characters, train tracks, trains, hills, sky, objects or shadows. Pure orthographic overhead diffuse color texture, no perspective, no directional lighting, no relief, no vignette, no text/UI. Opaque image full bleed. Four edges must seamlessly wrap for direct repeat with no seams and no framing. Keep medium-scale shapes clear and clean with the hand-painted oily gouache character seen in the source, not microtexture. Reference image is for style and ground color only, do not reproduce its scene.",
+  "referenced_image_paths": [
+    "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-1cee8d0b-5a42-4eff-b2c5-78237e7151f9.png"
+  ],
+  "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b632-ec74-7da2-9964-6f149dd45ad6/exec-6d0815f9-1fa6-415e-a34c-8c664e9e2555.png",
+  "requested_size": [
+    2048,
+    2048
+  ],
+  "actual_size": [
+    1254,
+    1254
+  ],
+  "pixel_format": "RGB 24-bit opaque",
+  "sha256": "143F4EE3A1BA3A00C156CD71B83941B68538E904D475DEC33BAE843D0E33A006",
+  "visual_inspection": "User screenshot inspected and used as image generation input. Broad curved interlocking tongue-like green strokes and warm earth gaps match the reference foreground shape language more closely than V1-V3. No physical vegetation or objects. Generated earth gaps slightly more saturated yellow than reference, requiring runtime/user visual review.",
+  "edge_rgb_mae_255": {
+    "left_right": 8.372408293460943,
+    "top_bottom": 7.819245082402984
+  },
+  "limitations": [
+    "Built-in generated 1254 square despite requested 2048; native dimensions preserved.",
+    "Edge pixels not mathematically identical; direct-repeat runtime verification required.",
+    "Shape-language match is visual judgment, not user acceptance."
+  ],
+  "postprocessing": "None. Original PNG bytes copied unchanged."
+}

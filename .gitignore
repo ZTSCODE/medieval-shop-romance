@@ -1,0 +1,28 @@
+# Godot generated files
+.godot/
+.import/
+export.cfg
+export_credentials.cfg
+*.translation
+*.import
+
+# Build outputs and local scratch files
+build/
+dist/
+work/
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Generated review and runtime evidence; retain the project entry points.
+outputs/*
+!outputs/.gdignore
+!outputs/README.md
+!outputs/OpenGodot.cmd
+!outputs/RunProject.cmd
+
+# Local secrets
+.env
+.env.*
+!.env.example

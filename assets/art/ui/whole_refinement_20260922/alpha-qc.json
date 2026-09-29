@@ -1,0 +1,62 @@
+{
+  "axis-whole-v1.png": {
+    "size": [
+      774,
+      2033
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      43,
+      39,
+      732,
+      1991
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 252
+  },
+  "journal-whole-v1.png": {
+    "size": [
+      1750,
+      899
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      24,
+      53,
+      1728,
+      846
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 253
+  },
+  "portrait-whole-v1.png": {
+    "size": [
+      1033,
+      1523
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      53,
+      38,
+      981,
+      1484
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 252
+  }
+}

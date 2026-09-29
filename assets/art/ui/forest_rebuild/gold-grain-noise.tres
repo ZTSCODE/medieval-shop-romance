@@ -1,0 +1,14 @@
+[gd_resource type="NoiseTexture2D" format=3 uid="uid://diw2r7ldf7td4"]
+
+[sub_resource type="FastNoiseLite" id="GoldGrain"]
+noise_type = 3
+seed = 19473
+frequency = 0.095
+fractal_octaves = 3
+fractal_gain = 0.45
+
+[resource]
+width = 256
+height = 256
+noise = SubResource("GoldGrain")
+seamless = true

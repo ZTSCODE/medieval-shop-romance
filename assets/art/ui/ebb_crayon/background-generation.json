@@ -1,0 +1,6 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Generate a single seamless tileable 2D game tabletop background texture. Square 1024x1024. Uniform muted indigo slate blue (#263451 average), subtle dry wax crayon and colored pencil grain, extremely low contrast softly rubbed broad blue-gray pigment areas, delicate irregular tiny diagonal chalk scratches evenly distributed, flat matte illustrated pigment on fine paper. Calm adult fantasy card game background. Must tile seamlessly on all four sides. NO objects, NO cards, NO UI, NO borders, NO framing, NO purple outlines, NO constellation lines, NO stars, NO maps, NO symbols, NO vignettes, NO text, NO people, NO perspective, NO 3D light or shadow, NO wood. Full bleed opaque, quiet low-detail center and edges of equal density.",
+  "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b156-b992-7683-a5d2-347cda5adb08/exec-1afa6bdc-7063-40ec-b821-b898fa143077.png",
+  "use": "等比 cover；降低纹理对比，避免边缘拼接可见"
+}

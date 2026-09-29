@@ -1,0 +1,9 @@
+{
+  "asset": "binding-cord-v2.png",
+  "generator": "image_gen",
+  "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b14d-93ee-7650-bac4-48efbec22604/exec-52faa425-c944-4ce1-990b-ffdafa491a9a.png",
+  "role": "Muted blue grey journal binding stroke",
+  "runtime_atlas_region": [426, 106, 186, 1266],
+  "opaque_bounds_alpha_above_128": [430, 110, 178, 1258],
+  "note": "Large RGB fringe is transparent. Atlas excludes nearly transparent perimeter padding; no opaque black background is integrated."
+}

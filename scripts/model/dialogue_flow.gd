@@ -1,0 +1,336 @@
+class_name DialogueFlow
+extends RefCounted
+
+signal changed
+signal finished
+signal story_completed(completed_story_id: String, npc_id: String)
+signal consequence_source_ready(event_id: String, npc_id: String, card_id: String, world_center: Vector2)
+
+var story_id := ""
+var line_index := 0
+var active_npc_id := ""
+var completed: Array[String] = []
+var settled_consequences: Array[String] = []
+var _settling := false
+
+
+func start_for_npc(npc_id: String) -> bool:
+	if is_active() or has_departed(npc_id):
+		return false
+	var next_story := _story_for_npc(npc_id, completed)
+	var definition := _dialogue_definition(next_story)
+	if next_story.is_empty() or definition.is_empty():
+		return false
+	if definition.npc_id != "npc" and definition.npc_id != npc_id:
+		return false
+	story_id = next_story
+	line_index = 0
+	active_npc_id = npc_id
+	changed.emit()
+	return true
+
+
+func advance() -> void:
+	if not is_active():
+		return
+	var definition := _dialogue_definition(story_id)
+	if definition.is_empty():
+		cancel()
+		return
+	if line_index < definition.lines.size() - 1:
+		line_index += 1
+		changed.emit()
+		return
+	if story_id not in completed:
+		completed.append(story_id)
+	var finished_story := story_id
+	var finished_npc := active_npc_id
+	_clear_active()
+	story_completed.emit(finished_story, finished_npc)
+	changed.emit()
+	finished.emit()
+
+
+func is_active() -> bool:
+	return not story_id.is_empty()
+
+
+func current_line() -> Dictionary:
+	if not is_active():
+		return {}
+	var definition := _dialogue_definition(story_id)
+	if definition.is_empty() or line_index < 0 or line_index >= definition.lines.size():
+		return {}
+	return definition.lines[line_index].duplicate(true)
+
+
+func to_data() -> Dictionary:
+	return {"story_id": story_id, "line_index": line_index, "active_npc_id": active_npc_id, "completed": completed.duplicate(), "settled_consequences": settled_consequences.duplicate()}
+
+
+func restore(data: Dictionary) -> void:
+	if not validate_data(data).is_empty():
+		return
+	story_id = String(data.story_id)
+	line_index = int(data.line_index)
+	active_npc_id = String(data.active_npc_id)
+	completed.assign(data.completed)
+	settled_consequences.assign(data.settled_consequences)
+
+
+func cancel() -> void:
+	if not is_active():
+		return
+	_clear_active()
+	changed.emit()
+
+
+func reset() -> void:
+	_clear_active()
+	completed.clear()
+	settled_consequences.clear()
+	changed.emit()
+
+
+func has_departed(npc_id: String) -> bool:
+	return npc_has_departed(to_data(), npc_id)
+
+
+func resolve_story_consequences(completed_story_id: String, npc_id: String, state: TableState) -> Dictionary:
+	var result := {"ok": false, "departed": [] as Array[String], "sources": [], "reason": ""}
+	if _settling:
+		result.reason = "Story consequences are already being resolved"
+		return result
+	if completed_story_id not in completed:
+		result.reason = "Story has not been completed"
+		return result
+	var definition := _dialogue_definition(completed_story_id)
+	if definition.is_empty() or (definition.npc_id != "npc" and definition.npc_id != npc_id):
+		result.reason = "Story does not belong to the completing NPC"
+		return result
+	var pending: Array[Dictionary] = []
+	for event_id: String in definition.get("consequences", []):
+		if event_id in settled_consequences:
+			continue
+		var effect := ContentCatalog.event_definition(event_id)
+		if effect.npc_id != npc_id:
+			result.reason = "Consequence does not belong to the completing NPC"
+			return result
+		pending.append(effect)
+	if pending.is_empty():
+		result.ok = true
+		return result
+	if state == null:
+		result.reason = "Story consequence has no table"
+		return result
+	var participant_error := _validate_participants(npc_id, state)
+	if not participant_error.is_empty():
+		result.reason = participant_error
+		return result
+	var card := _npc_card(npc_id, state)
+	var source_center := state.card_position(card) + TableState.CARD_SIZE * 0.5
+	var stack := state.stack_for(card)
+	var survivor_position := Vector2.ZERO
+	var has_survivor := false
+	if not stack.is_empty():
+		for member: String in state.stacks[stack].cards:
+			if member != card:
+				survivor_position = state.card_position(member)
+				has_survivor = true
+				break
+	_settling = true
+	for effect: Dictionary in pending:
+		consequence_source_ready.emit(String(effect.id), npc_id, card, source_center)
+		result.sources.append({"event_id": effect.id, "npc_id": npc_id, "card_id": card, "world_center": source_center})
+	state.remove_card(card)
+	if has_survivor:
+		state.move_stack(stack, survivor_position)
+	result.departed.append(card)
+	for effect: Dictionary in pending:
+		settled_consequences.append(String(effect.id))
+	_settling = false
+	result.ok = true
+	return result
+
+
+func _clear_active() -> void:
+	story_id = ""
+	line_index = 0
+	active_npc_id = ""
+
+
+static func validate_data(data: Variant, state: TableState = null) -> String:
+	if not data is Dictionary or data.size() != 5:
+		return "Dialogue fields are invalid"
+	if not data.get("story_id") is String or not data.get("active_npc_id") is String:
+		return "Dialogue identity is invalid"
+	if not _integer(data.get("line_index"), 0, 1000000) or not data.get("completed") is Array:
+		return "Dialogue progress is invalid"
+	if not data.get("settled_consequences") is Array:
+		return "Settled story consequences are invalid"
+	var seen := {}
+	var available_events := {}
+	for id: Variant in data.completed:
+		if not id is String or _dialogue_definition(id).is_empty():
+			return "Completed dialogue ID is unknown"
+		if seen.has(id):
+			return "Completed dialogue ID is duplicated"
+		seen[id] = true
+		for event_id: String in _dialogue_definition(id).get("consequences", []):
+			available_events[event_id] = true
+	var settled_seen := {}
+	for event_id: Variant in data.settled_consequences:
+		if not event_id is String or not available_events.has(event_id) or settled_seen.has(event_id):
+			return "Settled consequence is unknown, duplicated, or lacks its completed story"
+		settled_seen[event_id] = true
+	for id: String in seen:
+		if not _prerequisites_met(_dialogue_definition(id), data.completed):
+			return "Completed dialogue is missing a required story"
+	if data.story_id.is_empty():
+		if not data.active_npc_id.is_empty() or int(data.line_index) != 0:
+			return "Inactive dialogue contains active progress"
+		return ""
+	var definition := _dialogue_definition(data.story_id)
+	if definition.is_empty():
+		return "Active dialogue ID is unknown"
+	if int(data.line_index) >= definition.lines.size():
+		return "Dialogue line is outside the story"
+	if _story_for_npc(data.active_npc_id, data.completed) != data.story_id:
+		return "Dialogue does not match the NPC or completed stories"
+	if definition.npc_id != "npc" and definition.npc_id != data.active_npc_id:
+		return "Dialogue belongs to a different NPC"
+	if npc_has_departed(data, data.active_npc_id):
+		return "Active dialogue belongs to an NPC that has already departed"
+	if state != null:
+		return _validate_participants(data.active_npc_id, state)
+	return ""
+
+
+static func migrate_legacy_data(data: Variant) -> Variant:
+	if not data is Dictionary or data.size() != 4:
+		return null
+	for field: String in ["story_id", "line_index", "active_npc_id", "completed"]:
+		if not data.has(field):
+			return null
+	var migrated: Dictionary = data.duplicate(true)
+	migrated["settled_consequences"] = []
+	return migrated
+
+
+static func npc_has_departed(data: Dictionary, npc_id: String) -> bool:
+	for event_id: String in data.get("settled_consequences", []):
+		var effect := ContentCatalog.event_definition(event_id)
+		if effect.get("type") == "depart_npc" and effect.get("npc_id") == npc_id:
+			return true
+	return false
+
+
+static func _story_for_npc(npc_id: String, read_stories: Array) -> String:
+	var npc := ContentCatalog.npc_definition(npc_id)
+	var story_ids: Variant = npc.get("story_ids", [])
+	if not story_ids is Array:
+		return ""
+	var repeat_story := ""
+	for id: Variant in story_ids:
+		if not id is String:
+			return ""
+		var definition := _dialogue_definition(id)
+		if definition.is_empty() or definition.npc_id not in ["npc", npc_id]:
+			continue
+		if not _prerequisites_met(definition, read_stories):
+			continue
+		if id not in read_stories:
+			return id
+		if definition.get("repeatable", false):
+			repeat_story = id
+	return repeat_story
+
+
+static func _prerequisites_met(definition: Dictionary, read_stories: Array) -> bool:
+	for required: String in definition.get("requires_completed", []):
+		if required not in read_stories:
+			return false
+	return true
+
+
+static func _valid_story_requirements(definition: Dictionary, id: String) -> bool:
+	if definition.has("repeatable") and not definition.repeatable is bool:
+		return false
+	var required: Variant = definition.get("requires_completed", [])
+	if not required is Array:
+		return false
+	var seen := {}
+	for previous: Variant in required:
+		if not previous is String or previous == id or seen.has(previous) or ContentCatalog.story_definition(previous).is_empty():
+			return false
+		seen[previous] = true
+	return true
+
+
+static func _dialogue_definition(id: String) -> Dictionary:
+	var definition := ContentCatalog.story_definition(id)
+	if not definition.get("npc_id") is String or not definition.get("lines") is Array or definition.lines.is_empty():
+		return {}
+	if not _valid_story_requirements(definition, id):
+		return {}
+	if definition.npc_id != "npc" and ContentCatalog.npc_definition(definition.npc_id).is_empty():
+		return {}
+	for line: Variant in definition.lines:
+		if not line is Dictionary or not line.get("speaker") is String or not line.get("text_key") is String or line.text_key.is_empty():
+			return {}
+		if line.speaker not in ["hero", "npc", definition.npc_id]:
+			return {}
+	var consequences: Variant = definition.get("consequences", [])
+	if not consequences is Array:
+		return {}
+	var seen := {}
+	for event_id: Variant in consequences:
+		if not event_id is String or not event_id.begins_with("event.") or seen.has(event_id):
+			return {}
+		var effect := ContentCatalog.event_definition(event_id)
+		if effect.size() != 3 or effect.get("id") != event_id or effect.get("type") != "depart_npc" or not effect.get("npc_id") is String:
+			return {}
+		if ContentCatalog.npc_definition(effect.npc_id).is_empty() or (definition.npc_id != "npc" and effect.npc_id != definition.npc_id):
+			return {}
+		seen[event_id] = true
+	return definition
+
+
+static func _npc_card(npc_id: String, state: TableState) -> String:
+	for id: String in state.cards:
+		if state.cards[id].metadata.get("npc_id", "") == npc_id:
+			return id
+	return ""
+
+
+static func _validate_participants(npc_id: String, state: TableState) -> String:
+	if not state.validate().is_empty():
+		return "Dialogue table is invalid"
+	var hero := ""
+	var npc := ""
+	var definition := ContentCatalog.npc_definition(npc_id)
+	var card_definition := ContentCatalog.card_definition(definition.get("card_id", ""))
+	var expected_kind := StringName(card_definition.get("kind", ""))
+	if expected_kind.is_empty():
+		return "Dialogue NPC has no supported card"
+	for id: String in state.cards:
+		if state.card_kind(id) == &"hero":
+			if not hero.is_empty() or state.cards[id].zone != &"board":
+				return "Dialogue player card is invalid"
+			hero = id
+		if state.cards[id].metadata.get("npc_id", "") == npc_id:
+			if not npc.is_empty() or state.card_kind(id) != expected_kind:
+				return "Dialogue NPC card is invalid"
+			npc = id
+	if hero.is_empty() or npc.is_empty():
+		return "Dialogue participant is missing"
+	if state.cards[npc].zone == &"queue":
+		return "" if expected_kind == &"customer" else "Dialogue NPC cannot wait in the queue"
+	var hero_stack := state.stack_for(hero)
+	if hero_stack.is_empty() or state.stack_for(npc) != hero_stack:
+		return "Dialogue participants no longer share a stack"
+	return ""
+
+
+static func _integer(value: Variant, minimum: int, maximum: int) -> bool:
+	return (value is int or value is float) and is_finite(float(value)) and float(value) == floorf(float(value)) and float(value) >= minimum and float(value) <= maximum

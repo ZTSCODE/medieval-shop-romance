@@ -1,0 +1,12 @@
+{
+  "asset": "umber-paper-edge-v2.png",
+  "prompt": "Create a standalone flat hand-painted paper UI panel component closely matching the outer PAUSE paper in this reference. ONE single square sheet on transparent background (透明背景), no words, no icons. Opaque dark umber center (#39302a) and an irregular worn ash-umber PAPER MARGIN near the edges (#51473b). It is NOT a picture frame: there must be NO straight inset outline, NO rectangular inner seam, NO embossed ridge. Instead 3-5% wide edge has uneven diffuse PAINTED SCUMBLED BRUSH PATCHES with hard dry-brush tips, organically disappearing into the dark center at varying places. Main silhouette nearly rectangular with modest softly chamfered hand-cut corners and tiny unevenness, thin paper surface, no physical bevel. Corners need 5% radius in square image. Surface is matte miniature curved gouache strokes, low contrast, no grain noise. Around 4% empty transparent margin outside sheet. Bottom edge only has a second sliver of dark backing paper offset a little. Exact reference palette and matte brushwork. No digital gradients, no glow, no perfect border lines, no frame opening, no text. Production high-resolution UI panel used for fixed-width 9 slice paper edges; center can remain plain dark brown.",
+  "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b14d-93ee-7650-bac4-48efbec22604/exec-85b7eb9c-cdd3-40db-9553-2b94827d664f.png",
+  "generator": "image_gen",
+  "size": [
+    1254,
+    1254
+  ],
+  "reference": "outputs/ui-smoke-brown-suite-20260919/06-pause.png",
+  "supersedes": "umber-paper-rim.png"
+}

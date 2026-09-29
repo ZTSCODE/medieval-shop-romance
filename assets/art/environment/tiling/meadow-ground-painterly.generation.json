@@ -1,0 +1,32 @@
+{
+  "asset": "meadow-ground-painterly.png",
+  "method": "built-in image_gen",
+  "intent": "generate",
+  "prompt": "Use case: stylized-concept. Asset type: opaque seamless tiling ground albedo texture for the flat ground UNDER existing 3D meadow vegetation in a fantasy card game. Create one square 1536x1536 texture tile only, full bleed. Art direction inspired by the quiet painterly ground surfaces of Book of Travels: broad layered gouache masses and sparse short dry-brush strokes, beautiful subdued hand-painted color variation that describes dusty meadow soil, not a scene illustration. Orthographic straight-down view, no perspective. Palette: muted grey sage green, dark dusty olive, soft earthy grey brown; narrow mid-dark value range, desaturated with no vivid green. Large restful uneven overlapping painted areas, small amount of visible flat brushwork, no full-screen busy stippling or photographic grain. Crucial: PERFECTLY SEAMLESS TILEABLE ON ALL FOUR EDGES, left/right and top/bottom colors and brush marks wrap and match continuously when repeated; uniform visual weight, no central focal patch, no border, no vignette, no direction of illumination. This is a flat matte color material and contains absolutely NO plants, grass blades, flowers, rocks, objects, cast shadows, relief, bevels, ground cracks, characters, words, UI, watermarks, grids, frames, background transparency. Opaque edge to edge. Only flat painted terrain color and brush texture.",
+  "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b632-ec74-7da2-9964-6f149dd45ad6/exec-edb62c0d-7628-40e7-8628-25ac3d2c6df6.png",
+  "reference_urls": [
+    "https://bookoftravels.com/",
+    "https://www.datocms-assets.com/91892/1684326158-steam_screenshot_sunset01.png"
+  ],
+  "reference_note": "Official site read; screenshot endpoint failed to fetch in this agent. Art direction supplied by parent based on inspected references.",
+  "requested_size": [
+    1536,
+    1536
+  ],
+  "actual_size": [
+    1254,
+    1254
+  ],
+  "pixel_format": "RGB 24-bit opaque",
+  "sha256": "D935D73CA4891C1FC3024F707484613A257810BA12E10A8E94EDB4F49B41D827",
+  "visual_inspection": "Muted olive-sage-grey with soft broad overlapping dry-brushed masses, no painted objects, directional shadows or vignette. Suitable quiet base under separate vegetation.",
+  "edge_rgb_mae_255": {
+    "left_right": 5.10233918128655,
+    "top_bottom": 4.923179160021267
+  },
+  "limitations": [
+    "Tool did not honor requested pixel dimensions; delivered square 1254x1254 preserved without resampling.",
+    "Opposite edge pixels are near-matched but not mathematically identical. Renderer edge blending or repeat preview is needed before claiming invisible seams."
+  ],
+  "postprocessing": "None. Generated original copied unchanged."
+}

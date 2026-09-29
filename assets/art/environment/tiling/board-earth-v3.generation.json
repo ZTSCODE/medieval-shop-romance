@@ -1,0 +1,18 @@
+{
+  "tool": "built-in image_gen",
+  "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b631-ed8a-7173-8722-ab50f45917a6/exec-a5634536-e378-4469-8f49-c83529fd76a2.png",
+  "prompt": "Use case: stylized-concept\nAsset type: game production tileable opaque earth ground albedo; square image requested 2048 x 2048.\nPaint a QUIET CONTINUOUS PALE KHAKI-GREY SOIL SURFACE, seen perfectly top-down. The tranquil painted dirt path surface language of Book of Travels, but a seamless material tile with no path outline.\nCRITICAL SPATIAL COMPOSITION: 85 percent of the entire image is one nearly continuous uniform pale gray-sand earthen base, low saturation, only minute color variation. The remaining 15 percent has SPARSE thin, elongated curved horizontal sweeping brush scuffs of varied lengths, separated by large empty calm gaps. Delicately darker gray-taupe strokes, close in value to the base. These scattered marks are crisp local dry brush lines with occasional broken ends, not blur. Calm negative space is the primary visual feature. Think a flat painted ground with just a few long shallow arcing rake-like brush sweeps across it. Keep the surface uninterrupted and coherent.\nPalette: pale grey-beige, dusty grey khaki, cool taupe. No orange, no strong yellow, no blue.\nSeamless tile all four edges: left/right and top/bottom must continue without seam. Flat even illumination, no vignette, no baked light or shadows, fully opaque.\nABSOLUTELY FORBIDDEN: camouflage, all-over patchwork, polygon facets, mosaic, tessellation, densely packed brush blocks, islands of contrasting colors, broad blotches, cloudy plaster, granular noise, scattered pebbles, any rocks, cracks, plants, grass, leaves, paths or roads with outlines, grids, text, objects. Do not fill the empty spaces with extra details. This is intentionally a very restrained flat painted texture with sparse clearly drawn elongated sweep marks.",
+  "reference_style": "Book of Travels quiet continuous earthen ground with sparse long painted sweeps",
+  "reference_url": "https://clan.steamstatic.com/images/35811177/e8d2e7b8e115ca8edcac0aaee25fafa0cffd8193.jpg",
+  "target": "board-earth-v3.png",
+  "editing": "none; original generated pixels copied unchanged",
+  "requested_size": [
+    2048,
+    2048
+  ],
+  "actual_size": [
+    1254,
+    1254
+  ],
+  "verification": "Quiet continuous pale grey khaki soil and sparse elongated sweeps visually inspected; no v2 all-over patchwork. RGB opaque. Repeat preview remains required."
+}

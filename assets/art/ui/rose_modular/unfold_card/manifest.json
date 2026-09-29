@@ -1,0 +1,803 @@
+{
+  "schema_version": 1,
+  "asset_id": "ui.rose.unfold_card",
+  "tool": "image_gen.imagegen",
+  "canvas_size": [
+    1024,
+    1536
+  ],
+  "final_bounds": [
+    105,
+    65,
+    821,
+    1358
+  ],
+  "common_crop": [
+    97,
+    60,
+    831,
+    1394
+  ],
+  "fps": 14,
+  "frame_count": 9,
+  "loop": false,
+  "final_frame_index": 8,
+  "fixed_anchor": [
+    515.5,
+    744
+  ],
+  "path_pattern": "res://assets/art/ui/rose_modular/unfold_card/frame_%02d.png",
+  "common_crop_threshold": 16,
+  "common_crop_basis": "所有帧 alpha>=16 的连续纸张主体联合包围盒",
+  "common_crop_applied_to_png": false,
+  "render_alignment": "所有帧使用终帧 final_bounds 的同一锚点与等比缩放绘制完整画布；禁止按各帧包围盒分别缩放或裁切。",
+  "locked_reference": {
+    "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/outputs/ui-exploration-v7/parchment-rose-aligned.png",
+    "sha256": "8226AEFBE1BDAEBBF750512DAC7E4A2806347F0BDF72B5887E034A239D24D200"
+  },
+  "generation_method": "九个最终姿态均由内置 image_gen 分次独立绘制；中间帧引用两侧已完成锚帧。不是网格拆帧、视频抽帧、程序变形或淡入。",
+  "tool_quality_setting": null,
+  "tool_quality_note": "当前内置工具未暴露模型选择、质量档、采样步数或种子参数，未虚报具体质量档。",
+  "source_pixel_edits": false,
+  "generation_request_count": 13,
+  "generation_order_including_retries": [
+    {
+      "request_order": 1,
+      "label": "08",
+      "target_frame_index": 8,
+      "adopted": true,
+      "parallel_request_group": null,
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-9db68ccb-c112-4a9c-9ee1-9763adf23090.png",
+      "source_sha256": "5289106309CAE157E0071849D5E49F1AC38FAC89AB545061CD85751542C81A93",
+      "source_bytes": 1599026,
+      "source_last_write_utc": "2026-09-17T17:01:59.8353270Z"
+    },
+    {
+      "request_order": 2,
+      "label": "08-alpha-correction",
+      "target_frame_index": 8,
+      "adopted": false,
+      "parallel_request_group": null,
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-73b71114-c25a-419b-8812-b6485b0cb734.png",
+      "source_sha256": "B8C4728F631907C01B45D27EB39E8F0BC14DAB51A3757D8729F0930659946EAF",
+      "source_bytes": 1510066,
+      "source_last_write_utc": "2026-09-17T17:05:12.4318572Z"
+    },
+    {
+      "request_order": 3,
+      "label": "00",
+      "target_frame_index": 0,
+      "adopted": true,
+      "parallel_request_group": null,
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-4063e262-f0cb-4bf6-aef2-a503b7d2ce7e.png",
+      "source_sha256": "B4CC5A100CC3570765F6A1B0F642AC011BEC7AA70115DE1621CB0EE11A82BC4E",
+      "source_bytes": 1189052,
+      "source_last_write_utc": "2026-09-17T17:07:01.0337439Z"
+    },
+    {
+      "request_order": 4,
+      "label": "04",
+      "target_frame_index": 4,
+      "adopted": true,
+      "parallel_request_group": null,
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-97395fd9-325d-4065-a52d-26a62d2c0f7e.png",
+      "source_sha256": "3EE724FE6C7C1CDC7B19C9CA2C0A1CB7F638089CF6E8CA3C00833ABAD22E1CB7",
+      "source_bytes": 1725543,
+      "source_last_write_utc": "2026-09-17T17:08:42.3912642Z"
+    },
+    {
+      "request_order": 5,
+      "label": "02",
+      "target_frame_index": 2,
+      "adopted": false,
+      "parallel_request_group": "middle_even_frames",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-11780ce5-05a9-49f2-b0b9-6d19b20c4353.png",
+      "source_sha256": "FA0A6FEC02837210825C3C5B646FB5FEFA19FD60BEE4C770EEE869EB3D5D86D8",
+      "source_bytes": 1499712,
+      "source_last_write_utc": "2026-09-17T17:10:22.7449149Z"
+    },
+    {
+      "request_order": 6,
+      "label": "06",
+      "target_frame_index": 6,
+      "adopted": true,
+      "parallel_request_group": "middle_even_frames",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-7c373703-29a2-4b85-9fd4-db709db1ed72.png",
+      "source_sha256": "FD3D0F5AC24F73E4D0D6976C5504C7E764D2AD87032F28F1C942607B37435754",
+      "source_bytes": 1775563,
+      "source_last_write_utc": "2026-09-17T17:11:00.7833791Z"
+    },
+    {
+      "request_order": 7,
+      "label": "02-height-correction",
+      "target_frame_index": 2,
+      "adopted": true,
+      "parallel_request_group": null,
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-854b08b9-40d6-4218-b063-ce3a41420545.png",
+      "source_sha256": "29F88AEA97BF17DD9F181D19202396F08CC646BDAA8660C9A4BC042CA61E3AB1",
+      "source_bytes": 1612014,
+      "source_last_write_utc": "2026-09-17T17:13:15.4369121Z"
+    },
+    {
+      "request_order": 8,
+      "label": "01",
+      "target_frame_index": 1,
+      "adopted": true,
+      "parallel_request_group": null,
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-f15c63ef-09e2-465b-b98b-6500bada7756.png",
+      "source_sha256": "9381C7A0D2E90EFAA1E128D5DA2469BA582587F87FE2B07DF234A692DFE99DA9",
+      "source_bytes": 1452646,
+      "source_last_write_utc": "2026-09-17T17:15:16.2860503Z"
+    },
+    {
+      "request_order": 9,
+      "label": "03",
+      "target_frame_index": 3,
+      "adopted": false,
+      "parallel_request_group": null,
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-40e1690e-4d24-4314-9712-8b3d429005d5.png",
+      "source_sha256": "C98B491122945E22CB24AB399B496D63A3B225E1CDAA0BB8260A89EB8A9D944F",
+      "source_bytes": 1792782,
+      "source_last_write_utc": "2026-09-17T17:16:37.6523903Z"
+    },
+    {
+      "request_order": 10,
+      "label": "05",
+      "target_frame_index": 5,
+      "adopted": false,
+      "parallel_request_group": null,
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-1dd005b5-0f59-473d-93d0-9513497d5078.png",
+      "source_sha256": "9611102BDDF961F2A382E965323A4DFB71833687E1CD84BAF59096310D3C8AE3",
+      "source_bytes": 1834668,
+      "source_last_write_utc": "2026-09-17T17:18:01.0423538Z"
+    },
+    {
+      "request_order": 11,
+      "label": "07",
+      "target_frame_index": 7,
+      "adopted": true,
+      "parallel_request_group": null,
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-f35e6a5a-2bed-435e-bfbe-d1d76e75cb2e.png",
+      "source_sha256": "9B7A3E4D7EE9B84917AE26C6C6E286AB38A80B41A41A64A7B7B6E972818F39CB",
+      "source_bytes": 1634118,
+      "source_last_write_utc": "2026-09-17T17:19:24.8895978Z"
+    },
+    {
+      "request_order": 12,
+      "label": "03-width-correction",
+      "target_frame_index": 3,
+      "adopted": true,
+      "parallel_request_group": null,
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-e6669278-9847-4da7-ae10-950b6560a0e5.png",
+      "source_sha256": "0C8DFEE229A83B43FB1AAE3594170202CDEFA476C2BFA179321A3CD49A3F412F",
+      "source_bytes": 1712321,
+      "source_last_write_utc": "2026-09-17T17:21:11.0629050Z"
+    },
+    {
+      "request_order": 13,
+      "label": "05-width-correction",
+      "target_frame_index": 5,
+      "adopted": true,
+      "parallel_request_group": null,
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-08000586-5db3-453a-8ab5-87a44b9653fb.png",
+      "source_sha256": "9ADD169900823A5BF3BB221EC923D5BBAB99666F0372C3106284922A87D9D61E",
+      "source_bytes": 1809199,
+      "source_last_write_utc": "2026-09-17T17:22:34.5592012Z"
+    }
+  ],
+  "rejected_attempts": [
+    {
+      "label": "08-alpha-correction",
+      "target_index": 8,
+      "adopted": false,
+      "reason": "纸面不透明度改由运行时 shader 处理；不采用额外修正稿，保留第一次终帧锚点。",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-73b71114-c25a-419b-8812-b6485b0cb734.png",
+      "source_sha256": "B8C4728F631907C01B45D27EB39E8F0BC14DAB51A3757D8729F0930659946EAF",
+      "source_bytes": 1510066,
+      "source_last_write_utc": "2026-09-17T17:05:12.4318572Z",
+      "prompt": "Perform a narrowly targeted transparency correction on this exact image, preserving its existing 1024 x 1536 canvas, all paper positions, shape, colors, painted detail and silhouette.\nOUTPUT A REAL RGBA PNG / 透明背景.\nEvery visible piece of parchment must be completely opaque: alpha=255 throughout its full painted interior, including light cream brushwork, pale highlights and dusty rose paper. Do not make the paper translucent. Preserve all interior RGB colors exactly rather than blending or whitening them. Background pixels outside the paper silhouette must be alpha=0, not a colored gradient, glow, shadow or checkerboard. Permit fractional alpha ONLY in the outermost 1–2 pixels of silhouette antialiasing. Eliminate stray almost-transparent pixels floating outside the silhouette.\nDo not add or remove paper layers, resize, crop, scale, shift, redraw, recolor, embellish or change the accepted artwork. No text, labels, characters, buttons, symbols, border or other objects. This is only an opacity/alpha correction of the same final fully opened blank parchment card animation frame.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-9db68ccb-c112-4a9c-9ee1-9763adf23090.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-9db68ccb-c112-4a9c-9ee1-9763adf23090.png",
+          "sha256": "5289106309CAE157E0071849D5E49F1AC38FAC89AB545061CD85751542C81A93",
+          "role": "本帧定向修正底图"
+        }
+      ]
+    },
+    {
+      "label": "02-initial",
+      "target_index": 2,
+      "adopted": false,
+      "reason": "主体高度 1290px，较相邻锚帧明显偏短；重绘后为 1354px。",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-11780ce5-05a9-49f2-b0b9-6d19b20c4353.png",
+      "source_sha256": "FA0A6FEC02837210825C3C5B646FB5FEFA19FD60BEE4C770EEE869EB3D5D86D8",
+      "source_bytes": 1499712,
+      "source_last_write_utc": "2026-09-17T17:10:22.7449149Z",
+      "prompt": "Independently paint ONE in-between animation drawing of this SAME thin rose-cream paper card. The two supplied images are the earlier and later pose anchors in that order. Interpolate the physical VERTICAL accordion unfolding, not bitmap scale, opacity or texture stretching.\nOutput EXACTLY 1024 x 1536 RGBA PNG on a genuine transparent background / 透明背景. Same fixed front orthographic camera, full canvas and paper anchor centered near x=515, y=750. Preserve near-constant length, tiny worn relaxed edges, rose-cream front paint, dusty pink-brown reverse planes and one or two close accompanying rear sheets. Preserve normal brushstroke size and all design identity between the anchors. No camera movement, cropping, resizing or recentering. Paper faces opaque; only outside silhouette transparent. No green, yellow/orange shift, scene, floor, cast shadow, glow, checkerboard, text, title slip, ornaments, border, characters, buttons, number, grid or extra components. Thin hand-painted paper planes only, not heavy board, column, rolled scroll or plastic.\nThis is frame 02, precisely halfway between the two supplied anchor poses (00 and 04). The sheet is only beginning to unfold; its overall silhouette width should be approximately 420px centered at x=515 (about x=305..725), between anchor widths 231 and 629. Top and bottom remain around y=70 and y=1445. The narrow stationary central cream panel remains nearly the same width as in frame 00, while the neighboring cream wing faces start opening into view on both sides. The outer side panels are still substantially folded back, showing slim rose reverse planes and delicate lengthwise fold junctions. At the top and bottom, slight opposing zigzag edges correspond to these real hinges. It must visibly be a partial opening toward frame 04, not frame 04 reduced in horizontal scale. Keep both wings symmetrical in overall phase but gently irregular in edge shape. Only one animation frame.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_00.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_00.png",
+          "sha256": "B4CC5A100CC3570765F6A1B0F642AC011BEC7AA70115DE1621CB0EE11A82BC4E",
+          "role": "已完成相邻锚帧"
+        },
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png",
+          "sha256": "3EE724FE6C7C1CDC7B19C9CA2C0A1CB7F638089CF6E8CA3C00833ABAD22E1CB7",
+          "role": "已完成相邻锚帧"
+        }
+      ]
+    },
+    {
+      "label": "03-initial",
+      "target_index": 3,
+      "adopted": false,
+      "reason": "主体宽度 653px，超过后一帧的 629px；重绘后为 617px。",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-40e1690e-4d24-4314-9712-8b3d429005d5.png",
+      "source_sha256": "C98B491122945E22CB24AB399B496D63A3B225E1CDAA0BB8260A89EB8A9D944F",
+      "source_bytes": 1792782,
+      "source_last_write_utc": "2026-09-17T17:16:37.6523903Z",
+      "prompt": "Paint ONE original in-between animation drawing, frame 03, between the supplied earlier frame 02 and later frame 04 of the same rose-cream parchment card. Keep the paper's identity and change only its physical accordion opening pose toward the next frame.\n\n1024 x 1536 RGBA PNG, genuine transparent background / 透明背景. SAME front orthographic camera, full canvas and stable anchor x≈515,y≈752. Preserve the full paper length with top near y=68 and bottom near y=1442; don't shorten the sheet or change the empty margins. Overall visible width about 565px centered (x≈232..798), exactly between the references' widths 506 and 629. Front planes remain opaque; only surrounding pixels transparent.\n\nOpening state: both side cream faces rotate a little farther outward than frame 02 and a little less than frame 04. The central fifth stays planted and nearly the same width; physically revealing more side surfaces makes the silhouette wider. Maintain the two soft lengthwise front hinge junctions and the narrow dusty-rose reverse sections at the outside, plus the close rear sheets. Fold seams are slightly less deep than in frame 02. Match the top/bottom accordion transitions between the two anchors; no additional creases, no detached panels, no hard card slabs. Thin relaxed painted parchment, not a width-scaled picture.\n\nStrictly keep the anchors' pale smoky rose / warm cream / dusty pink-brown palette, short visible dry-brush texture scale, gentle micro-wear and small irregular edges. No green, recoloring, lettering, title strips, ornaments, buttons, figures, borders, shadows, glow, scene, checkerboard, plastic, rolled scroll cylinders, extra objects or contact sheet. Draw only this single intermediate frame on the unchanged full transparent canvas.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_02.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_02.png",
+          "sha256": "29F88AEA97BF17DD9F181D19202396F08CC646BDAA8660C9A4BC042CA61E3AB1",
+          "role": "已完成相邻锚帧"
+        },
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png",
+          "sha256": "3EE724FE6C7C1CDC7B19C9CA2C0A1CB7F638089CF6E8CA3C00833ABAD22E1CB7",
+          "role": "已完成相邻锚帧"
+        }
+      ]
+    },
+    {
+      "label": "05-initial",
+      "target_index": 5,
+      "adopted": false,
+      "reason": "主体宽度 874px，超过后一帧的 831px；重绘后为 796px。",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-1dd005b5-0f59-473d-93d0-9513497d5078.png",
+      "source_sha256": "9611102BDDF961F2A382E965323A4DFB71833687E1CD84BAF59096310D3C8AE3",
+      "source_bytes": 1834668,
+      "source_last_write_utc": "2026-09-17T17:18:01.0423538Z",
+      "prompt": "Draw a single independent animation in-between, frame 05, of the same thin rose-cream parchment card. Image 1 is earlier frame 04, image 2 is later frame 06. Make a physical opening pose visually halfway between those anchors; do not scale a source bitmap or stretch its texture.\n\nKeep EXACT 1024 x 1536 transparent-background / 透明背景 PNG, fixed full canvas and straight front orthographic camera. Paper center around x=515, vertical span y≈62..1440. The whole paper including close rear layers must fit roughly within x=150..880, width approximately 730px: distinctly wider than frame 04 and distinctly narrower than frame 06. Preserve nearly the same height as both anchors. Outside silhouette fully transparent, paper faces opaque, no background color or cast shadow.\n\nThe sheet is more than halfway open. Turn the cream side wing panels outward toward their final flat positions. The two long hinge seams are softer and less inwardly bent than frame 04, but more visible than frame 06. Physically reveal additional front-facing paper without widening the center panel abnormally. The surface starts reading as one connected flexible cream sheet, never three detached rectangles. Small dusty-rose reverse edges remain at the outer sides, with the same one or two tightly aligned backing papers, following the unfolding.\nMaintain the same top/bottom fold pattern, worn little edges, pale rose-cream color, dusty pink-brown backing color, fine short dry-brush paint and texture scale. A little flat painted crease shading is enough; no black stripe or dimensional trench. No green, recoloring, text, title strip, border ornament, characters, buttons, extra components, scene, glow, checkerboard, contact sheet, heavy cardboard, rolled scroll or plastic. Only the single full-height frame.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_06.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png",
+          "sha256": "3EE724FE6C7C1CDC7B19C9CA2C0A1CB7F638089CF6E8CA3C00833ABAD22E1CB7",
+          "role": "已完成相邻锚帧"
+        },
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_06.png",
+          "sha256": "FD3D0F5AC24F73E4D0D6976C5504C7E764D2AD87032F28F1C942607B37435754",
+          "role": "已完成相邻锚帧"
+        }
+      ]
+    }
+  ],
+  "runtime_alpha_policy": {
+    "required": true,
+    "raw_paper_max_alpha": 254,
+    "raw_paper_fully_opaque": false,
+    "clear_alpha_at_or_below": 0.0196078431372549,
+    "make_opaque_at_or_above": 0.85,
+    "intermediate_alpha": "保留轮廓抗锯齿；源 PNG 保持原始字节。",
+    "rationale": "原生输出具有真透明背景，但纸面存在轻微半透明。主代理已确认由 renderer 将纸面高 alpha 补至 1。"
+  },
+  "validation": {
+    "exact_canvas_all_frames": true,
+    "all_raw_copy_hashes_match": true,
+    "all_frames_have_one_main_body_component": true,
+    "all_corners_alpha_zero": true,
+    "visible_halo_outside_body_plus_2px": false,
+    "max_residual_alpha_outside_body_plus_2px": 5,
+    "residual_pixels_at_alpha5": 3,
+    "qc_path": "res://assets/art/ui/rose_modular/unfold_card/alpha-qc.json",
+    "visual_review": "已查看全部最终独立绘图；折面从窄纸束向两侧张开，末两帧放平。已重绘 02 高度异常与 03、05 宽度回缩问题。",
+    "playback_review": "本分工未运行 Godot；原生播放与最终视觉验收由主代理整合执行。",
+    "first_frame_total_width_ratio": 0.28136419001218027,
+    "measured_widths": [
+      231,
+      416,
+      506,
+      617,
+      629,
+      796,
+      831,
+      824,
+      821
+    ],
+    "measured_heights": [
+      1366,
+      1342,
+      1354,
+      1366,
+      1394,
+      1383,
+      1365,
+      1355,
+      1358
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "path": "res://assets/art/ui/rose_modular/unfold_card/frame_00.png",
+      "saved_path": "assets/art/ui/rose_modular/unfold_card/frame_00.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-4063e262-f0cb-4bf6-aef2-a503b7d2ce7e.png",
+      "source_sha256": "B4CC5A100CC3570765F6A1B0F642AC011BEC7AA70115DE1621CB0EE11A82BC4E",
+      "source_bytes": 1189052,
+      "source_last_write_utc": "2026-09-17T17:07:01.0337439Z",
+      "sha256": "B4CC5A100CC3570765F6A1B0F642AC011BEC7AA70115DE1621CB0EE11A82BC4E",
+      "canvas_size": [
+        1024,
+        1536
+      ],
+      "prompt": "Independently paint frame 00, the fully folded starting pose of the SAME parchment card shown in the supplied final-open frame 08. This is a new animation drawing, not an image scaling trick.\n\nKeep the EXACT 1024 x 1536 canvas, front orthographic camera, anchor center x=515.5 and vertical paper span approximately y=65..1423. Preserve the reference's smoky rose / warm rose-cream colors, tiny worn edges, short painted dry-brush detail and thin relaxed parchment. Genuine transparent background / 透明背景, full margins unchanged, no scene, floor, glow, shadow or checkerboard. Paper itself is solid and fully opaque; transparent only outside its silhouette.\n\nThe existing full sheet has been folded inward along FOUR VERTICAL accordion creases into a very narrow upright paper bundle at the CENTER. The stationary center fifth remains visible; the left two fifths and right two fifths are physically folded behind that center. At this first frame the visible bundle is only about 20 percent of the final 821px width: approximately x=433..598, total width 165px. Its height stays nearly unchanged at about 1358px. DO NOT scale the whole source horizontally. Draw real folded surfaces: a narrow cream front plane at normal brushstroke scale, several slim dusty-rose reverse planes and folded edge seams tucked immediately behind its left and right edges. Folded side panels are physically concealed, not squeezed into the front texture. Top and bottom edges show delicate thin folded-paper zigzags, not a spiral scroll. The original one or two close rear sheets fold together with the main paper, not left open behind it.\n\nThe paper is thin, hand-painted and flat in treatment, not a thick solid column, cardboard, plastic or photorealistic 3D object. No horizontal contraction, shortening, bounce, camera crop, enlarged close-up, or moved anchor. No text, title strip, characters, buttons, ornament, border, numbers, extra elements, grid or contact sheet. Only ONE narrow central folded-paper animation frame on the full transparent canvas.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_08.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_08.png",
+          "sha256": "5289106309CAE157E0071849D5E49F1AC38FAC89AB545061CD85751542C81A93",
+          "role": "已完成相邻锚帧"
+        }
+      ],
+      "alpha_bounds": [
+        398,
+        75,
+        231,
+        1366
+      ],
+      "alpha_bounds_threshold": 16,
+      "alpha_pixel_format": "Format32bppArgb",
+      "transparent_pixels": 1274056,
+      "fully_opaque_raw_pixels": 0,
+      "max_raw_alpha": 254,
+      "transparent_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_32px_band_max_alpha": 0,
+      "body_components_at_alpha16": 1,
+      "residual_alpha_outside_body_plus_2px_max": 4,
+      "residual_alpha_outside_body_plus_2px_ge5_pixels": 0,
+      "raw_copy_verified": true
+    },
+    {
+      "index": 1,
+      "path": "res://assets/art/ui/rose_modular/unfold_card/frame_01.png",
+      "saved_path": "assets/art/ui/rose_modular/unfold_card/frame_01.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-f15c63ef-09e2-465b-b98b-6500bada7756.png",
+      "source_sha256": "9381C7A0D2E90EFAA1E128D5DA2469BA582587F87FE2B07DF234A692DFE99DA9",
+      "source_bytes": 1452646,
+      "source_last_write_utc": "2026-09-17T17:15:16.2860503Z",
+      "sha256": "9381C7A0D2E90EFAA1E128D5DA2469BA582587F87FE2B07DF234A692DFE99DA9",
+      "canvas_size": [
+        1024,
+        1536
+      ],
+      "prompt": "Draw one independent animation in-between: frame 01 of the SAME thin rose-cream parchment card. The supplied image 1 is frame 00 (closed) and image 2 is frame 02 (partly open). Frame 01 must lie visually halfway between these two exact poses.\n\nLock canvas to 1024 x 1536 with genuine transparent background / 透明背景, fixed front orthographic camera and anchor x=515, y≈750. Preserve the full height: paper top near y=75, bottom near y=1435; do not shorten or vertically stretch the design or increase the upper/lower empty margins. Overall width about 365px, centered, between the references' widths 231 and 506: roughly x=333..698. All outside pixels transparent; paper interiors opaque.\n\nThe upright folded paper is beginning to breathe open. Keep the same central cream front strip at its natural size. On both sides a small amount of the hidden cream wing faces has started rotating outward, exposing less surface than frame 02, with narrow dusty-rose reverse edges remaining folded behind them. Real vertical accordion hinge planes, delicate thin seams and small top/bottom fold transitions. The revealed extra width must be newly visible panels, not a horizontally stretched front strip. Keep thin paper flexibility and the nearby rear layers moving together.\n\nCopy the exact rose-cream / smoky pink-brown colors, quiet short hand-painted brushwork, worn little edge details and flat soft appearance of these anchors. Preserve palette, camera and texture scale. No green, extra background, glow, cast shadow, large deep tears, board thickness, rolled scrolls, plastic, text, labels, ornaments, borders, characters, buttons or other components. One newly drawn frame only, not a grid or contact sheet.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_00.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_02.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_00.png",
+          "sha256": "B4CC5A100CC3570765F6A1B0F642AC011BEC7AA70115DE1621CB0EE11A82BC4E",
+          "role": "已完成相邻锚帧"
+        },
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_02.png",
+          "sha256": "29F88AEA97BF17DD9F181D19202396F08CC646BDAA8660C9A4BC042CA61E3AB1",
+          "role": "已完成相邻锚帧"
+        }
+      ],
+      "alpha_bounds": [
+        306,
+        72,
+        416,
+        1342
+      ],
+      "alpha_bounds_threshold": 16,
+      "alpha_pixel_format": "Format32bppArgb",
+      "transparent_pixels": 1039681,
+      "fully_opaque_raw_pixels": 0,
+      "max_raw_alpha": 254,
+      "transparent_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_32px_band_max_alpha": 0,
+      "body_components_at_alpha16": 1,
+      "residual_alpha_outside_body_plus_2px_max": 4,
+      "residual_alpha_outside_body_plus_2px_ge5_pixels": 0,
+      "raw_copy_verified": true
+    },
+    {
+      "index": 2,
+      "path": "res://assets/art/ui/rose_modular/unfold_card/frame_02.png",
+      "saved_path": "assets/art/ui/rose_modular/unfold_card/frame_02.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-854b08b9-40d6-4218-b063-ce3a41420545.png",
+      "source_sha256": "29F88AEA97BF17DD9F181D19202396F08CC646BDAA8660C9A4BC042CA61E3AB1",
+      "source_bytes": 1612014,
+      "source_last_write_utc": "2026-09-17T17:13:15.4369121Z",
+      "sha256": "29F88AEA97BF17DD9F181D19202396F08CC646BDAA8660C9A4BC042CA61E3AB1",
+      "canvas_size": [
+        1024,
+        1536
+      ],
+      "prompt": "Paint a corrected independent frame 02 BETWEEN the two supplied animation anchors: image 1 is closed frame 00, image 2 is half-open frame 04. This replacement must maintain the fixed full-height alignment of both anchors.\n\nExact output canvas: 1024 x 1536, genuine transparent background / 透明背景. Absolutely fixed upright orthographic camera. THE PAPER MUST EXTEND FROM y=65 TO y=1445: height approximately 1380 pixels, almost the full canvas height, with only about 65px transparent space above and 91px below. Do not draw a shorter floating paper centered with larger top/bottom margins. The top and bottom points must visually align with the corresponding top/bottom points of BOTH reference images. Center x=515. Paper body overall width about 475px, leftmost x≈277, rightmost x≈753. Draw within this fixed overall envelope without cropping, rescaling an existing picture, changing canvas or adding a background.\n\nAnimation pose: frame 02, a quarter of the opening. Keep the narrow central cream front strip in place, with two cream side faces beginning to fan outward along long vertical folds, and narrow dusty-rose reverse panels still tucked behind their outside edges. This is the midway fold angle between the supplied closed and half-open poses. The central front panel and normal brushstroke size are stable; the extra width comes from revealing side panel surfaces, not stretching the paper texture. Thin, pliable hand-painted parchment with soft narrow hinge seams. Top and bottom edges show small matching accordion zigzags, not tall spikes or cylinders. The close rear paper layers fold together with the same body.\n\nPreserve the anchors' exact warm rose-cream and smoky dusty-pink palette, visible dry-brush paint, irregular but only slightly worn continuous edges, subtle surface detail and very thin flat style. All paper interior opaque. Outside silhouette fully transparent. No green, yellow hue shift, lettering, title label, buttons, character, white line ornament, thick shadow, aura, scene, checkerboard, 3D scroll, plastic, other components, collage or contact sheet. One full-height animation frame only.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_00.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_00.png",
+          "sha256": "B4CC5A100CC3570765F6A1B0F642AC011BEC7AA70115DE1621CB0EE11A82BC4E",
+          "role": "已完成相邻锚帧"
+        },
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png",
+          "sha256": "3EE724FE6C7C1CDC7B19C9CA2C0A1CB7F638089CF6E8CA3C00833ABAD22E1CB7",
+          "role": "已完成相邻锚帧"
+        }
+      ],
+      "alpha_bounds": [
+        262,
+        75,
+        506,
+        1354
+      ],
+      "alpha_bounds_threshold": 16,
+      "alpha_pixel_format": "Format32bppArgb",
+      "transparent_pixels": 920690,
+      "fully_opaque_raw_pixels": 0,
+      "max_raw_alpha": 254,
+      "transparent_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_32px_band_max_alpha": 0,
+      "body_components_at_alpha16": 1,
+      "residual_alpha_outside_body_plus_2px_max": 3,
+      "residual_alpha_outside_body_plus_2px_ge5_pixels": 0,
+      "raw_copy_verified": true
+    },
+    {
+      "index": 3,
+      "path": "res://assets/art/ui/rose_modular/unfold_card/frame_03.png",
+      "saved_path": "assets/art/ui/rose_modular/unfold_card/frame_03.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-e6669278-9847-4da7-ae10-950b6560a0e5.png",
+      "source_sha256": "0C8DFEE229A83B43FB1AAE3594170202CDEFA476C2BFA179321A3CD49A3F412F",
+      "source_bytes": 1712321,
+      "source_last_write_utc": "2026-09-17T17:21:11.0629050Z",
+      "sha256": "0C8DFEE229A83B43FB1AAE3594170202CDEFA476C2BFA179321A3CD49A3F412F",
+      "canvas_size": [
+        1024,
+        1536
+      ],
+      "prompt": "A precise new in-between animation drawing. IMAGE 1 (frame 02) IS THE PRIMARY EDIT BASE. Image 2 (frame 04) is only the later motion target. Create frame 03 by making a SMALL PHYSICAL OPENING CHANGE TO IMAGE 1, not by copying or enlarging image 2.\n\nLock the 1024 x 1536 RGBA canvas, front-facing camera, center anchor, brushstroke scale and paper length. Genuine transparent background / 透明背景, opaque paper.\nImage 1's current whole silhouette spans approximately x=262..768. Move the LEFT outer folded wing edge only 30 pixels farther left, and the RIGHT outer folded wing edge only 30 pixels farther right. Thus the new silhouette should span x≈232..798, about 566px wide, definitely NARROWER than image 2's 629px paper. Keep paper's top and bottom close to image 1, about y=75..1430. Do not grow its height. Do not move the central front strip or widen it. Open the side hinge angles only a little more, revealing new thin slices of cream front paper while keeping the majority of the fold shape from image 1. This is the pose before the second image, not a pose after it.\n\nRetain the same thin rose-cream blank parchment, dusty pink-brown reverse planes and close rear sheets, tiny natural edge wear, short hand-painted brush marks, local painted color patches and small top/bottom fold transitions. Rear sheets must stay within this same narrow overall envelope. Do not stretch, scale or fade the entire drawing; physically redraw the slightly more open wing facets at their original material scale. No other alterations. No green, lettering, title strips, border, ornament, figure, button, scene, floor, background color, halo, cast shadow, heavy cardboard, scroll cylinders, plastic or extra components. One full-canvas independent animation frame only.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_02.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_02.png",
+          "sha256": "29F88AEA97BF17DD9F181D19202396F08CC646BDAA8660C9A4BC042CA61E3AB1",
+          "role": "已完成相邻锚帧"
+        },
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png",
+          "sha256": "3EE724FE6C7C1CDC7B19C9CA2C0A1CB7F638089CF6E8CA3C00833ABAD22E1CB7",
+          "role": "已完成相邻锚帧"
+        }
+      ],
+      "alpha_bounds": [
+        204,
+        67,
+        617,
+        1366
+      ],
+      "alpha_bounds_threshold": 16,
+      "alpha_pixel_format": "Format32bppArgb",
+      "transparent_pixels": 780950,
+      "fully_opaque_raw_pixels": 0,
+      "max_raw_alpha": 254,
+      "transparent_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_32px_band_max_alpha": 0,
+      "body_components_at_alpha16": 1,
+      "residual_alpha_outside_body_plus_2px_max": 4,
+      "residual_alpha_outside_body_plus_2px_ge5_pixels": 0,
+      "raw_copy_verified": true
+    },
+    {
+      "index": 4,
+      "path": "res://assets/art/ui/rose_modular/unfold_card/frame_04.png",
+      "saved_path": "assets/art/ui/rose_modular/unfold_card/frame_04.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-97395fd9-325d-4065-a52d-26a62d2c0f7e.png",
+      "source_sha256": "3EE724FE6C7C1CDC7B19C9CA2C0A1CB7F638089CF6E8CA3C00833ABAD22E1CB7",
+      "source_bytes": 1725543,
+      "source_last_write_utc": "2026-09-17T17:08:42.3912642Z",
+      "sha256": "3EE724FE6C7C1CDC7B19C9CA2C0A1CB7F638089CF6E8CA3C00833ABAD22E1CB7",
+      "canvas_size": [
+        1024,
+        1536
+      ],
+      "prompt": "Independently paint animation frame 04, the exact middle opening pose BETWEEN the supplied two frames of the same thin rose-cream parchment card.\nImage 1 = frame 00, narrow central folded bundle. Image 2 = frame 08, fully open flat paper. These are the only references. Interpolate the paper's physical unfolding, not its bitmap scale, texture width or opacity.\n\nOutput one genuine transparent-background / 透明背景 RGBA PNG, EXACTLY 1024 x 1536. Keep the identical fixed front orthographic camera, full uncropped canvas, upright center x=515.5, and nearly constant paper height from y≈65 to y≈1423. Do not recenter to a crop or zoom to fill the canvas. Keep all surrounding margins transparent. Paper faces are opaque.\n\nAt frame 04 the vertical accordion-folded sheet is about halfway through opening. Overall visible paper width is approximately 560px, occupying x≈235..795. The center front fifth remains in place at its natural width and texture scale. The folded side panels have opened outward to left and right, exposing additional cream front surfaces and a few narrow muted dusty-rose reverse/fold planes. Four lengthwise hinge folds are physically apparent as delicate changes of painted plane and narrow soft seams, not black stripes, grooves or thick board. The wings are still gently angled inward; this is not yet the final flat sheet. Draw the small top and bottom transitions appropriate to real paper folds. One or two very close rear sheets move with the main sheet and remain local accents, not a separate expanded rectangle behind the bundle. Do not fake the motion by stretching the central panel.\n\nMatch both reference frames' rose-cream and dusty pink-brown palette, hand-painted short brushstrokes, gentle tiny edge wear, very thin material, irregular continuous natural edges and absence of perspective distortion. The long edges and height must not jump up or down. No green, no orange/yellow shift, no plastic, no photorealism, no bulky dimensional scroll, rolls, hard cardboard, cast shadow, glowing aura, background, checkerboard, text, title labels, ornament, buttons, other components or extra objects. One frame, not a contact sheet or sequence.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_00.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_08.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_00.png",
+          "sha256": "B4CC5A100CC3570765F6A1B0F642AC011BEC7AA70115DE1621CB0EE11A82BC4E",
+          "role": "已完成相邻锚帧"
+        },
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_08.png",
+          "sha256": "5289106309CAE157E0071849D5E49F1AC38FAC89AB545061CD85751542C81A93",
+          "role": "已完成相邻锚帧"
+        }
+      ],
+      "alpha_bounds": [
+        198,
+        60,
+        629,
+        1394
+      ],
+      "alpha_bounds_threshold": 16,
+      "alpha_pixel_format": "Format32bppArgb",
+      "transparent_pixels": 734565,
+      "fully_opaque_raw_pixels": 0,
+      "max_raw_alpha": 254,
+      "transparent_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_32px_band_max_alpha": 1,
+      "body_components_at_alpha16": 1,
+      "residual_alpha_outside_body_plus_2px_max": 4,
+      "residual_alpha_outside_body_plus_2px_ge5_pixels": 0,
+      "raw_copy_verified": true
+    },
+    {
+      "index": 5,
+      "path": "res://assets/art/ui/rose_modular/unfold_card/frame_05.png",
+      "saved_path": "assets/art/ui/rose_modular/unfold_card/frame_05.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-08000586-5db3-453a-8ab5-87a44b9653fb.png",
+      "source_sha256": "9ADD169900823A5BF3BB221EC923D5BBAB99666F0372C3106284922A87D9D61E",
+      "source_bytes": 1809199,
+      "source_last_write_utc": "2026-09-17T17:22:34.5592012Z",
+      "sha256": "9ADD169900823A5BF3BB221EC923D5BBAB99666F0372C3106284922A87D9D61E",
+      "canvas_size": [
+        1024,
+        1536
+      ],
+      "prompt": "Make ONE precise newly painted frame 05 of this parchment opening animation. IMAGE 1 (frame 04) IS THE PRIMARY EDIT BASE; image 2 (frame 06) is only the later target pose. Make a SMALL physical opening advance from image 1. Do NOT copy, enlarge or match the full width of image 2.\n\nKeep exactly 1024 x 1536 RGBA, genuine transparent background / 透明背景, same full-canvas front orthographic camera and anchor. Image 1's current paper silhouette spans x≈198..827, width 629px. Open each outer folded wing only about 40–50 pixels farther away from the fixed center, producing about 710–730px overall width, around x=150..880. IT MUST REMAIN CLEARLY NARROWER than image 2's 831px paper. Rear sheets count in this same overall width. Do not change height: top near y=65, bottom near y=1440. Do not enlarge the middle panel or zoom the view.\n\nOpen the existing side cream paper facets just a little more and soften the same two vertical hinge seams slightly. Reveal newly visible cream surfaces with unchanged brushstroke scale. Keep more remaining fold curvature than image 2. The paper remains one flexible connected sheet, with muted dusty-rose reverse planes still visible at the outer edges and the same close backing sheets. Only the side hinge pose changes; center texture, camera, paper identity and natural micro-worn edge character stay stable. This is a real unfolding drawing, never an overall horizontal scale transform or fade.\n\nKeep the exact pale rose-cream front, smoky pink-brown backing, short dry-brush paint and thin flat handcrafted appearance. All paper faces opaque; outside silhouette fully transparent. No green, warm-yellow shift, letters, labels, decorative border, characters, buttons, other components, shadows, glow, floor, scene, checkerboard, thick stiff board, rolled scroll cylinders, plastic or contact sheet. One frame only, with the fixed margins preserved.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_06.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png",
+          "sha256": "3EE724FE6C7C1CDC7B19C9CA2C0A1CB7F638089CF6E8CA3C00833ABAD22E1CB7",
+          "role": "已完成相邻锚帧"
+        },
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_06.png",
+          "sha256": "FD3D0F5AC24F73E4D0D6976C5504C7E764D2AD87032F28F1C942607B37435754",
+          "role": "已完成相邻锚帧"
+        }
+      ],
+      "alpha_bounds": [
+        114,
+        67,
+        796,
+        1383
+      ],
+      "alpha_bounds_threshold": 16,
+      "alpha_pixel_format": "Format32bppArgb",
+      "transparent_pixels": 518153,
+      "fully_opaque_raw_pixels": 0,
+      "max_raw_alpha": 254,
+      "transparent_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_32px_band_max_alpha": 0,
+      "body_components_at_alpha16": 1,
+      "residual_alpha_outside_body_plus_2px_max": 3,
+      "residual_alpha_outside_body_plus_2px_ge5_pixels": 0,
+      "raw_copy_verified": true
+    },
+    {
+      "index": 6,
+      "path": "res://assets/art/ui/rose_modular/unfold_card/frame_06.png",
+      "saved_path": "assets/art/ui/rose_modular/unfold_card/frame_06.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-7c373703-29a2-4b85-9fd4-db709db1ed72.png",
+      "source_sha256": "FD3D0F5AC24F73E4D0D6976C5504C7E764D2AD87032F28F1C942607B37435754",
+      "source_bytes": 1775563,
+      "source_last_write_utc": "2026-09-17T17:11:00.7833791Z",
+      "sha256": "FD3D0F5AC24F73E4D0D6976C5504C7E764D2AD87032F28F1C942607B37435754",
+      "canvas_size": [
+        1024,
+        1536
+      ],
+      "prompt": "Independently paint ONE in-between animation drawing of this SAME thin rose-cream paper card. The two supplied images are the earlier and later pose anchors in that order. Interpolate the physical VERTICAL accordion unfolding, not bitmap scale, opacity or texture stretching.\nOutput EXACTLY 1024 x 1536 RGBA PNG on a genuine transparent background / 透明背景. Same fixed front orthographic camera, full canvas and paper anchor centered near x=515, y=750. Preserve near-constant length, tiny worn relaxed edges, rose-cream front paint, dusty pink-brown reverse planes and one or two close accompanying rear sheets. Preserve normal brushstroke size and all design identity between the anchors. No camera movement, cropping, resizing or recentering. Paper faces opaque; only outside silhouette transparent. No green, yellow/orange shift, scene, floor, cast shadow, glow, checkerboard, text, title slip, ornaments, border, characters, buttons, number, grid or extra components. Thin hand-painted paper planes only, not heavy board, column, rolled scroll or plastic.\nThis is frame 06, precisely halfway between the two supplied anchor poses (04 and 08). The paper is mostly open, about 775px overall width centered at x=515 (about x=128..902), between anchor widths 629 and 821. Top and bottom remain around y=63 and y=1435. Expand the physical cream wing surfaces toward their final flat positions; the prominent inward folds of frame 04 have almost relaxed. Narrow soft painted vertical hinge traces remain, much shallower and subtler than frame 04; the middle face and wings now read almost like one continuous blank cream sheet. Show small remaining turned-back side edges in muted dusty rose, transitioning into the very close rear sheets of the fully open reference. Avoid looking like three detached stiff boards. This is almost flat but still has a little real fold curvature. It must NOT be a narrow copy of frame 08 or a resized version of frame 04. Only one animation frame.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_08.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_04.png",
+          "sha256": "3EE724FE6C7C1CDC7B19C9CA2C0A1CB7F638089CF6E8CA3C00833ABAD22E1CB7",
+          "role": "已完成相邻锚帧"
+        },
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_08.png",
+          "sha256": "5289106309CAE157E0071849D5E49F1AC38FAC89AB545061CD85751542C81A93",
+          "role": "已完成相邻锚帧"
+        }
+      ],
+      "alpha_bounds": [
+        97,
+        64,
+        831,
+        1365
+      ],
+      "alpha_bounds_threshold": 16,
+      "alpha_pixel_format": "Format32bppArgb",
+      "transparent_pixels": 479089,
+      "fully_opaque_raw_pixels": 0,
+      "max_raw_alpha": 254,
+      "transparent_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_32px_band_max_alpha": 0,
+      "body_components_at_alpha16": 1,
+      "residual_alpha_outside_body_plus_2px_max": 4,
+      "residual_alpha_outside_body_plus_2px_ge5_pixels": 0,
+      "raw_copy_verified": true
+    },
+    {
+      "index": 7,
+      "path": "res://assets/art/ui/rose_modular/unfold_card/frame_07.png",
+      "saved_path": "assets/art/ui/rose_modular/unfold_card/frame_07.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-f35e6a5a-2bed-435e-bfbe-d1d76e75cb2e.png",
+      "source_sha256": "9B7A3E4D7EE9B84917AE26C6C6E286AB38A80B41A41A64A7B7B6E972818F39CB",
+      "source_bytes": 1634118,
+      "source_last_write_utc": "2026-09-17T17:19:24.8895978Z",
+      "sha256": "9B7A3E4D7EE9B84917AE26C6C6E286AB38A80B41A41A64A7B7B6E972818F39CB",
+      "canvas_size": [
+        1024,
+        1536
+      ],
+      "prompt": "Paint one independent penultimate animation drawing, frame 07, between these two supplied images of the same paper: image 1 is frame 06 (almost open with visible lengthwise folds), image 2 is frame 08 (fully flat resting sheet). This must be almost indistinguishable from the final open silhouette, with only very faint remaining physical fold curvature.\n\nKeep EXACT 1024 x 1536 RGBA canvas and genuine transparent background / 透明背景. Same fixed front orthographic camera and upright anchor. Paper overall bounds very close to x=105..926, y=65..1423, approximately 821px wide by 1358px high, centered at x=515.5,y=744. Do not make the paper wider or taller than the final reference and do not crop/reframe. Transparent surroundings, opaque paper faces.\n\nUse the FINAL flat frame 08 as the primary guide for the outer silhouette, surface continuity, fine natural edge wear, amount of backing-sheet exposure and the resting palette. Retain only a trace of frame 06's two vertical folds: almost fully flattened, shallow painted changes of plane, no gaps, deep shadows, protruding middle plank or detached panels. The top and bottom line should be almost relaxed into the complete rectangular parchment edge, not a W-shaped accordion ridge. The left and right wings have finished moving outward and are gently settling flat. Keep the same tiny local rear rose sheet edges, not a broad new border. This is true paper unfolding into the final pose, not stretching or fading a picture.\n\nPreserve rose-cream and dusty pink-brown colors, short hand-painted brush texture, thin light flat paper and the final frame's identity. No green, yellow shift, text, labels, title strips, ornamental lines, characters, buttons, scene, floor, glow, shadow, checkerboard, thick scroll, plastic, grid or additional components. One blank paper animation frame only.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_06.png",
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_08.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_06.png",
+          "sha256": "FD3D0F5AC24F73E4D0D6976C5504C7E764D2AD87032F28F1C942607B37435754",
+          "role": "已完成相邻锚帧"
+        },
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_modular/unfold_card/frame_08.png",
+          "sha256": "5289106309CAE157E0071849D5E49F1AC38FAC89AB545061CD85751542C81A93",
+          "role": "已完成相邻锚帧"
+        }
+      ],
+      "alpha_bounds": [
+        104,
+        66,
+        824,
+        1355
+      ],
+      "alpha_bounds_threshold": 16,
+      "alpha_pixel_format": "Format32bppArgb",
+      "transparent_pixels": 493612,
+      "fully_opaque_raw_pixels": 0,
+      "max_raw_alpha": 254,
+      "transparent_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_32px_band_max_alpha": 1,
+      "body_components_at_alpha16": 1,
+      "residual_alpha_outside_body_plus_2px_max": 4,
+      "residual_alpha_outside_body_plus_2px_ge5_pixels": 0,
+      "raw_copy_verified": true
+    },
+    {
+      "index": 8,
+      "path": "res://assets/art/ui/rose_modular/unfold_card/frame_08.png",
+      "saved_path": "assets/art/ui/rose_modular/unfold_card/frame_08.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-9db68ccb-c112-4a9c-9ee1-9763adf23090.png",
+      "source_sha256": "5289106309CAE157E0071849D5E49F1AC38FAC89AB545061CD85751542C81A93",
+      "source_bytes": 1599026,
+      "source_last_write_utc": "2026-09-17T17:01:59.8353270Z",
+      "sha256": "5289106309CAE157E0071849D5E49F1AC38FAC89AB545061CD85751542C81A93",
+      "canvas_size": [
+        1024,
+        1536
+      ],
+      "prompt": "Use case: stylized-concept. Produce ONE independently painted animation keyframe: frame 08 of a nine-frame parchment card unfolding animation. This is the final fully open, settled frame.\n\nThe supplied image is the SOLE locked visual reference. Use only the left tall card's softly worn rose-cream parchment body as the source of its edge character, flat hand-painted surface, thinness and colors. Exclude its title slip, text and inner decorative line, and exclude the entire right dialogue component and dark background.\n\nOUTPUT: one 1024 x 1536 PNG, genuine transparent background / 透明背景. Preserve this full portrait canvas. Put the completely unfolded paper body approximately within x=112..912, y=100..1414, centered at (512,757). Main paper body width-to-height approximately 112:184, about 0.61. Leave clear transparent margins on every side. Straight front orthographic view, upright, no camera tilt, no perspective, no cast shadow.\n\nSUBJECT: one fully opaque blank rose-cream parchment card, thin, relaxed and spread flat. One or two very closely aligned dusty-rose rear sheets may peek locally from behind it, as in the locked reference, never an even-width frame. Natural tiny edge wear and gently wavering long edges; each individual sheet retains an approximately rectangular continuous silhouette. No large notches, torn-off chunks or lobes. The narrow tall shape must stay clear.\nThe front face is warm cream with a subtle smoky rose blush, and rear paper edges are muted dusty pink-brown. Visible restrained short dry-brush paint marks, flat layered paint with local density changes; no photographic fibers. No green, sage, olive, teal or blue-green anywhere. The paper surface including its main face is entirely opaque alpha 255; only pixels outside the paper silhouette are transparent, with normal edge antialiasing.\n\nANIMATION DESIGN: this frame is the resting full-width endpoint of an accordion-like opening along vertical creases: a stationary central fifth with side panels extending to the left and right. Here all folds have fully relaxed into the flat sheet, with at most very faint painted fold traces. The paper's length is approximately 1314 pixels and stays this long throughout the future animation. No rolled scroll ends, thick board, plastic gloss, dimensional rim or dramatic curl.\n\nOnly the blank paper body, no lettering, title strip, characters, buttons, icons, ornament, printed border, other components, background, floor, shadow, grid, collage or contact sheet. One paper animation frame only. Do not print the frame number or coordinates.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/outputs/ui-exploration-v7/parchment-rose-aligned.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/outputs/ui-exploration-v7/parchment-rose-aligned.png",
+          "sha256": "8226AEFBE1BDAEBBF750512DAC7E4A2806347F0BDF72B5887E034A239D24D200",
+          "role": "锁定风格参考"
+        }
+      ],
+      "alpha_bounds": [
+        105,
+        65,
+        821,
+        1358
+      ],
+      "alpha_bounds_threshold": 16,
+      "alpha_pixel_format": "Format32bppArgb",
+      "transparent_pixels": 490720,
+      "fully_opaque_raw_pixels": 0,
+      "max_raw_alpha": 254,
+      "transparent_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_32px_band_max_alpha": 1,
+      "body_components_at_alpha16": 1,
+      "residual_alpha_outside_body_plus_2px_max": 5,
+      "residual_alpha_outside_body_plus_2px_ge5_pixels": 3,
+      "raw_copy_verified": true
+    }
+  ]
+}

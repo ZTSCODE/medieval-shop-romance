@@ -1,0 +1,95 @@
+{
+  "method": "builtin image_gen, each component independently painted, no concept crop",
+  "assets": [
+    {
+      "file": "close.png",
+      "size": [
+        1817,
+        866
+      ],
+      "transparent_perimeter": true,
+      "opaque_pixels": 1100478,
+      "alpha_bounds": [
+        58,
+        99,
+        1760,
+        758
+      ]
+    },
+    {
+      "file": "detail.png",
+      "size": [
+        1156,
+        1360
+      ],
+      "transparent_perimeter": true,
+      "opaque_pixels": 1241725,
+      "alpha_bounds": [
+        80,
+        37,
+        1081,
+        1320
+      ]
+    },
+    {
+      "file": "portrait.png",
+      "size": [
+        1035,
+        1520
+      ],
+      "transparent_perimeter": false,
+      "opaque_pixels": 1338778,
+      "alpha_bounds": [
+        41,
+        44,
+        996,
+        1478
+      ]
+    },
+    {
+      "file": "row.png",
+      "size": [
+        1881,
+        836
+      ],
+      "transparent_perimeter": true,
+      "opaque_pixels": 929902,
+      "alpha_bounds": [
+        46,
+        141,
+        1837,
+        685
+      ]
+    },
+    {
+      "file": "title.png",
+      "size": [
+        2089,
+        753
+      ],
+      "transparent_perimeter": false,
+      "opaque_pixels": 703963,
+      "alpha_bounds": [
+        48,
+        187,
+        2040,
+        551
+      ]
+    },
+    {
+      "file": "window.png",
+      "size": [
+        1774,
+        887
+      ],
+      "transparent_perimeter": false,
+      "opaque_pixels": 1226228,
+      "alpha_bounds": [
+        33,
+        77,
+        1743,
+        808
+      ]
+    }
+  ]
+}

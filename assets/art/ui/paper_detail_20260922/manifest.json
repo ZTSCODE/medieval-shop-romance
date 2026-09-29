@@ -1,0 +1,24 @@
+[
+  {
+    "asset": "umber-brush-tile.png",
+    "prompt": "Using the attached GAME UI concept strictly as material style reference only: generate ONE seamless tileable texture of the dark brown hand-painted paper surface visible inside the pause menu and recipe window. No UI layout, no text, no symbols, no border, no corners. Square fully opaque texture fills every pixel, wraps seamlessly on both axes. Match the reference's matte umber charcoal paper: average color near #393029, restrained subtle value variations #302a25 to #4b4034. Dense tiny irregular short curved tapered dry-brush strokes, visible bristle marks, overlapping 10-25 pixel strokes at 1536 px canvas size, multiple diagonal directions gently flowing together, not big broad rectangles. Fine illustrated gouache/stipple rubbed pigment on old paper, NOT photographic fabric, NOT canvas weave, NOT leather, NO smooth digital gradient, NO vignette, NO embossing, NO speckles brighter than reference, no large patchy shapes. These are UI reading surfaces, low contrast painterly marks not distracting. High resolution seamless texture ONLY; do not reproduce the illustration or interface from reference.",
+    "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b14d-93ee-7650-bac4-48efbec22604/exec-6c279390-e704-4b11-94b5-14c1e75d4b1d.png",
+    "generator": "image_gen",
+    "size": [
+      1254,
+      1254
+    ],
+    "reference": "outputs/ui-smoke-brown-suite-20260919/06-pause.png"
+  },
+  {
+    "asset": "umber-paper-rim.png",
+    "prompt": "Generate ONE reusable UI border component from the attached pause-menu reference, not a screenshot or interface. Transparent background (透明背景), transparent empty interior. A square thin hand-painted dark umber paper FRAME with subtly worn warm ash-brown outer lip. Canvas square. Outer square occupies 94% canvas, small slightly irregular flat corners and nearly straight edges with tiny dry-brush imperfections. Frame band is approximately 5% canvas width on each side, center entirely transparent. Corners modest and softly clipped, NOT big rounded corners. Palette #4b4036 dark warm ash brown, occasional muted #635647 worn bristle tips, no bright gold. Matte hand-painted gouache, tiny short curved low-contrast brushstrokes consistent with the reference's paper edge. Surface pigment wear, not metal, not leather, no carved frame, no embossed bevel, no inner gradient, no inner drop shadow, no glow, no volumetric thickness. Thin slightly misaligned lower backing edge visible in bottom and right only, separated by narrow dark seam. Straight sides have almost constant band width so they can be sliced and repeated, corners must all align. No text, no leaves, no background, no other components. Transparent center and outside essential.",
+    "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b14d-93ee-7650-bac4-48efbec22604/exec-fcdc2b33-7b34-4302-953f-e2771fa9b2f1.png",
+    "generator": "image_gen",
+    "size": [
+      1254,
+      1254
+    ],
+    "reference": "outputs/ui-smoke-brown-suite-20260919/06-pause.png"
+  }
+]

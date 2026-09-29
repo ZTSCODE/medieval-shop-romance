@@ -1,0 +1,16 @@
+{
+  "mode": "builtin_image_gen",
+  "reference": "assets/art/ui/forest_rebuild/menu-title-plaque.png",
+  "source_prompt_manifest": "assets/art/ui/forest_rebuild/menu-manifest.json",
+  "changes": "仅更换用途与比例；将植物移到左上/右下角并移除中间横线。保留原配色、宽斜水粉笔触、微不齐削角与两层薄底纸原文。整张纸面一次生成，未拆分边与纹理，未抠图或重采样。",
+  "pause": {
+    "prompt": "Generate ONE isolated game UI pause menu complete portrait paper sheet component, transparent background 透明背景 true alpha. Reference style only the thin layered dark paper title panel in the supplied original image. Portrait sheet width:height 0.712:1, request 1536x2160 pixels, warm charcoal brown #403a30 with clear broad angled handpainted gouache strokes, no tiny scratches or gravel grain. Slightly uneven mostly straight gently clipped paper corners. Two very thin backing papers offset a little along top and bottom, not thick/beveled. Small subdued warm taupe stylized botanical sprigs only at upper-left and lower-right margins, far from the center. NO horizontal lines. Center blank to hold interface content later; fully opaque complete paper surface with only the normal broad painted paper texture throughout. No text no shadows no scene no characters. Standalone crisp high resolution component centered with small transparent margin. Use the supplied original title plaque as the ONLY visual reference. Paint ONE complete sheet including its surface and edges together, not a border tile or texture tile.",
+    "source": "C:/Users/ZTCUS/.codex/generated_images/01a0c58b-4eeb-7202-8391-07938764eaca/exec-48fd1964-9788-4a72-8494-a9d3f1b90333.png",
+    "output": "pause-sheet.png"
+  },
+  "system": {
+    "prompt": "Generate ONE isolated game UI settings and save menu complete paper sheet component, transparent background 透明背景 true alpha. Reference style only the thin layered dark paper title panel in the supplied original image. Near-square landscape sheet width:height 1.12:1, request 2048x2048 canvas with sheet fitting at requested aspect, warm charcoal brown #403a30 with clear broad angled handpainted gouache strokes, no tiny scratches or gravel grain. Slightly uneven mostly straight gently clipped paper corners. Two very thin backing papers offset a little along top and bottom, not thick/beveled. Small subdued warm taupe stylized botanical sprigs only at upper-left and lower-right margins, far from the center. NO horizontal lines. Center blank to hold interface content later; fully opaque complete paper surface with only the normal broad painted paper texture throughout. No text no shadows no scene no characters. Standalone crisp high resolution component centered with small transparent margin. Use the supplied original title plaque as the ONLY visual reference. Paint ONE complete sheet including its surface and edges together, not a border tile or texture tile.",
+    "source": "C:/Users/ZTCUS/.codex/generated_images/01a0c58b-4eeb-7202-8391-07938764eaca/exec-e4a8fcf7-5f76-4bf2-9848-c8ebd9cd929c.png",
+    "output": "system-sheet.png"
+  }
+}

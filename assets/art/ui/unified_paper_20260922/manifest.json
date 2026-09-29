@@ -1,0 +1,14 @@
+{
+  "asset": "brush-edge.png",
+  "generator": "image_gen",
+  "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b14d-93ee-7650-bac4-48efbec22604/exec-b4ff74bf-c696-4fee-9f75-b8b4456ac7f7.png",
+  "prompt": "Create ONE transparent-background game UI paper edge component (透明背景). Square 1536 canvas, a thin square perimeter frame ONLY, transparent center and outside. Outer sheet bounds 2.5% from canvas sides. Frame thickness only 2.5% canvas width. Gentle hand-cut clipped corners, almost straight edges with very small irregularity. Dark muted purple-brown pigment #3B3334, with a FEW broad directional gouache strokes in slightly lighter #514647 along edge, only 2 or 3 broad long brush gestures per entire side, interspersed with long calm sections. Bristles visibly long and flowing in the edge direction. Frame is a flat painted paper surface, NO dirt, NO gritty speckles, NO ragged erosion, NO scratchy grunge, NO dense chipped flecks, NO gold line, NO bevel, NO gradients, NO ringlike shadow, NO frame hardware. Almost monochrome, warm grey-plum-brown. Unlike a distressed old frame, the brush marks are clean, broad and intentional. Outer and inner contour have slight painterly imperfections but never serrated. Interior completely transparent. No text, no icons, no decorations. High-resolution production component for tiled edges and fixed corners.",
+  "source_region": [
+    36,
+    40,
+    1184,
+    1176
+  ],
+  "fixed_corner": 64,
+  "usage": "fixed corner and repeated edge; shared paper_skin"
+}

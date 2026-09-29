@@ -1,0 +1,18 @@
+{
+  "reference": "outputs/ui-rebuild-references/08-main-menu.png",
+  "generator": "image_gen",
+  "assets": [
+    {
+      "path": "castle-town-night.png",
+      "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b14d-93ee-7650-bac4-48efbec22604/exec-2a45a5b0-8fad-44c0-84c9-665ab14965a2.png",
+      "role": "Independent transparent painted town, gate, towers and cypresses",
+      "dimensions": [1774, 887]
+    },
+    {
+      "path": "stone-path-tile.png",
+      "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b14d-93ee-7650-bac4-48efbec22604/exec-5e0bd084-24f6-4872-9b20-6f848c584792.png",
+      "role": "Independent orthographic tileable gouache stone path",
+      "dimensions": [1254, 1254]
+    }
+  ]
+}

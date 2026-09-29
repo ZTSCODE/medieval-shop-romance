@@ -1,0 +1,10 @@
+{
+  "tool": "built-in image_gen",
+  "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b631-ed8a-7173-8722-ab50f45917a6/exec-6f08a4df-4a83-4c80-af44-aeaf8dfcd019.png",
+  "prompt": "Use case: stylized-concept\nAsset type: production seamless tileable diffuse/albedo ground material for a 3D fantasy card tabletop. Generate a single square 1024 x 1024 PNG.\nPrimary request: quiet hand painted blue-grey tabletop texture inspired by the restrained gouache background surfaces of Book of Travels. Pure texture only, full image coverage, orthographic top-down.\nStyle: soft opaque gouache, medium-size dry brush strokes layered into broad peaceful fields. Subtle irregular fiber-like paint traces, occasional soft crayon drag, natural variation of stroke density. Large calm tonal regions with sparse medium-frequency dry strokes; not uniform tiny speckle.\nPalette: muted smoky slate blue, blue-grey and a little subdued lavender-grey; average around #424b60, narrow tonal range. Do not introduce green. This is backdrop beneath readable character cards.\nConstraints: seamless horizontally and vertically; top continues naturally into bottom and left into right with matching color and mark density. Edges must have no border, no shadow, no frame, no vignette and no special treatment. Surface flat and evenly lit; no central illumination or corner darkness. All pixels 100% opaque. Uniform material scale.\nAvoid: objects, grass, plants, stones, cracks, tiles, grids, text, symbols, logo, recognizable marks, canvas weave, woven cloth, burlap, gritty noise, photographic roughness, thick impasto, scratches, strong directional lighting. Do not draw a tabletop object or perspective scene; deliver only seamless material.",
+  "reference_style": "Book of Travels painterly quiet material",
+  "reference_url": "https://bookoftravels.com/",
+  "target": "board-painterly.png",
+  "editing": "none; original generated pixels copied unchanged",
+  "verification": "Visual inspection of single tile completed; repeat seam checks delegated to parent engine preview."
+}

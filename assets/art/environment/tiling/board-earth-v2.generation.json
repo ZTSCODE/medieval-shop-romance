@@ -1,0 +1,18 @@
+{
+  "tool": "built-in image_gen",
+  "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b631-ed8a-7173-8722-ab50f45917a6/exec-ab058839-053a-446a-89ab-8e8f30c85fa3.png",
+  "prompt": "Use case: stylized-concept\nAsset type: seamless tileable opaque albedo texture for earthen ground underneath a fantasy card board, square 2048 x 2048.\nDraw a crisp hand-painted khaki earthen ground material, based on the faceted painted ground language of Book of Travels. Entire canvas is pure top-down soil surface, flat unlit albedo, not a scene or a slab.\nPalette: warm gray-brown earth, khaki ochre, subdued dusty tan, occasional cool gray-brown small facets. Absolutely no blue or purple.\nPaint language: DISTINCT IRREGULAR FLAT POLYGONAL PAINT PATCHES with confident sharply readable brush boundaries. Low-medium contrast large and mid-sized angular earth patches, varied broken hard and soft edges, with scattered thin short linear dry-brush marks and tiny flat pebble-shaped strokes. Shapes should be clear at thumbnail scale while quieter stretches give the cards room to read. Use gouache block-in facets, not smoothly blended gradients.\nProduction: true seamless tiling in both X and Y, every crossing paint shape naturally continues to opposite edge. Consistent scale and mark density at edges, no frame. Fully opaque. Uniform illumination with no baked shadows, no highlights, no light direction, no center hotspot, no vignette.\nStrictly avoid the failed look: NO cloudy smudging, NO plaster/stucco texture, NO blurred soft cloud fields, NO airbrush, NO uniform sand noise, NO fabric, NO photography. No grass clumps, no plants, no large stones, no tracks, no major cracks, no tiles or grids, no symbols, no text. Small flattened painted pebble-like marks are allowed sparsely. Clean sharp hand painted facets with clear edge definition.",
+  "reference_style": "Book of Travels crisp irregular earthen painted facets",
+  "reference_url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1152340/ss_a01086f87841598625fa3ee06d8332304db79a84.1920x1080.jpg?t=1776671089",
+  "target": "board-earth-v2.png",
+  "editing": "none; original generated pixels copied unchanged",
+  "requested_size": [
+    2048,
+    2048
+  ],
+  "actual_size": [
+    1254,
+    1254
+  ],
+  "verification": "Crisp angular warm earthen patches visually inspected. RGB opaque. Repeat preview remains required."
+}

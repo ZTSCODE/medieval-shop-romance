@@ -1,0 +1,1028 @@
+[
+  {
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "transparent_pixels": 1274056,
+    "opaque_pixels": 0,
+    "max_alpha": 254,
+    "alpha_bounds_1": [
+      65,
+      72,
+      881,
+      1424
+    ],
+    "alpha_count_1": 298808,
+    "alpha_bounds_16": [
+      398,
+      75,
+      231,
+      1366
+    ],
+    "alpha_count_16": 291218,
+    "alpha_bounds_128": [
+      399,
+      76,
+      229,
+      1364
+    ],
+    "alpha_count_128": 288966,
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "outer_32px_band_max_alpha": 0,
+    "outer_32px_band_nonzero_pixels": 0,
+    "body_components_alpha16": 1,
+    "largest_body_pixels_alpha16": 291218,
+    "outside_body_plus_2px_nonzero_pixels": 1552,
+    "outside_body_plus_2px_alpha_ge5_pixels": 0,
+    "outside_body_plus_2px_alpha_ge16_pixels": 0,
+    "outside_body_plus_2px_max_alpha": 4,
+    "outside_body_plus_2px_max_location": [
+      618,
+      149
+    ],
+    "samples": [
+      {
+        "xy": [
+          100,
+          768
+        ],
+        "rgba": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          30
+        ],
+        "rgba": [
+          130,
+          101,
+          94,
+          0
+        ]
+      },
+      {
+        "xy": [
+          30,
+          768
+        ],
+        "rgba": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "xy": [
+          994,
+          768
+        ],
+        "rgba": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          1500
+        ],
+        "rgba": [
+          94,
+          75,
+          70,
+          0
+        ]
+      }
+    ],
+    "index": 0,
+    "path": "assets/art/ui/rose_modular/unfold_card/frame_00.png",
+    "sha256": "B4CC5A100CC3570765F6A1B0F642AC011BEC7AA70115DE1621CB0EE11A82BC4E",
+    "pixel_format": "Format32bppArgb"
+  },
+  {
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "transparent_pixels": 1039681,
+    "opaque_pixels": 0,
+    "max_alpha": 254,
+    "alpha_bounds_1": [
+      65,
+      70,
+      661,
+      1395
+    ],
+    "alpha_count_1": 533183,
+    "alpha_bounds_16": [
+      306,
+      72,
+      416,
+      1342
+    ],
+    "alpha_count_16": 522930,
+    "alpha_bounds_128": [
+      307,
+      73,
+      415,
+      1341
+    ],
+    "alpha_count_128": 520622,
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "outer_32px_band_max_alpha": 0,
+    "outer_32px_band_nonzero_pixels": 0,
+    "body_components_alpha16": 1,
+    "largest_body_pixels_alpha16": 522930,
+    "outside_body_plus_2px_nonzero_pixels": 3303,
+    "outside_body_plus_2px_alpha_ge5_pixels": 0,
+    "outside_body_plus_2px_alpha_ge16_pixels": 0,
+    "outside_body_plus_2px_max_alpha": 4,
+    "outside_body_plus_2px_max_location": [
+      716,
+      429
+    ],
+    "samples": [
+      {
+        "xy": [
+          100,
+          768
+        ],
+        "rgba": [
+          4,
+          2,
+          2,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          30
+        ],
+        "rgba": [
+          144,
+          112,
+          104,
+          0
+        ]
+      },
+      {
+        "xy": [
+          30,
+          768
+        ],
+        "rgba": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "xy": [
+          994,
+          768
+        ],
+        "rgba": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          1500
+        ],
+        "rgba": [
+          69,
+          53,
+          50,
+          0
+        ]
+      }
+    ],
+    "index": 1,
+    "path": "assets/art/ui/rose_modular/unfold_card/frame_01.png",
+    "sha256": "9381C7A0D2E90EFAA1E128D5DA2469BA582587F87FE2B07DF234A692DFE99DA9",
+    "pixel_format": "Format32bppArgb"
+  },
+  {
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "transparent_pixels": 920690,
+    "opaque_pixels": 0,
+    "max_alpha": 254,
+    "alpha_bounds_1": [
+      65,
+      73,
+      923,
+      1393
+    ],
+    "alpha_count_1": 652174,
+    "alpha_bounds_16": [
+      262,
+      75,
+      506,
+      1354
+    ],
+    "alpha_count_16": 641132,
+    "alpha_bounds_128": [
+      263,
+      76,
+      504,
+      1353
+    ],
+    "alpha_count_128": 638518,
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "outer_32px_band_max_alpha": 0,
+    "outer_32px_band_nonzero_pixels": 0,
+    "body_components_alpha16": 1,
+    "largest_body_pixels_alpha16": 641132,
+    "outside_body_plus_2px_nonzero_pixels": 3878,
+    "outside_body_plus_2px_alpha_ge5_pixels": 0,
+    "outside_body_plus_2px_alpha_ge16_pixels": 0,
+    "outside_body_plus_2px_max_alpha": 3,
+    "outside_body_plus_2px_max_location": [
+      317,
+      98
+    ],
+    "samples": [
+      {
+        "xy": [
+          100,
+          768
+        ],
+        "rgba": [
+          16,
+          11,
+          11,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          30
+        ],
+        "rgba": [
+          140,
+          106,
+          99,
+          0
+        ]
+      },
+      {
+        "xy": [
+          30,
+          768
+        ],
+        "rgba": [
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "xy": [
+          994,
+          768
+        ],
+        "rgba": [
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          1500
+        ],
+        "rgba": [
+          87,
+          69,
+          64,
+          0
+        ]
+      }
+    ],
+    "index": 2,
+    "path": "assets/art/ui/rose_modular/unfold_card/frame_02.png",
+    "sha256": "29F88AEA97BF17DD9F181D19202396F08CC646BDAA8660C9A4BC042CA61E3AB1",
+    "pixel_format": "Format32bppArgb"
+  },
+  {
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "transparent_pixels": 780950,
+    "opaque_pixels": 0,
+    "max_alpha": 254,
+    "alpha_bounds_1": [
+      72,
+      41,
+      866,
+      1424
+    ],
+    "alpha_count_1": 791914,
+    "alpha_bounds_16": [
+      204,
+      67,
+      617,
+      1366
+    ],
+    "alpha_count_16": 775989,
+    "alpha_bounds_128": [
+      205,
+      68,
+      615,
+      1364
+    ],
+    "alpha_count_128": 773051,
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "outer_32px_band_max_alpha": 0,
+    "outer_32px_band_nonzero_pixels": 0,
+    "body_components_alpha16": 1,
+    "largest_body_pixels_alpha16": 775989,
+    "outside_body_plus_2px_nonzero_pixels": 7721,
+    "outside_body_plus_2px_alpha_ge5_pixels": 0,
+    "outside_body_plus_2px_alpha_ge16_pixels": 0,
+    "outside_body_plus_2px_max_alpha": 4,
+    "outside_body_plus_2px_max_location": [
+      810,
+      545
+    ],
+    "samples": [
+      {
+        "xy": [
+          100,
+          768
+        ],
+        "rgba": [
+          45,
+          32,
+          29,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          30
+        ],
+        "rgba": [
+          146,
+          109,
+          101,
+          0
+        ]
+      },
+      {
+        "xy": [
+          30,
+          768
+        ],
+        "rgba": [
+          12,
+          8,
+          6,
+          0
+        ]
+      },
+      {
+        "xy": [
+          994,
+          768
+        ],
+        "rgba": [
+          12,
+          8,
+          7,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          1500
+        ],
+        "rgba": [
+          90,
+          70,
+          66,
+          0
+        ]
+      }
+    ],
+    "index": 3,
+    "path": "assets/art/ui/rose_modular/unfold_card/frame_03.png",
+    "sha256": "0C8DFEE229A83B43FB1AAE3594170202CDEFA476C2BFA179321A3CD49A3F412F",
+    "pixel_format": "Format32bppArgb"
+  },
+  {
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "transparent_pixels": 734565,
+    "opaque_pixels": 0,
+    "max_alpha": 254,
+    "alpha_bounds_1": [
+      0,
+      58,
+      1014,
+      1478
+    ],
+    "alpha_count_1": 838299,
+    "alpha_bounds_16": [
+      198,
+      60,
+      629,
+      1394
+    ],
+    "alpha_count_16": 823561,
+    "alpha_bounds_128": [
+      199,
+      61,
+      627,
+      1392
+    ],
+    "alpha_count_128": 820448,
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "outer_32px_band_max_alpha": 1,
+    "outer_32px_band_nonzero_pixels": 156,
+    "body_components_alpha16": 1,
+    "largest_body_pixels_alpha16": 823561,
+    "outside_body_plus_2px_nonzero_pixels": 6695,
+    "outside_body_plus_2px_alpha_ge5_pixels": 0,
+    "outside_body_plus_2px_alpha_ge16_pixels": 0,
+    "outside_body_plus_2px_max_alpha": 4,
+    "outside_body_plus_2px_max_location": [
+      605,
+      97
+    ],
+    "samples": [
+      {
+        "xy": [
+          100,
+          768
+        ],
+        "rgba": [
+          52,
+          37,
+          35,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          30
+        ],
+        "rgba": [
+          147,
+          115,
+          106,
+          0
+        ]
+      },
+      {
+        "xy": [
+          30,
+          768
+        ],
+        "rgba": [
+          16,
+          11,
+          10,
+          0
+        ]
+      },
+      {
+        "xy": [
+          994,
+          768
+        ],
+        "rgba": [
+          17,
+          12,
+          10,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          1500
+        ],
+        "rgba": [
+          118,
+          96,
+          91,
+          0
+        ]
+      }
+    ],
+    "index": 4,
+    "path": "assets/art/ui/rose_modular/unfold_card/frame_04.png",
+    "sha256": "3EE724FE6C7C1CDC7B19C9CA2C0A1CB7F638089CF6E8CA3C00833ABAD22E1CB7",
+    "pixel_format": "Format32bppArgb"
+  },
+  {
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "transparent_pixels": 518153,
+    "opaque_pixels": 0,
+    "max_alpha": 254,
+    "alpha_bounds_1": [
+      49,
+      65,
+      905,
+      1401
+    ],
+    "alpha_count_1": 1054711,
+    "alpha_bounds_16": [
+      114,
+      67,
+      796,
+      1383
+    ],
+    "alpha_count_16": 1040576,
+    "alpha_bounds_128": [
+      115,
+      68,
+      794,
+      1381
+    ],
+    "alpha_count_128": 1037550,
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "outer_32px_band_max_alpha": 0,
+    "outer_32px_band_nonzero_pixels": 0,
+    "body_components_alpha16": 1,
+    "largest_body_pixels_alpha16": 1040576,
+    "outside_body_plus_2px_nonzero_pixels": 5358,
+    "outside_body_plus_2px_alpha_ge5_pixels": 0,
+    "outside_body_plus_2px_alpha_ge16_pixels": 0,
+    "outside_body_plus_2px_max_alpha": 3,
+    "outside_body_plus_2px_max_location": [
+      906,
+      159
+    ],
+    "samples": [
+      {
+        "xy": [
+          100,
+          768
+        ],
+        "rgba": [
+          159,
+          120,
+          112,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          30
+        ],
+        "rgba": [
+          152,
+          122,
+          115,
+          0
+        ]
+      },
+      {
+        "xy": [
+          30,
+          768
+        ],
+        "rgba": [
+          94,
+          71,
+          66,
+          0
+        ]
+      },
+      {
+        "xy": [
+          994,
+          768
+        ],
+        "rgba": [
+          94,
+          70,
+          66,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          1500
+        ],
+        "rgba": [
+          119,
+          99,
+          95,
+          0
+        ]
+      }
+    ],
+    "index": 5,
+    "path": "assets/art/ui/rose_modular/unfold_card/frame_05.png",
+    "sha256": "9ADD169900823A5BF3BB221EC923D5BBAB99666F0372C3106284922A87D9D61E",
+    "pixel_format": "Format32bppArgb"
+  },
+  {
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "transparent_pixels": 479089,
+    "opaque_pixels": 0,
+    "max_alpha": 254,
+    "alpha_bounds_1": [
+      49,
+      62,
+      882,
+      1402
+    ],
+    "alpha_count_1": 1093775,
+    "alpha_bounds_16": [
+      97,
+      64,
+      831,
+      1365
+    ],
+    "alpha_count_16": 1075763,
+    "alpha_bounds_128": [
+      98,
+      65,
+      829,
+      1364
+    ],
+    "alpha_count_128": 1072342,
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "outer_32px_band_max_alpha": 0,
+    "outer_32px_band_nonzero_pixels": 0,
+    "body_components_alpha16": 1,
+    "largest_body_pixels_alpha16": 1075763,
+    "outside_body_plus_2px_nonzero_pixels": 9113,
+    "outside_body_plus_2px_alpha_ge5_pixels": 0,
+    "outside_body_plus_2px_alpha_ge16_pixels": 0,
+    "outside_body_plus_2px_max_alpha": 4,
+    "outside_body_plus_2px_max_location": [
+      101,
+      617
+    ],
+    "samples": [
+      {
+        "xy": [
+          100,
+          768
+        ],
+        "rgba": [
+          176,
+          131,
+          123,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          30
+        ],
+        "rgba": [
+          154,
+          123,
+          116,
+          0
+        ]
+      },
+      {
+        "xy": [
+          30,
+          768
+        ],
+        "rgba": [
+          118,
+          88,
+          81,
+          0
+        ]
+      },
+      {
+        "xy": [
+          994,
+          768
+        ],
+        "rgba": [
+          115,
+          86,
+          80,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          1500
+        ],
+        "rgba": [
+          78,
+          65,
+          61,
+          0
+        ]
+      }
+    ],
+    "index": 6,
+    "path": "assets/art/ui/rose_modular/unfold_card/frame_06.png",
+    "sha256": "FD3D0F5AC24F73E4D0D6976C5504C7E764D2AD87032F28F1C942607B37435754",
+    "pixel_format": "Format32bppArgb"
+  },
+  {
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "transparent_pixels": 493612,
+    "opaque_pixels": 0,
+    "max_alpha": 254,
+    "alpha_bounds_1": [
+      59,
+      63,
+      871,
+      1449
+    ],
+    "alpha_count_1": 1079252,
+    "alpha_bounds_16": [
+      104,
+      66,
+      824,
+      1355
+    ],
+    "alpha_count_16": 1065958,
+    "alpha_bounds_128": [
+      105,
+      66,
+      823,
+      1354
+    ],
+    "alpha_count_128": 1063056,
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "outer_32px_band_max_alpha": 1,
+    "outer_32px_band_nonzero_pixels": 1,
+    "body_components_alpha16": 1,
+    "largest_body_pixels_alpha16": 1065958,
+    "outside_body_plus_2px_nonzero_pixels": 5202,
+    "outside_body_plus_2px_alpha_ge5_pixels": 0,
+    "outside_body_plus_2px_alpha_ge16_pixels": 0,
+    "outside_body_plus_2px_max_alpha": 4,
+    "outside_body_plus_2px_max_location": [
+      504,
+      1400
+    ],
+    "samples": [
+      {
+        "xy": [
+          100,
+          768
+        ],
+        "rgba": [
+          163,
+          119,
+          111,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          30
+        ],
+        "rgba": [
+          160,
+          137,
+          130,
+          0
+        ]
+      },
+      {
+        "xy": [
+          30,
+          768
+        ],
+        "rgba": [
+          103,
+          75,
+          69,
+          0
+        ]
+      },
+      {
+        "xy": [
+          994,
+          768
+        ],
+        "rgba": [
+          104,
+          79,
+          74,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          1500
+        ],
+        "rgba": [
+          77,
+          66,
+          63,
+          0
+        ]
+      }
+    ],
+    "index": 7,
+    "path": "assets/art/ui/rose_modular/unfold_card/frame_07.png",
+    "sha256": "9B7A3E4D7EE9B84917AE26C6C6E286AB38A80B41A41A64A7B7B6E972818F39CB",
+    "pixel_format": "Format32bppArgb"
+  },
+  {
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "transparent_pixels": 490720,
+    "opaque_pixels": 0,
+    "max_alpha": 254,
+    "alpha_bounds_1": [
+      0,
+      0,
+      930,
+      1440
+    ],
+    "alpha_count_1": 1082144,
+    "alpha_bounds_16": [
+      105,
+      65,
+      821,
+      1358
+    ],
+    "alpha_count_16": 1065979,
+    "alpha_bounds_128": [
+      106,
+      66,
+      819,
+      1356
+    ],
+    "alpha_count_128": 1062604,
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "outer_32px_band_max_alpha": 1,
+    "outer_32px_band_nonzero_pixels": 10,
+    "body_components_alpha16": 1,
+    "largest_body_pixels_alpha16": 1065979,
+    "outside_body_plus_2px_nonzero_pixels": 7855,
+    "outside_body_plus_2px_alpha_ge5_pixels": 3,
+    "outside_body_plus_2px_alpha_ge16_pixels": 0,
+    "outside_body_plus_2px_max_alpha": 5,
+    "outside_body_plus_2px_max_location": [
+      174,
+      1384
+    ],
+    "samples": [
+      {
+        "xy": [
+          100,
+          768
+        ],
+        "rgba": [
+          156,
+          114,
+          106,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          30
+        ],
+        "rgba": [
+          167,
+          146,
+          137,
+          0
+        ]
+      },
+      {
+        "xy": [
+          30,
+          768
+        ],
+        "rgba": [
+          101,
+          72,
+          67,
+          0
+        ]
+      },
+      {
+        "xy": [
+          994,
+          768
+        ],
+        "rgba": [
+          95,
+          75,
+          69,
+          0
+        ]
+      },
+      {
+        "xy": [
+          512,
+          1500
+        ],
+        "rgba": [
+          76,
+          65,
+          59,
+          0
+        ]
+      }
+    ],
+    "index": 8,
+    "path": "assets/art/ui/rose_modular/unfold_card/frame_08.png",
+    "sha256": "5289106309CAE157E0071849D5E49F1AC38FAC89AB545061CD85751542C81A93",
+    "pixel_format": "Format32bppArgb"
+  }
+]

@@ -1,0 +1,284 @@
+{
+  "components": [
+    {
+      "file": "hud-axis-paper.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\hud-axis-paper.png",
+      "logical_pixels": [
+        102,
+        285
+      ],
+      "runtime_pixels": [
+        408,
+        1140
+      ],
+      "scale": 4,
+      "sha256": "a7ee9134bf60714561779b926a6075ef66ef355fb21069e6eeed158b12558fa1"
+    },
+    {
+      "file": "hud-recipe-button.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\hud-recipe-button.png",
+      "logical_pixels": [
+        101,
+        103
+      ],
+      "runtime_pixels": [
+        404,
+        412
+      ],
+      "scale": 4,
+      "sha256": "35c8b293510518cc4216aa25b83443cafa7c7b8fc63dc25902e374eb7346170a"
+    },
+    {
+      "file": "hud-relationship-button.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\hud-relationship-button.png",
+      "logical_pixels": [
+        100,
+        91
+      ],
+      "runtime_pixels": [
+        400,
+        364
+      ],
+      "scale": 4,
+      "sha256": "9cbf2e92aafdb7d3859dfb9a774163fb0428e86af85bbf251380ce85e00650bf"
+    },
+    {
+      "file": "hud-avatar-frame.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\hud-avatar-frame.png",
+      "logical_pixels": [
+        112,
+        190
+      ],
+      "runtime_pixels": [
+        448,
+        760
+      ],
+      "scale": 4,
+      "sha256": "ea2d93b881b81990846183d8dbb28e666fb2da9a30a0ca9ab039f9b4ce37cd31"
+    },
+    {
+      "file": "journal-outer.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\journal-outer.png",
+      "logical_pixels": [
+        1112,
+        573
+      ],
+      "runtime_pixels": [
+        4448,
+        2292
+      ],
+      "scale": 4,
+      "sha256": "d76b2265c97442e79c1df29a28b2af658c89f90cd54e2e978fbd5043d116ae2e"
+    },
+    {
+      "file": "journal-title.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\journal-title.png",
+      "logical_pixels": [
+        222,
+        60
+      ],
+      "runtime_pixels": [
+        888,
+        240
+      ],
+      "scale": 4,
+      "sha256": "afcb0addb6fd4c883d6ff9a454831921e6a6d75092d08ff2e65519b02ed1d71b"
+    },
+    {
+      "file": "journal-selected-row.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\journal-selected-row.png",
+      "logical_pixels": [
+        262,
+        136
+      ],
+      "runtime_pixels": [
+        1048,
+        544
+      ],
+      "scale": 4,
+      "sha256": "f3b5a28490a8dc7fb532f408ba08530d85b55e6258722c328f5f04439e92d6f2"
+    },
+    {
+      "file": "journal-normal-row.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\journal-normal-row.png",
+      "logical_pixels": [
+        262,
+        139
+      ],
+      "runtime_pixels": [
+        1048,
+        556
+      ],
+      "scale": 4,
+      "sha256": "667a896ed68160ec1b80fff7aa1de260081b26ffa9ce244cda04d87dcf529f31"
+    },
+    {
+      "file": "journal-thumbnail-paper.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\journal-thumbnail-paper.png",
+      "logical_pixels": [
+        139,
+        119
+      ],
+      "runtime_pixels": [
+        556,
+        476
+      ],
+      "scale": 4,
+      "sha256": "0e7b186134221d6126a11eed7aca45ff7f094dfd23b202a6cc505563e16abd92"
+    },
+    {
+      "file": "journal-portrait-paper.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\journal-portrait-paper.png",
+      "logical_pixels": [
+        320,
+        465
+      ],
+      "runtime_pixels": [
+        1280,
+        1860
+      ],
+      "scale": 4,
+      "sha256": "9cf4079d0512789722b34311f5401c6ba31d85cf40bcf02b050481298fe95ed0"
+    },
+    {
+      "file": "journal-detail-paper.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\journal-detail-paper.png",
+      "logical_pixels": [
+        425,
+        484
+      ],
+      "runtime_pixels": [
+        1700,
+        1936
+      ],
+      "scale": 4,
+      "sha256": "dd98dc3062efa058fced8ff5aab2b2a4048618cb92edae4c1bcc84d2900d956f"
+    },
+    {
+      "file": "journal-close.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\journal-close.png",
+      "logical_pixels": [
+        103,
+        55
+      ],
+      "runtime_pixels": [
+        412,
+        220
+      ],
+      "scale": 4,
+      "sha256": "047d9857c1bb068072fc2dafea1d950dafeb20977cfb44cfd7a27d0810f5261b"
+    },
+    {
+      "file": "recipe-outer.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\recipe-outer.png",
+      "logical_pixels": [
+        1135,
+        571
+      ],
+      "runtime_pixels": [
+        4540,
+        2284
+      ],
+      "scale": 4,
+      "sha256": "6924380812a932ea70489c7492078434e5f55fc17c5347e4a864e0332cbe7153"
+    },
+    {
+      "file": "recipe-title.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\recipe-title.png",
+      "logical_pixels": [
+        222,
+        62
+      ],
+      "runtime_pixels": [
+        888,
+        248
+      ],
+      "scale": 4,
+      "sha256": "ee626d2d09a3a1e2d7facd12b24a7b91abdad04a9df7db9ba77add9c81e7ca6e"
+    },
+    {
+      "file": "recipe-heading.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\recipe-heading.png",
+      "logical_pixels": [
+        261,
+        54
+      ],
+      "runtime_pixels": [
+        1044,
+        216
+      ],
+      "scale": 4,
+      "sha256": "04962a3974fe5c4821141a70c3c359e24141bacfd1dfead258476cc1dbfe6f10"
+    },
+    {
+      "file": "recipe-selected-row.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\recipe-selected-row.png",
+      "logical_pixels": [
+        278,
+        111
+      ],
+      "runtime_pixels": [
+        1112,
+        444
+      ],
+      "scale": 4,
+      "sha256": "df3a072a5f86d221b03b0f29d9519aa7c5de677f6141b874d8550b51552af27b"
+    },
+    {
+      "file": "recipe-normal-row.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\recipe-normal-row.png",
+      "logical_pixels": [
+        278,
+        115
+      ],
+      "runtime_pixels": [
+        1112,
+        460
+      ],
+      "scale": 4,
+      "sha256": "69ae5e63a8101e284caea7b59cd4d4853e5c347945f97d015e4bd98949ae432c"
+    },
+    {
+      "file": "recipe-close.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\recipe-close.png",
+      "logical_pixels": [
+        117,
+        56
+      ],
+      "runtime_pixels": [
+        468,
+        224
+      ],
+      "scale": 4,
+      "sha256": "2b4c565d230a2da58ca7a3a324f3c3bd0ef690aaf6ca855563de135662e91274"
+    },
+    {
+      "file": "recipe-divider.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\recipe-divider.png",
+      "logical_pixels": [
+        50,
+        490
+      ],
+      "runtime_pixels": [
+        200,
+        1960
+      ],
+      "scale": 4,
+      "sha256": "a18a04b2a691ce2c827d4c2d150417a585e2b05c427be4fefb338a6e3ec4b60c"
+    },
+    {
+      "file": "recipe-arrow.png",
+      "source": "assets\\art\\ui\\reference_preserved_20260922\\recipe-arrow.png",
+      "logical_pixels": [
+        49,
+        43
+      ],
+      "runtime_pixels": [
+        196,
+        172
+      ],
+      "scale": 4,
+      "sha256": "abbd1bb755c4de9d9f4184dc08ecc6ec49c91c6fbf1451bc4a4a47bf17a0af04"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "created": "2026-09-22",
+  "generator": "built-in image_gen",
+  "actual_size": [1254, 1254],
+  "shape_source": "C:/Users/ZTCUS/.codex/generated_images/01a0b14d-93ee-7650-bac4-48efbec22604/exec-781ed986-3402-49d4-8ea7-0a13e94e37f9.png",
+  "shape_file": "plum-paper-shape.png",
+  "shape_prompt": "One production 2D UI asset: a SINGLE thin flat rectangular sheet of matte dark plum-brown handpainted paper, approximate #393038, matching the short broad dry gouache strokes of a quiet medieval painted game dialogue panel. Square 2048x2048 canvas. Transparent background outside. Sheet front-on and perfectly flat, occupies 94% of canvas with small outer transparent margin. Nearly straight edges with fine handcut nicks, small flattened clipped asymmetric corners, NOT rounded UI corners. Zero thickness, zero drop shadow, no bevel, no highlight line. Subtle short broad drybrush strokes across paper, very low contrast same plum tone all across sheet including edges. No outline border, no inner frame, no ornaments, no text. The interior is opaque paper; exact shape and alpha edge will be used in 9-slice drawing. No scenery or other objects. Transparent background. Produce ONLY this blank paper component.",
+  "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b14d-93ee-7650-bac4-48efbec22604/exec-3494063e-450b-4222-b81c-d830d30807ac.png",
+  "purpose": "Bottom dialogue tile; independent repeated UI texture.",
+  "prompt": "Generate a single seamless tileable game UI paper texture, square image, fully opaque edge to edge, no border and no objects and no text. Flat hand-painted dry gouache on handmade paper, broad short irregular interlocking brush dabs, muted very dark plum brown charcoal base approximate #393038, small color shifts #43373d and #302c33, matte very low contrast readable behind ivory Chinese dialogue. Visible intentional painterly strokes, short flat feathered strokes between 20-70 pixels, not scratchy fibers, not camouflage blotches, not noisy burlap fabric, no relief shadows, no gloss, no vignette, no light gradient. Fine thin drypaint grain only inside the larger strokes. All four edges match continuously when repeated. Production texture only, 2048 by 2048."
+}

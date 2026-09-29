@@ -1,0 +1,31 @@
+{
+  "asset": "meadow-earth-v3.png",
+  "method": "built-in image_gen",
+  "intent": "generate",
+  "prompt": "Use case: stylized-concept. ONE seamless square ground albedo game texture, requested 2048x2048. Ground underneath separate meadow vegetation, inspired by the restrained hand-painted terrain of Book of Travels. Precisely top-down orthographic flat material, opaque full bleed. Very important composition: 85 percent a restful continuous muted grey-olive / grey-earth base of very similar values. The ground reads as one continuous quiet surface, not a pattern made of separate patches. Only a few UNEVENLY DISTRIBUTED local clusters of thin elongated gently curving dry-brush strokes and subtle rubbed moss/earth streaks. Much of the surface is left almost untouched. Sparse painterly detail is crisp, with controlled flat gouache marks and long shallow arcing brush movements. Low saturation and narrow value range. Avoid absolutely: camouflage pattern, irregular patchwork, square brush blocks, all-over mottling, busy repeating motifs, noisy ragged edges, grain, speckles, plaster, rough oil paint, blurry watercolor cloud fields, strong light/dark patches. No physical grass blades, plants, flowers, leaves, rocks, objects, shadows, relief, cracks, lighting direction, vignette or perspective. No scene composition, no horizon, no frame, no text. FOUR EDGES MUST WRAP SEAMLESSLY: left matches right and top matches bottom, so directly repeating the unchanged square makes continuous ground. Subdued grey olive earthy base with only sparse clear thin curved brush accents and irregular sparse grouping, not uniform distribution.",
+  "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b632-ec74-7da2-9964-6f149dd45ad6/exec-b577e968-291d-435a-82c6-bf8f52559856.png",
+  "reference_urls": [
+    "https://clan.steamstatic.com/images/35811177/e8d2e7b8e115ca8edcac0aaee25fafa0cffd8193.jpg"
+  ],
+  "reference_note": "Art direction from parent's inspected Book of Travels terrain reference: quiet continuous base with sparse clustered curved strokes.",
+  "requested_size": [
+    2048,
+    2048
+  ],
+  "actual_size": [
+    1254,
+    1254
+  ],
+  "pixel_format": "RGB 24-bit opaque",
+  "sha256": "A6B2B3E85EDA8145BC904E73D6286F7E617E9F39BBBC9A095D8AF05575BC787D",
+  "visual_inspection": "Quiet continuous grey-olive earthy base with sparse clusters of fine elongated curved brush strokes. Camouflage patchwork removed. No vegetation, flowers, objects, cast shadows or vignette.",
+  "edge_rgb_mae_255": {
+    "left_right": 3.7801701222753823,
+    "top_bottom": 2.791866028708129
+  },
+  "limitations": [
+    "Built-in generated 1254 square despite requested 2048; preserved native dimensions without resampling.",
+    "Edges are near-matched rather than mathematically identical; direct-repeat runtime inspection remains required."
+  ],
+  "postprocessing": "None. Original PNG bytes copied unchanged."
+}

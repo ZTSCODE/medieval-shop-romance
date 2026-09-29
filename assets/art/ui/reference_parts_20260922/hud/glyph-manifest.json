@@ -1,0 +1,29 @@
+{
+  "status": "candidate",
+  "mode": "builtin_image_gen",
+  "original": "outputs/ui-smoke-brown-suite-20260919/02-table.png",
+  "reference_crops": {
+    "sun": [
+      1562,
+      131,
+      1605,
+      177
+    ],
+    "moon": [
+      1568,
+      333,
+      1608,
+      372
+    ]
+  },
+  "sun": {
+    "prompt": "Create one isolated SUN GLYPH matching this exact original game concept crop. Transparent background 透明背景 real alpha. Remove all charcoal paper pixels. Keep only a primitive flat mural painted symbol, warm pale ochre-cream (#d7c293) disk with eight short irregular triangular/tapered rays, slight handpainted unevenness and restrained fine pigment grain, NOT glowing, not 3D, not glossy, no outline. Match the source disk and ray proportions and all eight ray positions precisely; rays are separated from disk by small transparent gaps. Source colors and shape only, no additional scene or symbols. Center the glyph in square image with 7 percent transparent margin, request native1024x1024. Dense mostly opaque flat pale pigment, no shadow or background.",
+    "file": "sun-glyph.png",
+    "source": "C:/Users/ZTCUS/.codex/generated_images/01a0c58b-4eeb-7202-8391-07938764eaca/exec-2b0b5034-f794-4701-931f-5f01a13a4b41.png"
+  },
+  "moon": {
+    "prompt": "Create one isolated MOON GLYPH matching this exact original game concept crop. Transparent background 透明背景 real alpha. Remove all charcoal paper pixels. Keep only a primitive flat mural painted CRESCENT MOON, cool pale ivory gray (#cad1ca), open to upper-right like the source, thick rounded outer left belly and slender upper and lower pointed tips, subtle uneven handpainted edge and restrained fine pigment grain, NOT glowing, not 3D, not glossy, no outline. Match the exact shape and orientation from the original crop. Source colors and shape only, no stars or extra symbols. Center glyph in square image with7 percent transparent margin, request native1024x1024. Dense mostly opaque flat pale pigment, no shadow or background.",
+    "file": "moon-glyph.png",
+    "source": "C:/Users/ZTCUS/.codex/generated_images/01a0c58b-4eeb-7202-8391-07938764eaca/exec-f1609b7c-d658-4467-8b78-2ae9ea9c3b44.png"
+  }
+}

@@ -1,0 +1,747 @@
+{
+  "version": 2,
+  "method": "independent_alpha_masks_and_neutral_texture",
+  "complete": true,
+  "assets": {
+    "brush_tile": {
+      "path": "brush_tile.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "region": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "logical_width": 640,
+      "neutral": 0.89,
+      "mirror_repeat": false
+    },
+    "shape_card": {
+      "path": "shape_card.png",
+      "source_size": [
+        1024,
+        1536
+      ],
+      "region": [
+        115,
+        96,
+        796,
+        1336
+      ],
+      "source_margins": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "mirror_repeat": false
+    },
+    "shape_dialogue": {
+      "path": "shape_dialogue.png",
+      "source_size": [
+        1916,
+        821
+      ],
+      "region": [
+        90,
+        196,
+        1750,
+        432
+      ],
+      "source_margins": [
+        80,
+        80,
+        80,
+        80
+      ],
+      "mirror_repeat": false
+    },
+    "shape_back_a": {
+      "path": "shape_back_a.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "region": [
+        258,
+        113,
+        734,
+        1044
+      ],
+      "source_margins": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "mirror_repeat": false
+    },
+    "shape_back_b": {
+      "path": "shape_back_b.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "region": [
+        178,
+        128,
+        899,
+        1020
+      ],
+      "source_margins": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "mirror_repeat": false
+    },
+    "shape_name": {
+      "path": "shape_name.png",
+      "source_size": [
+        1932,
+        814
+      ],
+      "region": [
+        213,
+        224,
+        1511,
+        354
+      ],
+      "source_margins": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "mirror_repeat": false
+    },
+    "shape_button": {
+      "path": "shape_button.png",
+      "source_size": [
+        1774,
+        887
+      ],
+      "region": [
+        275,
+        228,
+        1225,
+        429
+      ],
+      "source_margins": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "mirror_repeat": false
+    },
+    "shadow_card": {
+      "path": "shadow_card.png",
+      "source_size": [
+        1024,
+        1536
+      ],
+      "region": [
+        111,
+        116,
+        845,
+        1360
+      ],
+      "registered_region": [
+        115,
+        96,
+        796,
+        1336
+      ],
+      "alpha_gain": 1,
+      "mirror_repeat": false
+    },
+    "shadow_dialogue": {
+      "path": "shadow_dialogue.png",
+      "source_size": [
+        1915,
+        821
+      ],
+      "region": [
+        76,
+        201,
+        1796,
+        465
+      ],
+      "registered_region": [
+        90,
+        196,
+        1750,
+        432
+      ],
+      "alpha_gain": 1,
+      "mirror_repeat": false
+    },
+    "shadow_back_a": {
+      "path": "shadow_back_a.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "region": [
+        210,
+        53,
+        817,
+        1149
+      ],
+      "registered_region": [
+        258,
+        113,
+        734,
+        1044
+      ],
+      "alpha_gain": 2,
+      "mirror_repeat": false
+    },
+    "shadow_back_b": {
+      "path": "shadow_back_b.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "region": [
+        156,
+        83,
+        1036,
+        1119
+      ],
+      "registered_region": [
+        203,
+        154,
+        899,
+        1020
+      ],
+      "alpha_gain": 1.5,
+      "mirror_repeat": false
+    },
+    "shadow_name": {
+      "path": "shadow_name.png",
+      "source_size": [
+        1933,
+        814
+      ],
+      "region": [
+        212,
+        225,
+        1543,
+        391
+      ],
+      "registered_region": [
+        234,
+        241,
+        1511,
+        354
+      ],
+      "alpha_gain": 4,
+      "mirror_repeat": false
+    },
+    "shadow_button": {
+      "path": "shadow_button.png",
+      "source_size": [
+        1774,
+        887
+      ],
+      "region": [
+        258,
+        217,
+        1272,
+        464
+      ],
+      "registered_region": [
+        275,
+        228,
+        1225,
+        429
+      ],
+      "alpha_gain": 1.5,
+      "mirror_repeat": false
+    },
+    "ink_card": {
+      "path": "ink_card.png",
+      "source_size": [
+        1024,
+        1536
+      ],
+      "region": [
+        115,
+        96,
+        796,
+        1336
+      ],
+      "registered_region": [
+        115,
+        96,
+        796,
+        1336
+      ],
+      "mirror_repeat": false
+    },
+    "ink_dialogue": {
+      "path": "ink_dialogue.png",
+      "source_size": [
+        1916,
+        821
+      ],
+      "region": [
+        90,
+        196,
+        1750,
+        432
+      ],
+      "registered_region": [
+        90,
+        196,
+        1750,
+        432
+      ],
+      "mirror_repeat": false
+    },
+    "paper_border": {
+      "path": "shape_card.png",
+      "source_size": [
+        1024,
+        1536
+      ],
+      "region": [
+        115,
+        96,
+        796,
+        1336
+      ],
+      "source_margins": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "mirror_repeat": false
+    },
+    "slip_border": {
+      "path": "shape_name.png",
+      "source_size": [
+        1932,
+        814
+      ],
+      "region": [
+        213,
+        224,
+        1511,
+        354
+      ],
+      "source_margins": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "mirror_repeat": false
+    }
+  },
+  "roles": {
+    "card": {
+      "layers": [
+        {
+          "id": "back_a",
+          "shape": "shape_back_a",
+          "shadow": "shadow_back_a",
+          "texture": "brush_tile",
+          "tint": "be928c",
+          "frame_scale": 0.15,
+          "insets": [
+            0,
+            6,
+            0,
+            6
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation_deg": -0.45,
+          "tile_width": 192,
+          "texture_strength": 0.8,
+          "shadow_tint": "3525291a",
+          "shadow_offset": [
+            1,
+            1.5
+          ],
+          "texture_phase": [
+            0.2,
+            0.35
+          ]
+        },
+        {
+          "id": "back_b",
+          "shape": "shape_back_b",
+          "shadow": "shadow_back_b",
+          "texture": "brush_tile",
+          "tint": "cda49a",
+          "frame_scale": 0.15,
+          "insets": [
+            6,
+            0,
+            6,
+            0
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation_deg": 0.4,
+          "tile_width": 192,
+          "texture_strength": 0.8,
+          "shadow_tint": "3525291a",
+          "shadow_offset": [
+            1,
+            1.5
+          ],
+          "texture_phase": [
+            0.55,
+            0.1
+          ]
+        },
+        {
+          "id": "front",
+          "shape": "shape_card",
+          "shadow": "shadow_card",
+          "texture": "brush_tile",
+          "tint": "ead6c8",
+          "frame_scale": 0.14,
+          "insets": [
+            2,
+            3,
+            2,
+            3
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation_deg": 0,
+          "tile_width": 192,
+          "texture_strength": 0.8,
+          "shadow_tint": "35252924",
+          "shadow_offset": [
+            1,
+            1.5
+          ],
+          "ink": "ink_card",
+          "ink_tint": "fbf1dbb8"
+        }
+      ]
+    },
+    "dialogue": {
+      "layers": [
+        {
+          "id": "back_a",
+          "shape": "shape_back_a",
+          "shadow": "shadow_back_a",
+          "texture": "brush_tile",
+          "tint": "be928c",
+          "frame_scale": 0.23,
+          "insets": [
+            2,
+            8,
+            3,
+            8
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation_deg": -0.4,
+          "tile_width": 640,
+          "texture_strength": 0.8,
+          "shadow_tint": "3525291a",
+          "shadow_offset": [
+            1,
+            1.5
+          ],
+          "texture_phase": [
+            0.1,
+            0.3
+          ]
+        },
+        {
+          "id": "back_b",
+          "shape": "shape_back_b",
+          "shadow": "shadow_back_b",
+          "texture": "brush_tile",
+          "tint": "cda49a",
+          "frame_scale": 0.23,
+          "insets": [
+            17,
+            2,
+            20,
+            0
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation_deg": 0.35,
+          "tile_width": 640,
+          "texture_strength": 0.8,
+          "shadow_tint": "3525291a",
+          "shadow_offset": [
+            1,
+            1.5
+          ],
+          "texture_phase": [
+            0.65,
+            0.2
+          ]
+        },
+        {
+          "id": "front",
+          "shape": "shape_dialogue",
+          "shadow": "shadow_dialogue",
+          "texture": "brush_tile",
+          "tint": "ead6c8",
+          "frame_scale": 0.42,
+          "insets": [
+            4,
+            8,
+            4,
+            8
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation_deg": 0,
+          "tile_width": 640,
+          "texture_strength": 0.8,
+          "shadow_tint": "35252924",
+          "shadow_offset": [
+            1,
+            1.5
+          ],
+          "ink": "ink_dialogue",
+          "ink_tint": "fbf1dbcc"
+        }
+      ]
+    },
+    "panel": {
+      "layers": [
+        {
+          "id": "back_a",
+          "shape": "shape_back_a",
+          "shadow": "shadow_back_a",
+          "texture": "brush_tile",
+          "tint": "be928c",
+          "frame_scale": 0.23,
+          "insets": [
+            2,
+            8,
+            3,
+            8
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation_deg": -0.4,
+          "tile_width": 640,
+          "texture_strength": 0.8,
+          "shadow_tint": "3525291a",
+          "shadow_offset": [
+            1,
+            1.5
+          ],
+          "texture_phase": [
+            0.1,
+            0.3
+          ]
+        },
+        {
+          "id": "back_b",
+          "shape": "shape_back_b",
+          "shadow": "shadow_back_b",
+          "texture": "brush_tile",
+          "tint": "cda49a",
+          "frame_scale": 0.23,
+          "insets": [
+            17,
+            2,
+            20,
+            0
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation_deg": 0.35,
+          "tile_width": 640,
+          "texture_strength": 0.8,
+          "shadow_tint": "3525291a",
+          "shadow_offset": [
+            1,
+            1.5
+          ],
+          "texture_phase": [
+            0.65,
+            0.2
+          ]
+        },
+        {
+          "id": "front",
+          "shape": "shape_dialogue",
+          "shadow": "shadow_dialogue",
+          "texture": "brush_tile",
+          "tint": "ead6c8",
+          "frame_scale": 0.42,
+          "insets": [
+            4,
+            8,
+            4,
+            8
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation_deg": 0,
+          "tile_width": 640,
+          "texture_strength": 0.8,
+          "shadow_tint": "35252924",
+          "shadow_offset": [
+            1,
+            1.5
+          ],
+          "ink": "ink_dialogue",
+          "ink_tint": "fbf1dbcc"
+        }
+      ]
+    },
+    "label": {
+      "layers": [
+        {
+          "id": "front",
+          "shape": "shape_name",
+          "shadow": "shadow_name",
+          "texture": "brush_tile",
+          "tint": "dabaaa",
+          "frame_scale": 0.19,
+          "insets": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation_deg": 0,
+          "tile_width": 384,
+          "texture_strength": 0.8,
+          "shadow_tint": "3525291a",
+          "shadow_offset": [
+            1,
+            1.5
+          ]
+        }
+      ]
+    },
+    "button": {
+      "layers": [
+        {
+          "id": "front",
+          "shape": "shape_button",
+          "shadow": "shadow_button",
+          "texture": "brush_tile",
+          "tint": "ead6c8",
+          "frame_scale": 0.14,
+          "insets": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation_deg": 0,
+          "tile_width": 384,
+          "texture_strength": 0.8,
+          "shadow_tint": "3525291a",
+          "shadow_offset": [
+            1,
+            1.5
+          ]
+        }
+      ]
+    },
+    "back": {
+      "layers": [
+        {
+          "id": "front",
+          "shape": "shape_back_a",
+          "shadow": "shadow_back_a",
+          "texture": "brush_tile",
+          "tint": "be928c",
+          "frame_scale": 0.2,
+          "insets": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation_deg": 0,
+          "tile_width": 640,
+          "texture_strength": 0.8,
+          "shadow_tint": "3525291a",
+          "shadow_offset": [
+            1,
+            1.5
+          ]
+        }
+      ]
+    },
+    "card_label": {
+      "layers": [
+        {
+          "id": "front",
+          "shape": "shape_name",
+          "shadow": "shadow_name",
+          "texture": "brush_tile",
+          "tint": "dabaaa",
+          "frame_scale": 0.041,
+          "insets": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation_deg": 0,
+          "tile_width": 100,
+          "texture_strength": 0.8,
+          "shadow_tint": "3525291a",
+          "shadow_offset": [
+            0.4,
+            0.6
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "reference": "res://assets/art/ui/forest_rebuild/menu-title-plaque.png",
+  "prompt_source": "assets/art/ui/forest_rebuild/menu-manifest.json",
+  "prompts": [
+    "Generate ONE isolated game UI journal window paper component, transparent background 透明背景 true alpha. Reference style only the thin layered dark paper title panel at upper left. Landscape whole paper panel width:height 1.95:1, warm charcoal brown #403a30 with clear broad angled handpainted gouache strokes, no tiny scratches or gravel grain. Slightly uneven mostly straight gently clipped paper corners. Single complete thin paper panel. No centered backing paper strip, no vertical band, no separate sheet sticking out from the middle at top and bottom. Only a tiny full-width edge offset is allowed along the lower outside contour, never a centered protrusion. Flat, not thick or beveled. Small subdued warm taupe stylized botanical sprigs in the far upper-left and lower-right corners only. No lines crossing the interior. Large center blank to hold journal content later. Whole opaque painted paper, edge and face painted together in ONE image, not separate frame and texture. High resolution wide canvas, ideally 2560 pixels wide. No text no shadows no scene no characters. Standalone crisp high resolution component centered with small transparent margin.",
+    "Generate ONE isolated game UI dialogue window paper component, transparent background 透明背景 true alpha. Reference style only the thin layered dark paper title panel at upper left. Landscape whole paper panel width:height 5.5:1, warm charcoal brown #403a30 with clear broad angled handpainted gouache strokes, no tiny scratches or gravel grain. Slightly uneven mostly straight gently clipped paper corners. Single complete thin paper panel. No centered backing paper strip, no vertical band, no separate sheet sticking out from the middle at top and bottom. Only a tiny full-width edge offset is allowed along the lower outside contour, never a centered protrusion. Flat, not thick or beveled. Very small subdued warm taupe stylized botanical sprig at far left only. No lines crossing the interior. Large center blank for dialogue subtitles later. Whole opaque painted paper, edge and face painted together in ONE image, not separate frame and texture. High resolution panoramic canvas ideally 3072 pixels wide. No text no shadows no scene no characters. Standalone crisp high resolution component centered with small transparent margin."
+  ],
+  "outputs": [
+    {
+      "file": "journal-sheet-v2.png",
+      "source": "exec-05ab2291-0811-496a-836c-9db757542b5d.png",
+      "dimensions": [
+        1751,
+        898
+      ],
+      "alpha_bbox": [
+        38,
+        172,
+        1714,
+        728
+      ]
+    },
+    {
+      "file": "dialogue-sheet-v2.png",
+      "source": "exec-654ee236-b734-40ca-a074-3bb64c0f1f7b.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "alpha_bbox": [
+        59,
+        141,
+        2119,
+        581
+      ]
+    }
+  ]
+}

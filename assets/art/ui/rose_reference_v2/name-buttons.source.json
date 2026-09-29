@@ -1,0 +1,690 @@
+{
+  "schema_version": 1,
+  "asset_set": "ui.rose_reference_v2.name_buttons",
+  "method": "形状蒙版与阴影蒙版分别生成；后续由主代理平铺纹理、逐层着色和叠放。",
+  "tool": "image_gen.imagegen",
+  "current_user_reference": {
+    "path": "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png",
+    "sha256": "8226AEFBE1BDAEBBF750512DAC7E4A2806347F0BDF72B5887E034A239D24D200",
+    "canvas_size": [
+      1672,
+      941
+    ],
+    "bytes": 1397763
+  },
+  "scope": "仅名牌与继续按钮的两个形状蒙版、两个独立阴影及本来源记录；保留先前 name_tab 外观参考。",
+  "assets": [
+    {
+      "id": "shape_name",
+      "kind": "shape_mask",
+      "path": "assets/art/ui/rose_reference_v2/shape_name.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-bfc04e5e-7f23-4434-8855-1e4c374dfd16.png",
+      "source_sha256": "1A7875B6B0D468DD62421A3E7EEA4F31297CAEAD35D6B742664898B339B09AB8",
+      "sha256": "1A7875B6B0D468DD62421A3E7EEA4F31297CAEAD35D6B742664898B339B09AB8",
+      "raw_canvas": [
+        1932,
+        814
+      ],
+      "alpha_bbox": [
+        213,
+        224,
+        1511,
+        354
+      ],
+      "alpha_bbox_threshold": 16,
+      "prompt": "Extract the SHAPE ONLY of one exact paper component in the supplied current user reference image. This output is a technical silhouette mask, not finished UI artwork.\n\nTarget: the separate name slip centered on the TOP EDGE of the RIGHT dialogue panel, currently saying “信使”, approximately x=946..1238, y=284..348 in the reference. Preserve that slip's real outline: a low, wide, softly uneven near-rectangle, approximately 4.6–4.7:1 width-to-height; gently wavering long edges; individually small worn corners; tiny edge irregularities. No new lobes, large notches, symmetrical ornate ends or ruler-straight vector geometry. Do not use the left card's different, shorter name slip.\n\nMake the ENTIRE INTERIOR of this silhouette a uniform flat PURE WHITE #FFFFFF at FULL OPACITY alpha 255. There must be absolutely no color, paper texture, brush marks inside, letters, ornament, shading, gradient, bevel, rim or shadow. The silhouette edge is the only information being extracted. Outside the silhouette: real transparency / 透明背景 / transparent background, alpha 0, with at most normal 1-pixel edge antialiasing. No black, gray or colored background, no checkerboard pattern.\n\nOutput one PNG on a wide 1932 x 814 canvas, the whole white shape centered with generous transparent margins and never cropped. The white paper body should occupy roughly x=170..1762 and y=236..578, maintaining the source component's approximately 4.65:1 shape proportion. ONE shape only, no contact sheet, card, dialogue body, button, other layers, second mask or text. Preserve the original small paper's contour; do not design a generic UI frame and do not cut a hole in its center.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png",
+          "sha256": "8226AEFBE1BDAEBBF750512DAC7E4A2806347F0BDF72B5887E034A239D24D200",
+          "canvas_size": [
+            1672,
+            941
+          ]
+        }
+      ],
+      "quality_setting": null,
+      "quality_note": "内置工具未提供质量档、步数、模型或种子参数。",
+      "pixel_edits": false,
+      "qc": {
+        "canvas_size": [
+          1932,
+          814
+        ],
+        "max_alpha": 255,
+        "alpha_bounds_1": [
+          51,
+          3,
+          1797,
+          811
+        ],
+        "alpha_count_1": 511205,
+        "alpha_bounds_4": [
+          211,
+          224,
+          1515,
+          356
+        ],
+        "alpha_count_4": 496150,
+        "alpha_bounds_8": [
+          211,
+          224,
+          1514,
+          354
+        ],
+        "alpha_count_8": 493761,
+        "alpha_bounds_16": [
+          213,
+          224,
+          1511,
+          354
+        ],
+        "alpha_count_16": 493207,
+        "alpha_bounds_128": [
+          214,
+          225,
+          1509,
+          353
+        ],
+        "alpha_count_128": 490758,
+        "alpha_bounds_250": [
+          215,
+          226,
+          1507,
+          351
+        ],
+        "alpha_count_250": 486023,
+        "alpha_bounds_255": [
+          215,
+          228,
+          1507,
+          348
+        ],
+        "alpha_count_255": 1586,
+        "center_rgba": [
+          253,
+          252,
+          253,
+          254
+        ],
+        "center_65px_alpha_range": [
+          254,
+          254
+        ],
+        "center_65px_rgb_min": [
+          252,
+          252,
+          252
+        ],
+        "center_65px_rgb_max": [
+          255,
+          255,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "name": "shape_name",
+        "path": "assets/art/ui/rose_reference_v2/shape_name.png",
+        "sha256": "1A7875B6B0D468DD62421A3E7EEA4F31297CAEAD35D6B742664898B339B09AB8"
+      }
+    },
+    {
+      "id": "shape_button",
+      "kind": "shape_mask",
+      "path": "assets/art/ui/rose_reference_v2/shape_button.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-15ad5884-c7b3-4ec7-8327-d17607fdb0fa.png",
+      "source_sha256": "2508E25674B97AFCC9B69F91C94F6773AA3545F3513F27A40B42A10AA4A6E873",
+      "sha256": "2508E25674B97AFCC9B69F91C94F6773AA3545F3513F27A40B42A10AA4A6E873",
+      "raw_canvas": [
+        1774,
+        887
+      ],
+      "alpha_bbox": [
+        275,
+        228,
+        1225,
+        429
+      ],
+      "alpha_bbox_threshold": 16,
+      "prompt": "Correct only the aspect ratio of the white button silhouette in image 2, keeping its plain mask treatment, fixed 1774 x 887 canvas and soft small worn-edge character. Image 1 is the user's original chosen design and is the authority for the small LOWER RIGHT “继续” paper button, not the top long name label.\n\nThe current white mask in image 2 is too long and thin. The target button is approximately 170 wide by 66 high, so the WHITE BODY MUST BE ABOUT 2.6:1, NOT 3.5:1 OR A LONG NAMEPLATE. Keep the white body's present width around 1240px and its center fixed. Increase its vertical extent so the body is approximately 477px high: its upper edge near y=205 and lower edge near y=682. It should be visibly taller and chunkier in 2D outline, matching the original Continue paper's proportions, but still thin material with no 3D appearance. Preserve the same small naturally uneven edge character, without inventing large bumps or cutouts.\n\nUniform PURE WHITE #FFFFFF fully opaque interior, absolutely no paper texture, gray tint, letters, color, gradient, edge stroke, rim, bevel or shadow. Outside the shape, genuine transparent background / 透明背景, alpha zero; keep clear margins all around. Exactly one complete white shape on the same full canvas. No scene, checkerboard, second shape, dialogue body, card, label or other UI. Do not redesign the style; make this narrowly targeted proportion correction only.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png",
+        "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-d28bc1b5-2b01-41b1-a921-3339bdaa2adb.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png",
+          "sha256": "8226AEFBE1BDAEBBF750512DAC7E4A2806347F0BDF72B5887E034A239D24D200",
+          "canvas_size": [
+            1672,
+            941
+          ]
+        },
+        {
+          "path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-d28bc1b5-2b01-41b1-a921-3339bdaa2adb.png",
+          "sha256": "577961ECFE24BE0B27A25F08A1CB36F313F7987607F19788EE245C028CC51DB2",
+          "canvas_size": [
+            1774,
+            887
+          ]
+        }
+      ],
+      "quality_setting": null,
+      "quality_note": "内置工具未提供质量档、步数、模型或种子参数。",
+      "pixel_edits": false,
+      "qc": {
+        "canvas_size": [
+          1774,
+          887
+        ],
+        "max_alpha": 254,
+        "alpha_bounds_1": [
+          67,
+          17,
+          1624,
+          870
+        ],
+        "alpha_count_1": 502471,
+        "alpha_bounds_4": [
+          270,
+          228,
+          1232,
+          435
+        ],
+        "alpha_count_4": 491374,
+        "alpha_bounds_8": [
+          273,
+          228,
+          1227,
+          431
+        ],
+        "alpha_count_8": 489726,
+        "alpha_bounds_16": [
+          275,
+          228,
+          1225,
+          429
+        ],
+        "alpha_count_16": 488845,
+        "alpha_bounds_128": [
+          275,
+          229,
+          1224,
+          427
+        ],
+        "alpha_count_128": 486286,
+        "alpha_bounds_250": [
+          306,
+          243,
+          1164,
+          386
+        ],
+        "alpha_count_250": 412377,
+        "alpha_bounds_255": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_count_255": 0,
+        "center_rgba": [
+          253,
+          252,
+          253,
+          254
+        ],
+        "center_65px_alpha_range": [
+          253,
+          254
+        ],
+        "center_65px_rgb_min": [
+          252,
+          252,
+          252
+        ],
+        "center_65px_rgb_max": [
+          255,
+          255,
+          255
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "name": "shape_button",
+        "path": "assets/art/ui/rose_reference_v2/shape_button.png",
+        "sha256": "2508E25674B97AFCC9B69F91C94F6773AA3545F3513F27A40B42A10AA4A6E873"
+      }
+    },
+    {
+      "id": "shadow_name",
+      "kind": "shadow_mask",
+      "path": "assets/art/ui/rose_reference_v2/shadow_name.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-c6fb42c9-ccfa-4160-b431-bffec2c068df.png",
+      "source_sha256": "A1D414633B2CE21973AB54930F4C130B5FC616FFC75A9F3593B7A8D9F9792F51",
+      "sha256": "A1D414633B2CE21973AB54930F4C130B5FC616FFC75A9F3593B7A8D9F9792F51",
+      "raw_canvas": [
+        1933,
+        814
+      ],
+      "alpha_bbox": [
+        212,
+        225,
+        1543,
+        391
+      ],
+      "alpha_bbox_threshold": 4,
+      "prompt": "Technical game-UI asset: generate a single 2D grayscale drop-shadow MASK from the alpha silhouette of the provided abstract name-label shape.\nUse exactly the provided shape's canvas size, 1932 x 814 pixels, with unchanged scale and placement. The output is only neutral-gray shadow pixels on a genuine transparent background / 透明背景.\nMatch the input silhouette exactly, offset it down by 6 pixels and right by 1 pixel, with a soft 6-pixel feather at the outside edge. Use low shadow opacity, about 18 percent at the strongest area. Keep the rest of the canvas fully transparent. This is a close, minimal paper UI shadow for compositing beneath a separate opaque shape.\nDo not include the input white fill, a paper surface, texture, lettering, outlines, colored pixels, scenery, symbols, figures, or any real-world object. Do not resize, recenter, crop or redesign the silhouette. No glow, black background, checkerboard, second asset or contact sheet. One neutral gray transparency mask, full fixed canvas only.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/shape_name.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/shape_name.png",
+          "sha256": "1A7875B6B0D468DD62421A3E7EEA4F31297CAEAD35D6B742664898B339B09AB8",
+          "canvas_size": [
+            1932,
+            814
+          ]
+        }
+      ],
+      "quality_setting": null,
+      "quality_note": "内置工具未提供质量档、步数、模型或种子参数。",
+      "pixel_edits": false,
+      "qc": {
+        "canvas_size": [
+          1933,
+          814
+        ],
+        "max_alpha": 31,
+        "alpha_bounds_1": [
+          0,
+          0,
+          1764,
+          627
+        ],
+        "alpha_count_1": 560725,
+        "alpha_bounds_4": [
+          212,
+          225,
+          1543,
+          391
+        ],
+        "alpha_count_4": 540818,
+        "alpha_bounds_8": [
+          214,
+          227,
+          1536,
+          384
+        ],
+        "alpha_count_8": 527812,
+        "alpha_bounds_16": [
+          235,
+          241,
+          1508,
+          363
+        ],
+        "alpha_count_16": 144536,
+        "alpha_bounds_128": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_count_128": 0,
+        "alpha_bounds_250": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_count_250": 0,
+        "alpha_bounds_255": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_count_255": 0,
+        "center_rgba": [
+          0,
+          0,
+          0,
+          16
+        ],
+        "center_65px_alpha_range": [
+          13,
+          17
+        ],
+        "center_65px_rgb_min": [
+          0,
+          0,
+          0
+        ],
+        "center_65px_rgb_max": [
+          0,
+          0,
+          0
+        ],
+        "corner_alpha": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "name": "shadow_name",
+        "path": "assets/art/ui/rose_reference_v2/shadow_name.png",
+        "sha256": "A1D414633B2CE21973AB54930F4C130B5FC616FFC75A9F3593B7A8D9F9792F51"
+      }
+    },
+    {
+      "id": "shadow_button",
+      "kind": "shadow_mask",
+      "path": "assets/art/ui/rose_reference_v2/shadow_button.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-817ec86b-da2a-4404-8385-3547e03141f5.png",
+      "source_sha256": "500443ACA4CCAB71DCA80EDB01B57895B310305A145CA7A8FC26E6FCB9CC4281",
+      "sha256": "500443ACA4CCAB71DCA80EDB01B57895B310305A145CA7A8FC26E6FCB9CC4281",
+      "raw_canvas": [
+        1774,
+        887
+      ],
+      "alpha_bbox": [
+        265,
+        220,
+        1259,
+        458
+      ],
+      "alpha_bbox_threshold": 4,
+      "prompt": "Technical game-UI asset: generate ONE grayscale drop-shadow MASK from the alpha silhouette of the supplied abstract button shape.\nUse exactly the source canvas, 1774 x 887 pixels. Keep the shape's scale and position, with its body currently around x=275..1500,y=228..657. Output only neutral-gray shadow pixels on a genuine transparent background / 透明背景.\nThe shadow closely follows that outline, displaced only 1 pixel right and 6 pixels down, with a restrained soft 6-pixel feather. Low opacity, about 18 percent at the strongest area, fading smoothly to zero at the close outer edge. Keep all distant canvas pixels alpha zero. The intended compositing places an opaque paper shape above it, leaving only a narrow faint lower edge, so do not create a broad haze.\nDo not include the white source fill, paper texture, a paper surface, lettering, edge strokes, highlights, colors, figures, symbols, scenery or any physical object. Do not resize, recenter, crop or redesign the silhouette. No background, checkerboard, glow, second component or contact sheet. One grayscale shadow layer on exactly the same full canvas as the input shape.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/shape_button.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/shape_button.png",
+          "sha256": "2508E25674B97AFCC9B69F91C94F6773AA3545F3513F27A40B42A10AA4A6E873",
+          "canvas_size": [
+            1774,
+            887
+          ]
+        }
+      ],
+      "quality_setting": null,
+      "quality_note": "内置工具未提供质量档、步数、模型或种子参数。",
+      "pixel_edits": false,
+      "qc": {
+        "canvas_size": [
+          1774,
+          887
+        ],
+        "max_alpha": 105,
+        "alpha_bounds_1": [
+          258,
+          217,
+          1272,
+          464
+        ],
+        "alpha_count_1": 127774,
+        "alpha_bounds_4": [
+          265,
+          220,
+          1259,
+          458
+        ],
+        "alpha_count_4": 103137,
+        "alpha_bounds_8": [
+          268,
+          224,
+          1254,
+          452
+        ],
+        "alpha_count_8": 86771,
+        "alpha_bounds_16": [
+          271,
+          227,
+          1247,
+          446
+        ],
+        "alpha_count_16": 65123,
+        "alpha_bounds_128": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_count_128": 0,
+        "alpha_bounds_250": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_count_250": 0,
+        "alpha_bounds_255": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_count_255": 0,
+        "center_rgba": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "center_65px_alpha_range": [
+          0,
+          0
+        ],
+        "center_65px_rgb_min": [
+          0,
+          0,
+          0
+        ],
+        "center_65px_rgb_max": [
+          0,
+          0,
+          0
+        ],
+        "corner_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "name": "shadow_button",
+        "path": "assets/art/ui/rose_reference_v2/shadow_button.png",
+        "sha256": "500443ACA4CCAB71DCA80EDB01B57895B310305A145CA7A8FC26E6FCB9CC4281"
+      }
+    }
+  ],
+  "registration": [
+    {
+      "shape": "shape_name",
+      "shadow": "shadow_name",
+      "shape_canvas": [
+        1932,
+        814
+      ],
+      "shadow_canvas": [
+        1933,
+        814
+      ],
+      "canvas_equal": false,
+      "canvas_delta": [
+        1,
+        0
+      ],
+      "shared_pixel_origin": [
+        0,
+        0
+      ],
+      "requested_shadow_offset_pixels": [
+        1,
+        6
+      ],
+      "note": "原生阴影输出比形状画布多 1 列透明边。应按同一原点和像素比例配准，不能分别拉伸整个画布；未声称原图尺寸完全一致。"
+    },
+    {
+      "shape": "shape_button",
+      "shadow": "shadow_button",
+      "shape_canvas": [
+        1774,
+        887
+      ],
+      "shadow_canvas": [
+        1774,
+        887
+      ],
+      "canvas_equal": true,
+      "shared_pixel_origin": [
+        0,
+        0
+      ],
+      "requested_shadow_offset_pixels": [
+        1,
+        6
+      ]
+    }
+  ],
+  "raw_mask_limits": {
+    "shape_rgb_is_strict_pure_white": false,
+    "shape_interior_is_strict_alpha255": false,
+    "observed_center_rgba": [
+      253,
+      252,
+      253,
+      254
+    ],
+    "note": "生成器返回近白 RGB 与 253–254 的中心 alpha；原图按字节保留。形状分层消费时应只取 alpha，并将主体阈值补实，再乘独立平铺纹理和色调。没有把原始图片数值宣称为纯白或全不透明。",
+    "shadow_name_max_alpha": 31,
+    "shadow_button_max_alpha": 105,
+    "shadow_rgb_note": "阴影是黑色 RGB 配低 alpha；在浅色底上表现为灰影，黑底预览可能几乎不可见。button 阴影中心透明，主要位于薄边缘。",
+    "runtime_opacity_adjustable": true
+  },
+  "visual_review": {
+    "white_shapes": "只保留纸签轮廓，没有文字、色彩图案或镂空中洞；按钮初稿已定向增高。",
+    "source_ratios": {
+      "shape_name": 4.268361581920904,
+      "shape_button": 2.8554778554778553
+    },
+    "ratio_note": "记录实际主体比例，未将提示词中约 4.7 与约 2.6 当作测量结果。最终外形一致性由主代理结合当前参考核对。",
+    "no_godot_or_native_run": true,
+    "raw_files_preserved": true
+  },
+  "generation_request_count": 8,
+  "request_order": [
+    "name_tab appearance extraction",
+    "button_paper appearance extraction (returned before layering steering; unused)",
+    "shape_name",
+    "shape_button initial (too narrow)",
+    "shape_button targeted proportion correction",
+    "shadow_name first request (tool output moderation blocked; no image)",
+    "shadow_name successful technical mask request",
+    "shadow_button"
+  ],
+  "retained_appearance_references": [
+    {
+      "id": "name_tab",
+      "usage": "仅保留外观参考",
+      "path": "assets/art/ui/rose_reference_v2/name_tab.png",
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-65f15db6-2b8a-4490-b20b-012286af248a.png",
+      "source_sha256": "8A3BDDD11B73686C8AA1565AA22E623A7F1241D5FC627087B9B9241269699B45",
+      "raw_canvas": [
+        1932,
+        814
+      ],
+      "prompt": "Use case: precise-object-edit. Faithfully extract and complete ONE existing UI paper component from the supplied reference image. The supplied image is the only reference. This is preservation and text removal, NOT a new UI design.\n\nTARGET: the separate small horizontal name paper attached to the TOP CENTER of the RIGHT dialogue panel, currently bearing the two Chinese characters “信使” (approximately x=946..1238, y=284..348 in the reference). Use THIS name slip, not the taller card or the main dialogue sheet. Remove only its lettering and reveal matching blank paper brushwork beneath it. Preserve its exact pale dusty-rose / cream-blush palette, subtle uneven silhouette, softly wavering long edges, small chips, individually irregular corners, visible long-and-short soft dry-brush marks, and the very narrow painted lower-edge accent. It must still look like the same little name slip from the chosen reference, simply isolated and text-free.\n\nOutput a single 1536 x 512 PNG with genuine transparent background / 透明背景. Show just the complete paper slip, uniformly enlarged, centered with transparent margins on all sides, never clipped. The PAPER BODY is approximately 4.6–4.7 times wider than high (about 1200 x 258 pixels within this canvas), matching the original dialogue name slip's roughly 290 x 64 proportion. Preserve its thin flat appearance. The whole paper surface including the center must be solid, fully opaque paper with natural brush texture; do not make a hollow frame.\n\nNo text or ghost letters. No title, second sheet, dialogue panel, card, character, button, frame kit, contact sheet, border ornament, new graphic outline, modern rounded rectangle, exact ruler-straight edges, glossy highlight, 3D thickness, bevel, rolled corner, fold, heavy shadow, green or recoloring. No background, glow, floor or painted checkerboard. Only this faithful blank version of the existing soft rose name slip.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png",
+          "sha256": "8226AEFBE1BDAEBBF750512DAC7E4A2806347F0BDF72B5887E034A239D24D200",
+          "canvas_size": [
+            1672,
+            941
+          ]
+        }
+      ],
+      "pixel_edits": false
+    },
+    {
+      "id": "button_paper",
+      "usage": "用户切换到分层蒙版前调用已返回；未复制进工程，未采用。",
+      "path": null,
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-fdb3dfe8-0b0f-49b4-a363-01cb4c204af3.png",
+      "source_sha256": "71620CAF8C97DD40B964DCBFBEF4400CEFF21BE24692D6E84500C9AC73A8446F",
+      "raw_canvas": [
+        2021,
+        778
+      ],
+      "prompt": "Use case: precise-object-edit. Faithfully extract and lightly complete ONE existing UI component from this supplied image. Use this exact current image as the only reference. This is extraction and text removal, not a redesign or a generic frame kit.\n\nTARGET: the little separate “继续” paper button overlapping the LOWER RIGHT EDGE of the RIGHT dialogue box (approximately x=1383..1552, y=569..637 in the reference). Extract that actual button paper, not the main panel, the top name tag or any other component. Remove the two Chinese characters only, filling the lettering area with matching nearby paper brushwork. Preserve the existing cream-blush color, softly visible fine long-and-short dry-brush strokes, gently irregular and slightly worn outline, tiny corner differences and the very subtle narrow lower-edge accent. The result must look like the same small paper button from the chosen design with its letters removed, retaining its original restrained flat light appearance.\n\nOutput ONE PNG on genuine transparent background / 透明背景. Suggested full canvas 1024 x 512, with the complete button centered and generous transparent margins on every side. The actual paper silhouette must keep the original approximately 2.6:1 width-to-height ratio, like a 170 x 66 button uniformly enlarged, roughly 760 x 295 pixels if using the suggested canvas. Do not crop the edges, squeeze it, or make it a long thin nameplate. The paper is a complete filled solid little sheet, entirely opaque through its center, not a hollow border.\n\nLock the original light creamy blush palette; no green, grey-green, sage, teal, saturation boost or new rose-brown outer frame. No new decorative outline or modern UI stroke. No ghost lettering, text, symbols, flourishes, second paper layer, panel, name tag, card, characters, other controls, grid or contact sheet. No thickness, glossy plastic, bevel, rolled corner, paper curl, embossing, deep fold or heavy shadow. Do not straighten the existing soft edges into a perfect vector rectangle. No scene, floor, background color, glow, visible checkerboard or anything beyond the isolated text-free original paper button.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png",
+          "sha256": "8226AEFBE1BDAEBBF750512DAC7E4A2806347F0BDF72B5887E034A239D24D200",
+          "canvas_size": [
+            1672,
+            941
+          ]
+        }
+      ],
+      "pixel_edits": false
+    }
+  ],
+  "rejected_shape_attempts": [
+    {
+      "source_path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-d28bc1b5-2b01-41b1-a921-3339bdaa2adb.png",
+      "path": "C:/Users/ZTCUS/.codex/generated_images/01a0ab60-3239-7a43-a7b1-ac180cc3542e/exec-d28bc1b5-2b01-41b1-a921-3339bdaa2adb.png",
+      "sha256": "577961ECFE24BE0B27A25F08A1CB36F313F7987607F19788EE245C028CC51DB2",
+      "canvas_size": [
+        1774,
+        887
+      ],
+      "bytes": 298987,
+      "reason": "初稿形状过于细长；已通过单独 imagegen 定向调整高度，未程序拉伸。",
+      "prompt": "Extract only the silhouette of ONE exact existing paper button from this current user reference image. Output a pure technical white shape mask, not finished UI artwork.\n\nThe target is the separate small “继续” paper button overlapping the LOWER RIGHT EDGE of the right dialogue panel, around x=1383..1552,y=569..637. Preserve this button's approximately 2.6:1 width-to-height ratio, softly uneven long edges, tiny worn notches and slightly different corners. Keep it a simple gently relaxed thin-paper near-rectangle, following the actual reference's contour. Do not extract the long top name slip, dialogue panel or left card. Do not invent ornate ends, big lobes, deep cutouts, large tears or a precise vector-rounded rectangle.\n\nFill the entire shape with mathematically uniform PURE WHITE #FFFFFF, fully opaque alpha 255. No paper texture, brush marks inside, gradient, tint, color, shade, outline, rim, bevel, lettering or shadow. Only the outside contour is retained. Outside it is genuine alpha-zero transparency / 透明背景 / transparent background. Normal 1-pixel edge antialiasing is allowed; no painted black/gray/checkerboard backdrop, halo or stray objects.\n\nOutput one 1792 x 896 PNG. Center the whole complete button shape on this full canvas with transparent margins, approximately x=246..1546, y=198..698, giving a body about 1300 x 500 and the original 2.6:1 ratio. Never crop an edge and never make an empty-hole border. One solid white silhouette only, no second component, no sheet or contact sheet, no text.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png"
+      ],
+      "references": [
+        {
+          "path": "C:/Users/ZTCUS/AppData/Local/Temp/codex-clipboard-2e49e2e7-78ac-4e4e-a30a-184c370d7f80.png",
+          "sha256": "8226AEFBE1BDAEBBF750512DAC7E4A2806347F0BDF72B5887E034A239D24D200",
+          "canvas_size": [
+            1672,
+            941
+          ]
+        }
+      ]
+    }
+  ],
+  "failed_generation_attempts": [
+    {
+      "asset": "shadow_name",
+      "prompt": "Create ONLY a separate thin-paper SHADOW MASK corresponding to the exact white silhouette in the supplied shape_name mask. The supplied image is geometry reference only, not a paper illustration. Keep the EXACT 1932 x 814 canvas, camera, scale, shape position, transparent margins and silhouette size. Do not crop or recenter.\n\nImagine that exact flat name slip lying extremely close above a surface. Its tiny cast shadow is displaced just about 1 pixel right and 6 pixels down on this large source canvas, with a very restrained soft feather of about 6–8 pixels. Output the shadow alone: a neutral soft gray alpha-mask silhouette, strongest opacity about 18%, fading smoothly to alpha zero at its close edge. Its underlying area may be a single even gray shadow field, but no visible paper face, paper texture, white sheet, colored paint, outline, highlights or physical object. The intended runtime places the opaque paper above this shadow, leaving only a narrow low-contrast edge visible. It is a flat thin-paper cast shadow, not a raised card, thick slab or dramatic floating-object shadow.\n\nTrue transparent background / 透明背景 / transparent background outside the small shadow. No black or gray background, no checkerboard, no glow. Keep this shadow closely matched to every small irregularity of the reference mask instead of substituting a smooth rounded rectangle. One standalone shadow layer only, same full canvas as the shape. No words, controls, second component, contact sheet, border, new shapes or full UI.",
+      "referenced_image_paths": [
+        "C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance/assets/art/ui/rose_reference_v2/shape_name.png"
+      ],
+      "status": "output_moderation_blocked",
+      "category": "sexual",
+      "request_id": "99729e50-a53a-48e4-b301-bc273cacab50",
+      "note": "无人物的技术阴影蒙版请求在工具输出阶段被拒绝，未产生图像；随后同一资产的简洁技术请求成功。"
+    }
+  ]
+}

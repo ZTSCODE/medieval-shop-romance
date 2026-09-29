@@ -1,0 +1,500 @@
+{
+  "status": "whole_piece_layout_candidate",
+  "method": "single coherent whole-paper components; no tiled or rectangular infill",
+  "components": [
+    {
+      "file": "hud-axis-paper.png",
+      "source": "hud_axis.png",
+      "size": [
+        102,
+        285
+      ],
+      "erase": [
+        [
+          25,
+          10,
+          77,
+          269
+        ]
+      ],
+      "preserve": [],
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "d78e876005f6f9549ba7c6061f4d8d058b5adb8b5ce31b9bfc5c9edbbc27fbfa"
+    },
+    {
+      "file": "hud-recipe-button.png",
+      "source": "hud_recipe.png",
+      "size": [
+        101,
+        103
+      ],
+      "erase": [
+        [
+          15,
+          66,
+          88,
+          102
+        ]
+      ],
+      "preserve": [],
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "38857f6d0b70aa6261fc7ac635e0816f1c162073e3f43ab51d11be43efcd3ef1"
+    },
+    {
+      "file": "hud-relationship-button.png",
+      "source": "hud_relationship.png",
+      "size": [
+        100,
+        91
+      ],
+      "erase": [
+        [
+          15,
+          51,
+          86,
+          90
+        ]
+      ],
+      "preserve": [],
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "d6f88a136922ceb0e40ec4784db9438b60dd97c138ee74f2f10af07bc437cf3c"
+    },
+    {
+      "file": "hud-avatar-frame.png",
+      "source": "hud_portrait.png",
+      "size": [
+        112,
+        190
+      ],
+      "erase": [
+        [
+          31,
+          9,
+          78,
+          43
+        ],
+        [
+          9,
+          48,
+          102,
+          181
+        ]
+      ],
+      "preserve": [],
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "84e5c6f6a219e4ee27be0a4d572d01a349e9e6cb845b7bd790328a8c921b139f"
+    },
+    {
+      "file": "hud-sun.png",
+      "source": "hud_axis.png",
+      "source_rect": [
+        22,
+        8,
+        80,
+        61
+      ],
+      "size": [
+        58,
+        53
+      ],
+      "sha256": "a1230a916358105f18cfa36a67f9d23f86616d7751ee019ea87efdc5bc11be26"
+    },
+    {
+      "file": "hud-moon.png",
+      "source": "hud_axis.png",
+      "source_rect": [
+        24,
+        216,
+        80,
+        275
+      ],
+      "size": [
+        56,
+        59
+      ],
+      "sha256": "c27e93060f4bbee28dd4cb644660b119b5715270747dc82ac3d78424ed4bc1ae"
+    },
+    {
+      "file": "hud-recipe-icon.png",
+      "source": "hud_recipe.png",
+      "source_rect": [
+        20,
+        7,
+        83,
+        67
+      ],
+      "size": [
+        63,
+        60
+      ],
+      "sha256": "64f6565ca36507884cde7dc984469d46275021db4ae3e51d6664ebb3e6e8fda3"
+    },
+    {
+      "file": "hud-relationship-icon.png",
+      "source": "hud_relationship.png",
+      "source_rect": [
+        21,
+        5,
+        80,
+        53
+      ],
+      "size": [
+        59,
+        48
+      ],
+      "sha256": "57811fd5978c0d1006453136a7bc1a0201c96d5c6041d7a7f50469c20d4d4940"
+    },
+    {
+      "file": "journal-outer.png",
+      "source": "relation_outer.png",
+      "size": [
+        1112,
+        573
+      ],
+      "erase": [
+        [
+          48,
+          61,
+          1080,
+          557
+        ],
+        [
+          441,
+          0,
+          663,
+          24
+        ]
+      ],
+      "method": "locked_source_with_single_coherent_fill",
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "e5174e3fbbb59da28534c312d9c839e4bb65ee0aee1f1eb598f9fda7961e5d04"
+    },
+    {
+      "file": "journal-title.png",
+      "source": "relation_title.png",
+      "size": [
+        222,
+        60
+      ],
+      "erase": [
+        [
+          40,
+          9,
+          185,
+          49
+        ]
+      ],
+      "method": "locked_source_with_single_coherent_fill",
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "fc840c73ab032429f30cc3adf8618b9bf66c92809d97ee362328f22691bd32b2"
+    },
+    {
+      "file": "journal-selected-row.png",
+      "source": "relation_selected.png",
+      "size": [
+        262,
+        136
+      ],
+      "erase": [
+        [
+          7,
+          8,
+          146,
+          127
+        ],
+        [
+          158,
+          45,
+          246,
+          97
+        ]
+      ],
+      "method": "locked_source_with_single_coherent_fill",
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "244fcf16db164cf3c167daae09ac8162c80015d4e4f06f49b3bce4e97e851369"
+    },
+    {
+      "file": "journal-normal-row.png",
+      "source": "relation_normal.png",
+      "size": [
+        262,
+        139
+      ],
+      "erase": [
+        [
+          10,
+          8,
+          145,
+          127
+        ],
+        [
+          157,
+          44,
+          244,
+          99
+        ]
+      ],
+      "method": "locked_source_with_single_coherent_fill",
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "095a7a3c5859f55236d57f647301ea641157920c78d0822ed612a3257263870c"
+    },
+    {
+      "file": "journal-thumbnail-paper.png",
+      "size": [
+        139,
+        119
+      ],
+      "method": "single_coherent_whole_piece",
+      "sha256": "cf25abf291787bb0a3609d58678316303f9c13ad7a39632e80b00d841b8073ca"
+    },
+    {
+      "file": "journal-portrait-paper.png",
+      "source": "relation_portrait.png",
+      "size": [
+        320,
+        465
+      ],
+      "erase": [
+        [
+          20,
+          18,
+          300,
+          445
+        ]
+      ],
+      "method": "locked_source_with_single_coherent_fill",
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "423bb615805010ff43c9ec117bcb580a3f0a5311c0aa43198f89720417059fdd"
+    },
+    {
+      "file": "journal-detail-paper.png",
+      "source": "relation_detail.png",
+      "size": [
+        425,
+        484
+      ],
+      "erase": [
+        [
+          32,
+          26,
+          359,
+          79
+        ],
+        [
+          42,
+          110,
+          330,
+          281
+        ],
+        [
+          34,
+          313,
+          373,
+          384
+        ],
+        [
+          285,
+          438,
+          398,
+          484
+        ]
+      ],
+      "method": "locked_source_with_single_coherent_fill",
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "454890c8146a148d9630bb8e708364b8acc94d63dcb1eb6dc1687a12c91db581"
+    },
+    {
+      "file": "journal-close.png",
+      "source": "relation_close.png",
+      "size": [
+        103,
+        55
+      ],
+      "erase": [
+        [
+          25,
+          11,
+          83,
+          48
+        ]
+      ],
+      "method": "locked_source_with_single_coherent_fill",
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "86654d67b28d27a27171415b53305f7729d5a7234ddcd3b78516c49881342265"
+    },
+    {
+      "file": "recipe-outer.png",
+      "source": "recipe_outer.png",
+      "size": [
+        1135,
+        571
+      ],
+      "erase": [
+        [
+          24,
+          41,
+          350,
+          502
+        ],
+        [
+          358,
+          104,
+          1121,
+          465
+        ],
+        [
+          945,
+          501,
+          1090,
+          571
+        ],
+        [
+          453,
+          0,
+          675,
+          24
+        ]
+      ],
+      "method": "locked_source_with_single_coherent_fill",
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "e25e6c4a68779f95fb3f9a6933c364bbb7c921197d7090740b1abae339839a2f"
+    },
+    {
+      "file": "recipe-title.png",
+      "source": "recipe_title.png",
+      "size": [
+        222,
+        62
+      ],
+      "erase": [
+        [
+          66,
+          16,
+          159,
+          51
+        ]
+      ],
+      "method": "locked_source_with_single_coherent_fill",
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "e7cb84f29e5bbe66b871a1ef5d33a63cb0ce028c43ea9528d57905e8e7aa8888"
+    },
+    {
+      "file": "recipe-heading.png",
+      "source": "recipe_heading.png",
+      "size": [
+        261,
+        54
+      ],
+      "erase": [
+        [
+          81,
+          10,
+          208,
+          43
+        ]
+      ],
+      "method": "locked_source_with_single_coherent_fill",
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "ea42957276a4fc9aa20719e9b8b97ab69cac3a6efa82447a8de56e8facae17db"
+    },
+    {
+      "file": "recipe-selected-row.png",
+      "source": "recipe_selected.png",
+      "size": [
+        278,
+        111
+      ],
+      "erase": [
+        [
+          40,
+          13,
+          115,
+          99
+        ],
+        [
+          130,
+          26,
+          231,
+          79
+        ]
+      ],
+      "method": "locked_source_with_single_coherent_fill",
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "32596f63e70ed0f2f73e015ee1b39a4637462b49ea5fcc67b306b307aa7288c1"
+    },
+    {
+      "file": "recipe-normal-row.png",
+      "source": "recipe_normal.png",
+      "size": [
+        278,
+        115
+      ],
+      "erase": [
+        [
+          36,
+          12,
+          119,
+          100
+        ],
+        [
+          124,
+          32,
+          221,
+          81
+        ]
+      ],
+      "method": "locked_source_with_single_coherent_fill",
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "f238378fe36c5fb7e7cd61a0cdacd8ee4eb71c5590861d2350ca5e473068d668"
+    },
+    {
+      "file": "recipe-close.png",
+      "source": "recipe_close.png",
+      "size": [
+        117,
+        56
+      ],
+      "erase": [
+        [
+          23,
+          10,
+          97,
+          50
+        ]
+      ],
+      "method": "locked_source_with_single_coherent_fill",
+      "visible_source_exact_fraction": 1.0,
+      "sha256": "94e1b3c159b5e8f6acfcc70e8457f99990707f93a4964634add3d13875f36afc"
+    },
+    {
+      "file": "recipe-divider.png",
+      "source": "recipe_divider.png",
+      "source_rect": [
+        0,
+        0,
+        50,
+        490
+      ],
+      "size": [
+        50,
+        490
+      ],
+      "sha256": "6d98623d532f621ee8f72c590affdcb5acd279ad9c1f12fefd42e45c220dd9a8"
+    },
+    {
+      "file": "recipe-arrow.png",
+      "source": "recipe_arrow.png",
+      "source_rect": [
+        0,
+        0,
+        49,
+        43
+      ],
+      "size": [
+        49,
+        43
+      ],
+      "sha256": "0a174e943eefc995109e703c8dc2a549b81b3ab1b3e68830127ca411b4a7ce72"
+    }
+  ]
+}

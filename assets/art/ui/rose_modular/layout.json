@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "assets": {
+    "paper_tile": {
+      "path": "paper_tile.png",
+      "region": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "logical_width": 128,
+      "mirror_repeat": true
+    },
+    "back_tile": {
+      "path": "back_tile.png",
+      "region": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "logical_width": 128,
+      "mirror_repeat": true
+    },
+    "paper_border": {
+      "path": "paper_border.png",
+      "region": [
+        64,
+        74,
+        1128,
+        1110
+      ],
+      "source_margins": [
+        150,
+        150,
+        150,
+        150
+      ]
+    },
+    "slip_border": {
+      "path": "slip_border.png",
+      "region": [
+        58,
+        78,
+        1140,
+        1105
+      ],
+      "source_margins": [
+        180,
+        180,
+        180,
+        180
+      ]
+    }
+  },
+  "roles": {
+    "card": {
+      "border": "paper_border",
+      "tile": "paper_tile",
+      "border_thickness": 9,
+      "tile_width": 96,
+      "fill_overlap": 1,
+      "front_insets": [2, 3, 2, 3],
+      "back_border": "slip_border",
+      "backing_rects": [
+        {"insets": [0, 8, 0, 8], "offset": [0, -1]},
+        {"insets": [8, 0, 8, 0], "offset": [1, 0]}
+      ]
+    },
+    "dialogue": {
+      "border": "paper_border",
+      "tile": "paper_tile",
+      "border_thickness": 16,
+      "tile_width": 128,
+      "fill_overlap": 1,
+      "front_insets": [0, 12, 0, 12],
+      "back_border": "slip_border",
+      "backing_rects": [
+        {"insets": [10, 0, 10, 2], "offset": [-2, 0]},
+        {"insets": [10, 2, 10, 0], "offset": [2, 0]}
+      ]
+    },
+    "panel": {
+      "border": "paper_border",
+      "tile": "paper_tile",
+      "border_thickness": 16,
+      "tile_width": 128,
+      "fill_overlap": 1,
+      "front_insets": [0, 12, 0, 12],
+      "back_border": "slip_border",
+      "backing_rects": [
+        {"insets": [10, 0, 10, 2], "offset": [-2, 0]},
+        {"insets": [10, 2, 10, 0], "offset": [2, 0]}
+      ]
+    },
+    "label": {
+      "border": "slip_border",
+      "tile": "paper_tile",
+      "border_thickness": 6,
+      "tile_width": 96,
+      "fill_overlap": 1,
+      "backings": [],
+      "tint": "f5dfda"
+    },
+    "button": {
+      "border": "slip_border",
+      "tile": "paper_tile",
+      "border_thickness": 7,
+      "tile_width": 96,
+      "fill_overlap": 1,
+      "backings": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "back": {
+      "border": "slip_border",
+      "tile": "back_tile",
+      "border_thickness": 8,
+      "tile_width": 128,
+      "fill_overlap": 1,
+      "backings": []
+    }
+  }
+}

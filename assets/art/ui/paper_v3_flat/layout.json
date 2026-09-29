@@ -1,0 +1,38 @@
+{
+  "card_face": {
+    "region": [
+      61,
+      71,
+      863,
+      1475
+    ],
+    "source_size": [
+      979,
+      1606
+    ]
+  },
+  "dialogue_button": {
+    "region": [
+      107,
+      178,
+      1770,
+      437
+    ],
+    "source_size": [
+      1983,
+      793
+    ]
+  },
+  "dialogue_panel": {
+    "region": [
+      77,
+      225,
+      1922,
+      355
+    ],
+    "source_size": [
+      2073,
+      758
+    ]
+  }
+}

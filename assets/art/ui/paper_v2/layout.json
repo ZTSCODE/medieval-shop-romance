@@ -1,0 +1,290 @@
+{
+  "arrow": {
+    "region": [
+      130,
+      100,
+      1310,
+      774
+    ],
+    "source_size": [
+      1536,
+      1024
+    ]
+  },
+  "button_hover": {
+    "region": [
+      68,
+      127,
+      2039,
+      482
+    ],
+    "source_size": [
+      2172,
+      724
+    ]
+  },
+  "button": {
+    "region": [
+      69,
+      130,
+      2036,
+      476
+    ],
+    "source_size": [
+      2172,
+      724
+    ]
+  },
+  "card_frame": {
+    "region": [
+      28,
+      25,
+      927,
+      1556
+    ],
+    "source_size": [
+      980,
+      1605
+    ]
+  },
+  "checkbox_off": {
+    "region": [
+      375,
+      401,
+      517,
+      489
+    ],
+    "source_size": [
+      1254,
+      1254
+    ]
+  },
+  "checkbox_on": {
+    "region": [
+      374,
+      401,
+      519,
+      490
+    ],
+    "source_size": [
+      1254,
+      1254
+    ]
+  },
+  "close": {
+    "region": [
+      223,
+      231,
+      814,
+      785
+    ],
+    "source_size": [
+      1254,
+      1254
+    ]
+  },
+  "dialogue_panel": {
+    "region": [
+      15,
+      29,
+      2145,
+      674
+    ],
+    "source_size": [
+      2172,
+      724
+    ]
+  },
+  "hud_panel": {
+    "region": [
+      25,
+      56,
+      2122,
+      617
+    ],
+    "source_size": [
+      2168,
+      725
+    ]
+  },
+  "main_menu_bg": {
+    "region": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "source_size": [
+      1672,
+      941
+    ]
+  },
+  "main_menu_panel": {
+    "region": [
+      23,
+      3,
+      1051,
+      1443
+    ],
+    "source_size": [
+      1086,
+      1448
+    ]
+  },
+  "market_panel": {
+    "region": [
+      30,
+      43,
+      2116,
+      660
+    ],
+    "source_size": [
+      2172,
+      724
+    ]
+  },
+  "name_panel": {
+    "region": [
+      5,
+      16,
+      1436,
+      1050
+    ],
+    "source_size": [
+      1448,
+      1086
+    ]
+  },
+  "pause_panel": {
+    "region": [
+      14,
+      4,
+      1096,
+      1393
+    ],
+    "source_size": [
+      1122,
+      1402
+    ]
+  },
+  "people_panel": {
+    "region": [
+      43,
+      44,
+      1040,
+      1311
+    ],
+    "source_size": [
+      1122,
+      1402
+    ]
+  },
+  "portrait_frame": {
+    "region": [
+      69,
+      91,
+      949,
+      1274
+    ],
+    "source_size": [
+      1086,
+      1448
+    ]
+  },
+  "progress_fill": {
+    "region": [
+      58,
+      265,
+      2062,
+      199
+    ],
+    "source_size": [
+      2172,
+      724
+    ]
+  },
+  "progress_track": {
+    "region": [
+      33,
+      274,
+      2098,
+      220
+    ],
+    "source_size": [
+      2172,
+      724
+    ]
+  },
+  "recipes_panel": {
+    "region": [
+      25,
+      16,
+      1075,
+      1356
+    ],
+    "source_size": [
+      1122,
+      1402
+    ]
+  },
+  "save_panel": {
+    "region": [
+      18,
+      9,
+      1093,
+      1385
+    ],
+    "source_size": [
+      1122,
+      1402
+    ]
+  },
+  "settings_panel": {
+    "region": [
+      38,
+      27,
+      1071,
+      1343
+    ],
+    "source_size": [
+      1122,
+      1402
+    ]
+  },
+  "slider_knob": {
+    "region": [
+      262,
+      264,
+      731,
+      726
+    ],
+    "source_size": [
+      1254,
+      1254
+    ]
+  },
+  "tab": {
+    "region": [
+      90,
+      219,
+      1616,
+      480
+    ],
+    "source_size": [
+      1774,
+      887
+    ]
+  },
+  "table_background": {
+    "region": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "source_size": [
+      1672,
+      941
+    ]
+  }
+}

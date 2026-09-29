@@ -1,0 +1,18 @@
+{
+  "generator": "built-in imagegen",
+  "source": "C:/Users/ZTCUS/.codex/generated_images/01a0b62c-ad7d-75d3-935d-89221a6aba54/exec-db00a025-5542-455d-a04c-60eb580889c1.png",
+  "asset": "assets/art/ui/ebb_crayon/recipe-icon-v2.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha": {
+    "transparent": 1305623,
+    "partial": 264963,
+    "opaque": 1930,
+    "border_nonzero": 1,
+    "page_sample": 0
+  },
+  "prompt": "Minimal warm ivory chalk/crayon open recipe book outline, one small leaf glyph and two short recipe strokes, transparent background, no text, no panel, no shadow. Cleaned with imagegen to remove filled page texture while preserving line silhouette.",
+  "postprocess": "none; byte-identical copy of generated PNG"
+}

@@ -1,0 +1,82 @@
+{
+  "axis-paper-candidate-v2.png": {
+    "size": [
+      748,
+      2103
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      46,
+      39,
+      705,
+      2062
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 253
+  },
+  "recipe-button-candidate-v2.png": {
+    "size": [
+      1221,
+      1288
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      49,
+      55,
+      1172,
+      1237
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 252
+  },
+  "relationship-button-candidate-v2.png": {
+    "size": [
+      1221,
+      1288
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      43,
+      18,
+      1188,
+      1266
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 252
+  },
+  "avatar-frame-candidate-v2.png": {
+    "size": [
+      948,
+      1659
+    ],
+    "mode": "RGBA",
+    "alpha_bbox_128": [
+      31,
+      21,
+      921,
+      1638
+    ],
+    "corner_alpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "center_alpha": 253
+  }
+}
