@@ -66,8 +66,17 @@ func freeze_camera_transition(value: bool) -> void:
 
 
 func _ready() -> void:
+	add_to_group("click_particle_stage")
 	_ensure_nodes()
 	refresh_camera()
+
+
+func can_emit_click_dust(screen: Vector2) -> bool:
+	if not _active or get_tree().paused or _menu_view or not _effective_rect.has_point(screen):
+		return false
+	# Reuse the table's existing UI exclusion policy instead of duplicating it.
+	var context := get_parent()
+	return not context.has_method("_pointer_blocked") or not context.call("_pointer_blocked", screen)
 
 
 func configure(value: Rect2, model: TableCamera) -> void:

@@ -87,7 +87,7 @@ func _run() -> void:
 	var meadow_material := board_surface.get_surface_override_material(0) as ShaderMaterial
 	var board_material := board_surface.get_surface_override_material(1) as ShaderMaterial
 	_check("plain support slab does not cover the sculpted painted surface", not board_slab.visible)
-	_check("board and meadow retain the current dark forest textures", (board_material.get_shader_parameter("grain") as Texture2D).resource_path.ends_with("earth-tile.png") and (meadow_material.get_shader_parameter("grain") as Texture2D).resource_path.ends_with("forest-floor-tile.png"))
+	_check("board uses the retained wood texture and meadow remains unchanged", (board_material.get_shader_parameter("grain") as Texture2D).resource_path.ends_with("board-wood-retained.png") and (meadow_material.get_shader_parameter("grain") as Texture2D).resource_path.ends_with("forest-floor-tile.png"))
 	_check("board texture is no longer suppressed by a gray blue tint", (board_material.get_shader_parameter("surface_tint") as Color).is_equal_approx(Color.WHITE))
 	print("EDITABLE_ENVIRONMENT_SUITE: %d checks, %d failures" % [checks, failures])
 	quit(0 if failures == 0 else 1)

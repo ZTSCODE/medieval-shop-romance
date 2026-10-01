@@ -79,7 +79,7 @@ func _run() -> void:
 	cursor.spawn_click_particles(Vector2(120, 90))
 	await process_frame
 	_check("click particles spawn", cursor.particle_count() == 1)
-	await create_timer(0.36).timeout
+	await create_timer(cursor.CLICK_SPARK.CLEANUP_DEADLINE + 0.1).timeout
 	_check("click particles finish", cursor.particle_count() == 0)
 	var right_click := InputEventMouseButton.new()
 	right_click.button_index = MOUSE_BUTTON_RIGHT
@@ -93,7 +93,7 @@ func _run() -> void:
 	_check("right drag uses drag state", cursor.is_dragging_visual())
 	cursor._sync_pointer_state(false, right_click.position)
 	await process_frame
-	await create_timer(0.36).timeout
+	await create_timer(cursor.CLICK_SPARK.CLEANUP_DEADLINE + 0.1).timeout
 	_check("right click particles finish", cursor.particle_count() == 0)
 	var middle_press := InputEventMouseButton.new()
 	middle_press.button_index = MOUSE_BUTTON_MIDDLE

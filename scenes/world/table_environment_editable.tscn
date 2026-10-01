@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" path="res://assets/models/terrain/board-terrain-user-v1.res" id="1_61dps"]
 [ext_resource type="Shader" uid="uid://dswnd5joay30h" path="res://assets/shaders/painterly_tiling.gdshader" id="2_f8kjb"]
 [ext_resource type="Texture2D" uid="uid://dni48mwe5xd2g" path="res://assets/art/forest_rebuild/forest-floor-tile.png" id="3_fdohl"]
-[ext_resource type="Texture2D" uid="uid://bkcxame0s2ecs" path="res://assets/art/forest_rebuild/earth-tile.png" id="4_g5ivu"]
+[ext_resource type="Texture2D" path="res://assets/art/forest_rebuild/board-wood-retained.png" id="4_g5ivu"]
 [ext_resource type="Texture2D" uid="uid://t3pl81p5b0ue" path="res://assets/art/forest_rebuild/wood-rim-tile.png" id="5_pdkel"]
 [ext_resource type="Texture2D" uid="uid://bi3kklk5l42jq" path="res://assets/art/forest_rebuild/distant-river.png" id="6_a6ft1"]
 [ext_resource type="Script" uid="uid://cq0mjo8jaossh" path="res://scripts/view/table_grass_paint_surface_3d.gd" id="7_ro54l"]
