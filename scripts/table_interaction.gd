@@ -3,6 +3,7 @@ extends Node
 
 signal dialogue_requested(npc_id: String)
 signal stack_combined(stack_id: String)
+signal camera_gesture(kind: StringName, amount: float)
 
 var chapter_runtime: ChapterRuntime
 
@@ -41,6 +42,7 @@ var simulation_paused := false
 var pointer_blocked := Callable()
 var shop: ShopSession
 var opening: OpeningFlow
+var exploration: LocationExploration
 var progress: PlayerProgress
 var full_table_mode := false
 var customer_lane: CustomerLane
@@ -181,6 +183,7 @@ func _input(event: InputEvent) -> void:
 		mouse_screen = event.position
 		if panning:
 			camera.pan(event.relative)
+			camera_gesture.emit(&"pan", event.relative.length())
 			get_viewport().set_input_as_handled()
 		elif not pressed_id.is_empty():
 			if dragging_id.is_empty() and press_at.distance_to(event.position) >= DRAG_THRESHOLD:
@@ -210,6 +213,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP or event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			camera.zoom_at(event.position, 1.12 if event.button_index == MOUSE_BUTTON_WHEEL_UP else 1.0 / 1.12)
+			camera_gesture.emit(&"zoom", 1.0)
 		elif event.button_index == MOUSE_BUTTON_MIDDLE or (event.button_index == MOUSE_BUTTON_LEFT and Input.is_key_pressed(KEY_SPACE)):
 			_begin_pan(event.button_index)
 		elif event.button_index in [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGHT]:
@@ -768,6 +772,8 @@ func _sync_stack_progress() -> void:
 			progress = clampf(float(conversation_preparation.elapsed) / CONVERSATION_PREPARE_SECONDS, 0.0, 1.0)
 	if not id.is_empty():
 		rows.append({"stack_id": id, "progress": progress})
+	if exploration != null:
+		rows.append_array(exploration.work_progress())
 	if chapter_runtime != null:
 		rows.append_array(chapter_runtime.work_progress())
 	while _extra_stack_progress.size() < maxi(0, rows.size() - 1):

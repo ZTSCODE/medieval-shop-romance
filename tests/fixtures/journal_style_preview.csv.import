@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://drxhpgnklkr6k"
+
+[deps]
+
+files=["res://tests/fixtures/journal_style_preview.zh_CN.translation", "res://tests/fixtures/journal_style_preview.en.translation"]
+
+source_file="res://tests/fixtures/journal_style_preview.csv"
+dest_files=["res://tests/fixtures/journal_style_preview.zh_CN.translation", "res://tests/fixtures/journal_style_preview.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -47,7 +47,7 @@ static func apply_art(view: TableCardView, kind: StringName) -> void:
 		_art_specs[kind] = {
 			"texture": GameArt.texture(String(definition.get("art_path", ""))),
 			"region": region,
-			"portrait": definition.get("category", "") == "character",
+			"portrait": definition.get("art_is_portrait", definition.get("category", "") == "character"),
 			"currency": kind == &"coin",
 			"fit": StringName(definition.get("art_fit", "cover")),
 		}

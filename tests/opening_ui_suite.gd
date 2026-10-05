@@ -15,6 +15,9 @@ func _initialize() -> void:
 
 
 func _run() -> void:
+	# 本测试只检查底部文字框模式：用固定的四页数据，不受正式内容（含全屏序幕页）影响。
+	ContentCatalog.opening_definition()
+	ContentCatalog._base_data.opening = {"pages": ["OPENING_PAGE_1", "OPENING_PAGE_2", "OPENING_PAGE_3", "OPENING_PAGE_4"], "title_key": "OPENING_FOG_TITLE"}
 	var test_root := "res://work/opening-ui-%d" % OS.get_process_id()
 	var settings := GameSettings.new(test_root.path_join("settings.cfg"))
 	var store := SaveStore.new(test_root.path_join("saves"))

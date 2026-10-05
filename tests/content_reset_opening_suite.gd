@@ -4,6 +4,7 @@ var checks := 0
 var failures := 0
 
 func _initialize() -> void:
+	_use_empty_catalog()
 	var flow := OpeningFlow.new()
 	var table := TableState.new()
 	flow.start(table)
@@ -73,3 +74,11 @@ func _check(passed: bool) -> void:
 	if not passed:
 		failures += 1
 		push_error("Content reset opening check %d failed" % checks)
+
+
+# 本测试审计“空内容基座”的行为：先换成空目录，不受正式内容影响。
+func _use_empty_catalog() -> void:
+	var base := {"version": 1, "content_generation": ContentCatalog.content_generation(), "cards": {}, "recipes": {}, "npcs": {}, "stories": {}, "events": {}, "opening": {}, "initial_cards": []}
+	ContentCatalog._registry.configure_base(base)
+	ContentCatalog._base_data = base
+	ContentCatalog._data = ContentCatalog._registry.catalog()

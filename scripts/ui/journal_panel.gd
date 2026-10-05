@@ -321,7 +321,7 @@ func _relationship_stage_key(relationship: Dictionary) -> String:
 
 func _entry_texture(id: String) -> Texture2D:
 	if journal_kind != "recipes":
-		return GameArt.portrait(id)
+		return GameArt.card_face(id)
 	var recipe := ContentCatalog.recipe_definition(id)
 	for key: String in ["outputs", "inputs", "reusable"]:
 		var parts: Array = recipe.get(key, [])

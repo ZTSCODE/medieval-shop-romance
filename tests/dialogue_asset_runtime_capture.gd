@@ -22,7 +22,7 @@ class PreviewFlow extends DialogueFlow:
 
 var app: Node
 var failures := 0
-const OUTPUT := "res://outputs/dialogue-ui-20260929"
+const OUTPUT := "res://outputs/dialogue-wide-20261003"
 
 func _initialize() -> void:
 	_run.call_deferred()
@@ -60,7 +60,7 @@ func _run() -> void:
 	_check("native texture bound", ui.text_panel.get_theme_stylebox("panel").get_script().resource_path.ends_with("reference_dialogue_paper.gd"))
 	_check("isolated save profile", app.qa_mode and app.save_store.directory.contains("qa-profile"))
 	_check("single nameplate and botanical decoration", not ui._speaker_tab.visible and not ui._leaf.visible)
-	_check("reference screen width", ui.text_panel.size.x / ui._root.size.x < 0.37)
+	_check("dialogue at least twice previous width", ui.text_panel.size.x / UiScale.reference_size(ui._root).x >= 1340.0 / 1672.0 - 0.001)
 	_check("compact panel keeps text space", ui._content.size.y >= 24)
 	await _shot("01-dialogue-in-game-1600x900.png")
 	if "--preview-hold" in OS.get_cmdline_user_args():
@@ -92,5 +92,14 @@ func _check(label: String, ok: bool) -> void:
 		failures += 1
 
 func _shot(filename: String) -> void:
+	app.opening_overlay.hide_all()
+	app.opening_overlay.hide()
 	await RenderingServer.frame_post_draw
-	_check("capture " + filename, root.get_texture().get_image().save_png(OUTPUT.path_join(filename)) == OK)
+	var image := root.get_texture().get_image()
+	if image.get_format() not in [Image.FORMAT_RGB8, Image.FORMAT_RGBA8]:
+		var display := Image.create(image.get_width(), image.get_height(), false, Image.FORMAT_RGB8)
+		for y in image.get_height():
+			for x in image.get_width():
+				display.set_pixel(x, y, image.get_pixel(x, y).linear_to_srgb())
+		image = display
+	_check("capture " + filename, image.save_png(OUTPUT.path_join(filename)) == OK)

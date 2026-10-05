@@ -1,0 +1,10 @@
+[
+  {
+    "path": "assets/video/opening/opening_film.ogv",
+    "bytes": 431777690,
+    "sha256": "ae2267462c0ce985227457270b9aafc96d2ba2008dae9313c8fdbf0119d6dd92",
+    "transport": "github-release-asset",
+    "release_tag": "sync-dot-20261005-055546",
+    "asset_name": "opening_film.ogv"
+  }
+]

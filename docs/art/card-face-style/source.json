@@ -1,0 +1,29 @@
+{
+  "source_prompts": [
+    "outputs/ui-travel-paper-20260919/prompts/A-table.txt",
+    "outputs/ui-travel-paper-20260919/prompts/B-relations.txt",
+    "outputs/ui-travel-paper-20260919/prompts/C-recipes.txt"
+  ],
+  "references": [
+    {
+      "file": "reference-1.png",
+      "sha256": "7615EF027FE236B1759CFA3DF537F43DB0FE3D529BFE03FD7BB896AEB2D251CE"
+    },
+    {
+      "file": "reference-2.png",
+      "sha256": "AE2A765C45AD0FEE23DD42B252502910BE87856E6038C8394211C6455C03D345"
+    },
+    {
+      "file": "reference-3.png",
+      "sha256": "CE952575232984B837A73A1B3B443130A125AA94978BE7420926FE4BA7F41766"
+    },
+    {
+      "file": "reference-4.png",
+      "sha256": "96D6147AE33EF0ED00B808F99443EA82728B3DBB178E682789A4127ED0BDEF06"
+    }
+  ],
+  "source_thread": "01a0b652-d210-7a82-b9c9-79ed5250570c",
+  "adaptation": "只修改交付形态为独立卡面及主题；复用原风格、原四张参考。无立绘或被否决的生图参考。",
+  "backup": "outputs/painted-card-faces-20261004/backup-art-before-original-style",
+  "source_title": "转换人物为参考图风格 (31)"
+}

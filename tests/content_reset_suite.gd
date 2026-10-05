@@ -10,6 +10,7 @@ var checks := 0
 var failures := 0
 
 func _initialize() -> void:
+	_use_empty_catalog()
 	var state := TableState.new()
 	var shop := ShopSession.new()
 	shop.state = state
@@ -212,3 +213,11 @@ func _test_contact_rules() -> void:
 	ContentCatalog._base_data.runtime_rules.contact_visits.probe.interest_facts = ["fact.probe.first", "fact.probe.first"]
 	check(ChapterSnapshot._contact_interest_error(table, story) == "invalid_contact_visit_interests", "configured_interests_must_be_distinct")
 	ContentCatalog._base_data = base
+
+
+# 本测试审计“空内容基座”的行为：先换成空目录，不受正式内容影响。
+func _use_empty_catalog() -> void:
+	var base := {"version": 1, "content_generation": ContentCatalog.content_generation(), "cards": {}, "recipes": {}, "npcs": {}, "stories": {}, "events": {}, "opening": {}, "initial_cards": []}
+	ContentCatalog._registry.configure_base(base)
+	ContentCatalog._base_data = base
+	ContentCatalog._data = ContentCatalog._registry.catalog()

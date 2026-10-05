@@ -63,6 +63,14 @@ func advance_intro() -> void:
 	changed.emit()
 
 
+# 一次读完序幕剩下的全部页面：开场动画播完或被跳过时用，结果与逐页读完相同。
+func finish_intro() -> void:
+	if stage != &"intro":
+		return
+	intro_index = maxi(intro_page_count() - 1, 0)
+	advance_intro()
+
+
 func advance(delta: float, suspended: bool = false) -> void:
 	if stage != &"explore" or state == null:
 		return

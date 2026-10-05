@@ -1,0 +1,15 @@
+Recovered source: codex://threads/01a0b652-d210-7a82-b9c9-79ed5250570c, "转换人物为参考图风格 (31)".
+Original prompts: outputs/ui-travel-paper-20260919/prompts/A-table.txt and B-relations.txt.
+Use ONLY the four original reference images in outputs/ui-travel-paper-20260919/references/reference-1.png through reference-4.png. No existing character full portrait and no previously generated card-face images as references.
+
+Reuse the original visual grammar and wording:
+"soft matte painted map colors", "opaque gouache, short dry-brush dashes, flat simplified trees and soft muted blue foliage like reference 1";
+"Faces calm simplified and hand painted; graphic shapes not detailed anime";
+"economical folk-art gouache manner";
+"flat gouache understatement, slight organic imperfect edges, sparse brown linework, delicate brush texture and subtle value separation";
+"light grey-sage, cool creamy paper, desaturated blue-green, small terracotta red accents. Color temperature neutral, no yellow filter";
+"quiet negative space", "tactile, naive, gently irregular, quietly poetic; restrained and readable".
+No heavy black comic outlines, dramatic chiaroscuro, bold cel shading, sharp anime rendering, metallic effects, gloss, gradients, logos, words, card frame or UI.
+
+Adapt ONLY deliverable and subject: one standalone vertical 2:3 card illustration filling an opaque rectangular background. Character card faces show a head-and-neck portrait, not body, with pale muted foliage background. Preserve nuanced fine short brush marks in quiet flat color areas as in original references: no dense chipped speckles, thick impasto, black contour drawing, or artificial all-over grain. Do not exaggerate eyes into long cartoon pill-shapes. Do not add detailed anatomy, individual hair strands or dense scenery. Complete background painted in this same restrained manner, with enough calm space to read the principal subject when displayed as a small card.
+

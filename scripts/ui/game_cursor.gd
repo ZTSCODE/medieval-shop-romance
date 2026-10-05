@@ -5,6 +5,7 @@ const HOVER_SOURCE = preload("res://assets/art/ui/hand_cursor/hover.png")
 const PRESSED_SOURCE = preload("res://assets/art/ui/hand_cursor/pressed.png")
 const DRAG_SOURCE = preload("res://assets/art/ui/hand_cursor/drag.png")
 const CLICK_SPARK = preload("res://scripts/ui/cursor_click_spark.gd")
+const MAX_CLICK_BURSTS := 16
 const SOURCE_SIZE := 256
 const SOURCE_HOTSPOT := Vector2(24, 24)
 const SOURCE_DRAG_HOTSPOT := Vector2(24, 24)
@@ -30,7 +31,6 @@ var _particle_layer: CanvasLayer
 var _cursor_layer: CanvasLayer
 var _cursor_sprite: Sprite2D
 var _previous_mouse_mode := Input.MOUSE_MODE_VISIBLE
-var _click_serial := 0
 var _child_windows: Array[Window] = []
 var _native_window_cursor := false
 var _native_cursor_state := -1
@@ -127,14 +127,17 @@ func current_textures() -> Array[Texture2D]:
 func spawn_click_particles(at: Vector2) -> void:
 	if _particle_layer == null:
 		return
+	var stage := get_tree().get_first_node_in_group("click_particle_stage")
+	if get_tree().paused or (stage != null and stage.has_method("can_emit_click_dust") and not stage.can_emit_click_dust(at)):
+		return
+	# Bound rapid input to 624 simulated particles; the overlay never handles input.
+	while _particle_layer.get_child_count() >= MAX_CLICK_BURSTS:
+		var oldest := _particle_layer.get_child(0)
+		_particle_layer.remove_child(oldest)
+		oldest.queue_free()
 	var spark = CLICK_SPARK.new()
 	_particle_layer.add_child(spark)
-	_click_serial += 1
-	var phase := -0.18 + float(_click_serial % 3 - 1) * 0.08
-	var canvas_scale := get_viewport().get_final_transform().get_scale()
-	var canvas_to_screen := maxf(0.1, minf(absf(canvas_scale.x), absf(canvas_scale.y)))
-	var visual_scale := float(_cursor_size) / BASE_CURSOR_SIZE / canvas_to_screen
-	spark.setup(at, visual_scale, phase)
+	spark.setup(at, stage)
 
 
 func particle_count() -> int:

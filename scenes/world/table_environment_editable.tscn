@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" path="res://assets/models/terrain/board-terrain-user-v1.res" id="1_61dps"]
 [ext_resource type="Shader" uid="uid://dswnd5joay30h" path="res://assets/shaders/painterly_tiling.gdshader" id="2_f8kjb"]
 [ext_resource type="Texture2D" uid="uid://dni48mwe5xd2g" path="res://assets/art/forest_rebuild/forest-floor-tile.png" id="3_fdohl"]
-[ext_resource type="Texture2D" uid="uid://bkcxame0s2ecs" path="res://assets/art/forest_rebuild/earth-tile.png" id="4_g5ivu"]
+[ext_resource type="Texture2D" uid="uid://hhypmg0iicjc" path="res://assets/art/forest_rebuild/board-wood-retained.png" id="4_g5ivu"]
 [ext_resource type="Texture2D" uid="uid://t3pl81p5b0ue" path="res://assets/art/forest_rebuild/wood-rim-tile.png" id="5_pdkel"]
 [ext_resource type="Texture2D" uid="uid://bi3kklk5l42jq" path="res://assets/art/forest_rebuild/distant-river.png" id="6_a6ft1"]
 [ext_resource type="Script" uid="uid://cq0mjo8jaossh" path="res://scripts/view/table_grass_paint_surface_3d.gd" id="7_ro54l"]
@@ -21,9 +21,17 @@
 [ext_resource type="Script" uid="uid://cvubpxcwvm2io" path="res://scripts/view/table_editor_preview_rig_3d.gd" id="19_preview"]
 [ext_resource type="Script" uid="uid://cwmsgspiwt0bp" path="res://scripts/view/table_manual_plant_3d.gd" id="20_manual"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldtju"]
-albedo_color = Color(0.1882353, 0.14509805, 0.11764706, 1)
-roughness = 0.95
+[sub_resource type="ShaderMaterial" id="StandardMaterial3D_ldtju"]
+render_priority = 0
+shader = ExtResource("2_f8kjb")
+shader_parameter/grain = ExtResource("4_g5ivu")
+shader_parameter/tile_size_meters = 6.0
+shader_parameter/surface_tint = Color(1, 1, 1, 1)
+shader_parameter/tone_gain = 0.58
+shader_parameter/unfolded_coordinates = false
+shader_parameter/local_coordinates = false
+shader_parameter/box_projection = true
+shader_parameter/grain_along_z = false
 
 [sub_resource type="BoxMesh" id="BoxMesh_yar7x"]
 size = Vector3(20.65591, 0.16, 14.200939)
@@ -34,6 +42,7 @@ shader = ExtResource("2_f8kjb")
 shader_parameter/grain = ExtResource("3_fdohl")
 shader_parameter/tile_size_meters = 4.0
 shader_parameter/surface_tint = Color(1, 1, 1, 1)
+shader_parameter/tone_gain = 1.0
 shader_parameter/unfolded_coordinates = false
 shader_parameter/local_coordinates = true
 
@@ -53,7 +62,23 @@ shader = ExtResource("2_f8kjb")
 shader_parameter/grain = ExtResource("5_pdkel")
 shader_parameter/tile_size_meters = 2.0
 shader_parameter/surface_tint = Color(1, 1, 1, 1)
+shader_parameter/tone_gain = 1.0
 shader_parameter/unfolded_coordinates = false
+shader_parameter/local_coordinates = false
+shader_parameter/box_projection = true
+shader_parameter/grain_along_z = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rimz"]
+render_priority = 0
+shader = ExtResource("2_f8kjb")
+shader_parameter/grain = ExtResource("5_pdkel")
+shader_parameter/tile_size_meters = 2.0
+shader_parameter/surface_tint = Color(1, 1, 1, 1)
+shader_parameter/tone_gain = 1.0
+shader_parameter/unfolded_coordinates = false
+shader_parameter/local_coordinates = false
+shader_parameter/box_projection = true
+shader_parameter/grain_along_z = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_05d7h"]
 size = Vector3(22.05591, 0.28, 0.72)
@@ -86,7 +111,6 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 
 [node name="BoardThickness" type="MeshInstance3D" parent="." unique_id=1493679233]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
-visible = false
 material_override = SubResource("StandardMaterial3D_ldtju")
 mesh = SubResource("BoxMesh_yar7x")
 
@@ -97,29 +121,25 @@ surface_material_override/1 = SubResource("ShaderMaterial_tquys")
 
 [node name="WoodRim0" type="MeshInstance3D" parent="." unique_id=1576893872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.055, -7.40047)
-visible = false
 material_override = SubResource("ShaderMaterial_m40u5")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_05d7h")
 
 [node name="WoodRim1" type="MeshInstance3D" parent="." unique_id=2088263243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.055, 7.40047)
-visible = false
 material_override = SubResource("ShaderMaterial_m40u5")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_qtqj7")
 
 [node name="WoodRim2" type="MeshInstance3D" parent="." unique_id=561152504]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.627955, -0.055, 0)
-visible = false
-material_override = SubResource("ShaderMaterial_m40u5")
+material_override = SubResource("ShaderMaterial_rimz")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_gcqid")
 
 [node name="WoodRim3" type="MeshInstance3D" parent="." unique_id=771153722]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.627955, -0.055, 0)
-visible = false
-material_override = SubResource("ShaderMaterial_m40u5")
+material_override = SubResource("ShaderMaterial_rimz")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_em8sn")
 
@@ -137,7 +157,7 @@ light_color = Color(0.65882355, 0.77254903, 0.9372549, 1)
 light_energy = 0.25
 
 [node name="DistantSkyWorldPlane" type="MeshInstance3D" parent="." unique_id=1640935641]
-transform = Transform3D(1.0, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, 0, -290, -212.21973)
+transform = Transform3D(1, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, 0, -290, -212.21973)
 material_override = SubResource("StandardMaterial3D_ui616")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_tkmps")

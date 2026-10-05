@@ -16,7 +16,7 @@ func get_frame_rect() -> Rect2:
 
 
 func get_portrait_placement() -> Dictionary:
-	var art := GameArt.portrait(subject_id)
+	var art := GameArt.card_face(subject_id)
 	if art == null:
 		return {"source": Rect2(), "destination": Rect2()}
 	var region := get_portrait_region()
@@ -28,7 +28,7 @@ func _draw() -> void:
 	var amount := press_feedback.amount if is_instance_valid(press_feedback) else 1.0
 	draw_set_transform(size * (1.0 - amount) * 0.5, 0.0, Vector2.ONE * amount)
 	preload("res://scripts/ui/hud_reference_paper.gd").draw_paper(get_canvas_item(), Rect2(Vector2.ZERO,size), "portrait")
-	var art := GameArt.portrait(subject_id)
+	var art := GameArt.card_face(subject_id)
 	if art != null:
 		var region := get_portrait_region()
 		var source := Rect2(region.position * art.get_size(), region.size * art.get_size())

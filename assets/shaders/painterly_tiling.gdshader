@@ -7,10 +7,24 @@ uniform vec4 surface_tint : source_color = vec4(1.0);
 uniform float tone_gain : hint_range(0.25, 1.25) = 1.0;
 uniform bool unfolded_coordinates = false;
 uniform bool local_coordinates = false;
+// 盒体逐面投影：顶/底面取 xz，侧面取长度×高度，避免单一 xz 投影在侧面或旋转后拉成条纹。
+uniform bool box_projection = false;
+// 盒体沿 z 方向延伸时（如左右边框）把木纹转到长度方向。
+uniform bool grain_along_z = false;
 varying vec2 surface_world;
 
 void vertex() {
 	surface_world = unfolded_coordinates ? UV : (local_coordinates ? VERTEX.xz : (MODEL_MATRIX * vec4(VERTEX, 1.0)).xz);
+	if (box_projection) {
+		vec3 facing = abs(NORMAL);
+		if (facing.y >= facing.x && facing.y >= facing.z) {
+			surface_world = grain_along_z ? VERTEX.zx : VERTEX.xz;
+		} else if (facing.x >= facing.z) {
+			surface_world = VERTEX.zy;
+		} else {
+			surface_world = VERTEX.xy;
+		}
+	}
 }
 
 void fragment() {

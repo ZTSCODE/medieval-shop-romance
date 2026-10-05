@@ -42,6 +42,7 @@ func _ready() -> void:
 	_paper.show_behind_parent = true
 	var recolor := preload("res://scripts/ui/ui_paper_palette.gd").button_material()
 	_paper.material = recolor
+	recolor.set_shader_parameter("linear_canvas", get_viewport().use_hdr_2d)
 	_visual.add_child(_paper)
 	_paper.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_theme_font_override("font", Typography.regular())

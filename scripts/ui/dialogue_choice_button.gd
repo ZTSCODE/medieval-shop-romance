@@ -35,6 +35,7 @@ func _ready() -> void:
 	focus_entered.connect(_update_selection)
 	focus_exited.connect(_update_selection)
 	preload("res://scripts/ui/paper_button_feedback.gd").bind(self)
+	preload("res://scripts/ui/dialogue_hover_paper.gd").bind(self, true)
 
 
 func fit_caption(value: String, width: float, font_size: int, ui_scale: float) -> float:

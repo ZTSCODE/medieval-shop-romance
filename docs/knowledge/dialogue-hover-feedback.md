@@ -1,0 +1,6 @@
+2026-10-03：对话框继续/完成、回复选项、开场继续入口增加专属纸张背景。短长背景分别由imagegen生成，保存于assets/art/ui/dialogue_20261003/hover-continue.png和hover-reply.png，已验证RGBA透明边并登记图片评价工具。dialogue_hover_paper负责0.12秒淡入、0.16秒淡出，仅hover/按住显示，禁用、隐藏和失去窗口焦点时清理；沿用PaperPressFeedback的0.97缩放与回弹，不改变命中区域。边缘依高度等比，中间按StyleBoxTexture TILE_FIT适配。
+测试tests/dialogue_hover_capture.gd采用隔离剧情和信号驱动检查，截图与check.log在outputs/dialogue-hover-20261003；idle、hover、press、release、disabled和继续/暂停/关闭检查全部通过。已检查短长背景游戏内截图。此测试未模拟完整物理鼠标移动路径。修改前脚本备份在该输出目录backup。
+2026-10-04：用户要求底纸与对话框明显区分并有独立叠放阴影；新增dialogue_hover_paper.gdshader，将原笔触明暗转换为浅暖灰纸色，正确适配HDR线性色彩；文字及箭头随背景淡入变为深褐色。继续按钮扩大至160×54参考尺寸并居中文案，开场入口一致；阴影沿同一alpha轮廓向右下偏移。截图及通过的交互检查在outputs/dialogue-hover-layered-20261004，旧版脚本已备份。
+2026-10-04后续：用户否决过白纸色与规则切角。短按钮重新以用户关闭按钮参考生成hover-paper-soft.png（RGBA，alpha>8 bbox273,140,1911,586），使用轻微纤维缺口和磨损边缘。短长按钮纸色压为中灰褐(0.67,0.635,0.555)，保留笔触亮度差异；短按钮单独标定reference_luma=0.65，回复=0.45。宽留白和阴影仍保留。备份及截图在outputs/dialogue-hover-paper-20261004。
+2026-10-04最终方向：用户要求hover底纸采用对话框顶部title区域风格。以dialogue-wide顶部灰红褐标签重新生成hover-title-paper.png，短长按钮统一使用此资源并按长度平铺适配，恢复浅色文字及箭头；取消浅灰褐重映射，保留源笔触并轻微校准颜色。保留宽留白、阴影和动画。备份、运行截图与日志在outputs/dialogue-hover-title-20261004。
+2026-10-04修正：用户要求同title样式但不同细节，不能复制标题标签。新资源hover-button-distinct.png改用横向宽笔触、不对称细微缺口与短段薄边，去掉title的深色磨损角；保留灰红褐纸感、按钮留白、阴影与动画。新alpha区域Rect2(44,162,2012,424)，短长入口共同适配。旧脚本备份及截图检查位于outputs/dialogue-hover-distinct-20261004。

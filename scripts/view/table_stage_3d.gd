@@ -7,10 +7,6 @@ const CANVAS_SIZE := Vector2i(3200, 2200)
 const CAMERA_GEOMETRY := preload("res://scripts/view/table_camera_geometry.gd")
 const PIXELS_PER_UNIT := CAMERA_GEOMETRY.PIXELS_PER_UNIT
 const CAMERA_FOV := CAMERA_GEOMETRY.FOV_DEGREES
-const CAMERA_ELEVATION := CAMERA_GEOMETRY.ELEVATION_DEGREES
-const TABLE_TEXTURE := "res://assets/art/forest_rebuild/earth-tile.png"
-const MEADOW_TEXTURE := "res://assets/art/forest_rebuild/forest-floor-tile.png"
-const SURFACE_SHADER := preload("res://assets/shaders/painterly_tiling.gdshader")
 const EDITABLE_TABLE_SCENE := preload("res://scenes/world/table_environment_editable.tscn")
 
 var card_canvas: SubViewport
@@ -66,8 +62,17 @@ func freeze_camera_transition(value: bool) -> void:
 
 
 func _ready() -> void:
+	add_to_group("click_particle_stage")
 	_ensure_nodes()
 	refresh_camera()
+
+
+func can_emit_click_dust(screen: Vector2) -> bool:
+	if not _active or get_tree().paused or _menu_view or not _effective_rect.has_point(screen):
+		return false
+	# Reuse the table's existing UI exclusion policy instead of duplicating it.
+	var context := get_parent()
+	return not context.has_method("_pointer_blocked") or not context.call("_pointer_blocked", screen)
 
 
 func configure(value: Rect2, model: TableCamera) -> void:
@@ -278,6 +283,7 @@ func _ensure_nodes() -> void:
 	card_canvas.process_mode = Node.PROCESS_MODE_PAUSABLE
 	card_canvas.size = CANVAS_SIZE
 	card_canvas.disable_3d = true
+	card_canvas.use_hdr_2d = true
 	card_canvas.transparent_bg = true
 	card_canvas.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	card_canvas.render_target_clear_mode = SubViewport.CLEAR_MODE_ALWAYS
@@ -288,6 +294,7 @@ func _ensure_nodes() -> void:
 	viewport_3d.name = "TableViewport3D"
 	viewport_3d.size = Vector2i(1280, 800)
 	viewport_3d.own_world_3d = true
+	viewport_3d.use_hdr_2d = true
 	viewport_3d.transparent_bg = true
 	viewport_3d.msaa_3d = Viewport.MSAA_2X
 	viewport_3d.render_target_update_mode = SubViewport.UPDATE_ALWAYS
@@ -329,60 +336,6 @@ func _ensure_nodes() -> void:
 	add_child(_table_title)
 
 
-func _build_board() -> void:
-	var extent := TableState.WORLD_BOUNDS.size / PIXELS_PER_UNIT
-	var slab := MeshInstance3D.new()
-	slab.name = "BoardThickness"
-	var box := BoxMesh.new()
-	box.size = Vector3(extent.x, 0.16, extent.y)
-	slab.mesh = box
-	# Keep the slab top clear of the imported painted surface. At -0.10 the
-	# surfaces were only 2 mm apart, so the plain slab won the depth test.
-	slab.position.y = -0.15
-	slab.visible = false
-	var edge := StandardMaterial3D.new()
-	edge.albedo_color = Color("30251e")
-	edge.roughness = 0.95
-	slab.material_override = edge
-	scene_root.add_child(slab)
-	var surface := MeshInstance3D.new()
-	surface.name = "BoardSurface"
-	var base := ShaderMaterial.new()
-	base.shader = SURFACE_SHADER
-	base.set_shader_parameter("grain", load(TABLE_TEXTURE))
-	base.set_shader_parameter("tile_size_meters", 6.0)
-	base.set_shader_parameter("surface_tint", Color.WHITE)
-	base.set_shader_parameter("unfolded_coordinates", true)
-	var ground := ShaderMaterial.new()
-	ground.shader = SURFACE_SHADER
-	ground.set_shader_parameter("grain", load(MEADOW_TEXTURE))
-	ground.set_shader_parameter("tile_size_meters", 4.0)
-	ground.set_shader_parameter("unfolded_coordinates", true)
-	surface.mesh = load("res://assets/models/terrain/board-terrain-user-v1.res") as ArrayMesh
-	if surface.mesh == null:
-		surface.mesh = FoldedTerrain.make_mesh(base,ground)
-	else:
-		surface.set_surface_override_material(0,ground)
-		if surface.mesh.get_surface_count()>1:
-			surface.set_surface_override_material(1,base)
-	scene_root.add_child(surface)
-	var wood := ShaderMaterial.new()
-	wood.shader = SURFACE_SHADER
-	wood.set_shader_parameter("grain", load("res://assets/art/forest_rebuild/wood-rim-tile.png"))
-	wood.set_shader_parameter("tile_size_meters", 2.0)
-	for side in 4:
-		var beam := MeshInstance3D.new()
-		beam.name = "WoodRim" + str(side)
-		var shape := BoxMesh.new()
-		shape.size = Vector3(extent.x + 1.4, 0.28, 0.72) if side < 2 else Vector3(0.72,0.28,extent.y)
-		beam.mesh = shape
-		beam.material_override = wood
-		beam.position = Vector3(0,-0.055, (-1.0 if side == 0 else 1.0) * (extent.y * 0.5 + 0.30)) if side < 2 else Vector3((-1.0 if side == 2 else 1.0) * (extent.x * 0.5 + 0.30),-0.055,0)
-		beam.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-		scene_root.add_child(beam)
-	_build_card_plane()
-
-
 func _build_card_plane() -> void:
 	var extent := TableState.WORLD_BOUNDS.size / PIXELS_PER_UNIT
 	var cards := MeshInstance3D.new()
@@ -401,22 +354,3 @@ func _build_card_plane() -> void:
 	cards.material_override = material
 	cards.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	scene_root.add_child(cards)
-
-
-func _build_far_background() -> void:
-	_far_background = MeshInstance3D.new()
-	_far_background.name = "DistantSkyWorldPlane"
-	var plane := QuadMesh.new()
-	plane.size = Vector2(500, 500.0 / 3.0)
-	_far_background.mesh = plane
-	_far_background.position = Vector3(0, -290, -173)
-	_far_background.rotation.x = deg_to_rad(-CAMERA_ELEVATION)
-	var material := StandardMaterial3D.new()
-	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	material.albedo_texture = load("res://assets/art/forest_rebuild/distant-river.png")
-	material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
-	material.cull_mode = BaseMaterial3D.CULL_DISABLED
-	_far_background.material_override = material
-	_far_background.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	scene_root.add_child(_far_background)
-

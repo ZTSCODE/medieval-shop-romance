@@ -75,7 +75,12 @@ static func decode(payload: Variant, manifest_path: String = Package.MANIFEST_PA
 static func _decode_with_package(payload: Variant, package: Dictionary) -> Dictionary:
 	if not _generation_matches(payload):
 		return _failure("content_generation_mismatch", "SAVE_UNSUPPORTED_VERSION")
-	if not _fields(payload, ["state_version", "session_mode", "content_generation", "table", "module_checkpoint", "package_fingerprint", "director", "day", "camera", "progress", "opening", "identity"]):
+	# onboarding 为可选的新手目标字段，其余字段仍按原清单严格校验。
+	var core_fields: Variant = payload
+	if payload is Dictionary and payload.has("onboarding"):
+		core_fields = payload.duplicate()
+		core_fields.erase("onboarding")
+	if not _fields(core_fields, ["state_version", "session_mode", "content_generation", "table", "module_checkpoint", "package_fingerprint", "director", "day", "camera", "progress", "opening", "identity"]):
 		return _failure("invalid_chapter_payload_fields")
 	if not _integer(payload.state_version, VERSION, VERSION) or payload.session_mode != "chapter_01":
 		return _failure("unsupported_chapter_version", "SAVE_UNSUPPORTED_VERSION")
@@ -176,7 +181,7 @@ static func _decode_with_package(payload: Variant, package: Dictionary) -> Dicti
 		"day": day.duplicate(true), "camera": camera.duplicate(true), "progress": progress,
 		"opening": payload.opening.duplicate(true), "identity": payload.identity.duplicate(true),
 		"director": payload.director.duplicate(true), "package": package, "chapter_world": world,
-		"checkpoint_template": checkpoint_template}
+		"checkpoint_template": checkpoint_template, "onboarding": OnboardingGoals.sanitize(payload.get("onboarding"))}
 
 
 static func _opening_error(data: Variant, table: TableState, story: RefCounted) -> String:
