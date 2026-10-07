@@ -1,10 +1,12 @@
 # Opening Script Draft v1.8
 
+Maintenance note (2026-10-07): the flow below includes v1.8, but the chronicle and dated earlier rulings retain older wording; they are not substitutes for [the current canon](bible/README.md). User decisions and their dates remain in [story-premise.md](../knowledge/story-premise.md). This cleanup changes document guidance only, not dialogue or the pending PV rewrite.
+
 v1.8 (2026-10-06 evening, user): the seed the hero took is a card on the table from the first moment ("Her Seed" / 那一把种子) and is never explained in the opening. Walking the wood brings the Messenger's card and the Brookside path; the meeting is started by the player, and when it ends his card leaves. Walking the path brings him back together with the Lee, and the second talk shows the Lee and has them trade names (he is Oisín / 奥辛, provisional). The sloes, the badger track and the standing stones are gone.
 
 v1.7 (2026-10-06, user): after the film and the naming, the game starts with the hero alone, talking to himself where the snow gives out; the wood is the first card to arrive; he hesitates over it; then the first goals (basic controls and dragging himself onto the wood). The Messenger is met inside the wood, not before it. The hero's past and what he carries are his secret and are not told here (`docs/knowledge/story-premise.md`).
 
-Status: **in the game** (2026-10-03) as temporary content, awaiting user review. English is the source; the Chinese sits beside it in `tools/content/build_opening.py`, which writes `data/content.json` and `localization/game.csv` (glossary: `opening-zh-glossary.md`). The script below is regenerated from that data, so edit the generator, not this file. Setting: `world-bible.md`. Method: `narrative-methodology.md`. Implementation: `docs/knowledge/opening-story-runtime.md`.
+Status: **in the game** (2026-10-03) as temporary content, awaiting user review. English is the source; the Chinese sits beside it in `tools/content/build_opening.py`, which writes `data/content.json` and `localization/game.csv` (glossary: `opening-zh-glossary.md`). The script below is regenerated from that data. Keep generator-owned text aligned with the game before rebuilding; direct game edits must be carried back into the generator first, and regeneration must not silently overwrite later work. Current wording is read from `localization/game.csv`; this document is a generated view. Current setting: [bible/README.md](bible/README.md); `world-bible.md` is a superseded proposal. Method: `narrative-methodology.md`. Implementation: `docs/knowledge/opening-story-runtime.md`.
 
 User direction (2026-10-03): first a ceremonial chronicle with a sense of history that sets out the world's central conflict (after Absolum's intro); then the hero's own pages have **only the hero**: the tension and suspicion of the flight, no exposition. The person the hero talks to is **the Messenger**, the player's mentor; the hero's situation and the world come out through that conversation. No Warden.
 
@@ -269,7 +271,7 @@ Stage `table_basics` "Know Your Table": `pan_table`, `zoom_table`, `drag_card` "
 
 ---
 
-## 写作说明
+## 写作说明（旧稿历史，现行设定以 bible/ 为准）
 
 - **主角是普通人**：没有超能力，合成只是玩法。他的来历和罪名写在 `world-bible.md` §7，开场不说。
 - **矛盾只有一条**：帝国借白冬起家、靠白冬统治。序幕：自由城镇 → 白冬年年蔓延 → 一个人带着运粮车和长矛跟着雪走，饥饿的城镇为面包开门，名字被写上他的地图 → 他称帝，白冬从此为他的家族效力 → 地图边缘有人在逃，他找到了对抗白冬的线索。文风是史诗西幻（绝对魔权、哈迪斯、指环王序章），不是古风。

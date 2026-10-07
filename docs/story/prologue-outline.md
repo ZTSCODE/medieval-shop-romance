@@ -1,5 +1,7 @@
 # Prologue Outline: "Out of the Wind" (proposal for review)
 
+Scope (2026-10-07): this is the 2026-10-03 proposal and its implementation labels describe that date. Later user rulings and the current opening have superseded parts of it; proposed village, shop and tutorial extensions are not automatically approved or implemented. Use [the current canon](bible/README.md), [open questions](bible/open-questions.md) and [runtime history](../knowledge/opening-story-runtime.md) before continuing. The original proposal remains below for reference.
+
 Status: proposal, 2026-10-03. English first. The whole prologue chapter from the first screen to the end of the tutorial. Parts 0–4 exist (0 and 1 in the game; 2–4 drafted in `opening-scenes-v2-draft.md`); parts 5–8 are new. Setting: `world-bible.md` §2a and §7.
 
 **What the prologue must do:** set up the one conflict (the Empire rules through the White Winter; the hero carries a way to stand against it); bring him to the Lee; introduce the Messenger (mentor, first romance thread) and the woman with the lantern (the village's voice); teach the core loop (explore, talk, open the shop, trade, end the day); and end on a hook.

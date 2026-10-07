@@ -45,7 +45,7 @@
 
 ## 刷植物
 
-工程已启用 `Grass Painter` 编辑器插件。三个可刷图层位于：
+工程已启用 `Grass Painter` 编辑器插件。八个可刷图层位于：
 
 - `EnvironmentRoot/EditableVegetation/BroadleafField`
 - `EnvironmentRoot/EditableVegetation/RocksField`

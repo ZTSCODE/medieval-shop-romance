@@ -1,5 +1,7 @@
 # 棋盘外沿交互植被
 
+版本范围（2026-10-07）：下文保存早期 2D 草甸、素材来源、接口与测试历史。现行植物来自人工维护的 `scenes/world/table_environment_editable.tscn`，编辑入口见 [植物制作手册](../art/manual-plant-production.md) 和 [Grass Painter](../tools/grass_painter.md)；不能按下方旧 CanvasLayer 或程序生成接口重建当前场景。
+
 ## 最新修正：世界坐标草甸
 
 用户否决上一轮草形和屏幕边框铺法，明确参考`game/scenes/world/tile_templates/wilderness_meadow_0002.tscn`。只读解析结果表明，鲜绿`GrassField`为0株，实际为`GrassField4`细草15591株、`GrassField2`深灌丛7968株、`GrassField3`白花3674株，另有38株静态树。本版按约57.3%/29.3%/13.4%复用前三层，保留各层源区域色强度、饱和度与自然色参数；没有搬入3D灯光，因此不将当前渲染等同于原场景最终光照。

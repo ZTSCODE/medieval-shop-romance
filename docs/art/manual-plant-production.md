@@ -84,7 +84,7 @@
 选中 `BoardSurface`，它有两个 Surface Override Material：
 
 - Surface 0：棋盘外围林地，目前为 `forest-floor-tile.png`。
-- Surface 1：棋盘褐色泥地，目前为 `earth-tile.png`。
+- Surface 1：背景棋盘面，目前为 `board-wood-retained.png`，被启用的真棋盘遮住。
 
 展开对应材质的 Shader Parameters：
 
@@ -95,7 +95,7 @@
 
 地面纹理必须是不透明正方形 PNG，建议 1024–2048 像素，开启 Mipmaps 和 Repeat。不要直接把一张低分辨率整景图拉伸覆盖整个棋盘。
 
-当前褐色棋盘使用 `res://assets/art/forest_rebuild/earth-tile.png`。替换时可以直接把新的纹理拖到 Surface 1 材质的 `Grain`，也可以覆盖同路径文件后执行 `Reimport`。`BoardThickness` 是旧的纯色支撑盒，当前保持隐藏；不要重新显示它，否则会遮住起伏棋盘上的笔触材质。
+当前实际可见的真棋盘是已启用的 `BoardThickness`，不是应隐藏的旧支撑盒。它的材质 `Grain` 使用 `res://assets/art/forest_rebuild/board-wood-retained.png`，6 米一铺、`Tone Gain` 为 0.58；只改 `BoardSurface` 的 Surface 1 会被真棋盘遮住。替换真棋盘纹理应选中 `BoardThickness` 修改对应材质，或覆盖该纹理文件后 `Reimport`。四边 `WoodRim0–3` 仍使用共用木框纹理及盒体投影，左右边框另开启 `Grain Along Z`；不要取消投影设置。场景是人工维护的唯一来源，详细参数与历史修复见 [真棋盘木纹记录](../knowledge/real-board-wood.md)。
 
 ## 七、其他场景美术编辑
 

@@ -1,5 +1,7 @@
 # Opening Scenes v2 (English draft for review)
 
+Scope (2026-10-07): historical English proposal from 2026-10-03, not the current character facts or runtime script. Preserve its unused scenes for reference; do not import them or its `world-bible.md` assumptions without checking [the current canon](bible/README.md) and user approval. Current implemented flow is recorded in [opening-story-runtime.md](../knowledge/opening-story-runtime.md).
+
 Status: draft, 2026-10-03. English only; Chinese and in-game wiring come after the user approves. Follows the chronicle "The Iron Peace" replacement in `opening-script-draft.md` v1.6 (free towns → White Winter → the founder's grain and spears → the Emperor → a man at the edge of the map with a clue to standing against the winter). Setting: `world-bible.md` §2a and §7.
 
 **Who the hero is (kept back from the player, felt in every scene):** a knight in the Emperor's service, taken as a boy from a town the winter had broken. Sent to burn a hamlet for hiding seed corn, he found what it was hiding: old grain from the free towns, putting up green shoots through the frost. He took the sack and rode. The forty riders hunting him are his own company.
