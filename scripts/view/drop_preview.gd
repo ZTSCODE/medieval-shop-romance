@@ -1,7 +1,7 @@
 class_name TableDropPreview
 extends Node2D
 
-const PAPER_SOURCE := Rect2(68, 96, 880, 1372)
+const PAPER_SOURCE := TableCardView.PAPER_SOURCE
 const PAPER_TEXTURE := preload("res://assets/art/ui/forest_rebuild/card-sage-paper.png")
 const TITLE_TEXTURE := preload("res://assets/art/ui/forest_rebuild/card-title-sage.png")
 
@@ -24,6 +24,10 @@ func _ready() -> void:
 	_gold_layer.name = "DropPreviewGold"
 	_gold_material = ShaderMaterial.new()
 	_gold_material.shader = preload("res://assets/shaders/card_inset_gold.gdshader")
+	_gold_material.set_shader_parameter("source_origin", TableCardView.PAPER_INTERIOR.position)
+	_gold_material.set_shader_parameter("source_size", TableCardView.PAPER_INTERIOR.size)
+	_gold_material.set_shader_parameter("face_size", TableCardView.CARD_SIZE)
+	_gold_material.set_shader_parameter("corner_radius", TableCardView.CORNER_RADIUS)
 	_gold_material.set_shader_parameter("title_paper",TITLE_TEXTURE)
 	_gold_material.set_shader_parameter("gold_noise",preload("res://assets/art/ui/forest_rebuild/gold-grain-noise.tres"))
 	_gold_layer.material = _gold_material
@@ -38,6 +42,8 @@ func _process(delta: float) -> void:
 	_clock += maxf(delta, 0.0)
 	_gold_material.set_shader_parameter("strength",0.90 + 0.10 * (0.5 + 0.5 * sin(_clock * 4.6)))
 	_gold_material.set_shader_parameter("shimmer_clock",_clock)
+	_gold_material.set_shader_parameter("linear_canvas", get_viewport().use_hdr_2d)
+	_gold_material.set_shader_parameter("hdr_headroom", get_window().get_output_max_linear_value() if get_viewport().use_hdr_2d else 1.0)
 
 
 func _draw() -> void:
@@ -45,9 +51,10 @@ func _draw() -> void:
 	for index in count:
 		var rect := Rect2(Vector2(0.0, index * TableState.STACK_STEP), TableState.CARD_SIZE)
 		var tint := Color(0.60,0.24,0.19,0.48) if blocked else Color(0.55,0.47,0.34,0.52)
-		ImagePlacement.draw(get_canvas_item(),PAPER_TEXTURE,rect,&"contain",tint,PAPER_SOURCE)
+		TableCardView._draw_paper_patch(get_canvas_item(), PAPER_TEXTURE, rect, PAPER_SOURCE, tint, 80.0, 12.0)
 		if blocked:
-			CrayonCardStyle.draw_card(get_canvas_item(),rect,Color("c37560"),0.72)
+			var blocked_color: Color = CrayonCardStyle.palette(Color("c37560")).body
+			TableCardView._draw_rounded_card_paper(get_canvas_item(), PAPER_TEXTURE, rect.grow(-2.0), Color(blocked_color, 0.72))
 
 
 func _draw_gold() -> void:
@@ -55,7 +62,7 @@ func _draw_gold() -> void:
 		return
 	for index in _preview_count():
 		var rect := Rect2(Vector2(0.0,index * TableState.STACK_STEP),TableState.CARD_SIZE)
-		ImagePlacement.draw(_gold_layer.get_canvas_item(),PAPER_TEXTURE,rect,&"contain",Color.WHITE,PAPER_SOURCE)
+		TableCardView._draw_paper_patch(_gold_layer.get_canvas_item(), PAPER_TEXTURE, rect, PAPER_SOURCE, Color.WHITE, 80.0, 12.0)
 
 
 func _preview_count() -> int:

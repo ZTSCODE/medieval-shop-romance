@@ -41,6 +41,7 @@ func _ready() -> void:
 			slash.add_theme_color_override("font_color", BookSkin.MUTED)
 			add_child(slash)
 		var choice := Button.new()
+		choice.set_meta("audio_event", "ui.toggle")
 		choice.custom_minimum_size = Vector2(72, 48)
 		choice.add_theme_font_override("font", BookSkin.Typography.regular())
 		choice.add_theme_font_size_override("font_size", 26)

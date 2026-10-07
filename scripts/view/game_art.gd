@@ -16,11 +16,12 @@ static func queue_card_preloads() -> void:
 			continue
 		for section: String in ["cards", "npcs"]:
 			for definition: Dictionary in catalog.get(section, {}).values():
-				var path: String = definition.get("art_path", definition.get("portrait_path", ""))
-				if path.is_empty() or _textures.has(path) or path in _pending or not ResourceLoader.exists(path):
-					continue
-				if ResourceLoader.load_threaded_request(path) == OK:
-					_pending.append(path)
+				for field: String in ["art_path", "portrait_path"]:
+					var path: String = definition.get(field, "")
+					if path.is_empty() or _textures.has(path) or path in _pending or not ResourceLoader.exists(path):
+						continue
+					if ResourceLoader.load_threaded_request(path) == OK:
+						_pending.append(path)
 
 
 static func poll_preloads(max_completed: int = 3) -> void:
@@ -56,5 +57,14 @@ static func card_texture(kind: StringName) -> Texture2D:
 
 static func portrait(npc_id: String) -> Texture2D:
 	if npc_id == "hero":
-		return card_texture(&"hero")
+		return texture(String(ContentCatalog.card_definition(ContentCatalog.card_id_for_kind(&"hero")).get("portrait_path", "")))
 	return texture(String(ContentCatalog.npc_definition(npc_id).get("portrait_path", "")))
+
+
+# 卡面用于棋盘、目录及头像入口；人物立绘由 portrait 单独提供。
+static func card_face(subject_id: String) -> Texture2D:
+	var npc := ContentCatalog.npc_definition(subject_id)
+	var id := String(npc.get("card_id", ""))
+	if id.is_empty():
+		id = subject_id if not ContentCatalog.card_definition(subject_id).is_empty() else ContentCatalog.card_id_for_kind(StringName(subject_id))
+	return texture(String(ContentCatalog.card_definition(id).get("art_path", "")))

@@ -1,6 +1,7 @@
 extends Node
 
 const AUTOSAVE_INTERVAL := 30.0
+const ONBOARDING_PAN_DISTANCE := 120.0
 const ChapterPackageLoader = preload("res://scripts/content/chapter_package.gd")
 const ChapterSnapshotCodec = preload("res://scripts/content/chapter_snapshot.gd")
 const StorageWorkerScript = preload("res://scripts/services/storage_job_worker.gd")
@@ -15,6 +16,7 @@ var day_cycle: DayCycle
 var overlay: SessionOverlay
 var journal: GameJournal
 var opening: OpeningFlow
+var exploration := LocationExploration.new()
 var opening_overlay: OpeningOverlay
 var dialogue: DialogueFlow
 var dialogue_overlay: DialogueOverlay
@@ -27,6 +29,8 @@ var progress: PlayerProgress
 var identity: PlayerIdentity
 var main_menu: MainMenu
 var name_entry: NameEntry
+var onboarding: OnboardingGoals
+var onboarding_panel: OnboardingGoalPanel
 var vegetation: Node3D
 var _last_plant_pointer_usec := 0
 var table_stage: TableStage3D
@@ -48,12 +52,16 @@ var _hitch_report_path := "user://hitch-profile.json"
 var _presentation_stage: StringName = &""
 var _presentation_page := -1
 var _tutorial_key := ""
+var _scene_delay := 0.0  # 开场里自动开始的下一段剧情之前留的一点停顿（等新卡落到桌上）
+var _live: DevLiveReload  # 开发用的边改边看；只有带 --live 启动时才有
+var _live_resume := false  # 自动重启之后直接回到刚才的旅程
 var _exploration_started := false
 var _scene_view_initialized := false
 var _storage_thread: Thread
 var _storage_worker: RefCounted
 var _storage_job: Dictionary = {}
 var _queued_storage: Dictionary = {}
+var _pan_travel := 0.0
 
 
 func _ready() -> void:
@@ -143,6 +151,9 @@ func _ready() -> void:
 	add_child(board)
 	board.shop = shop
 	board.opening = opening
+	board.exploration = exploration
+	exploration.outputs_created.connect(_on_exploration_outputs)
+	exploration.explored.connect(_on_location_explored)
 	board.progress = progress
 	board.full_table_mode = opening_session
 	board.customer_lane = null if opening_session else customer_lane
@@ -172,6 +183,7 @@ func _ready() -> void:
 	opening_overlay = OpeningOverlay.new()
 	add_child(opening_overlay)
 	opening_overlay.advance_requested.connect(opening.advance_intro)
+	opening_overlay.finish_requested.connect(opening.finish_intro)
 	dialogue_overlay = DialogueOverlay.new()
 	add_child(dialogue_overlay)
 	dialogue_overlay.configure(dialogue)
@@ -188,6 +200,19 @@ func _ready() -> void:
 	overlay.configure(settings, save_store)
 	overlay.focus_hero_requested.connect(_focus_hero)
 	overlay.time_cycle_requested.connect(cycle_time_mode)
+	onboarding = OnboardingGoals.new()
+	onboarding.changed.connect(func() -> void:
+		if not _loading:
+			_autosave_pending = true
+	)
+	onboarding_panel = OnboardingGoalPanel.new()
+	add_child(onboarding_panel)
+	onboarding_panel.configure(onboarding)
+	board.camera_gesture.connect(_on_camera_gesture)
+	board.card_dragged.connect(func(whole: bool) -> void:
+		if not whole:
+			onboarding.report(&"card_dragged"))
+	journal.open_state_changed.connect(func(_open: bool) -> void: _refresh_onboarding_panel())
 	main_menu = MainMenu.new()
 	add_child(main_menu)
 	name_entry = NameEntry.new()
@@ -201,6 +226,8 @@ func _ready() -> void:
 	name_entry.confirmed.connect(_on_name_confirmed)
 	name_entry.canceled.connect(_cancel_naming)
 	day_cycle.progress_changed.connect(overlay.set_day)
+	day_cycle.progress_changed.connect(func(_day: int, _progress: float): _sync_audio_context())
+	day_cycle.day_started.connect(func(_day: int): AudioEvents.play_event("world.dawn"))
 	day_cycle.day_started.connect(shop.on_day_started)
 	day_cycle.day_started.connect(func(_day: int) -> void: _autosave_pending = true)
 	overlay.set_day(day_cycle.day, day_cycle.progress())
@@ -218,6 +245,7 @@ func _ready() -> void:
 	shop.transaction_completed.connect(_on_transaction_completed)
 	opening.outputs_created.connect(_on_opening_outputs)
 	opening.revealed.connect(_on_opening_revealed)
+	opening.arrivals_created.connect(_on_opening_arrivals)
 	opening.changed.connect(_on_opening_changed)
 	settings.changed.connect(_refresh_localized_content)
 	get_window().focus_exited.connect(_on_focus_lost)
@@ -232,11 +260,23 @@ func _ready() -> void:
 		set_game_paused(true)
 		overlay.open_page("settings")
 		overlay.show_status(settings.error_key, true)
+	if "--live" in arguments and not qa_mode:
+		_live = DevLiveReload.new()
+		add_child(_live)
+		_live.content_changed.connect(_live_content_changed)
+		_live.goals_changed.connect(_live_goals_changed)
+		_live.restart_requested.connect(_live_restart)
+		_live.replay_requested.connect(_live_replay_opening)
+		_live_resume = "--live-resume" in arguments
 
 
 
 func _process(delta: float) -> void:
 	_poll_storage_job()
+	if _live_resume and _storage_thread == null:
+		_live_resume = false
+		if _at_main_menu and _has_session:
+			_continue_journey()
 	if not qa_mode:
 		HitchProbe.frame(delta)
 	GameArt.poll_preloads()
@@ -258,8 +298,14 @@ func _process(delta: float) -> void:
 		var opening_started := HitchProbe.stamp()
 		opening.advance(delta * _game_speed, not board.pressed_id.is_empty() or board.panning or not board.flights.is_empty())
 		HitchProbe.record("opening_advance", opening_started)
+		_scene_delay = maxf(_scene_delay - delta, 0.0)
+		_start_opening_prologue()
 		if chapter == null or opening.stage != &"complete":
 			_update_opening_tutorial()
+		# 开场那一次探索结束后，由通用的地点探索接手（章节模式有自己的工作系统）。
+		if chapter == null and opening.stage == &"complete":
+			exploration.state = board.state
+			exploration.advance(delta * _game_speed, not board.pressed_id.is_empty() or board.panning or not board.flights.is_empty())
 	if not autosave_enabled or _autosave_blocked:
 		return
 	if not get_tree().paused and not _time_paused:
@@ -324,6 +370,8 @@ func _input(event: InputEvent) -> void:
 			print("Hitch report saved: " + _hitch_report_path)
 		get_viewport().set_input_as_handled()
 		return
+	if _story_naming():
+		return
 	if _at_main_menu:
 		if event.keycode == KEY_ESCAPE:
 			if not event.echo:
@@ -367,6 +415,8 @@ func _toggle_journal(page: String) -> void:
 	board.hovered_id = ""
 	board._update_view_flags()
 	journal.toggle(page)
+	if journal.current_page == page:
+		onboarding.report(StringName("journal_%s_opened" % page))
 
 
 func _notification(what: int) -> void:
@@ -415,16 +465,22 @@ func set_time_paused(value: bool) -> void:
 		return
 	var probe_started := HitchProbe.stamp()
 	_time_paused = value
+	AudioEvents.play_event("ui.time_speed")
 	board.simulation_paused = value
 	overlay.set_time_controls(_game_speed, _time_paused, true)
+	onboarding.report(&"time_mode_changed", "paused" if value else "resumed")
 	HitchProbe.record("time_pause_toggle", probe_started)
 
 
 func set_game_speed(value: float) -> void:
 	if _at_main_menu or _menu_paused:
 		return
+	var previous_speed := _game_speed
 	_game_speed = 3.0 if value >= 3.0 else 1.0
 	board.simulation_speed = _game_speed
+	if previous_speed != _game_speed:
+		onboarding.report(&"time_mode_changed", "speed=%d" % int(_game_speed))
+		AudioEvents.play_event("ui.time_speed")
 	overlay.set_time_controls(_game_speed, _time_paused, true)
 
 
@@ -434,7 +490,7 @@ func _apply_pause_state() -> void:
 	_scene_view_initialized = true
 	table_stage.freeze_camera_transition(_menu_paused)
 	var moving := table_stage.is_camera_transitioning()
-	var reading := opening.stage == &"intro" or dialogue.is_active() or dialogue_overlay.is_presenting()
+	var reading := opening.stage == &"intro" or dialogue.is_active() or dialogue_overlay.is_presenting() or _story_naming()
 	_refresh_narrative_table()
 	get_tree().paused = _at_main_menu or _menu_paused or reading or moving
 	board.simulation_paused = _time_paused
@@ -468,8 +524,9 @@ func _apply_pause_state() -> void:
 	board.surface.visible = not _at_main_menu
 	board.drag_root.visible = not _at_main_menu
 	dialogue_overlay.visible = not _at_main_menu and not moving
-	opening_overlay.visible = not _at_main_menu and not moving
-	var sidebar_visible := not _at_main_menu and not moving and not dialogue_overlay.is_presenting() and not dialogue.is_active()
+	opening_overlay.visible = not _at_main_menu and not moving and not _story_naming()
+	# 全屏序幕期间也收起右侧栏，保持暗场。
+	var sidebar_visible := not _at_main_menu and not moving and not dialogue_overlay.is_presenting() and not dialogue.is_active() and not opening_overlay.is_chronicle_showing()
 	journal.set_entries_visible(sidebar_visible)
 	if overlay.has_method("set_hud_visible"):
 		overlay.call("set_hud_visible", sidebar_visible)
@@ -481,8 +538,36 @@ func _apply_pause_state() -> void:
 		market.hide()
 	_refresh_chapter_market()
 	_refresh_chapter_customer_lane()
+	_refresh_onboarding_panel()
+	_sync_audio_context()
 	HitchProbe.record("menu_pause_scene", scene_started)
 	HitchProbe.record("menu_pause_apply", probe_started)
+
+
+# 新手目标只在玩家能直接操作桌面时出现：避开主菜单、暂停、序章、对白、镜头过渡与手账。
+func _refresh_onboarding_panel() -> void:
+	if not is_instance_valid(onboarding_panel):
+		return
+	var reading := opening.stage == &"intro" or dialogue.is_active() or dialogue_overlay.is_presenting() or _story_naming() or _opening_scene_pending()
+	var blocked := _at_main_menu or _menu_paused or reading or table_stage.is_camera_transitioning() or journal.is_open()
+	onboarding_panel.set_available(not blocked)
+
+
+# 每个存档独立的新手进度：读档/新旅程时整体替换，目标栏随之从该存档的进度重新呈现。
+func _restore_onboarding(data: Variant) -> void:
+	if not onboarding.restore(data):
+		onboarding.restore(OnboardingGoals.fresh_data())
+	_pan_travel = 0.0
+	onboarding_panel.resync()
+
+
+func _on_camera_gesture(kind: StringName, amount: float) -> void:
+	if kind == &"zoom":
+		onboarding.report(&"camera_zoomed")
+	elif kind == &"pan":
+		_pan_travel += amount
+		if _pan_travel >= ONBOARDING_PAN_DISTANCE:
+			onboarding.report(&"camera_panned")
 
 
 func _refresh_vegetation_layout() -> void:
@@ -495,6 +580,7 @@ func _refresh_vegetation_layout() -> void:
 func _focus_hero() -> void:
 	if _at_main_menu or get_tree().paused:
 		return
+	onboarding.report(&"hero_focused")
 	for card_id: String in board.state.cards:
 		if board.state.card_kind(card_id) == &"hero":
 			board.cancel_gesture()
@@ -548,6 +634,7 @@ func _sync_opening_presentation(force: bool = false) -> void:
 	if _at_main_menu:
 		_apply_pause_state()
 		return
+	_start_opening_prologue()
 	if opening.stage == &"intro":
 		if force or changed_stage or _presentation_page != opening.intro_index:
 			opening_overlay.show_intro(opening.intro_index, OpeningFlow.intro_page_count())
@@ -560,16 +647,82 @@ func _sync_opening_presentation(force: bool = false) -> void:
 		_update_opening_tutorial()
 	_presentation_stage = opening.stage
 	_presentation_page = opening.intro_index
+	_request_story_name_if_needed()
 	_apply_pause_state()
 
 
+# 开场里自己开始的剧情（opening.scenes，按顺序）：主角的独白，或人物还没上桌时的一场戏，都不需要叠卡触发。
+# 排在前面的没读完，后面的不会开始；带 stage 的要等开场走到那一步。
+func _next_opening_scene() -> String:
+	if chapter != null or opening.stage == &"intro" or opening.stage == &"inactive":
+		return ""
+	for entry: Variant in ContentCatalog.opening_definition().get("scenes", []):
+		if not entry is Dictionary:
+			continue
+		var story_id := String(entry.get("story", ""))
+		if story_id.is_empty() or story_id in dialogue.completed:
+			continue
+		var stage := String(entry.get("stage", ""))
+		return story_id if stage.is_empty() or opening.stage == StringName(stage) else ""
+	return ""
+
+
+func _opening_scene_pending() -> bool:
+	return not dialogue.is_active() and not _next_opening_scene().is_empty()
+
+
+func _start_opening_prologue() -> void:
+	if _loading or _at_main_menu or dialogue.is_active() or _story_name_pending():
+		return
+	var story_id := _next_opening_scene()
+	if story_id.is_empty() or _scene_delay > 0.0 or not board.flights.is_empty():
+		return
+	var definition := ContentCatalog.story_definition(story_id)
+	if definition.get("solo", false):
+		dialogue.start_solo(story_id)
+		return
+	var npc_id := String(definition.get("npc_id", ""))
+	if dialogue.next_story(npc_id) == story_id:
+		# 先记入人物关系：读档要求进行中的对话人物已在手账里。
+		progress.meet_npc(npc_id, day_cycle.day)
+		dialogue.start_for_npc(npc_id)
+
+
 func _update_opening_tutorial() -> void:
-	var key := String(ContentCatalog.opening_definition().get("tutorial_key", ""))
-	if key.is_empty() or dialogue.is_active():
+	var key := _opening_tutorial_key()
+	if key.is_empty() or dialogue.is_active() or _opening_scene_pending():
+		_tutorial_key = ""
 		opening_overlay.hide_all()
 	elif key != _tutorial_key:
 		_tutorial_key = key
 		opening_overlay.show_tutorial(key)
+
+
+# 开场提示按顺序给出：每条在其完成条件达成后让位给下一条；全部完成后不再提示。
+func _opening_tutorial_key() -> String:
+	if opening.stage == &"intro" or opening.stage == &"inactive":
+		return ""
+	var definition := ContentCatalog.opening_definition()
+	var hints: Variant = definition.get("tutorials", [])
+	if not hints is Array or hints.is_empty():
+		return String(definition.get("tutorial_key", ""))
+	for hint: Variant in hints:
+		if not hint is Dictionary:
+			continue
+		var until_stage := String(hint.get("until_stage", ""))
+		var until_story := String(hint.get("until_story", ""))
+		var after_story := String(hint.get("after_story", ""))
+		if not after_story.is_empty() and after_story not in dialogue.completed:
+			return ""
+		if not until_stage.is_empty() and opening.stage == StringName(until_stage):
+			continue
+		if not until_story.is_empty() and until_story in dialogue.completed:
+			continue
+		var until_kind_gone := StringName(hint.get("until_kind_gone", ""))
+		if not until_kind_gone.is_empty() and not _board_has_kind(until_kind_gone):
+			continue
+		return String(hint.get("key", ""))
+	return ""
 
 
 func _on_opening_changed() -> void:
@@ -582,9 +735,52 @@ func _on_opening_changed() -> void:
 
 
 func _on_opening_outputs(cards: Array[String], source: StringName) -> void:
-	board.queue_output_flights(cards, source)
+	if not cards.is_empty():
+		board.queue_output_flights(cards, source)
+	board.refresh_content()
+	AudioEvents.play_event("world.discovery")
+	_scene_delay = 0.6
+	onboarding.report(&"opening_explored")
+
+
+# 剧情读完后上桌的卡：从主角所在一侧之外的屏幕边缘滑进来，落定后才接下一段。
+func _on_opening_arrivals(cards: Array[String]) -> void:
+	var hero_x := 0.0
+	for card_id: String in board.state.cards:
+		if board.state.card_kind(card_id) == &"hero":
+			hero_x = board.state.card_position(card_id).x
+	var view := get_viewport().get_visible_rect()
+	for card_id: String in cards:
+		var at := board.state.card_position(card_id)
+		var target := board.camera.to_screen(at + TableState.CARD_SIZE * 0.5)
+		var from_right := at.x >= hero_x
+		var origin := Vector2(view.end.x + 160.0 if from_right else view.position.x - 160.0, target.y)
+		board.queue_screen_output_flights([card_id], origin, "")
+		var npc_id := String(board.state.cards[card_id].metadata.get("npc_id", ""))
+		if not npc_id.is_empty():
+			progress.meet_npc(npc_id, day_cycle.day)
 	board.refresh_content()
 	board.sound.play_cue(&"stack")
+	_scene_delay = 1.3
+	_autosave_pending = true
+
+
+func _board_has_kind(kind: StringName) -> bool:
+	for id: String in board.state.cards:
+		if board.state.card_kind(id) == kind:
+			return true
+	return false
+
+
+func _on_exploration_outputs(cards: Array[String], source_position: Vector2, source_id: String) -> void:
+	board.queue_world_output_flights(cards, source_position, source_id)
+	board.refresh_content()
+	AudioEvents.play_event("world.discovery")
+	_autosave_pending = true
+
+
+func _on_location_explored(card_definition_id: String) -> void:
+	onboarding.report(StringName("explore_completed:" + card_definition_id))
 
 
 func _on_opening_revealed() -> void:
@@ -635,12 +831,19 @@ func _on_dialogue_completed(completed_story_id: String, npc_id: String) -> void:
 		return
 	if chapter != null:
 		return
+	onboarding.report(StringName("story_completed:" + completed_story_id))
+	opening.output_bounds = shop.output_bounds
+	opening.deliver_arrivals(completed_story_id)
 	var result := dialogue.resolve_story_consequences(completed_story_id, npc_id, board.state)
 	if not result.ok:
 		push_error("Cannot resolve completed story: " + String(result.reason))
 		return
 	if result.departed.is_empty():
 		return
+	if not result.created.is_empty():
+		var source: Dictionary = result.sources[0]
+		board.queue_world_output_flights(result.created, source.world_center - TableState.CARD_SIZE * 0.5, String(source.card_id))
+		board.sound.play_cue(&"stack")
 	for card: String in result.departed:
 		shop.customers.erase(card)
 	board.refresh_content()
@@ -651,8 +854,32 @@ func _on_dialogue_completed(completed_story_id: String, npc_id: String) -> void:
 func _start_new_journey() -> void:
 	if _legacy_qa:
 		_commit_new_journey(identity.name)
+	elif int(ContentCatalog.opening_definition().get("name_entry_page", -1)) >= 0:
+		_commit_new_journey("")
 	else:
 		_request_name("new")
+
+
+# 开场读到 name_entry_page 页时请玩家取名（等于页数即“序幕读完之后”）；新旅程不在主菜单取名。
+func _story_name_pending() -> bool:
+	var page := int(ContentCatalog.opening_definition().get("name_entry_page", -1))
+	if page < 0 or not identity.name.is_empty() or opening.stage == &"inactive":
+		return false
+	return opening.stage != &"intro" or opening.intro_index >= page
+
+
+func _story_naming() -> bool:
+	return name_entry.visible and _name_purpose == "story"
+
+
+# 取名期间不能取消，不回主菜单；名字定下之前，林边那段对话不开始。
+func _request_story_name_if_needed() -> void:
+	if _at_main_menu or name_entry.visible or not _story_name_pending():
+		return
+	board.cancel_gesture()
+	_name_purpose = "story"
+	name_entry.open("", false, false)
+	_apply_pause_state()
 
 
 func _request_name(purpose: String) -> void:
@@ -666,6 +893,8 @@ func _request_name(purpose: String) -> void:
 
 
 func _cancel_naming() -> void:
+	if _name_purpose == "story":
+		return
 	name_entry.close()
 	_name_purpose = ""
 	_menu_paused = false
@@ -681,6 +910,19 @@ func _on_name_confirmed(player_name: String) -> void:
 		return
 	if _name_purpose == "new":
 		_commit_new_journey(player_name)
+		return
+	if _name_purpose == "story":
+		identity.set_name(player_name)
+		_sync_identity()
+		var saved := save_game("auto", false)
+		if not saved.ok:
+			identity.name = ""
+			_sync_identity()
+			name_entry.show_status(saved.error_key)
+			return
+		name_entry.close()
+		_name_purpose = ""
+		_sync_opening_presentation(true)
 		return
 	var previous_name := identity.name
 	identity.set_name(player_name)
@@ -705,16 +947,20 @@ func _commit_new_journey(player_name: String) -> bool:
 	var previous_blocked := _autosave_blocked
 	var previous_session := _has_session
 	_loading = true
+	AudioEvents.set_restoring(true)
 	_leave_chapter()
 	var table := TableState.new()
 	shop.setup(table)
-	opening.output_bounds = TableState.WORLD_BOUNDS
+	# 开局的卡放在镜头正对的那块桌面中央，而不是整张桌子的中央（那里在开场镜头的下缘之外）。
+	var opening_center := Vector2(0,-350)
+	opening.output_bounds = Rect2(opening_center - board.camera.bounds.size * 0.5, board.camera.bounds.size).intersection(TableState.WORLD_BOUNDS)
 	opening.start(table)
 	dialogue.reset()
 	dialogue_overlay.sync()
 	identity.restore({"name": ""})
 	if not player_name.is_empty():
 		identity.set_name(player_name)
+	_restore_onboarding(OnboardingGoals.fresh_data())
 	day_cycle.day = 1
 	day_cycle.elapsed = 0.0
 	progress.restore({"recipes": [], "npcs": {}})
@@ -722,15 +968,17 @@ func _commit_new_journey(player_name: String) -> bool:
 	board.replace_state(table)
 	board.camera.zoom = 1.0
 	board.camera.target_zoom = 1.0
-	var opening_center := Vector2(0,-350)
 	board.camera.offset = board.camera.bounds.get_center()-opening_center*board.camera.zoom
 	board.camera.target_offset = board.camera.offset
 	customer_lane.restore_session(shop)
 	_exploration_started = false
+	exploration.reset()
+	_scene_delay = 0.0
 	_startup_save_error = ""
 	_autosave_blocked = false
 	_has_session = true
 	_loading = false
+	AudioEvents.set_restoring(false)
 	_sync_identity()
 	var result := save_game("auto", false)
 	if not result.ok:
@@ -833,6 +1081,7 @@ func _begin_async_save(slot: String, notify: bool) -> Dictionary:
 	var prepared: Dictionary
 	if chapter == null:
 		prepared = GameSnapshot.capture(board.state, shop, day_cycle, board.camera, progress, opening, dialogue, identity)
+		prepared["onboarding"] = onboarding.to_data()
 	else:
 		var checkpoint: Dictionary = chapter.checkpoint_fast()
 		if not checkpoint.get("table") is Dictionary:
@@ -842,6 +1091,7 @@ func _begin_async_save(slot: String, notify: bool) -> Dictionary:
 			{"day": day_cycle.day, "elapsed": day_cycle.elapsed, "seconds_per_day": day_cycle.seconds_per_day},
 			{"zoom": board.camera.zoom, "center": [center.x, center.y]},
 			progress.to_data(), opening.to_data(), identity.to_data(), chapter.director_data(), chapter.package.package_fingerprint)
+		prepared["onboarding"] = onboarding.to_data()
 	HitchProbe.record("async_save_prepare", capture_started)
 	_storage_worker = StorageWorkerScript.new()
 	_storage_thread = Thread.new()
@@ -1025,6 +1275,7 @@ func apply_snapshot(decoded: Dictionary) -> void:
 		_apply_chapter_snapshot(decoded)
 		return
 	_loading = true
+	AudioEvents.set_restoring(true)
 	_leave_chapter()
 	board.cancel_gesture()
 	shop.state = decoded.state
@@ -1043,6 +1294,7 @@ func apply_snapshot(decoded: Dictionary) -> void:
 	opening.restore(decoded.opening, decoded.state)
 	dialogue.restore(decoded.dialogue)
 	identity.restore(decoded.identity)
+	_restore_onboarding(decoded.get("onboarding", {}))
 	_sync_identity()
 	dialogue_overlay.sync()
 	_set_board_mode()
@@ -1058,12 +1310,14 @@ func apply_snapshot(decoded: Dictionary) -> void:
 	overlay.set_day(day_cycle.day, day_cycle.progress())
 	journal.refresh()
 	_exploration_started = opening.elapsed > 0.0
+	exploration.reset()
 	_sync_opening_presentation(true)
 	if dialogue.is_active():
 		opening_overlay.hide_all()
 	_autosave_elapsed = 0.0
 	_autosave_pending = false
 	_loading = false
+	AudioEvents.set_restoring(false)
 
 
 func _restore_automatic_save() -> void:
@@ -1094,12 +1348,16 @@ func _restore_automatic_save() -> void:
 
 
 func _on_customer_arrived(npc_id: StringName) -> void:
+	if not _loading:
+		AudioEvents.play_event("world.arrival")
 	if chapter != null:
 		return
 	progress.meet_npc(String(npc_id), day_cycle.day)
 
 
 func _on_transaction_completed(action: StringName, npc_id: StringName) -> void:
+	if not _loading:
+		AudioEvents.play_event("world.shop_toggle" if action == &"toggle_shop" else "world.trade")
 	if chapter != null:
 		return
 	var recipe_id := ContentCatalog.recipe_for_action(action)
@@ -1130,6 +1388,11 @@ func _on_focus_lost() -> void:
 func _sync_identity() -> void:
 	if identity == null:
 		return
+	# 文案里的 {name}：名字变了就让已经显示的文字重新取一次。
+	PlayerNameText.install()
+	if PlayerNameText.player_name != identity.name:
+		PlayerNameText.player_name = identity.name
+		get_tree().root.propagate_notification(NOTIFICATION_TRANSLATION_CHANGED)
 	if is_instance_valid(board):
 		board.player_name = identity.name
 	if is_instance_valid(overlay):
@@ -1141,7 +1404,7 @@ func _sync_identity() -> void:
 func _pointer_blocked(point: Vector2) -> bool:
 	var portrait := overlay.player_hud.portrait
 	var over_portrait := portrait.is_visible_in_tree() and portrait.get_global_rect().has_point(point)
-	return get_tree().paused or over_portrait or overlay.blocks_time_control(point) or journal.blocks_pointer(point) or opening_overlay.blocks_pointer(point) or (chapter_menu != null and chapter_menu.blocks_pointer(point))
+	return get_tree().paused or over_portrait or overlay.blocks_time_control(point) or journal.blocks_pointer(point) or onboarding_panel.blocks_pointer(point) or opening_overlay.blocks_pointer(point) or (chapter_menu != null and chapter_menu.blocks_pointer(point))
 
 
 func _quit_game() -> void:
@@ -1164,9 +1427,62 @@ func _quit_without_save() -> void:
 	get_tree().quit()
 
 
+# ---- 开发用的边改边看（--live）。文件监视在 dev_live_reload.gd，这里决定游戏怎么接住变化。 ----
+
+func _live_content_changed() -> void:
+	if chapter != null:
+		_live.say("content.json changed, but it is not reloaded in chapter mode")
+		return
+	var error := ContentCatalog.reload_base()
+	if not error.is_empty():
+		_live.say("content.json NOT reloaded: " + error)
+		return
+	# 正在读的那段剧情如果被改短了，当前这一句可能已经不存在：只好收起对话。
+	if dialogue.is_active() and not DialogueFlow.validate_data(dialogue.to_data()).is_empty():
+		dialogue.cancel()
+	board.refresh_content()
+	dialogue_overlay.sync()
+	_sync_opening_presentation(true)
+	_live.say("content reloaded")
+
+
+func _live_goals_changed() -> void:
+	var stages := OnboardingGoals.load_definition(OnboardingGoals.DEFINITION_PATH)
+	if stages.is_empty():
+		_live.say("onboarding_goals.json NOT reloaded: invalid")
+		return
+	var saved := onboarding.to_data()
+	onboarding.stages = stages
+	_restore_onboarding(saved)
+	_live.say("goals reloaded")
+
+
+# 存档后退出，并让引擎自己重新启动、回到刚才的旅程。
+func _live_restart() -> void:
+	var settings_ok := settings.save_settings()
+	var result := save_game("auto", false) if _has_session else {"ok": true, "error_key": ""}
+	# 存不了档多半是因为内容结构刚改过、桌上还是旧卡：照样重启，回到上一次存好的地方，不然改动永远生效不了。
+	if not result.ok or not settings_ok:
+		print("[live] restarting without saving: the current table could not be saved")
+	OS.set_restart_on_exit(true, PackedStringArray(["--path", ProjectSettings.globalize_path("res://"), "--", "--live", "--live-resume"]))
+	get_tree().quit()
+
+
+# 从取名之后重新开始开场（沿用现在的名字，跳过动画）。和“新旅程”一样会覆盖自动存档。
+func _live_replay_opening() -> void:
+	if chapter != null or _menu_paused:
+		return
+	if not _commit_new_journey(identity.name if not identity.name.is_empty() else tr("PLAYER_DEFAULT_NAME")):
+		return
+	opening.finish_intro()
+	_live.say("opening replayed from the first monologue")
+
+
 func _capture_session() -> Dictionary:
 	if chapter == null:
-		return GameSnapshot.capture(board.state, shop, day_cycle, board.camera, progress, opening, dialogue, identity)
+		var legacy := GameSnapshot.capture(board.state, shop, day_cycle, board.camera, progress, opening, dialogue, identity)
+		legacy["onboarding"] = onboarding.to_data()
+		return legacy
 	var relationships_started := HitchProbe.stamp()
 	_sync_chapter_relationships()
 	HitchProbe.record("save_capture_relationships", relationships_started)
@@ -1183,6 +1499,8 @@ func _capture_session() -> Dictionary:
 		{"zoom": board.camera.zoom, "center": [center.x, center.y]},
 		progress.to_data(), opening.to_data(), identity.to_data(), checkpoint, director)
 	HitchProbe.record("save_capture_snapshot", snapshot_started)
+	if payload.has("state_version"):
+		payload["onboarding"] = onboarding.to_data()
 	return payload
 
 
@@ -1206,6 +1524,7 @@ func _commit_chapter_journey(player_name: String) -> bool:
 		{"zoom": 1.0, "center": [0.0, -350.0]},
 		{"recipes": [], "npcs": {}}, initial_opening.to_data(), {"name": player_name},
 		runtime.checkpoint(), runtime.director_data())
+	payload["onboarding"] = OnboardingGoals.fresh_data()
 	var checked := GameSnapshot.decode(payload)
 	if not checked.ok:
 		push_error("Chapter initial save refused: " + str(checked.get("reason", "")))
@@ -1261,6 +1580,7 @@ func _apply_chapter_snapshot(decoded: Dictionary) -> void:
 		push_error("Validated chapter could not be adopted: " + str(prepared.get("error", "")))
 		return
 	_loading = true
+	AudioEvents.set_restoring(true)
 	_time_paused = false
 	_game_speed = 1.0
 	board.simulation_speed = 1.0
@@ -1272,6 +1592,7 @@ func _apply_chapter_snapshot(decoded: Dictionary) -> void:
 		var registered := ContentCatalog.enable_module("chapter_01", decoded.package.bundle.content)
 		if not registered.ok:
 			_loading = false
+			AudioEvents.set_restoring(false)
 			push_error("Cannot activate validated chapter catalog: " + str(registered.error))
 			return
 	_chapter_translations = ModuleBundle.new()
@@ -1290,7 +1611,10 @@ func _apply_chapter_snapshot(decoded: Dictionary) -> void:
 	chapter.changed.connect(_on_chapter_changed)
 	chapter.outputs_created.connect(board.queue_world_output_flights)
 	chapter.market_outputs_created.connect(_on_chapter_market_outputs)
+	chapter.operation_completed.connect(func(_operation: String): AudioEvents.play_event("world.operation_complete"))
+	chapter.shop_state_changed.connect(func(_is_open: bool): AudioEvents.play_event("world.shop_toggle"))
 	chapter.recipe_completed.connect(progress.discover_recipe)
+	chapter.recipe_completed.connect(func(_recipe: String): AudioEvents.play_event("world.craft_complete"))
 	chapter.npc_encountered.connect(_on_chapter_npc_encountered)
 	chapter.failed.connect(func(reason: String) -> void: push_error("Chapter runtime: " + reason))
 	chapter_market.configure(chapter, board, day_cycle)
@@ -1306,6 +1630,7 @@ func _apply_chapter_snapshot(decoded: Dictionary) -> void:
 	opening.intro_index = int(decoded.opening.intro_index)
 	opening.elapsed = float(decoded.opening.elapsed)
 	identity.restore(decoded.identity)
+	_restore_onboarding(decoded.get("onboarding", {}))
 	chapter.reconcile_npc_presence()
 	board.replace_state(chapter.table)
 	board.camera.zoom = float(decoded.camera.zoom)
@@ -1320,9 +1645,11 @@ func _apply_chapter_snapshot(decoded: Dictionary) -> void:
 	overlay.set_day(day_cycle.day, day_cycle.progress())
 	journal.refresh()
 	_exploration_started = opening.elapsed > 0.0
+	exploration.reset()
 	_autosave_elapsed = 0.0
 	_autosave_pending = false
 	_loading = false
+	AudioEvents.set_restoring(false)
 	_sync_opening_presentation(true)
 
 
@@ -1435,3 +1762,11 @@ func _run_qa(path: String) -> void:
 	var qa: Node = qa_script.new()
 	add_child(qa)
 	qa.call_deferred("run", self)
+
+
+func _sync_audio_context() -> void:
+	if day_cycle == null or dialogue == null or opening == null:
+		return
+	if not dialogue.is_active():
+		AudioEvents.restore_narrative_scene(dialogue.completed, String(opening.stage))
+	AudioEvents.set_context(_at_main_menu, _menu_paused, opening.stage == &"intro" or dialogue.is_active() or dialogue_overlay.is_presenting() or _story_naming(), day_cycle.progress())

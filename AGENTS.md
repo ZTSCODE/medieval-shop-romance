@@ -1,85 +1,52 @@
-# 2026-09-24 内容重制：最高优先级当前状态
+# AI Observability and Mechanism Diagnostics
 
-用户已要求删除原有全部实际游戏内容，保留游戏机制、UI和已有优化。当前 `data/content.json` 的内容集合全部为空；旧开场、旧首章、旧人物、配方与立绘均已移出工程。下方所有涉及旧具体内容的历史约定仅为历史，禁止据此自动恢复内容。保留的章节引擎及历史内部 ID 属于兼容机制，不能按名称整目录删除；新内容另行确认制作。当前入口、存档隔离和验证见 `docs/content-reset-audit-20260924.md`。
+- For mechanisms that stack, trigger one another, affect multiple modules, or depend on timing, use one authoritative processing path for each class of outcome. Support deterministic replay and retain causal records in text that AI agents can read.
+- Cover values, states, tags, timing, random choices, interactions, resource changes, and presentation triggers. Do not trace only damage or other numerical outcomes. Choose recording granularity and verification methods according to the mechanism's actual complexity.
+- Define authoritative entry points by responsibility domain. Do not centralize every mechanism in an all-purpose manager. Keep module interfaces small, and never bypass a domain's authoritative path to produce its outcomes directly.
 
-# 项目约定
+# Project Goals
 
-- 2026-09-22 独立组件方向覆盖此前“原参考裁片高清重建”方案：用户不要求百分百复刻概念图，但明确禁止从概念图裁剪拼接运行素材；右栏、关系页、配方页的纸底、题签、按钮、头像框、日月/配方/关系图标、分隔和箭头均须分别独立生图，透明背景、至少4倍逻辑尺寸、等比显示。当前运行素材在 `assets/art/ui/independent_components_20260922/`，`scripts/ui` 已无 `reference_runtime_hd_20260922`、`reference_preserved_20260922`、`reference_parts_20260922` 引用。当前门禁以无拼接来源、alpha外圈、清晰度、无拉伸、无裁切、无重叠、1080p/真实4K/小屏/115%布局为准，不再以像素级复刻原图为完成条件。
+- Build a complete, executable, maintainable, testable Godot game suitable for commercial release.
+- This is not a disposable prototype. Production implementations must account for long-term maintenance, performance, save compatibility, content expansion, and release risks.
+- Gameplay, art direction, worldbuilding, target platforms, and business model are not finalized. Resolve them through small, replaceable experiments. Do not turn unconfirmed exploration into permanent global architecture.
 
-- 2026-09-22 运行时参考门禁更新：右栏、关系页、配方页已改用 `reference_preserved_20260922` 原参考轮廓的4倍高清重建版，配方箭头回到原图坐标；`tools/runtime_reference_gate.py` 对 Godot 最终截图而非源素材检查，1920自动缩放与真实3840自动78%均17/17通过，证据在 `outputs/ui-reference-gate-20260922/runtime/1920-auto` 与 `runtime/3840-auto`。该结果只证明锁定的纸形、边缘、间距和静态装饰达到门槛，不代表用户已经完成最终美术接受；实际角色、已发现条目数量与原概念占位内容允许不同。
+# User and Collaboration
 
-- 2026-09-22 追加美术约束：边框可用切角（数量待用户确认），按钮不能过于不整齐，主体边缘应平直规整、只保留细微手绘起伏。该用户许可须在视觉门禁中列为明确允许差异，不能继续强套原图角点或擅自采用大缺口。
+- The user has no Godot experience or established project foundation. Evaluate their instructions critically: they may be unsuitable or incorrect. When explaining operations, provide executable steps, including UI entry points, options to click, expected results, and common failure recovery.
+- Do not assume familiarity with Godot, GDScript, 3D, art pipelines, version control, or game publishing terminology.
+- Before each stage, define its goal, deliverables, acceptance criteria, and main risks. After completion, provide verification steps the user can perform.
+- Explain options and tradeoffs, and obtain user confirmation before decisions that affect the technical approach, project scope, data compatibility, cost, or commercial release.
+- Complete the smallest playable loop first, then expand. Do not mass-produce assets or build large systems before validating the core experience.
+- Do not use "a complete game" to justify building the entire architecture at once. Enforce small interfaces, single responsibilities, and module isolation. Confirm cross-module changes in advance.
+- When generating multiple images, delegate independent images to multiple sub-agents in parallel to save time.
 
-- 2026-09-22 最新严格视觉门禁：用户要求右侧轴/按钮/头像按原02-table重画，记录页按原04-relations/05-recipes拆组件逐项达到像素级相似再放行，检查层级与边缘，不能随意通过。功能测试不得当作美术验收。原图裁片、固定排除区、候选与差异图登记outputs/ui-reference-gate-20260922；完整规则docs/ui-reference-gate-contract.md。候选仅存reference_parts_20260922，不通过不得替换运行版。此条覆盖此前以原旅途题板统一全部窗口的参考选择。当前候选未通过，不能记为完成或已获用户认可。
+# Production and Risk Control
 
-- 2026-09-22 时间轴和记录页视觉返修覆盖前述九区取景方案：这三处必须使用whole_paper_style.gd连续源区域一次等比绘制，不得拆成九块独立cover造成接缝、笔触尺度跳变和粗糙模糊；使用whole_refinement_20260922完整轴/横纸/立绘纸，题签按真实纸面留白定位。右侧日月轴、天数、记录按钮、头像共用hud_column_layout.gd，以整列高度在屏幕右侧垂直居中，不能各自固定顶部坐标。视觉验收同时查看整屏和4K原像素局部图，不能仅凭测试通过或缩略图宣称还原。
+- Godot version: `v4.7.1.stable.official [a13da4feb]`.
+- Centralize all player-visible text and reference it through localization keys. Do not scatter hardcoded UI text, dialogue, hints, or names across scripts and scenes. Keep translation, proofreading, and bulk replacement straightforward.
+- Treat character, system, item, location, quest, and other names as provisional until formally confirmed. Code, scenes, resources, and saves must use stable internal IDs that are independent of display names. Renaming must be simple and must not break execution, references, or existing saves.
+- Proactively use online assets and generate images, audio, or other media as temporary assets to be replaced later. Do not block exploratory placeholder work on copyright concerns.
+- Avoid one-off exceptions, throwaway code, and unusual task-specific patches that create future maintenance problems.
+- Maintain a concise knowledge library for user-specified values, worldbuilding, preferences, and requirements. Update relevant documents after each addition or change. Use descriptive filenames and separate topics into files of only one or two paragraphs, so future agents can find and read them with minimal context use.
+- Keep this file focused on enduring guidance. Store work history, implementation details, and superseded decisions in separate documents.
+- Before operations that could damage existing scenes, resources, saves, or user changes, explain the risks and prepare a recoverable plan.
 
-- 2026-09-22 最新整纸方向覆盖以下分离纸边/平铺纹理约定：用户要求复用原主菜单旅途题板提示词与笔触，整张生成窗口纸面，唯一视觉输入为forest_rebuild/menu-title-plaque.png，禁止拿中间返修图继续作参考。普通面板不复制题板中央上下凸出的竖穿底纸带；同类界面共用PaperSkin和统一状态色。素材位于title_family_20260922；不再使用旧独立纸边和内部重复纹理。主菜单原题板保留。UI独立于3D棋盘缩放，1080p及以下自动100%、4K自动78%、中间连续变化，支持75/85/100/115%手动覆盖并持久化；不叠乘Windows DPI。所有按压仍只缩绘制不缩命中区域。
+# Art Boards
 
-- 2026-09-22 最新UI统一要求：所有运行界面纸肤收敛到paper_skin.gd与ui_paper_palette.gd，包含设置、存读档、取名、下拉与确认框。宽笔触暗紫褐底纸460逻辑像素周期；边沿使用unified_paper_20260922/brush-edge.png的稀疏方向性笔触，停止使用碎污渍磨损边。记录页整体缩放需反向补偿纹理/边宽/底纸偏移，不能改变最终纹理密度；同类标题、紧凑操作、内嵌字段共享角色样式。所有按钮只缩放视觉，不能缩命中框；主菜单长条纸叶字一起压下，普通按钮用顶点缩放，快速点放完成97%轻压后回弹。通用图标保留高清源图，禁止先缩为18–28px再放大。详细规则与例外见docs/ui-unified-style.md。本条覆盖旧磨损纸边及多套纸肤要求。
-- 2026-09-22 最新纹理纠正覆盖上一条细密纸纹要求：用户认可新磨损纸外沿，但否决umber-brush-tile的细密重复与偏黄，内部恢复dialogue_20260922/plum-brush-tile的短宽交错笔触、460逻辑像素周期，调回暗褐略带灰紫。菜单按钮直接保留menu-button-paper原RGB明暗与叠纸边，仅重着色为灰绿选中，不再压缩明暗或混入细纹理。新外沿、固定命中区域及已修好的按压反馈保留。
-- 2026-09-22 按钮与纸面细化：配方/关系入口打开后不能因toggle或鼠标焦点常绿，只在有效悬停/键盘焦点变色；头像、入口和Esc叉用UiPressFeedback做97%轻压回弹，固定控件命中框、只变绘制，极快点放也播完。Esc叉禁用旧通用hover/focus放大。纸面新增paper_detail_20260922细短干笔平铺与独立磨损纸边V2，不能恢复大块刷痕或一圈内沿渐变。修改前可运行备份在项目旁medieval-shop-romance-backups/ui-before-detail-20260922-021652，含SHA256清单。
-- 2026-09-22 UI返修：菜单按钮所有状态必须共用原PNG轮廓，只做重着色；按下不减暗，仅97%缩小，Esc按钮用普通Control定位，禁用CenterContainer二次覆写。序章/对白先测量完整正文再向上扩高，底部固定，不能靠固定高度裁字。配方预览直接实例化TableCardView并由CardContent.apply填充，禁止另画仿卡；关系详情使用完整原图等比容纳。记录窗口使用独立可重复纸边层，不能只留平色外形。
-- 2026-09-22 最新 UI：对白改为屏幕底部宽横纸，暗紫褐短宽干笔、左上姓名题签、右下继续箭头；原主角与信使双立绘放在纸框上方，纸框覆盖立绘底部切口，说话者平滑提亮放大并置顶。关系与配方以 `outputs/ui-smoke-brown-suite-20260919/04-relations.png`、`05-recipes.png` 为准：深褐横纸、顶中题签、右下唯一浅纸关闭，覆盖旧浅色页/左上关闭要求；不虚构未发现内容。主菜单与 Esc 菜单以同目录01/06为准，鼠标及键盘焦点必须统一显示灰橄榄绿色纸条与赭红叶标，窗口保持不可拖动。独立平铺纹理与纸形蒙版在 `assets/art/ui/dialogue_20260922/`，整合实机结果在 `outputs/ui-refinement-20260922/`。
+## 卡面与立绘
 
-- 2026-09-19最新微调：用户要求露金克制，采用card-gold-foil-matte.png浅暖哑光金、窄幅不规则露底，停用大片角部高亮金箔。主菜单在棋盘上方取景，只平移概览相机，保持概览高度及32度FOV，不再推到城镇前。FoldedTerrain在棋盘后缘加入1.6米宽、30度中间倒角面，再接60度后坡；网格、植物和射线均共享分段映射，存档逻辑坐标不变。
+- 两套资产独立生成。卡面：角色上半身＋绘制背景；复用用户认可的完整纸卡合集工作流，唯一参考与原提示词见[制作文档](docs/art/card-face-generation.md)，仅替换主题，不额外改写画法。从头绘制，不输入被否决的新卡面或立绘。
+- 立绘：已确认的精致人物插画风格，完整人物、透明背景；可用对应角色立绘保持身份。[模板与参考](docs/art/character-portrait-generation.md)。
+- `art_path` / `GameArt.card_face` 用于棋盘、配方、关系左侧、主角头像；`portrait_path` / `GameArt.portrait` 仅用于对话和关系右侧。不得串用或连带覆盖。
+- 卡面先同图生成完整纸卡合集，再提取插画区接入；运行时卡框和本地化文字独立保留。按原参考及实机尺寸验收。
 
-- 2026-09-19记录页细节返修：以docs/journal-reference-analysis.md逐项比对原03/04。记录页独用JournalPaperStyle灰奶油短羽状干笔与两层明显错位底纸，不修改其他UI纸肤；关系无贯穿竖分隔，整合肖像/姓名/粗蓝花缎带/相遇地点和轻故事提示，统计降为tooltip；配方使用独立亮纸条、断角选中、定宽输入产物纸片、细分叉箭头，标题带植物印且右上悬挂便签。仅两个真实页面页签放关系页，配方页不套同样页签结构；唯一左上关闭仍保留。只有已发现数据，完整列表截图须标明隔离fixture，不伪造角色/配方。
+- Art direction reference: `C:/Users/ZTCUS/iCloudDrive/iCloud~md~obsidian/GameArt/ArtDirection.canvas`.
+- Organize generated content by category on boards in the appropriate vault directories. Create a board when none exists.
 
-- 2026-09-19最新卡牌状态：选中为纸面磨损后露出的宽窄断续烫金块，不能退回细金色描线；NPC赭红纸与题签、地点灰绿、主角及未定其他类型暂中性灰。类型符号印在与卡边相连的左上纸肩中，不做悬浮徽章。
-- 2026-09-19主菜单与棋盘共用同一个3D场景和摄像机，菜单在后坡城镇取景，1.3秒移动/旋转过渡进入棋盘；过渡中冻结操作，Esc可冻结镜头，往返不改存档的棋盘镜头。停用独立journey_menu_backdrop场景。对话打开与退出动画期间右侧日期/头像/记录入口淡出，结束恢复；此条覆盖以前“对话中右栏常驻”。Esc外置题签、标题栏、空白区可拖，手动位置重开保留，仅超出视口时夹回。
+# Image Review and Game Debugging
 
-- 2026-09-19用户否决屏幕叠层假远景：棋盘与后缘延伸地形必须属于同一个连续ArrayMesh，后方折面向远处明显转折，植物/建筑根点放在实际地形上；最远背景为世界空间内朝摄像机的远距离平面。缩放/平移不得依靠屏幕上缘mask拼背景。当前FoldedTerrain将后缘向下折60度，射线换算与植被事件使用展开地面坐标；卡牌仍在前侧平面交互。
-- 2026-09-19用户要求缩小过大的卡牌：改168×258，专用独立灰绿卡纸/姓名签/贴边金线，禁止再为概念图构图把卡牌放大到448×688。存档v8兼容v7大牌及v1–6旧尺寸，先按原尺寸验证旧档合法性再迁移。
-- 2026-09-19主菜单参考outputs/ui-rebuild-references/08-main-menu.png：左侧独立题板与四个纸条入口，右侧林中小路、远镇、前景桌面/卡牌/灯笼。使用分开的纸板、植物、道具和地形组件，不以整张概念图作界面背景。记录页须对照03-relationships/04-recipes，保留真实发现数据、顶部纸页签与外凸题签，不用虚构角色或配方填空。
-
-- 2026-09-19最新美术要求覆盖此前粉纸及WitchHand外观：参考 outputs/ui-rebuild-references/05-card-table-depth.png，褐色地面与宽木边，棋盘维持轻微3D俯视，后方植物向远处河流和建筑形成纵深。卡牌为灰绿手绘纸、独立顶部姓名签、左上类型图标、选中金边；主角和信使保留原插画。UI组件和纹理独立制作，固定像素密度平铺，边角不拉伸。对话与暂停依据 outputs/ui-smoke-brown-suite-20260919/03-dialogue.png 与06-pause.png：右侧深褐纸对话、巨大双人立绘交错且说话者置顶；居中深纸暂停窗、外置标题签、五项操作。关系与配方沿用本次纸页参考，去掉底部重复关闭。实际游戏截图须独立留证，概念图不能冒充实机结果。
-
-- 2026-09-19 地面V4：用户否决V3灰底刮痕，已用本轮上传《旅行之书》实图作为生图输入，重画并接入board-earth-v4.png及meadow-earth-v4.png；泥地为暖土宽笔色面、外围为橄榄绿互嵌笔触。每2米一周期，只有周期边缘2%局部交接，内部不混合。V4尚未获用户视觉接受，不宣称完全还原参考。
-- 2026-09-19 地面V3：用户否决V2满铺迷彩图块，要求重新生成。当前使用board-earth-v3.png和meadow-earth-v3.png，连续浅土色/灰橄榄底与疏落长笔；仍按每2米完整平铺。V2仅留历史资源，V3已接入但外观未获用户接受，不得把平铺技术检查当作美术定稿。
-- 2026-09-19 对话与HUD可见性：当前说话者立绘z_index最高，不得被另一立绘挡住。配方/关系图标在游戏内含序章、对话、暂停均保持可见，对话中可查看；主菜单仍隐藏游戏HUD，系统暂停时禁用记录操作。右侧210逻辑像素内使用右缘18%黑色向左渐透明底衬，不接收鼠标，不添加明显边框。
-- 2026-09-19 对话最新要求：右侧短时间轴/天数/图标/头像作为一组向底部锚定。对白纯深色，无左侧蓝色间隙；不切换棋盘镜头宽度。主角与NPC立绘同时显示，人物组约半幅跨出栏左缘，约56%视口高；说话者0.24秒内提亮放大，非说话者变暗缩小。对话进入退出0.28秒，退出完成前冻结牌桌，Esc冻结过渡。角色与NPC合叠准备1.5秒才进入对话，进度位于整叠外；拆开清零，按住/拖动/暂停冻结，持续合叠不重复触发。准备是瞬时状态，换档清除，存档格式不变。
-- 2026-09-19 地面纹理纠正：用户否决模糊油彩纹理，明确棋盘中间改泥土地、不要蓝色。当前board-earth-v2.png与meadow-earth-v2.png采用较清楚的土色/灰绿色笔触块面，完整纹理按世界空间每2米直接平铺，停用四向半幅混合；不得通过扩大低分辨率单图或整幅混合掩盖接缝。原图1254×1254，不宣称生成器请求的2048为实际尺寸，近景需检查像素密度。
-- 2026-09-19 右侧HUD最新排布：短时间轴（高度为视口36%、限制220–360）、其下天数、配方/关系纯图标按钮；头像固定屏幕右下最底部，姓名在头像上。按钮常驻名称隐藏，悬停提示仍本地化。日月使用单独生成的moon-glyph-v2.png与sun-glyph-v2.png透明图标，统一暖米色纯色洞窟壁画风、等比显示。
-- 2026-09-19 草丛重叠闪烁处理：每512×256分块按16×16小格错位种植，保留256株候选和半尺寸，不允许随机根点近乎重合。植被透明空白用alpha阈值剔除，叶片采用不透明深度写入，避免透明排序跳变；不按棋盘矩形裁叶片，不在每帧随机移动种植点。
-- 2026-09-19 用户澄清时间轴仍在右侧：头像、姓名天数、配方与关系入口移到其下方同中线纵排，不再放左下。配方/关系使用独立生成的透明简约暖白线条图标recipe-icon-v2.png、relationship-icon-v2.png，等比显示，文案仍本地化。头像在对白上方保持可见但暂停不触发聚焦；记录入口仍沿用阅读/暂停时隐藏规则。
-- 2026-09-19 镜头范围纠正：平移中心上限随缩放从棋盘尺寸±0.225渐增至最大缩放时±0.5，确保中键可抵达四角；缩小时重新约束，不能恢复所有缩放共用固定小平移范围。
-- 2026-09-19 植物重播冷却：同一局部扫动区域最短触发间隔默认0.35秒（interaction_retrigger_interval），冷却期不改正在播放的事件与方向；扫向其他区域可立即触发，暂停使用游戏elapsed冻结冷却。
-- 2026-09-19 植物动画仅允许画面左右摆动：顶点只修改局部X，不改Y/Z；去除纵向下压，使用连续混合拨动，避免最强事件切换造成相位跳变。源meadow主/细风波及根部固定保留，快速划过的历史继续播完。
-- 2026-09-19 植被最新覆盖：用户撤销植物阴影，假阴影与真实投影均关闭；植株宽高各减50%，每512×256分块候选数64增至256，补偿覆盖密度。卡牌悬浮阴影、自然风及快速扫动完整回弹保持。
-- 2026-09-19 最新交互调整：卡牌鼠标按下即悬浮，无需超过拖动阈值，单击释放落回原位。植物使用固定地面的柔边假阴影，关闭真实光源投影；恢复旧正弦阻尼回弹手感，但保留完整快速扫过线段和1.1秒历史，后续事件不得不断重置已有回弹。自然风与暂停冻结继续保留。
-- 2026-09-19 最新细化：日月轴进度从上向下，植物面平行摄像机、根点仍在棋盘外，允许叶片摆入棋盘且不得按棋盘矩形裁剪；鼠标完整扫动路径触发，速度越快越强但封顶，缓慢扫过幅度小，保留自然风与暂停冻结。鼠标位置附带柔和暖光照亮牌桌与植物。卡底内缩适配削角，不能从生成边框外露出分类底色。
-- 2026-09-19 紧凑棋盘：用户确认面积为原来的5/12，宽高各乘sqrt(5/12)，卡牌112×184不变；开局概览缩放0.60、最低0.55，平移中心限制在棋盘尺寸的±0.225。植物在棋盘外按稳定分块种子铺设并根据投影视野延展，不能露出原380像素植物环的边界。存档v6兼容v1–5，旧档先按旧边界验证再迁入新棋盘。时间改为右侧太阳/月亮纵轴，左下仅保留姓名与天数；头像点击平滑定位主角，暂停禁用。卡框改独立生成的card-frame-v2.png，保持插画等比、卡底不透明。透明底部须能拖卡/平移，仅实际控件拦截鼠标，禁止用旧布局预留区域阻断棋盘输入。
-- 2026-09-19 显示设置：窗口模式提供分辨率选择并独立持久化，全屏和无边框使用当前显示器原生尺寸，分辨率栏显示实际尺寸并禁止手选；回到窗口恢复所选尺寸，小屏或换屏时限制在可用桌面内。3D视口必须按实际屏幕像素渲染，暂停切换同样立即刷新。
-- 2026-09-18 最新架构授权：用户要求改为3D棋盘、少量透视。已以TableStage3D/Camera3D真实透视呈现，俯角72度（较正俯视倾斜18度）、FOV32，100逻辑像素映射1米；原2D卡牌绘制位于独立SubViewport并贴到3D棋盘，拖起卡牌保持屏幕浮层。牌桌外植被改TableMeadow3D真实空间批绘，根点仍位于WORLD_BOUNDS外；右侧对白/HUD仍屏幕UI。鼠标通过射线到牌桌平面转换，存档仍保存原2D逻辑位置、缩放和中心，版本保持v5。本条取代早期“仅Godot 2D棋盘”和2D植被运行方案。
-- 2026-09-18 植被纠正：用户指定game工程res://scenes/world/tile_templates/wilderness_meadow_0002.tscn效果，明确“棋盘外”是TableState.WORLD_BOUNDS之外的世界空间，不是屏幕边缘。最新TableVegetation作为board.world子节点，2200株分块MultiMesh2D、随镜头平移缩放，根点全在边界外380像素环内；取真实场景细草/深灌丛/白花，禁用该场景实例为0的鲜绿grass_clump主草。旧80株屏幕边框方案作废。只适配2D源植被材质和风场，不宣称复制原3D灯光；源码保持只读。
-- 2026-09-18 用户明确允许本轮复用 C:/Users/ZTCUS/Documents/game 的植被铺设代码。只复用三个透明植物PNG及grass_painter的风波、根部固定、距离交互与区域色公式，适配为本项目2D屏幕外沿；源工程保持只读，不继承其其他玩法或世界观。鼠标经过/点击会拨动并阻尼回弹，不采集或产出物品。植被裁去真实棋盘和HUD区域，主菜单隐藏、Esc和阅读时冻结；实现和来源见docs/knowledge/table-vegetation-source.md。
-- 2026-09-18 最新已批准并接入方向：用户选定 B（outputs/ui-directions-v4/01-ebb-witchhand-crayon.png），追加卡牌更长、立绘位于对话框左下、不要紫色边框线。实际使用112×184长牌、细微独立蜡笔边纹与分类色、蓝灰桌面；序章/对白改右侧35%全高无描边叙事栏，当前说话者透明近景立绘锚在栏左下。HUD与记录入口移左下；这条取代旧底部字幕/右下HUD/粉纸舒展的视觉约定。保留原拖放弹性，旧纸张逐帧播放停用，不制作假逐帧；新素材位于assets/art/ui/ebb_crayon。阅读时只对牌桌显示取景，不改变卡牌真实位置或存档镜头。Esc、计时、姓名、唯一信使离场和存档规则不变。
-- 2026-09-18 最新选择：用户暂选原 WitchHand 概念（outputs/ui-witchhand-v1/witchhand-ui-concept.png，同本轮附件）为基准；要求卡边有细微蜡笔手绘感，并探索 Esoteric Ebb 的 UI 配合蜡笔绘制、WitchHand 卡牌比例与背景，以及 Fogpiercer（Steam 3219010）方向。候选位于 outputs/ui-directions-v4；当前仍是概念迭代，尚未把新版接入运行时，不沿用旧粉色纸张。卡牌应更接近 WitchHand 实机约3:4的宽高比例，概念生成偏差须标明，实际足迹变更需随选定版统一迁移。
-- 2026-09-18 本轮概念探索新要求：用户否决仅换颜色的固定布局，要求各参考游戏连同构图、信息分区、卡牌组织与对话布局分别重设计。七版归档在 outputs/ui-directions-v3；本轮允许概念图探索不同日期/人物入口/字幕位置，尚未选择或接入运行时，不能把示意新增按钮、数值或布局当作已确认玩法。
-- 2026-09-18 最新美术方向：用户明确撤回此前 UI 方向，改做参考 WitchHand 的新版本。旧粉色纸张、叠纸蒙版及纸张舒展风格不再作为新 UI 的约束，以下相关记录仅为旧实现历史；玩法、本地化、人物身份与等比显示规则继续保留。本轮新概念图位于 outputs/ui-witchhand-v1/witchhand-ui-concept.png，尚未接入运行时或获得视觉定稿确认。
-- 用户于 2026-09-18 选定 outputs/ui-exploration-v7/parchment-rose-aligned.png 的粉色方案，并授权接入卡牌、序章/对话框、姓名纸条及对话按钮；其他 UI 继续沿用原素材。纸纹、底纸纹、纸边和小纸条边框分别生成，生产素材位于 assets/art/ui/rose_modular。纹理以固定密度平铺，边角固定尺寸、长边重复拼接，不能把整图拉伸成皮肤。保持轻薄手绘粉色、小破损与舒展边缘，较大轮廓变化来自略错开的独立底纸；不可回到绿色或厚重立体纸张。所有图像等比显示，人物透明而卡底完全不透明。纸张舒展使用每帧单独生成的卡牌/对话两套序列，依照首尾→中点→区间中点制作，不能以淡入、整图缩放、程序变形或视频抽帧替代；换句不重播、普通拖放不重播、Esc 冻结动画。
-- 信使剧情自然读完后，执行唯一事件 event.messenger.departure：移除信使卡，保留主角、树、镇口及人物关系记录。用户确认本轮只做离场，暂不留下物品；将来物品必须从 NPC 实际位置出现。中途对话不离场，读取存档不重放后果；旧档中已读但未离场的信使再次交谈读完后离场。存档 v5 保存唯一后果集合，兼容 v1–4。
-- 游戏启动进入独立主菜单。新旅程先取名，再序章与教程；取消取名不改旧进度。Esc 的操作为“返回主菜单”，必须成功保存后才返回，不能直接退出程序；真正退出位于主菜单。主菜单不推进后台时间和自动保存，也不露出游戏 HUD。旧档补名保留原进度，名称作为用户输入数据保存，独立于内容 ID 与翻译键；存档状态 v5 兼容 v1–4。
-- 右下角集中显示主角头像、玩家自取姓名、游戏时刻、天数和当日进度。一天仍为120秒，时刻按一日24小时映射。底部剧情/对话框与市场不得遮挡 HUD。
-- 卡牌统一112×184，仅绘制标题与近景大图，不能恢复底部说明/类别文字或卡内进度条。组合进度位于整叠顶部之外，跟随实际位置，拆开消失，暂停冻结。旧存档先按旧128×180验证，再迁移边缘位置；新版坏档仍严格拒绝。
-- 用户当前要求按游戏流程逐段制作：新开局为四页原创序章，牌桌仅有“你”与“森林”；组合探索后森林变为信使、树、苇灯镇入口，玩家保留，共四张卡。用户已追加玩家与 NPC 组合交谈、双人立绘、卡面插画和统一 UI 美术；尚不添加入镇、伐木或完整支线。镇名与8秒探索时长暂定。
-- 序章改为游戏画面底部文字框，牌桌和日期可见、经营与记录入口隐藏，阅读时停止计时和卡牌交互，Esc 仍可打开系统窗口。探索显示最上层卡牌进度，拆开归零，整叠拖动暂不结算，暂停冻结。产物必须从森林实际位置出现。序章页数、探索与对话状态纳入存档，兼容旧经营存档，不自动清空已有进度。
-- 玩家与棋盘 NPC 新合叠打开双人立绘对话；主角投向顶部客人则返回原位并交谈，客人仍留在队列。对话期间冻结牌桌、日期与耐心，Esc 覆盖系统窗口后可继续同一句。持续叠放不重复触发；重新组合可重读，交谈本身不反复奖励好感或来访次数。存档保存故事代号、实际 NPC、行号与唯一已读集合。
-- Esc、配方、人物关系均使用可拖动、可关闭、限制在视口内的悬浮窗口；配方和人物关系记住各自的本次会话位置，查看时游戏继续。开场/对话字幕固定在底部，不能恢复全屏叙事遮板或右侧停靠记录栏。
-- 美术调性为成年男性之间的恋爱奇幻；主角为成年男性旅人，信使必须使用用户指定原图。用户本轮三个美术对话中的清晰硬边色块作为角色画风参考，ArtDirection.canvas 的安静信息层级指导 UI。资源复制进 assets/art，卡面与立绘共用身份来源，临时访客可共用占位立绘；未经用户确认不把临时设定当成正式定稿。
-- 用户于 2026-09-17 确认：玩家首要动力是遇见 NPC、提升好感度、解锁剧情。后续阶段、卡牌与经营策划须围绕这一核心评估；具体角色、互动、数值和剧情触发方式仍待确认，不能把经营效率或配方收集直接当成首要目标。
-- 用户已追加固定货源与出售菜单：底部投卡区固定于屏幕，拖入金币购买、拖入商品出售，棋盘不再生成货源牌；每位客人显示独立耐心条。任何交易产物必须从对应菜单或付款客人的实际位置跳出，再落到棋盘。当前用户要求先不打包，使用 Godot 直接运行工程验证。
-- 中文交流、文档和问题说明；终端命令、终端输出、脚本注释及日志使用英文。
-- 当前目录是独立游戏根目录，临时内部名 `medieval_shop_romance`，目标引擎 Godot v4.7.1。用户不熟悉 Godot，操作说明需清楚解释步骤。
-- 使用小模块、稳定 ID；玩家可见文本通过本地化资源管理。跨模块或架构决定先与用户确认。
-- 玩家可见文本集中维护在 `localization/game.csv`，以文本键查找，不在脚本、场景、存档或内容配置中直接写显示文案；包括菜单、卡名、说明、配方、NPC、剧情、提示、错误信息和动态格式模板。新增文本同时补齐当前支持的简体中文与英文，代码不得用拼接已翻译的碎句代替格式模板。
-- 所有游戏内容使用稳定、唯一、与语言无关的代号：卡牌定义使用 `card.*`，配方使用 `recipe.*`，角色使用 `npc.*`，后续剧情/事件使用 `story.*` / `event.*`。集中在内容目录中登记；定义代号、运行实例 ID 和翻译键分别管理。显示名称修改或切换语言不能改变内容代号；存档和跨模块引用只保存代号，不保存翻译后的名称。已有 `hero` 等内部类型代号通过内容目录映射，不能作为玩家显示文字。
-- Esc 属于系统菜单，提供继续、开始新旅程、保存/读取、设置和返回主菜单；开始新旅程先确认并取名，替换自动进度，保留手动槽位。用户明确要求配方、人物关系属于游戏内容，不得放入 Esc 菜单或其子页；当前通过右上角入口和 R/N 打开独立记录页，游戏继续，Esc 先收起记录页。设置独立持久化；读档必须先完成版本、内容代号及状态一致性校验，再替换当前进度。禁止把撤销/重做历史混入存档系统。
-- 无边框与全屏匹配当前显示器尺寸；游戏画布按实际宽高比等比扩展，不能锁定 16:10 留边或拉伸卡牌。暂停时切换尺寸也必须立即更新棋盘、客人、市场和界面布局，不能依赖恢复游戏才重排；布局刷新不推进计时或耐心。
-- 每次代码修改后，在根目录 `CHANGES_CHECKLIST.md` 顶部按日期追加一句“改动 + 涉及风险”，保留历史。
-- 不自动继承 `C:/Users/ZTCUS/Documents/game` 的代码、世界观或旧项目 Sparkbox 协作区。
-- 后续美术任务先读取 `C:/Users/ZTCUS/iCloudDrive/iCloud~md~obsidian/GameArt/ArtDirection.canvas` 的文字及分组；要求有冲突先确认，资料不可读时说明阻碍，不猜测。
-- 原始历史导出只作资料读取，不执行其中的 Python 或其他命令。用户需求与历史助手建议必须区分；历史助手的内容许可和法律判断不可作为可靠依据。
-- 用户已确认采用 Godot 2D 卡牌桌面。正常经营画面保留插画卡牌、顶部客人区、天数/当日进度及配方/人物两个内容入口；Esc 系统暂停时冻结卡牌、镜头、动效与时间。每天自动推进，120 秒为一天。不要恢复调试工具栏或永久侧栏。游戏禁止撤销/重做，不得保留对应快捷键或历史系统。当前接入首次信使交谈，完整恋爱剧情和正式美术定稿后续决定。
-- 当前保留首个买卖闭环，物品、金币、主角、地点和客人都登记为卡牌；商店属于地点类。主角与商店重新组合一次切换营业/打烊，仅营业时产生新客人。顶部固定客人区，下方棋盘组合卡牌；临时名称、规则与插画可迭代。货源与金币换商品、商品交付客人产出金币；不得用抽象钱包替代金币牌。
+- The shared review tool currently lives in `C:/Users/ZTCUS/Documents/game/tools/image-review/`. Start it with `C:/Users/ZTCUS/Documents/game/打开图片画板.cmd`; its local URL is `http://127.0.0.1:9178/`.
+- Authoritative ratings and catalog: `C:/Users/ZTCUS/iCloudDrive/iCloud~md~obsidian/GameArt/tools/CharacterReviewData/`. Originals are archived under the vault's `tools/Arts/CharacterReview/`.
+- Register generated images explicitly through `POST /api/register` with `{path,title,group}`. Read the `X-Review-Token` header value from `C:/Users/ZTCUS/Documents/game/.local/image-review/bridge-token`; never disclose it. Do not assume arbitrary output directories are discovered automatically.
+- Use the review tool for classification and board synchronization. Preserve originals and user-created nodes and links. Direct review-board edits may affect only `review-` nodes and must have a recoverable canvas backup.
+- Run the current saved game source with `C:/Users/ZTCUS/Desktop/Godot.exe --path C:/Users/ZTCUS/Documents/Codex/2026-09-15/medieval-shop-romance`. Do not substitute historical export packages. Launching may update Godot caches and game saves. The review service must remain localhost-only.

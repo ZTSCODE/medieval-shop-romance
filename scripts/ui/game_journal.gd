@@ -152,6 +152,7 @@ func toggle(page: String) -> void:
 		close()
 		return
 	var opening := current_page.is_empty()
+	AudioEvents.play_event("book.open" if opening else "book.page")
 	current_page = page
 	if is_instance_valid(_reveal):
 		_reveal.kill()
@@ -207,6 +208,7 @@ func close() -> void:
 	if not was_open:
 		panel.hide()
 		return
+	AudioEvents.play_event("book.close")
 	_reveal = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	_reveal.tween_property(panel, "modulate:a", 0.0, 0.18)
 	_reveal.tween_callback(func(): panel.hide())

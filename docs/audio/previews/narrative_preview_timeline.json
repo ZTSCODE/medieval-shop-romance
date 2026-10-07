@@ -1,0 +1,211 @@
+[
+  {
+    "time_seconds": 0,
+    "duration_seconds": 15.0,
+    "event": "ambience.snowline",
+    "text_key": "",
+    "quote_zh": "",
+    "pan": 0,
+    "catalog_gain_db": -2,
+    "offset_db": 0,
+    "purpose": "User snowline context: exposed gusts retreat as trees shelter the player"
+  },
+  {
+    "time_seconds": 1.2,
+    "duration_seconds": 2.527,
+    "event": "narrative.snow_to_soft_ground",
+    "text_key": "DLG_MESSENGER_EDGE_01",
+    "quote_zh": "肺里像着了火。脚下的地越来越软。身后某处，一条狗叫了一声，又停了。",
+    "pan": 0.0,
+    "catalog_gain_db": -1,
+    "offset_db": 0,
+    "purpose": "脚下的地越来越软"
+  },
+  {
+    "time_seconds": 4.1,
+    "duration_seconds": 1.12,
+    "event": "narrative.dog_far",
+    "text_key": "DLG_MESSENGER_EDGE_01",
+    "quote_zh": "肺里像着了火。脚下的地越来越软。身后某处，一条狗叫了一声，又停了。",
+    "pan": -0.28,
+    "catalog_gain_db": 0,
+    "offset_db": 0,
+    "purpose": "一条狗叫了一声"
+  },
+  {
+    "time_seconds": 9.0,
+    "duration_seconds": 0.658,
+    "event": "narrative.scarf",
+    "text_key": "DLG_MESSENGER_EDGE_03",
+    "quote_zh": "你的左手抖个不停。你把它塞进外套里按住，像按住别人的手。",
+    "pan": 0.12,
+    "catalog_gain_db": -2,
+    "offset_db": 0.0,
+    "purpose": "Exact configured narrative phrase: 你把它塞进外套里"
+  },
+  {
+    "time_seconds": 12,
+    "duration_seconds": 64.0,
+    "event": "ambience.cold_wood",
+    "text_key": "",
+    "quote_zh": "",
+    "pan": 0,
+    "catalog_gain_db": 0,
+    "offset_db": 0,
+    "purpose": "Thawed thornwood; no added bird/cricket chorus"
+  },
+  {
+    "time_seconds": 13.0,
+    "duration_seconds": 0.632,
+    "event": "narrative.brush_thorns",
+    "text_key": "DLG_MESSENGER_EDGE_04",
+    "quote_zh": "然后树木合拢过来，一片白雾横在你面前，低低的，一动不动。",
+    "pan": 0.0,
+    "catalog_gain_db": -2,
+    "offset_db": 0.0,
+    "purpose": "Exact configured narrative phrase: 然后树木合拢过来"
+  },
+  {
+    "time_seconds": 20.0,
+    "duration_seconds": 0.44,
+    "event": "narrative.soft_steps",
+    "text_key": "DLG_MESSENGER_EDGE_07",
+    "quote_zh": "一个年轻人从雾里走出来，喘着粗气。头发上别着月桂，腰间挎着信包。",
+    "pan": 0.0,
+    "catalog_gain_db": -1,
+    "offset_db": 0.0,
+    "purpose": "Exact configured narrative phrase: 从雾里走出来"
+  },
+  {
+    "time_seconds": 20.42,
+    "duration_seconds": 0.403,
+    "event": "narrative.soft_steps",
+    "text_key": "DLG_MESSENGER_EDGE_07",
+    "quote_zh": "一个年轻人从雾里走出来，喘着粗气。头发上别着月桂，腰间挎着信包。",
+    "pan": 0.0,
+    "catalog_gain_db": -1,
+    "offset_db": 0.0,
+    "purpose": "Exact configured narrative phrase: 从雾里走出来"
+  },
+  {
+    "time_seconds": 25.5,
+    "duration_seconds": 0.488,
+    "event": "narrative.flask_handover",
+    "text_key": "DLG_MESSENGER_EDGE_19",
+    "quote_zh": "他递过来一只水壶，壶身上錾着一对黄铜翅膀。",
+    "pan": 0.12,
+    "catalog_gain_db": -3,
+    "offset_db": 0.0,
+    "purpose": "Exact configured narrative phrase: 他递过来一只水壶"
+  },
+  {
+    "time_seconds": 32.0,
+    "duration_seconds": 0.488,
+    "event": "narrative.flask_handover",
+    "text_key": "DLG_MESSENGER_EDGE_21",
+    "quote_zh": "你接过来。手指冷得厉害，黄铜摸上去竟有点烫。",
+    "pan": 0.12,
+    "catalog_gain_db": -3,
+    "offset_db": -3.0,
+    "purpose": "Exact configured narrative phrase: 你接过来"
+  },
+  {
+    "time_seconds": 37.5,
+    "duration_seconds": 1.12,
+    "event": "narrative.dog_nearer",
+    "text_key": "DLG_MESSENGER_EDGE_27",
+    "quote_zh": "远远的身后，狗又叫了。比刚才近。",
+    "pan": -0.28,
+    "catalog_gain_db": 0,
+    "offset_db": 0.0,
+    "purpose": "Exact configured narrative phrase: 狗又叫了"
+  },
+  {
+    "time_seconds": 41.0,
+    "duration_seconds": 0.474,
+    "event": "narrative.scarf",
+    "text_key": "DLG_MESSENGER_EDGE_32",
+    "quote_zh": "你把围巾递给他。他一句话没说，绕在了自己脖子上。",
+    "pan": 0.12,
+    "catalog_gain_db": -2,
+    "offset_db": 0.0,
+    "purpose": "Exact configured narrative phrase: 你把围巾递给他"
+  },
+  {
+    "time_seconds": 44,
+    "duration_seconds": 8.0,
+    "event": "movement.stream_escape",
+    "text_key": "opening.explore",
+    "quote_zh": "实际叠卡探索黑刺李林，走入溪水避开追踪",
+    "pan": 0,
+    "catalog_gain_db": -2,
+    "offset_db": 0,
+    "purpose": "Actual player action, never EDGE29 instruction"
+  },
+  {
+    "time_seconds": 53.0,
+    "duration_seconds": 1.793,
+    "event": "narrative.wet_arrive",
+    "text_key": "DLG_MESSENGER_RULES_01",
+    "quote_zh": "一个钟头后，他追了上来，膝盖以下全湿透了，一脸得意。",
+    "pan": 0.0,
+    "catalog_gain_db": -2,
+    "offset_db": 0.0,
+    "purpose": "Exact configured narrative phrase: 他追了上来"
+  },
+  {
+    "time_seconds": 57.0,
+    "duration_seconds": 0.658,
+    "event": "narrative.scarf",
+    "text_key": "DLG_MESSENGER_RULES_03",
+    "quote_zh": "他把围巾还给你。围巾被他的脖子捂得还是暖的。",
+    "pan": 0.12,
+    "catalog_gain_db": -2,
+    "offset_db": 0.0,
+    "purpose": "Exact configured narrative phrase: 他把围巾还给你"
+  },
+  {
+    "time_seconds": 57,
+    "duration_seconds": 19.0,
+    "event": "music.story",
+    "text_key": "DLG_MESSENGER_RULES_03",
+    "quote_zh": "",
+    "pan": 0,
+    "catalog_gain_db": -24,
+    "offset_db": 0,
+    "purpose": "Restrained warmth only after dogs were diverted; actual -24dB trim"
+  },
+  {
+    "time_seconds": 61.5,
+    "duration_seconds": 0.415,
+    "event": "narrative.berry_pluck",
+    "text_key": "DLG_MESSENGER_RULES_07",
+    "quote_zh": "他在一丛黑刺李边蹲下，摘了一颗果子，皱眉看了看，放进你掌心。",
+    "pan": 0.0,
+    "catalog_gain_db": -2,
+    "offset_db": 0.0,
+    "purpose": "Exact configured narrative phrase: 摘了一颗果子"
+  },
+  {
+    "time_seconds": 66.5,
+    "duration_seconds": 1.95,
+    "event": "narrative.run_depart",
+    "text_key": "DLG_MESSENGER_RULES_17",
+    "quote_zh": "然后他转身跑进了林子。",
+    "pan": 0.0,
+    "catalog_gain_db": -2,
+    "offset_db": 0.0,
+    "purpose": "Exact configured narrative phrase: 转身跑进了林子"
+  },
+  {
+    "time_seconds": 72.0,
+    "duration_seconds": 0.474,
+    "event": "narrative.scarf",
+    "text_key": "DLG_MESSENGER_RULES_18",
+    "quote_zh": "你把围巾重新绕回脖子上。上面还有他的体温。",
+    "pan": 0.12,
+    "catalog_gain_db": -2,
+    "offset_db": 0.0,
+    "purpose": "Exact configured narrative phrase: 你把围巾重新绕回脖子上"
+  }
+]

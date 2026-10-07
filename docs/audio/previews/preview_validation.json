@@ -1,0 +1,16 @@
+[
+  {
+    "filename": "narrative_snowline_to_thornwood_76s.mp3",
+    "seconds": 76.0,
+    "peak_dbfs": -14.690508197723586,
+    "rms_dbfs": -37.17079193145155,
+    "kind": "offline_catalog_audition_not_game_capture"
+  },
+  {
+    "filename": "ui_card_book_sampler_40s.mp3",
+    "seconds": 40.0,
+    "peak_dbfs": -18.01286838316512,
+    "rms_dbfs": -52.56895857707705,
+    "kind": "offline_catalog_audition_not_game_capture"
+  }
+]

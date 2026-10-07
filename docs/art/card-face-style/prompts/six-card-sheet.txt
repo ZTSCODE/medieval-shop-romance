@@ -1,0 +1,13 @@
+Create one high-resolution square illustration sheet with six separate tall 2:3 paintings, arranged in an exact 3-column by 2-row grid, equal cells, no gaps. Use ONLY the four provided pictures as visual style references. Reuse their soft matte painted colors, opaque economical folk-art gouache, short dry-brush dashes, flat simplified shapes and quiet negative space. Light grey-sage, cool creamy paper, desaturated blue-green, small terracotta accents; neutral temperature. Calm simplified hand-painted faces, not detailed anime. Each painting has a complete opaque painted background. Keep the modest visual detail of little illustrations in the original paper UI.
+
+Top row left to right:
+1. Upper-body adult male traveler, tousled dark brown hair, short stubble, olive-grey travelling coat, quiet expression, sparse forest background.
+2. Blackthorn woodland, blue-green trees, narrow path, a few blue-purple berries.
+3. Upper-body young adult male messenger, dark tousled hair, a few gold leaves in his hair, friendly smile, white and terracotta clothes, holding a letter, sparse forest background.
+
+Bottom row left to right:
+4. Blue-purple sloe fruits on a thorny twig with leaves.
+5. Badger footprints along a woodland path.
+6. Four mossy standing stones in a meadow, a small distant village.
+
+All six share the references' restrained hand-painted brush handling. Illustrations only, no words, labels, card frames, dividing lines or UI. Draw all six from scratch.

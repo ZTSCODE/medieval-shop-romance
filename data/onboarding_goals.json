@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "stages": [
+    {
+      "id": "table_basics",
+      "title_key": "ONBOARD_STAGE_TABLE_BASICS",
+      "goals": [
+        {"id": "pan_table", "text_key": "ONBOARD_GOAL_PAN_TABLE", "event": "camera_panned"},
+        {"id": "zoom_table", "text_key": "ONBOARD_GOAL_ZOOM_TABLE", "event": "camera_zoomed"},
+        {"id": "drag_card", "text_key": "ONBOARD_GOAL_DRAG_CARD", "event": "card_dragged"},
+        {"id": "walk_wood", "text_key": "ONBOARD_GOAL_WALK_WOOD", "event": "opening_explored"}
+      ]
+    },
+    {
+      "id": "into_mist",
+      "title_key": "ONBOARD_STAGE_INTO_MIST",
+      "goals": [
+        {"id": "meet_messenger", "text_key": "ONBOARD_GOAL_MEET_MESSENGER", "event": "story_completed:story.messenger.edge"},
+        {"id": "follow_stream", "text_key": "ONBOARD_GOAL_FOLLOW_STREAM", "event": "explore_completed:card.loc.stream_path"},
+        {"id": "hear_lee", "text_key": "ONBOARD_GOAL_HEAR_LEE", "event": "story_completed:story.messenger.catch_up"}
+      ]
+    },
+    {
+      "id": "shop_tools",
+      "title_key": "ONBOARD_STAGE_SHOP_TOOLS",
+      "goals": [
+        {"id": "focus_hero", "text_key": "ONBOARD_GOAL_FOCUS_HERO", "event": "hero_focused"},
+        {"id": "change_time", "text_key": "ONBOARD_GOAL_CHANGE_TIME", "event": "time_mode_changed"},
+        {"id": "open_recipes", "text_key": "ONBOARD_GOAL_OPEN_RECIPES", "event": "journal_recipes_opened"},
+        {"id": "open_relationships", "text_key": "ONBOARD_GOAL_OPEN_RELATIONSHIPS", "event": "journal_npcs_opened"}
+      ]
+    }
+  ]
+}

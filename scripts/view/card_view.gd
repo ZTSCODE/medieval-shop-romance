@@ -3,13 +3,14 @@ extends Node2D
 
 const CARD_SIZE := TableState.CARD_SIZE
 const HALF_SIZE := CARD_SIZE * 0.5
-const CORNER_RADIUS := 2.0
+const CORNER_RADIUS := 8.0
 const MAX_TILT := deg_to_rad(4.0)
 const FACE_RECT := Rect2(-HALF_SIZE, CARD_SIZE)
-const ART_RECT := Rect2(-HALF_SIZE + CARD_SIZE * Vector2(0.06, 0.087), CARD_SIZE * Vector2(0.88, 0.877))
-const TITLE_FONT_SIZE := int(CARD_SIZE.x * 0.11)
-const TITLE_RECT := Rect2(Vector2(-CARD_SIZE.x * 0.35, -HALF_SIZE.y - CARD_SIZE.y * 0.045), Vector2(CARD_SIZE.x * 0.70, CARD_SIZE.y * 0.13))
+const ART_RECT := Rect2(-HALF_SIZE + CARD_SIZE * Vector2(0.038, 0.115), CARD_SIZE * Vector2(0.924, 0.85))
+const TITLE_FONT_SIZE := int(CARD_SIZE.x * 0.125)
+const TITLE_RECT := Rect2(Vector2(-CARD_SIZE.x * 0.35, -HALF_SIZE.y - CARD_SIZE.y * 0.055), Vector2(CARD_SIZE.x * 0.70, CARD_SIZE.y * 0.16))
 const PAPER_SOURCE := Rect2(68, 96, 880, 1372)
+const PAPER_INTERIOR := Rect2(148, 176, 720, 1212)
 const COMPONENT_DIR := "res://assets/art/ui/forest_rebuild/"
 const FRAME_PATH := CrayonCardStyle.EDGE_PATH
 const PAPER_BASE := Color("718885")
@@ -55,11 +56,12 @@ var _masked_destination := Rect2()
 var _masked_source := Rect2()
 var _art_layer: Node2D
 var _art_material: ShaderMaterial
-var _glyph_layer: Node2D
+var _front_layer: Node2D
 var _gold_layer: Node2D
 var _gold_material: ShaderMaterial
 var _gold_clock := 0.0
 static var _component_cache: Dictionary = {}
+static var _paper_contour := PackedVector2Array()
 
 
 func _init() -> void:
@@ -72,6 +74,9 @@ func _ready() -> void:
 	_art_layer.name = "ArtSurface"
 	_art_material = ShaderMaterial.new()
 	_art_material.shader = preload("res://assets/shaders/card_art_edge.gdshader")
+	_art_material.set_shader_parameter("type_paper_profile", preload("res://assets/art/ui/forest_rebuild/type-paper-profile.tres"))
+	_art_material.set_shader_parameter("face_origin", FACE_RECT.position)
+	_art_material.set_shader_parameter("face_size", FACE_RECT.size)
 	_art_layer.material = _art_material
 	add_child(_art_layer)
 	_art_layer.draw.connect(_draw_art_layer)
@@ -82,13 +87,22 @@ func _ready() -> void:
 	_gold_material.shader = preload("res://assets/shaders/card_inset_gold.gdshader")
 	_gold_material.set_shader_parameter("title_paper",_component("card-title-sage.png"))
 	_gold_material.set_shader_parameter("gold_noise",preload("res://assets/art/ui/forest_rebuild/gold-grain-noise.tres"))
+	_gold_material.set_shader_parameter("face_origin", FACE_RECT.position)
+	_gold_material.set_shader_parameter("use_face_geometry", true)
+	_gold_material.set_shader_parameter("source_origin", PAPER_INTERIOR.position)
+	_gold_material.set_shader_parameter("source_size", PAPER_INTERIOR.size)
+	_gold_material.set_shader_parameter("corner_radius", CORNER_RADIUS)
+	_gold_material.set_shader_parameter("face_size", FACE_RECT.size)
+	_gold_material.set_shader_parameter("title_origin", (TITLE_RECT.position - FACE_RECT.position) / FACE_RECT.size)
+	_gold_material.set_shader_parameter("title_size", TITLE_RECT.size / FACE_RECT.size)
 	_gold_layer.material = _gold_material
 	add_child(_gold_layer)
 	_gold_layer.draw.connect(_draw_inset_gold)
-	_glyph_layer = Node2D.new()
-	_glyph_layer.name = "TypeGlyph"
-	add_child(_glyph_layer)
-	_glyph_layer.draw.connect(_draw_type_glyph)
+	_front_layer = Node2D.new()
+	_front_layer.name = "CardFrontDetails"
+	add_child(_front_layer)
+	_front_layer.draw.connect(_draw_type_glyph)
+	_front_layer.draw.connect(_draw_content)
 	if ResourceLoader.exists(FRAME_PATH):
 		_frame_texture = load(FRAME_PATH) as Texture2D
 	queue_redraw()
@@ -220,11 +234,11 @@ func _draw() -> void:
 	shadow_transform.origin = HALF_SIZE + Vector2(1.0 + lift * 0.20, 2.0 + lift * 0.25)
 	draw_set_transform_matrix(shadow_transform)
 	for spread: float in [5.0, 2.5, 0.0]:
-		ImagePlacement.draw(get_canvas_item(), _component("card-sage-paper.png"), FACE_RECT.grow(spread * (0.3 + _drag_mix * 0.7)), &"contain", Color(0.025, 0.03, 0.035, 0.055 + _drag_mix * 0.035), PAPER_SOURCE)
+		_draw_paper_patch(get_canvas_item(), _component("card-sage-paper.png"), FACE_RECT.grow(spread * (0.3 + _drag_mix * 0.7)), PAPER_SOURCE, Color(0.025, 0.03, 0.035, 0.055 + _drag_mix * 0.035), 80.0, 12.0)
 	draw_set_transform_matrix(_visual_transform)
 	var hint_pulse := 0.78 if reduced_motion else 0.68 + 0.32 * (0.5 + 0.5 * sin(_gold_clock * 5.2))
 	var active_rim := maxf(maxf(_selected_mix, _target_mix), _combination_hint_mix * hint_pulse)
-	ImagePlacement.draw(get_canvas_item(), _component("card-sage-paper.png"), FACE_RECT, &"contain", _paper_tint(), PAPER_SOURCE)
+	_draw_paper_patch(get_canvas_item(), _component("card-sage-paper.png"), FACE_RECT, PAPER_SOURCE, _paper_tint(), 80.0, 12.0)
 	if is_instance_valid(_art_layer):
 		_art_layer.transform = _visual_transform
 	if is_instance_valid(_gold_layer):
@@ -232,27 +246,30 @@ func _draw() -> void:
 		_gold_layer.visible = active_rim > 0.005
 		_gold_material.set_shader_parameter("strength",active_rim)
 		_gold_material.set_shader_parameter("shimmer_clock",_gold_clock)
+		_gold_material.set_shader_parameter("linear_canvas", get_viewport().use_hdr_2d)
+		_gold_material.set_shader_parameter("hdr_headroom", get_window().get_output_max_linear_value() if get_viewport().use_hdr_2d else 1.0)
 		_gold_layer.queue_redraw()
-	if is_instance_valid(_glyph_layer):
-		_glyph_layer.transform = _visual_transform
-		_glyph_layer.queue_redraw()
-	_draw_content()
+	if is_instance_valid(_front_layer):
+		_front_layer.transform = _visual_transform
+		_front_layer.queue_redraw()
 	draw_set_transform_matrix(Transform2D.IDENTITY)
 
 
 func _draw_inset_gold() -> void:
-	ImagePlacement.draw(_gold_layer.get_canvas_item(), _component("card-sage-paper.png"), FACE_RECT, &"contain", Color.WHITE, PAPER_SOURCE)
+	_draw_paper_patch(_gold_layer.get_canvas_item(), _component("card-sage-paper.png"), FACE_RECT, PAPER_SOURCE, Color.WHITE, 80.0, 12.0)
 
 
 func _draw_type_glyph() -> void:
 	var glyph := GameArt.texture("res://assets/art/ui/forest_rebuild/type-leaf.png")
+	var glyph_size := CARD_SIZE * Vector2(0.12, 0.09)
 	if category_id == &"character":
 		var people := AtlasTexture.new()
 		people.atlas = GameArt.texture("res://assets/art/ui/forest_rebuild/relationship-solid.png")
 		people.region = Rect2(286,404,684,538)
 		glyph = people
+		glyph_size.x = CARD_SIZE.x * 0.085
 	if glyph != null:
-		ImagePlacement.draw(_glyph_layer.get_canvas_item(), glyph, Rect2(FACE_RECT.position + CARD_SIZE * Vector2(0.075, 0.093), CARD_SIZE * Vector2(0.085, 0.072)), &"contain", Color(0.75,0.70,0.57,0.90))
+		ImagePlacement.draw(_front_layer.get_canvas_item(), glyph, Rect2(FACE_RECT.position + CARD_SIZE * Vector2(0.040, 0.062), glyph_size), &"contain", Color(0.78,0.75,0.65,0.94))
 
 
 func get_title_rect() -> Rect2:
@@ -265,31 +282,58 @@ func _draw_content() -> void:
 	var title_rect := get_title_rect()
 	var title_tint := _paper_tint()
 	_draw_title_shadow(title_rect)
-	ImagePlacement.draw(get_canvas_item(), _component("card-title-sage.png"), title_rect, &"contain", title_tint, Rect2(110, 196, 1810, 380))
+	_draw_paper_patch(_front_layer.get_canvas_item(), _component("card-title-sage.png"), title_rect, Rect2(110, 196, 1810, 380), title_tint, 90.0, 6.0)
 	var text_width := title_rect.size.x - 12.0
 	var baseline := title_rect.position.y + (title_rect.size.y - _font.get_height(TITLE_FONT_SIZE)) * 0.5 + _font.get_ascent(TITLE_FONT_SIZE)
-	draw_string(_font, Vector2(title_rect.position.x + 6.0, baseline), _fit_line(_title, text_width, TITLE_FONT_SIZE), HORIZONTAL_ALIGNMENT_CENTER, text_width, TITLE_FONT_SIZE, Color("f1eadb"))
+	_front_layer.draw_string(_font, Vector2(title_rect.position.x + 6.0, baseline), _fit_line(_title, text_width, TITLE_FONT_SIZE), HORIZONTAL_ALIGNMENT_CENTER, text_width, TITLE_FONT_SIZE, Color("f1eadb"))
 
 
 func _draw_title_shadow(title_rect: Rect2) -> void:
-	var placement := ImagePlacement.fit(Rect2(110, 196, 1810, 380), title_rect, &"contain")
-	var destination: Rect2 = placement.destination
-	# 下缘两小段收尖断笔，避免整片投影把题签本身染暗。
-	for stroke: Vector3 in [Vector3(0.09, 0.34, 0.38), Vector3(0.62, 0.19, 0.27)]:
-		var at := Vector2(destination.position.x + destination.size.x * stroke.x, destination.end.y - 0.45)
-		var length := destination.size.x * stroke.y
-		var points := PackedVector2Array([at, at+Vector2(length*0.23,-0.15), at+Vector2(length*0.72,0.1), at+Vector2(length,0.3), at+Vector2(length*0.82,1.4), at+Vector2(length*0.47,2.1), at+Vector2(length*0.15,1.1)])
-		var ink := Color(0.065,0.05,0.045,stroke.z)
-		var tip := Color(ink,0.02)
-		draw_polygon(points,PackedColorArray([tip,ink,ink,tip,ink,ink,tip]))
+	# Dry contact pigment: irregular width and broken coverage, without a blurred halo.
+	# Paper covers the inner edge; the top remains open.
+	var contour := PackedVector2Array([
+		Vector2(0.002,0.07),Vector2(0.001,0.30),Vector2(0.002,0.57),
+		Vector2(0.000,0.74),Vector2(0.002,0.88),
+		Vector2(0.009,0.96),Vector2(0.025,1.008),
+		Vector2(0.08,1.018),Vector2(0.19,1.011),Vector2(0.32,1.021),
+		Vector2(0.46,1.009),Vector2(0.58,1.022),Vector2(0.73,1.012),
+		Vector2(0.87,1.019),Vector2(0.96,1.010),Vector2(0.987,0.985),
+		Vector2(1.002,0.92),Vector2(1.001,0.78),Vector2(1.003,0.61),
+		Vector2(1.000,0.48),Vector2(1.002,0.28),Vector2(1.000,0.07)
+	])
+	var stroke_distance := 0.0
+	var vertices := PackedVector2Array()
+	var colors := PackedColorArray()
+	var triangles := PackedInt32Array()
+	for index in contour.size() - 1:
+		var start := title_rect.position + contour[index] * title_rect.size
+		var finish := title_rect.position + contour[index + 1] * title_rect.size
+		var length := start.distance_to(finish)
+		var normal := (finish - start).normalized().orthogonal()
+		var steps := maxi(1, ceili(length / 1.4))
+		for step in steps:
+			var distance := stroke_distance + length * float(step) / steps
+			var next_distance := stroke_distance + length * float(step + 1) / steps
+			var a := start.lerp(finish, float(step) / steps)
+			var b := start.lerp(finish, float(step + 1) / steps)
+			var edge_a := normal * (2.40 + 0.55 * sin(distance * 0.23)) * 0.5
+			var edge_b := normal * (2.40 + 0.55 * sin(next_distance * 0.23)) * 0.5
+			var first := vertices.size()
+			vertices.append_array(PackedVector2Array([a - edge_a, b - edge_b, b + edge_b, a + edge_a]))
+			var pigment_a := Color(0.10,0.075,0.060, 0.51 + 0.12 * sin(distance * 0.17) + 0.07 * sin(distance * 0.53))
+			var pigment_b := Color(0.10,0.075,0.060, 0.51 + 0.12 * sin(next_distance * 0.17) + 0.07 * sin(next_distance * 0.53))
+			colors.append_array(PackedColorArray([pigment_a, pigment_b, pigment_b, pigment_a]))
+			triangles.append_array(PackedInt32Array([first, first + 1, first + 2, first, first + 2, first + 3]))
+		stroke_distance += length
+	RenderingServer.canvas_item_add_triangle_array(_front_layer.get_canvas_item(), triangles, vertices, colors)
 
 
 func _paper_tint() -> Color:
 	if category_id == &"character" and content_kind != &"hero":
-		return Color(0.94, 0.46, 0.32)
+		return Color(0.98, 0.64, 0.58)
 	if category_id == &"location":
-		return Color(0.59, 0.79, 0.61)
-	return Color(0.67, 0.71, 0.83)
+		return Color(0.90, 0.86, 0.89)
+	return Color(0.92, 0.87, 0.91)
 
 
 func _draw_art_layer() -> void:
@@ -309,6 +353,59 @@ func _prepare_masked_art() -> void:
 		_art_material.set_shader_parameter("art_origin", _masked_destination.position)
 		_art_material.set_shader_parameter("art_size", _masked_destination.size)
 		_art_material.set_shader_parameter("source_size", _masked_source.size)
+
+
+static func _draw_paper_patch(canvas: RID, texture: Texture2D, target: Rect2, source: Rect2, tint: Color, source_border: float, target_border: float) -> void:
+	# Preserve the painted corners while adapting the center to the card geometry.
+	if texture == null:
+		return
+	if source == PAPER_SOURCE:
+		_draw_rounded_card_paper(canvas, texture, target, tint)
+		return
+	var source_x := [source.position.x, source.position.x + source_border, source.end.x - source_border, source.end.x]
+	var source_y := [source.position.y, source.position.y + source_border, source.end.y - source_border, source.end.y]
+	var target_x := [target.position.x, target.position.x + target_border, target.end.x - target_border, target.end.x]
+	var target_y := [target.position.y, target.position.y + target_border, target.end.y - target_border, target.end.y]
+	for row in 3:
+		for column in 3:
+			var sample := Rect2(source_x[column], source_y[row], source_x[column + 1] - source_x[column], source_y[row + 1] - source_y[row])
+			var destination := Rect2(target_x[column], target_y[row], target_x[column + 1] - target_x[column], target_y[row + 1] - target_y[row])
+			texture.draw_rect_region(canvas, destination, sample, tint, false, true)
+
+
+static func _draw_rounded_card_paper(canvas: RID, texture: Texture2D, target: Rect2, tint: Color) -> void:
+	# One outline for paper, shadows, gold and drop previews. Sample inside the
+	# painted sheet: its original bevel must not cut through the round silhouette.
+	if _paper_contour.is_empty():
+		var centers := [Vector2(CARD_SIZE.x - CORNER_RADIUS, CORNER_RADIUS),
+			CARD_SIZE - Vector2.ONE * CORNER_RADIUS,
+			Vector2(CORNER_RADIUS, CARD_SIZE.y - CORNER_RADIUS),
+			Vector2.ONE * CORNER_RADIUS]
+		for corner in 4:
+			for step in 25:
+				var angle := -PI * 0.5 + (corner + step / 24.0) * PI * 0.5
+				var normal := Vector2.from_angle(angle)
+				var point: Vector2 = centers[corner] + normal * CORNER_RADIUS
+				_paper_contour.append((point + normal * _paper_edge_wave(point)) / CARD_SIZE)
+			var edge_angle := corner * PI * 0.5
+			var normal := Vector2.from_angle(edge_angle)
+			var start: Vector2 = centers[corner] + normal * CORNER_RADIUS
+			var end: Vector2 = centers[(corner + 1) % 4] + normal * CORNER_RADIUS
+			var steps := int(ceil(start.distance_to(end) / 4.0))
+			for step in range(1, steps):
+				var point := start.lerp(end, step / float(steps))
+				_paper_contour.append((point + normal * _paper_edge_wave(point)) / CARD_SIZE)
+	var points := PackedVector2Array()
+	var uvs := PackedVector2Array()
+	for point in _paper_contour:
+		points.append(target.position + point * target.size)
+		uvs.append((PAPER_INTERIOR.position + point * PAPER_INTERIOR.size) / texture.get_size())
+	RenderingServer.canvas_item_add_polygon(canvas, points, PackedColorArray([tint]), uvs, texture.get_rid())
+
+
+static func _paper_edge_wave(point: Vector2) -> float:
+	# Match the gold shader's subpixel paper-edge variation.
+	return sin(point.x * 0.23 + point.y * 0.31) * 0.25 + sin(point.x * 0.53 - point.y * 0.41) * 0.12
 
 
 static func _component(filename: String) -> Texture2D:

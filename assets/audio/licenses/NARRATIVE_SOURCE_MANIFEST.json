@@ -1,0 +1,1253 @@
+{
+  "verified_date": "2026-10-06",
+  "content_sources": [
+    "data/content.json",
+    "localization/game.csv"
+  ],
+  "direction": "Cold snowline escape transitions to damp, sheltered blackthorn woods. Physical sounds follow actual actions, not mentioned nouns. No daytime bird/cricket blanket, cheerful lute or magical mist effects in pursuit.",
+  "sources": [
+    {
+      "id": "corsica_snow",
+      "title": "42 Snow and Gravel Footsteps",
+      "author": "Corsica_S; extraction by Iwan Gabovitch",
+      "source_url": "https://opengameart.org/content/42-snow-and-gravel-footsteps",
+      "download_url": "https://opengameart.org/sites/default/files/corsica_s-walking_in_snow.7z",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "verified_date": "2026-10-06",
+      "archive": "snow_steps.7z",
+      "archive_sha256": "206306b51f8eeedf82043d6628174ec8ff9b16230dffb5192a5c74688e62abd4",
+      "source_page_snapshot": "42-snow-and-gravel-footsteps.html",
+      "notes": "Publisher page and archive readme explicitly confirm permission to release under CC0."
+    },
+    {
+      "id": "fantozzi_steps",
+      "title": "Fantozzi’s Footsteps (Grass/Sand & Stone)",
+      "author": "Fantozzi; extracted by qubodup",
+      "source_url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "download_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "verified_date": "2026-10-06",
+      "archive": "grass_steps.7z",
+      "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+      "source_page_snapshot": "fantozzis-footsteps-grasssand-stone.html",
+      "notes": "Publisher describes Sand variants as suitable for grass; originals and slices CC0."
+    },
+    {
+      "id": "qubodup_leaves",
+      "title": "20 Rustles of dry leaves",
+      "author": "qubodup",
+      "source_url": "https://opengameart.org/content/20-rustles-dry-leaves",
+      "download_url": "https://opengameart.org/sites/default/files/qubodup-rustle.7z",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "verified_date": "2026-10-06",
+      "archive": "leaf_rustles.7z",
+      "archive_sha256": "c5d7458085e9b208009388b832184bddc0045482f6fa67a1eb6ea09335bb7a43",
+      "source_page_snapshot": "20-rustles-dry-leaves.html",
+      "notes": "Recorded leaf rustles. Selected short movements, not long noisy beds."
+    },
+    {
+      "id": "independent_wood",
+      "title": "35 wooden cracks/hits/destructions",
+      "author": "Independent.nu; submitted by qubodup",
+      "source_url": "https://opengameart.org/content/35-wooden-crackshitsdestructions",
+      "download_url": "https://opengameart.org/sites/default/files/independent_nu_ljudbank-wood_crack_hit_destruction.7z",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "verified_date": "2026-10-06",
+      "archive": "wood_cracks.7z",
+      "archive_sha256": "2f9723be0147c32ea07db8ef7406229fb8f1a6ce8feabdf0dbf2dc5ee2aacd1a",
+      "source_page_snapshot": "35-wooden-crackshitsdestructions.html",
+      "notes": "One short filtered crack transient selected to suggest a small twig; do not deploy heavy destruction files."
+    },
+    {
+      "id": "brandon_morris_dog",
+      "title": "Dog barking mono",
+      "author": "Brandon Morris (HaelDB)",
+      "source_url": "https://opengameart.org/content/dog-barking-mono",
+      "download_url": "https://opengameart.org/sites/default/files/dog_barking_mono.wav",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "verified_date": "2026-10-06",
+      "archive": "dog_barks.wav",
+      "archive_sha256": "bbd0f908b3514dd3bd7d2bc04dcf64f8d360a161e7f43cac5d6761e7add79451",
+      "source_page_snapshot": "dog-barking-mono.html",
+      "notes": "Offered under OGA-BY 3.0 OR CC0; CC0 option selected. OGA FAQ confirms only one listed license must be followed: https://opengameart.org/node/5571 . Same single bark used at two distances."
+    },
+    {
+      "id": "tinyworlds_steps",
+      "title": "Different steps on wood, stone, leaves, gravel and mud",
+      "author": "TinyWorlds",
+      "source_url": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "download_url": "https://opengameart.org/sites/default/files/%5Bkdd%5DDifferentSteps_0.zip",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "verified_date": "2026-10-06",
+      "archive": "different_steps.zip",
+      "archive_sha256": "987d072b7deaa65177e005ddd8185f2351be7c9a76cd7575dea560549c39b33b",
+      "source_page_snapshot": "different-steps-on-wood-stone-leaves-gravel-and-mud.html",
+      "notes": "CC0 field-recording-derived mud/gravel/leaf steps. Only mud/gravel selected for specific physical contacts."
+    },
+    {
+      "id": "rubberduck_water",
+      "title": "40 CC0 water / splash / slime SFX",
+      "author": "rubberduck",
+      "source_url": "https://opengameart.org/content/40-cc0-water-splash-slime-sfx",
+      "download_url": "https://opengameart.org/sites/default/files/water-splash-slime-sfx.zip",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "verified_date": "2026-10-06",
+      "archive": "water_splashes.zip",
+      "archive_sha256": "7cd39abb49d4362a37ba18dc0e454c7dc1d08029d4e5b683149046bc237b2eba",
+      "source_page_snapshot": "40-cc0-water-splash-slime-sfx.html",
+      "notes": "Only water loop and small splash variants used; no slime/bubble or rain tracks selected."
+    },
+    {
+      "id": "kenney_rpg",
+      "title": "RPG Audio",
+      "author": "Kenney Vleugels / Kenney",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "download_urls": [
+        "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip"
+      ],
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "license_file": "kenney_rpg/License.txt",
+      "evidence_file": "kenney_rpg-source.html",
+      "verified_date": "2026-10-06",
+      "notes": "Physical book, leather, coins, door, creak and footsteps. Prefer these organic cues to electronic UI effects.",
+      "originals": [
+        {
+          "path": "kenney_rpg.zip",
+          "bytes": 964837,
+          "sha256": "6dbeaf8544da958d8f2adcb4a4a4b76c1ade34a05f8ab9edccd327da7375f38b"
+        }
+      ],
+      "original_staging_manifest": "../AUDIO_SOURCE_MANIFEST.json"
+    },
+    {
+      "id": "park_ambiences",
+      "title": "Park ambiences",
+      "author": "Thimras",
+      "source_url": "https://opengameart.org/content/park-ambiences",
+      "download_urls": [
+        "https://opengameart.org/sites/default/files/park_ambience_river.wav",
+        "https://opengameart.org/sites/default/files/park_ambience_wind.wav"
+      ],
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "license_file": null,
+      "evidence_file": "park-ambiences-source.html",
+      "verified_date": "2026-10-06",
+      "notes": "Natural field recordings of small river/wildlife and open-field wind in Adelaide. Wind is filtered and attenuated in derivatives; river should be used only where water fits the scene.",
+      "originals": [
+        {
+          "path": "park_ambience_river.wav",
+          "bytes": 99072736,
+          "sha256": "da0c0c9b1249a83a1611cc116d5737b0864a8db9f45f1ae8dcc079d0f7c0bbbf"
+        },
+        {
+          "path": "park_ambience_wind.wav",
+          "bytes": 73960096,
+          "sha256": "5c381856745b4706e7eba55eb9271a61a530e90c05df8126adb2db89ecfa6c5a"
+        }
+      ],
+      "original_staging_manifest": "../AUDIO_SOURCE_MANIFEST.json"
+    }
+  ],
+  "assets": [
+    {
+      "file": "ready/amb_snowline_gusts_loop.ogg",
+      "originals": [
+        "../park_ambience_wind.wav"
+      ],
+      "source_ids": [
+        "park_ambiences"
+      ],
+      "intended_text_keys": [
+        "OPENING_CHRONICLE_PAGE_2",
+        "OPENING_CHRONICLE_PAGE_5",
+        "DLG_MESSENGER_EDGE_01"
+      ],
+      "modifications": "36s natural open-field wind excerpt with broad gusts, filtered and circular 2s blend. Designed snowline storm bed, not claimed to be a field recording of snowfall. Added 40ms lookaround transient compression (5:1 above 3x RMS; 20ms gain smoothing) before looping to control isolated recording peaks without flattening multi-second gusts.",
+      "loop": true,
+      "duration_seconds": 36.0,
+      "target_rms_dbfs": -25,
+      "source_peak_ceiling_dbfs": -6,
+      "sha256": "f5932aaa9eaf764d3ff9bb661cb70d653cb3ad5fd74db03b67900c849cac2100"
+    },
+    {
+      "file": "ready/amb_thorn_forest_cold_loop.ogg",
+      "originals": [
+        "../park_ambience_wind.wav"
+      ],
+      "source_ids": [
+        "park_ambiences"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_04",
+        "DLG_MESSENGER_EDGE_05"
+      ],
+      "modifications": "32s low-pass sheltered wind, circular 2s blend. No added birds/insects, no magical mist effect. Added 40ms lookaround transient compression (5:1 above 3x RMS; 20ms gain smoothing) before looping to control isolated recording peaks without flattening multi-second gusts.",
+      "loop": true,
+      "duration_seconds": 32.0,
+      "target_rms_dbfs": -34,
+      "source_peak_ceiling_dbfs": -14,
+      "sha256": "685c1dc6382f0ce8b49d1ad49a97c540db57675673f2c8390e0f5ec46f9aab29"
+    },
+    {
+      "file": "ready/amb_creek_hidden_loop.ogg",
+      "originals": [
+        "water_splashes/loop_water_02.ogg"
+      ],
+      "source_ids": [
+        "rubberduck_water"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_29",
+        "action:first_forest"
+      ],
+      "modifications": "Water-only loop repeated four times after circular .35s blend and filtering; use low/distant until entering stream.",
+      "loop": true,
+      "duration_seconds": 26.6565,
+      "target_rms_dbfs": -30,
+      "source_peak_ceiling_dbfs": -10,
+      "sha256": "587981c7cc680f2df1904ccdfeb8bb6e689cffe4d8b7936ff4d0f3fd4819c039"
+    },
+    {
+      "file": "ready/step_snow_01.ogg",
+      "originals": [
+        "snow_steps/Corsica_S-Walking_in_Snow/Corsica_S-Walking_on_snow_covered_gravel_01.flac"
+      ],
+      "source_ids": [
+        "corsica_snow"
+      ],
+      "intended_text_keys": [
+        "snowline_travel",
+        "transition:DLG_MESSENGER_EDGE_01"
+      ],
+      "modifications": "Natural snow-covered gravel/ice footstep, 48kHz conversion, gain and endpoint fades.",
+      "loop": false,
+      "duration_seconds": 0.476875,
+      "target_rms_dbfs": -24,
+      "source_peak_ceiling_dbfs": -9,
+      "sha256": "a586713de2e3994e5c7f648eab38ffd35884f908c6c0f2f06a0b64135bbe525a"
+    },
+    {
+      "file": "ready/step_snow_02.ogg",
+      "originals": [
+        "snow_steps/Corsica_S-Walking_in_Snow/Corsica_S-Walking_on_snow_covered_gravel_02.flac"
+      ],
+      "source_ids": [
+        "corsica_snow"
+      ],
+      "intended_text_keys": [
+        "snowline_travel",
+        "transition:DLG_MESSENGER_EDGE_01"
+      ],
+      "modifications": "Natural snow-covered gravel/ice footstep, 48kHz conversion, gain and endpoint fades.",
+      "loop": false,
+      "duration_seconds": 0.69375,
+      "target_rms_dbfs": -24,
+      "source_peak_ceiling_dbfs": -9,
+      "sha256": "119fdf0a1961aab77658ae4c75d81e22f1e0a2f65622b0ee81a775cb6101696e"
+    },
+    {
+      "file": "ready/step_snow_03.ogg",
+      "originals": [
+        "snow_steps/Corsica_S-Walking_in_Snow/Corsica_S-Walking_on_snow_covered_gravel_03.flac"
+      ],
+      "source_ids": [
+        "corsica_snow"
+      ],
+      "intended_text_keys": [
+        "snowline_travel",
+        "transition:DLG_MESSENGER_EDGE_01"
+      ],
+      "modifications": "Natural snow-covered gravel/ice footstep, 48kHz conversion, gain and endpoint fades.",
+      "loop": false,
+      "duration_seconds": 0.6495625,
+      "target_rms_dbfs": -24,
+      "source_peak_ceiling_dbfs": -9,
+      "sha256": "61ef4e08aa5679d51123245fecf2ce17e875f576f20e7aa292d00ac4fd1eaa39"
+    },
+    {
+      "file": "ready/step_snow_04.ogg",
+      "originals": [
+        "snow_steps/Corsica_S-Walking_in_Snow/Corsica_S-Walking_on_snow_covered_gravel_04.flac"
+      ],
+      "source_ids": [
+        "corsica_snow"
+      ],
+      "intended_text_keys": [
+        "snowline_travel",
+        "transition:DLG_MESSENGER_EDGE_01"
+      ],
+      "modifications": "Natural snow-covered gravel/ice footstep, 48kHz conversion, gain and endpoint fades.",
+      "loop": false,
+      "duration_seconds": 0.6790208333333333,
+      "target_rms_dbfs": -24,
+      "source_peak_ceiling_dbfs": -9,
+      "sha256": "ba3c0a047aab5906eb2c753c4d5cc770858e16196c54eeb4376c2f714e9e5caa"
+    },
+    {
+      "file": "ready/step_soft_grass_01.ogg",
+      "originals": [
+        "grass_steps/Fantozzi-footsteps/flac/Fantozzi-SandL1.flac"
+      ],
+      "source_ids": [
+        "fantozzi_steps"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_01",
+        "DLG_MESSENGER_EDGE_07",
+        "DLG_MESSENGER_RULES_15",
+        "DLG_MESSENGER_RULES_17",
+        "action:badger_track"
+      ],
+      "modifications": "Recorded sand/grass-like single footstep; low-pass to soften brittle edge, gain and endpoint fades.",
+      "loop": false,
+      "duration_seconds": 0.44254166666666667,
+      "target_rms_dbfs": -25,
+      "source_peak_ceiling_dbfs": -10,
+      "sha256": "38665c9ef634a84a94884c41d52986c93bbe941dd5d84081c18887ea398682a9"
+    },
+    {
+      "file": "ready/step_soft_grass_02.ogg",
+      "originals": [
+        "grass_steps/Fantozzi-footsteps/flac/Fantozzi-SandR1.flac"
+      ],
+      "source_ids": [
+        "fantozzi_steps"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_01",
+        "DLG_MESSENGER_EDGE_07",
+        "DLG_MESSENGER_RULES_15",
+        "DLG_MESSENGER_RULES_17",
+        "action:badger_track"
+      ],
+      "modifications": "Recorded sand/grass-like single footstep; low-pass to soften brittle edge, gain and endpoint fades.",
+      "loop": false,
+      "duration_seconds": 0.40577083333333336,
+      "target_rms_dbfs": -25,
+      "source_peak_ceiling_dbfs": -10,
+      "sha256": "55e9f34a32303859d54530b2bc42e064ceb5ab0495d49eacb8d71e1feefeee32"
+    },
+    {
+      "file": "ready/step_soft_grass_03.ogg",
+      "originals": [
+        "grass_steps/Fantozzi-footsteps/flac/Fantozzi-SandL2.flac"
+      ],
+      "source_ids": [
+        "fantozzi_steps"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_01",
+        "DLG_MESSENGER_EDGE_07",
+        "DLG_MESSENGER_RULES_15",
+        "DLG_MESSENGER_RULES_17",
+        "action:badger_track"
+      ],
+      "modifications": "Recorded sand/grass-like single footstep; low-pass to soften brittle edge, gain and endpoint fades.",
+      "loop": false,
+      "duration_seconds": 0.3196041666666667,
+      "target_rms_dbfs": -25,
+      "source_peak_ceiling_dbfs": -10,
+      "sha256": "7970b8f70c3428b975d2e1fca05dfb37e19058d22171ed34178846ef1b7ad813"
+    },
+    {
+      "file": "ready/step_soft_grass_04.ogg",
+      "originals": [
+        "grass_steps/Fantozzi-footsteps/flac/Fantozzi-SandR2.flac"
+      ],
+      "source_ids": [
+        "fantozzi_steps"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_01",
+        "DLG_MESSENGER_EDGE_07",
+        "DLG_MESSENGER_RULES_15",
+        "DLG_MESSENGER_RULES_17",
+        "action:badger_track"
+      ],
+      "modifications": "Recorded sand/grass-like single footstep; low-pass to soften brittle edge, gain and endpoint fades.",
+      "loop": false,
+      "duration_seconds": 0.3401875,
+      "target_rms_dbfs": -25,
+      "source_peak_ceiling_dbfs": -10,
+      "sha256": "358c04559f72d6118312b55900cf8bee2a79e28a4e42622f757d01fe946d27aa"
+    },
+    {
+      "file": "ready/step_wet_earth.ogg",
+      "originals": [
+        "different_steps/mud02.ogg"
+      ],
+      "source_ids": [
+        "tinyworlds_steps"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_01",
+        "DLG_MESSENGER_RULES_01"
+      ],
+      "modifications": "Soft mud/earth contact rather than hard interior footsteps.",
+      "loop": false,
+      "duration_seconds": 0.2599375,
+      "target_rms_dbfs": -25,
+      "source_peak_ceiling_dbfs": -10,
+      "sha256": "e5fd0bff81ce2c5c25d11b5d6befaae5d9f9fbc36067c7369415ce09f28aa83a"
+    },
+    {
+      "file": "ready/brush_thorns_01.ogg",
+      "originals": [
+        "leaf_rustles/rustle/rustle09.flac"
+      ],
+      "source_ids": [
+        "qubodup_leaves"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_04",
+        "DLG_MESSENGER_EDGE_05",
+        "DLG_MESSENGER_RULES_17"
+      ],
+      "modifications": "Selected sub-second foliage-contact recording, gain reduced and endpoint fades.",
+      "loop": false,
+      "duration_seconds": 0.6347083333333333,
+      "target_rms_dbfs": -28,
+      "source_peak_ceiling_dbfs": -13,
+      "sha256": "4ffddeb7216f475cf3d888f9ae8381d581aa54f884d688139c0ebe3050c27d30"
+    },
+    {
+      "file": "ready/brush_thorns_02.ogg",
+      "originals": [
+        "leaf_rustles/rustle/rustle12.flac"
+      ],
+      "source_ids": [
+        "qubodup_leaves"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_04",
+        "DLG_MESSENGER_EDGE_05",
+        "DLG_MESSENGER_RULES_17"
+      ],
+      "modifications": "Selected sub-second foliage-contact recording, gain reduced and endpoint fades.",
+      "loop": false,
+      "duration_seconds": 0.7727708333333333,
+      "target_rms_dbfs": -28,
+      "source_peak_ceiling_dbfs": -13,
+      "sha256": "baff859f347c843b8b0eacf925cd0f9d426f64e120e42d21266f840134a18f81"
+    },
+    {
+      "file": "ready/brush_thorns_03.ogg",
+      "originals": [
+        "leaf_rustles/rustle/rustle16.flac"
+      ],
+      "source_ids": [
+        "qubodup_leaves"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_04",
+        "DLG_MESSENGER_EDGE_05",
+        "DLG_MESSENGER_RULES_17"
+      ],
+      "modifications": "Selected sub-second foliage-contact recording, gain reduced and endpoint fades.",
+      "loop": false,
+      "duration_seconds": 0.9646041666666667,
+      "target_rms_dbfs": -28,
+      "source_peak_ceiling_dbfs": -13,
+      "sha256": "4bdcf4062f352f03eba38bcb557cbbd174bd594a4348e5ddf695909e586dd522"
+    },
+    {
+      "file": "ready/berry_leaf_pluck.ogg",
+      "originals": [
+        "leaf_rustles/rustle/rustle10.flac"
+      ],
+      "source_ids": [
+        "qubodup_leaves"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_RULES_07"
+      ],
+      "modifications": "Short .42s leaf contact for a single sloe pluck; no reward chime.",
+      "loop": false,
+      "duration_seconds": 0.4177708333333333,
+      "target_rms_dbfs": -30,
+      "source_peak_ceiling_dbfs": -16,
+      "sha256": "c460b45673b26e4e3db1fed6cb55030532a9cc807af692c66a2ddb100091ca9d"
+    },
+    {
+      "file": "ready/twig_snap_small.ogg",
+      "originals": [
+        "wood_cracks/wood_impact/crack07.mp3.flac"
+      ],
+      "source_ids": [
+        "independent_wood"
+      ],
+      "intended_text_keys": [
+        "transition:forest_entry",
+        "action:badger_track"
+      ],
+      "modifications": "Small transient extracted from recorded wood crack, high-pass removes heavy construction thump; not a literal twig field recording.",
+      "loop": false,
+      "duration_seconds": 0.27,
+      "target_rms_dbfs": -31,
+      "source_peak_ceiling_dbfs": -17,
+      "sha256": "bcec2fc8ac0252f737d502786496dbf4513a0a34cb63384db07070fc6ca89543"
+    },
+    {
+      "file": "ready/dog_bark_far.ogg",
+      "originals": [
+        "dog_barks.wav"
+      ],
+      "source_ids": [
+        "brandon_morris_dog"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_01"
+      ],
+      "modifications": "Second individual bark extracted (0.45–0.87s) from four-bark source; distance lowpass/gain and faint short reflections; one bark only.",
+      "loop": false,
+      "duration_seconds": 1.12,
+      "target_rms_dbfs": -33,
+      "source_peak_ceiling_dbfs": -23,
+      "sha256": "37c7de3e42d603075a98f29b1aacdf2d7f8fba16c3f0fa00b6efd331f63d439c"
+    },
+    {
+      "file": "ready/dog_bark_nearer.ogg",
+      "originals": [
+        "dog_barks.wav"
+      ],
+      "source_ids": [
+        "brandon_morris_dog"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_27"
+      ],
+      "modifications": "Second individual bark extracted (0.45–0.87s) from four-bark source; distance lowpass/gain and faint short reflections; one bark only.",
+      "loop": false,
+      "duration_seconds": 1.12,
+      "target_rms_dbfs": -26,
+      "source_peak_ceiling_dbfs": -15,
+      "sha256": "15a7f17941fa669409c2adc233aae532afa78456e3011c35bc9e2c9bc4266329"
+    },
+    {
+      "file": "ready/step_shallow_water_01.ogg",
+      "originals": [
+        "water_splashes/splash_12.ogg",
+        "different_steps/mud02.ogg"
+      ],
+      "source_ids": [
+        "rubberduck_water",
+        "tinyworlds_steps"
+      ],
+      "intended_text_keys": [
+        "action:first_forest",
+        "DLG_MESSENGER_RULES_01"
+      ],
+      "modifications": "Restrained small splash + soft mud contact for shallow-water travel. No pouring or drinking.",
+      "loop": false,
+      "duration_seconds": 0.7859583333333333,
+      "target_rms_dbfs": -25,
+      "source_peak_ceiling_dbfs": -10,
+      "sha256": "72c120c3245dd446d2af22ee890f1e221ffc1bed2f98714c944c9a4a1a35dc25"
+    },
+    {
+      "file": "ready/step_shallow_water_02.ogg",
+      "originals": [
+        "water_splashes/splash_14.ogg",
+        "different_steps/mud02.ogg"
+      ],
+      "source_ids": [
+        "rubberduck_water",
+        "tinyworlds_steps"
+      ],
+      "intended_text_keys": [
+        "action:first_forest",
+        "DLG_MESSENGER_RULES_01"
+      ],
+      "modifications": "Restrained small splash + soft mud contact for shallow-water travel. No pouring or drinking.",
+      "loop": false,
+      "duration_seconds": 0.5593541666666667,
+      "target_rms_dbfs": -25,
+      "source_peak_ceiling_dbfs": -10,
+      "sha256": "c4a45b2cadd2a0abd67436b6fe0eece355a710238bbead39bfd690b587c026e6"
+    },
+    {
+      "file": "ready/scarf_cloth_01.ogg",
+      "originals": [
+        "../kenney_rpg/Audio/cloth1.ogg"
+      ],
+      "source_ids": [
+        "kenney_rpg"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_03",
+        "DLG_MESSENGER_EDGE_32",
+        "DLG_MESSENGER_RULES_03",
+        "DLG_MESSENGER_RULES_18"
+      ],
+      "modifications": "Quiet fabric handling, no UI chime.",
+      "loop": false,
+      "duration_seconds": 0.6610416666666666,
+      "target_rms_dbfs": -29,
+      "source_peak_ceiling_dbfs": -14,
+      "sha256": "75141210425374ea95346268dd940f6c5296648b0732baea52bd26267429d877"
+    },
+    {
+      "file": "ready/scarf_cloth_02.ogg",
+      "originals": [
+        "../kenney_rpg/Audio/cloth3.ogg"
+      ],
+      "source_ids": [
+        "kenney_rpg"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_03",
+        "DLG_MESSENGER_EDGE_32",
+        "DLG_MESSENGER_RULES_03",
+        "DLG_MESSENGER_RULES_18"
+      ],
+      "modifications": "Quiet fabric handling, no UI chime.",
+      "loop": false,
+      "duration_seconds": 0.4765625,
+      "target_rms_dbfs": -29,
+      "source_peak_ceiling_dbfs": -14,
+      "sha256": "8b3ccd3a071f6b5556dd145d367ebdc5855c8d5fc19f570c6ba7638d2c0dc707"
+    },
+    {
+      "file": "ready/flask_handover.ogg",
+      "originals": [
+        "../kenney_rpg/Audio/metalClick.ogg",
+        "../kenney_rpg/Audio/handleSmallLeather.ogg"
+      ],
+      "source_ids": [
+        "kenney_rpg"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_19",
+        "DLG_MESSENGER_EDGE_21"
+      ],
+      "modifications": "Soft leather/hand contact with subdued brass tick. No cork, liquid pour, gulp or invented drinking.",
+      "loop": false,
+      "duration_seconds": 0.49083333333333334,
+      "target_rms_dbfs": -30,
+      "source_peak_ceiling_dbfs": -17,
+      "sha256": "04fe2299428872dac8eecc7cf613952501acf226b8418343e57ec19d50742933"
+    },
+    {
+      "file": "ready/stone_pickup_small.ogg",
+      "originals": [
+        "different_steps/gravel.ogg",
+        "../kenney_rpg/Audio/cloth2.ogg"
+      ],
+      "source_ids": [
+        "tinyworlds_steps",
+        "kenney_rpg"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_CHOICE_STONE_1"
+      ],
+      "modifications": "Low-level gravel/fabric contact for gripping a small stone; no projectile or impact.",
+      "loop": false,
+      "duration_seconds": 0.7039166666666666,
+      "target_rms_dbfs": -31,
+      "source_peak_ceiling_dbfs": -18,
+      "sha256": "56b2b789f9be62b057e55d14c2fd1b220fecad35bd2e2f7dd49d42dfef82d6f6"
+    },
+    {
+      "file": "ready/run_forest_depart.ogg",
+      "originals": [
+        "ready/step_soft_grass_01.ogg",
+        "ready/step_soft_grass_02.ogg",
+        "ready/step_soft_grass_03.ogg",
+        "ready/step_soft_grass_04.ogg",
+        "ready/step_soft_grass_01.ogg",
+        "ready/step_soft_grass_02.ogg",
+        "ready/step_soft_grass_03.ogg"
+      ],
+      "source_ids": [
+        "fantozzi_steps"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_RULES_17"
+      ],
+      "modifications": "Five quick grass/soft-earth steps attenuate with distance and stop; no continuing loop under dialogue.",
+      "loop": false,
+      "duration_seconds": 1.95,
+      "target_rms_dbfs": -26,
+      "source_peak_ceiling_dbfs": -11,
+      "sha256": "8aadd49cc6486c510aabbf2efc00b3d46207ab4cb73bcfa1406f0d29cd8da259"
+    },
+    {
+      "file": "ready/wet_steps_arrive.ogg",
+      "originals": [
+        "ready/step_shallow_water_01.ogg",
+        "ready/step_shallow_water_02.ogg",
+        "ready/step_shallow_water_01.ogg"
+      ],
+      "source_ids": [
+        "rubberduck_water",
+        "tinyworlds_steps"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_RULES_01"
+      ],
+      "modifications": "Short irregular-feeling movement sequence; departing run attenuates away. Stops after the beat, never loops under waiting dialogue.",
+      "loop": false,
+      "duration_seconds": 1.7932916666666667,
+      "target_rms_dbfs": -26,
+      "source_peak_ceiling_dbfs": -11,
+      "sha256": "ecbd6e3e5516c91dfde8b347892827c53299c5e2b27e90570e124dfe124b7aa7"
+    },
+    {
+      "file": "ready/snow_to_soft_ground.ogg",
+      "originals": [
+        "ready/step_snow_01.ogg",
+        "ready/step_snow_02.ogg",
+        "ready/step_soft_grass_03.ogg",
+        "ready/step_soft_grass_04.ogg",
+        "ready/step_soft_grass_01.ogg",
+        "ready/step_soft_grass_02.ogg",
+        "ready/step_soft_grass_03.ogg"
+      ],
+      "source_ids": [
+        "corsica_snow",
+        "fantozzi_steps"
+      ],
+      "intended_text_keys": [
+        "DLG_MESSENGER_EDGE_01"
+      ],
+      "modifications": "Short irregular-feeling movement sequence; departing run attenuates away. Stops after the beat, never loops under waiting dialogue.",
+      "loop": false,
+      "duration_seconds": 2.5269375,
+      "target_rms_dbfs": -26,
+      "source_peak_ceiling_dbfs": -11,
+      "sha256": "311c1453549c76ef8db6e98a2c36d45f8ccb02f321fd1f9f98dec817ebcc3c45"
+    }
+  ],
+  "suggested_text_key_assets": {
+    "OPENING_CHRONICLE_PAGE_2": {
+      "text": "然后，白冬来了。春天不化的雪，直到盛夏仍是一片白的田野。\n它年复一年向这片土地蔓延，每一年都走得更远一点，夺走得更多一点。",
+      "assets": [
+        "ready/amb_snowline_gusts_loop.ogg"
+      ]
+    },
+    "OPENING_CHRONICLE_PAGE_5": {
+      "text": "如今，在那张地图参差的边缘，一个人正在逃命，身后是四十个骑手和他们的猎狗。\n他找到了一条线索，指向帝国唯一不能容许的东西：对抗白冬的方法。",
+      "assets": [
+        "ready/amb_snowline_gusts_loop.ogg"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_01": {
+      "text": "肺里像着了火。脚下的地越来越软。身后某处，一条狗叫了一声，又停了。",
+      "assets": [
+        "ready/amb_snowline_gusts_loop.ogg",
+        "ready/step_soft_grass_01.ogg",
+        "ready/step_soft_grass_02.ogg",
+        "ready/step_soft_grass_03.ogg",
+        "ready/step_soft_grass_04.ogg",
+        "ready/step_wet_earth.ogg",
+        "ready/dog_bark_far.ogg",
+        "ready/snow_to_soft_ground.ogg"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_04": {
+      "text": "然后树木合拢过来，一片白雾横在你面前，低低的，一动不动。",
+      "assets": [
+        "ready/amb_thorn_forest_cold_loop.ogg",
+        "ready/brush_thorns_01.ogg",
+        "ready/brush_thorns_02.ogg",
+        "ready/brush_thorns_03.ogg"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_05": {
+      "text": "前方的雾里有东西在动。你停下。它也停下。",
+      "assets": [
+        "ready/amb_thorn_forest_cold_loop.ogg",
+        "ready/brush_thorns_01.ogg",
+        "ready/brush_thorns_02.ogg",
+        "ready/brush_thorns_03.ogg"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_29": {
+      "text": "那几棵树后面有条小溪。走在水里，别走岸上，一直走到林子变稀。",
+      "assets": [
+        "ready/amb_creek_hidden_loop.ogg"
+      ]
+    },
+    "action:first_forest": {
+      "text": null,
+      "assets": [
+        "ready/amb_creek_hidden_loop.ogg",
+        "ready/step_shallow_water_01.ogg",
+        "ready/step_shallow_water_02.ogg"
+      ]
+    },
+    "snowline_travel": {
+      "text": null,
+      "assets": [
+        "ready/step_snow_01.ogg",
+        "ready/step_snow_02.ogg",
+        "ready/step_snow_03.ogg",
+        "ready/step_snow_04.ogg"
+      ]
+    },
+    "transition:DLG_MESSENGER_EDGE_01": {
+      "text": null,
+      "assets": [
+        "ready/step_snow_01.ogg",
+        "ready/step_snow_02.ogg",
+        "ready/step_snow_03.ogg",
+        "ready/step_snow_04.ogg"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_07": {
+      "text": "一个年轻人从雾里走出来，喘着粗气。头发上别着月桂，腰间挎着信包。",
+      "assets": [
+        "ready/step_soft_grass_01.ogg",
+        "ready/step_soft_grass_02.ogg",
+        "ready/step_soft_grass_03.ogg",
+        "ready/step_soft_grass_04.ogg"
+      ]
+    },
+    "DLG_MESSENGER_RULES_15": {
+      "text": "他已经倒退着走开了，咧着嘴笑。",
+      "assets": [
+        "ready/step_soft_grass_01.ogg",
+        "ready/step_soft_grass_02.ogg",
+        "ready/step_soft_grass_03.ogg",
+        "ready/step_soft_grass_04.ogg"
+      ]
+    },
+    "DLG_MESSENGER_RULES_17": {
+      "text": "然后他转身跑进了林子。",
+      "assets": [
+        "ready/step_soft_grass_01.ogg",
+        "ready/step_soft_grass_02.ogg",
+        "ready/step_soft_grass_03.ogg",
+        "ready/step_soft_grass_04.ogg",
+        "ready/brush_thorns_01.ogg",
+        "ready/brush_thorns_02.ogg",
+        "ready/brush_thorns_03.ogg",
+        "ready/run_forest_depart.ogg"
+      ]
+    },
+    "action:badger_track": {
+      "text": null,
+      "assets": [
+        "ready/step_soft_grass_01.ogg",
+        "ready/step_soft_grass_02.ogg",
+        "ready/step_soft_grass_03.ogg",
+        "ready/step_soft_grass_04.ogg",
+        "ready/twig_snap_small.ogg"
+      ]
+    },
+    "DLG_MESSENGER_RULES_01": {
+      "text": "一个钟头后，他追了上来，膝盖以下全湿透了，一脸得意。",
+      "assets": [
+        "ready/step_wet_earth.ogg",
+        "ready/step_shallow_water_01.ogg",
+        "ready/step_shallow_water_02.ogg",
+        "ready/wet_steps_arrive.ogg"
+      ]
+    },
+    "DLG_MESSENGER_RULES_07": {
+      "text": "他在一丛黑刺李边蹲下，摘了一颗果子，皱眉看了看，放进你掌心。",
+      "assets": [
+        "ready/berry_leaf_pluck.ogg"
+      ]
+    },
+    "transition:forest_entry": {
+      "text": null,
+      "assets": [
+        "ready/twig_snap_small.ogg"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_27": {
+      "text": "远远的身后，狗又叫了。比刚才近。",
+      "assets": [
+        "ready/dog_bark_nearer.ogg"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_03": {
+      "text": "你的左手抖个不停。你把它塞进外套里按住，像按住别人的手。",
+      "assets": [
+        "ready/scarf_cloth_01.ogg",
+        "ready/scarf_cloth_02.ogg"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_32": {
+      "text": "你把围巾递给他。他一句话没说，绕在了自己脖子上。",
+      "assets": [
+        "ready/scarf_cloth_01.ogg",
+        "ready/scarf_cloth_02.ogg"
+      ]
+    },
+    "DLG_MESSENGER_RULES_03": {
+      "text": "他把围巾还给你。围巾被他的脖子捂得还是暖的。",
+      "assets": [
+        "ready/scarf_cloth_01.ogg",
+        "ready/scarf_cloth_02.ogg"
+      ]
+    },
+    "DLG_MESSENGER_RULES_18": {
+      "text": "你把围巾重新绕回脖子上。上面还有他的体温。",
+      "assets": [
+        "ready/scarf_cloth_01.ogg",
+        "ready/scarf_cloth_02.ogg"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_19": {
+      "text": "他递过来一只水壶，壶身上錾着一对黄铜翅膀。",
+      "assets": [
+        "ready/flask_handover.ogg"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_21": {
+      "text": "你接过来。手指冷得厉害，黄铜摸上去竟有点烫。",
+      "assets": [
+        "ready/flask_handover.ogg"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_STONE_1": {
+      "text": "你的手握住一块石头。冰凉，小得派不上用场。",
+      "assets": [
+        "ready/stone_pickup_small.ogg"
+      ]
+    }
+  },
+  "mandatory_context_rules": [
+    "Film has its own soundtrack: never layer these cues over existing video.",
+    "Opening snow belongs to approach/name-entry and initial snow-to-soft-ground transition only. RULES_08 awaits first frost, so ongoing forest footsteps must not crunch snow.",
+    "EDGE_01 and EDGE_27 use the same single dog bark, still behind the listener. The second is clearer/louder; never continuous barking.",
+    "EDGE_04 attenuates exposed gusts into sheltered forest. EDGE_05 stops footsteps and movement.",
+    "EDGE_19/21: receiving/holding flask, not pouring or drinking. EDGE_20 is an invitation, not a performed action.",
+    "EDGE_29 describes future stream route: only distant creek ambience, no water footsteps until the actual first_forest exploration action.",
+    "Actual first_forest exploration is 8 seconds of shallow-water travel; later badger_track is 6 seconds of damp grass/soil travel, not water or snow.",
+    "RULES_02 reports dogs diverted: no new bark. RULES_07 selects a tiny foliage pluck. RULES_17 is an actual departing run.",
+    "Most dialogue lines remain quiet. Trigger once per newly entered line/branch; never retrigger because of reflow, save/load reconstruction or settings changes.",
+    "Wind/foley-led silence is the preferred pursuit score. No suitable new licensed tension music has been auditioned; do not repurpose cozy loops."
+  ],
+  "validation": [
+    {
+      "file": "ready/amb_snowline_gusts_loop.ogg",
+      "duration_seconds": 36.0,
+      "rms_dbfs": -25.079286186400644,
+      "peak_dbfs": -9.271429061889648,
+      "first_sample_absolute_max": 0.0029764645732939243,
+      "last_sample_absolute_max": 0.003968500532209873,
+      "endpoint_jump_linear_max": 0.0069449651055037975,
+      "bytes": 616819,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/amb_thorn_forest_cold_loop.ogg",
+      "duration_seconds": 32.0,
+      "rms_dbfs": -34.14559069230735,
+      "peak_dbfs": -19.413135528564453,
+      "first_sample_absolute_max": 0.00047228223411366343,
+      "last_sample_absolute_max": 0.001638155896216631,
+      "endpoint_jump_linear_max": 0.0016790305962786078,
+      "bytes": 512199,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/amb_creek_hidden_loop.ogg",
+      "duration_seconds": 26.6565,
+      "rms_dbfs": -30.14869929502168,
+      "peak_dbfs": -15.319869995117188,
+      "first_sample_absolute_max": 0.000563945563044399,
+      "last_sample_absolute_max": 0.0006106258369982243,
+      "endpoint_jump_linear_max": 4.6680273953825235e-05,
+      "bytes": 291250,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/step_snow_01.ogg",
+      "duration_seconds": 0.47420833333333334,
+      "rms_dbfs": -30.52255432798702,
+      "peak_dbfs": -9.047340393066406,
+      "first_sample_absolute_max": 9.6461126304348e-06,
+      "last_sample_absolute_max": 0.00047684134915471077,
+      "endpoint_jump_linear_max": 0.0004864874645136297,
+      "bytes": 10953,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/step_snow_02.ogg",
+      "duration_seconds": 0.6910833333333334,
+      "rms_dbfs": -26.85081559827711,
+      "peak_dbfs": -9.168503761291504,
+      "first_sample_absolute_max": 1.6028388927225024e-05,
+      "last_sample_absolute_max": 0.00044371039257384837,
+      "endpoint_jump_linear_max": 0.00042768201092258096,
+      "bytes": 14132,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/step_snow_03.ogg",
+      "duration_seconds": 0.6468958333333333,
+      "rms_dbfs": -27.919217552058967,
+      "peak_dbfs": -8.960674285888672,
+      "first_sample_absolute_max": 5.7837896747514606e-06,
+      "last_sample_absolute_max": 0.0003318635281175375,
+      "endpoint_jump_linear_max": 0.0003368160978425294,
+      "bytes": 13521,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/step_snow_04.ogg",
+      "duration_seconds": 0.6763541666666667,
+      "rms_dbfs": -35.718702286555896,
+      "peak_dbfs": -8.92454719543457,
+      "first_sample_absolute_max": 2.149191232092562e-06,
+      "last_sample_absolute_max": 9.005822357721627e-05,
+      "endpoint_jump_linear_max": 8.790902938926592e-05,
+      "bytes": 13805,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/step_soft_grass_01.ogg",
+      "duration_seconds": 0.439875,
+      "rms_dbfs": -34.68899726394834,
+      "peak_dbfs": -10.673881530761719,
+      "first_sample_absolute_max": 1.396689003740903e-05,
+      "last_sample_absolute_max": 5.862187026650645e-05,
+      "endpoint_jump_linear_max": 6.796207162551582e-05,
+      "bytes": 11722,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/step_soft_grass_02.ogg",
+      "duration_seconds": 0.40310416666666665,
+      "rms_dbfs": -35.05630779943673,
+      "peak_dbfs": -10.464629173278809,
+      "first_sample_absolute_max": 7.830330105207395e-06,
+      "last_sample_absolute_max": 0.000784840842243284,
+      "endpoint_jump_linear_max": 0.0007924591191112995,
+      "bytes": 11091,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/step_soft_grass_03.ogg",
+      "duration_seconds": 0.3169375,
+      "rms_dbfs": -34.17055738984726,
+      "peak_dbfs": -10.538528442382812,
+      "first_sample_absolute_max": 1.3297024452185724e-05,
+      "last_sample_absolute_max": 0.0008988927584141493,
+      "endpoint_jump_linear_max": 0.0009121897746808827,
+      "bytes": 10105,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/step_soft_grass_04.ogg",
+      "duration_seconds": 0.36133333333333334,
+      "rms_dbfs": -36.55361682774804,
+      "peak_dbfs": -9.804661750793457,
+      "first_sample_absolute_max": 1.7438173017580993e-05,
+      "last_sample_absolute_max": 2.089170503261073e-11,
+      "endpoint_jump_linear_max": 1.7438193026464432e-05,
+      "bytes": 9552,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/step_wet_earth.ogg",
+      "duration_seconds": 0.25727083333333334,
+      "rms_dbfs": -34.52680709800653,
+      "peak_dbfs": -10.351301193237305,
+      "first_sample_absolute_max": 0.00022372807143256068,
+      "last_sample_absolute_max": 0.00013946148101240396,
+      "endpoint_jump_linear_max": 0.00013266323367133737,
+      "bytes": 9908,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/brush_thorns_01.ogg",
+      "duration_seconds": 0.6320416666666666,
+      "rms_dbfs": -39.49558096189389,
+      "peak_dbfs": -14.034830093383789,
+      "first_sample_absolute_max": 1.0430848078613053e-06,
+      "last_sample_absolute_max": 7.767628994770348e-05,
+      "endpoint_jump_linear_max": 7.663320866413414e-05,
+      "bytes": 15398,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/brush_thorns_02.ogg",
+      "duration_seconds": 0.7701041666666667,
+      "rms_dbfs": -32.97918585305009,
+      "peak_dbfs": -13.429258346557617,
+      "first_sample_absolute_max": 1.8195926259068074e-06,
+      "last_sample_absolute_max": 0.00012362710549496114,
+      "endpoint_jump_linear_max": 0.00012398266699165106,
+      "bytes": 18439,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/brush_thorns_03.ogg",
+      "duration_seconds": 0.9619375,
+      "rms_dbfs": -37.37516471274741,
+      "peak_dbfs": -13.219796180725098,
+      "first_sample_absolute_max": 2.2924336040563986e-10,
+      "last_sample_absolute_max": 2.85457463178318e-05,
+      "endpoint_jump_linear_max": 2.854581907740794e-05,
+      "bytes": 22105,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/berry_leaf_pluck.ogg",
+      "duration_seconds": 0.41510416666666666,
+      "rms_dbfs": -33.240451392290275,
+      "peak_dbfs": -15.81322193145752,
+      "first_sample_absolute_max": 2.8750946512445807e-06,
+      "last_sample_absolute_max": 0.0002724877849686891,
+      "endpoint_jump_linear_max": 0.00026961270486935973,
+      "bytes": 11831,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/twig_snap_small.ogg",
+      "duration_seconds": 0.2673333333333333,
+      "rms_dbfs": -35.74494179008646,
+      "peak_dbfs": -16.925458908081055,
+      "first_sample_absolute_max": 0.00032376599847339094,
+      "last_sample_absolute_max": 0.002158108167350292,
+      "endpoint_jump_linear_max": 0.0024818740785121918,
+      "bytes": 10490,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/dog_bark_far.ogg",
+      "duration_seconds": 1.12,
+      "rms_dbfs": -45.28385708479861,
+      "peak_dbfs": -23.135107040405273,
+      "first_sample_absolute_max": 0.0,
+      "last_sample_absolute_max": 0.0,
+      "endpoint_jump_linear_max": 0.0,
+      "bytes": 7730,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/dog_bark_nearer.ogg",
+      "duration_seconds": 1.12,
+      "rms_dbfs": -37.33494687101238,
+      "peak_dbfs": -15.055072784423828,
+      "first_sample_absolute_max": 0.0,
+      "last_sample_absolute_max": 0.0,
+      "endpoint_jump_linear_max": 0.0,
+      "bytes": 8702,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/step_shallow_water_01.ogg",
+      "duration_seconds": 0.7832916666666667,
+      "rms_dbfs": -40.922993426609395,
+      "peak_dbfs": -10.854192733764648,
+      "first_sample_absolute_max": 4.129564956656395e-07,
+      "last_sample_absolute_max": 0.0,
+      "endpoint_jump_linear_max": 4.129564956656395e-07,
+      "bytes": 13860,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/step_shallow_water_02.ogg",
+      "duration_seconds": 0.5566875,
+      "rms_dbfs": -36.91418680801096,
+      "peak_dbfs": -10.72427749633789,
+      "first_sample_absolute_max": 5.382196424652541e-12,
+      "last_sample_absolute_max": 0.0,
+      "endpoint_jump_linear_max": 5.382196424652541e-12,
+      "bytes": 11510,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/scarf_cloth_01.ogg",
+      "duration_seconds": 0.658375,
+      "rms_dbfs": -36.52047072444274,
+      "peak_dbfs": -14.433300018310547,
+      "first_sample_absolute_max": 6.254493882806855e-07,
+      "last_sample_absolute_max": 2.0689409211627208e-05,
+      "endpoint_jump_linear_max": 2.131485780410003e-05,
+      "bytes": 15113,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/scarf_cloth_02.ogg",
+      "duration_seconds": 0.47389583333333335,
+      "rms_dbfs": -34.15330391250557,
+      "peak_dbfs": -14.26077938079834,
+      "first_sample_absolute_max": 8.716099728189874e-06,
+      "last_sample_absolute_max": 0.00024259701604023576,
+      "endpoint_jump_linear_max": 0.00025127941626124084,
+      "bytes": 11741,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/flask_handover.ogg",
+      "duration_seconds": 0.4881666666666667,
+      "rms_dbfs": -41.855046218167445,
+      "peak_dbfs": -17.04566192626953,
+      "first_sample_absolute_max": 1.6630868913125596e-06,
+      "last_sample_absolute_max": 5.2020336624991614e-06,
+      "endpoint_jump_linear_max": 5.012494966649683e-06,
+      "bytes": 11432,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/stone_pickup_small.ogg",
+      "duration_seconds": 0.70125,
+      "rms_dbfs": -41.01482957018572,
+      "peak_dbfs": -18.53499412536621,
+      "first_sample_absolute_max": 1.7787844626582228e-05,
+      "last_sample_absolute_max": 1.092639195121592e-06,
+      "endpoint_jump_linear_max": 1.728088864183519e-05,
+      "bytes": 16542,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/run_forest_depart.ogg",
+      "duration_seconds": 1.95,
+      "rms_dbfs": -38.373205052988375,
+      "peak_dbfs": -11.196235656738281,
+      "first_sample_absolute_max": 0.0,
+      "last_sample_absolute_max": 0.0,
+      "endpoint_jump_linear_max": 0.0,
+      "bytes": 30557,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/wet_steps_arrive.ogg",
+      "duration_seconds": 1.7932916666666667,
+      "rms_dbfs": -39.94274725126244,
+      "peak_dbfs": -11.526321411132812,
+      "first_sample_absolute_max": 0.0,
+      "last_sample_absolute_max": 0.0,
+      "endpoint_jump_linear_max": 0.0,
+      "bytes": 28079,
+      "decode_errors": []
+    },
+    {
+      "file": "ready/snow_to_soft_ground.ogg",
+      "duration_seconds": 2.5269375,
+      "rms_dbfs": -32.45505019559109,
+      "peak_dbfs": -11.307653427124023,
+      "first_sample_absolute_max": 0.0,
+      "last_sample_absolute_max": 0.00019281255663372576,
+      "endpoint_jump_linear_max": 0.00019281255663372576,
+      "bytes": 42896,
+      "decode_errors": []
+    }
+  ],
+  "audition_limit": "All files decoded and signal levels/seams measured; direct human listening/perceptual audition not available in this sourcing pass. Natural-source labels and processing are documented; final headphone in-game QA remains necessary."
+}

@@ -73,6 +73,7 @@ static func final_aspect(value: StringName) -> float:
 
 
 func play() -> void:
+	AudioEvents.play_event("animation.paper_unfold")
 	if _clip.is_empty():
 		configure(kind)
 	frame_index = 0

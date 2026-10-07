@@ -123,4 +123,4 @@
 - 不要编辑植物节点内部生成的 `PlantRenderer` 或 `__GrassRenderer`。
 - 不要编辑 `grass_positions` 等数组；它们属于画笔图层数据。
 - 不要把 UI、卡牌或字幕放进这个 3D 环境场景。
-- 手动美术调整后不要运行 `tools/build_editable_table_scene.gd`，该脚本用于重建初始场景，可能覆盖人工摆放结果。
+- `table_environment_editable.tscn` 由人工在编辑器中维护，是桌面场景的唯一来源；原重建脚本 `tools/build_editable_table_scene.gd` 已于 2026-10-01 删除。

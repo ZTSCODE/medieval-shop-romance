@@ -191,6 +191,8 @@ func set_paused(value: bool) -> void:
 		_settings_exit.kill()
 	var changed := value != _paused
 	_paused = value
+	if changed:
+		AudioEvents.play_event("ui.pause" if value else "ui.resume")
 	if is_instance_valid(player_hud):
 		player_hud.focus_enabled = not value and _hud_target_visible
 	if not value:
@@ -209,6 +211,8 @@ func open_page(page: String) -> void:
 		return
 	var probe_started := HitchProbe.stamp()
 	_close_confirmation(false)
+	if current_page != page:
+		AudioEvents.play_event("book.page")
 	current_page = page
 	_status_key = ""
 	if not is_node_ready():
@@ -270,6 +274,8 @@ func confirm_quit_without_save() -> void:
 
 
 func show_status(key: String, is_error: bool = false) -> void:
+	if key != _status_key and not key.is_empty():
+		AudioEvents.play_event("ui.error" if is_error else "ui.confirm")
 	_status_key = key
 	_status_is_error = is_error
 	if is_instance_valid(_status_label):

@@ -5,6 +5,7 @@ var failures := 0
 
 
 func _initialize() -> void:
+	_use_empty_catalog()
 	_test_names()
 	_test_identity_data()
 	_test_snapshots_and_migration()
@@ -130,3 +131,11 @@ func _check(label: String, passed: bool) -> void:
 	if not passed:
 		failures += 1
 		print("FAIL " + label)
+
+
+# 本测试的存档样本是“空牌桌 + 空内容基座”：先换成空目录，不受正式内容影响。
+func _use_empty_catalog() -> void:
+	var base := {"version": 1, "content_generation": ContentCatalog.content_generation(), "cards": {}, "recipes": {}, "npcs": {}, "stories": {}, "events": {}, "opening": {}, "initial_cards": []}
+	ContentCatalog._registry.configure_base(base)
+	ContentCatalog._base_data = base
+	ContentCatalog._data = ContentCatalog._registry.catalog()

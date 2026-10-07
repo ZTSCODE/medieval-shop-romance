@@ -1,0 +1,1771 @@
+{
+  "schema_version": 1,
+  "design": "Text-led medieval soundscape: exposed snowline wind retreats into damp thornwood; exact phrase-bound finite foley, two distance-matched dog calls, tactile flask and scarf contact, stream traversal only on player action. Preserve existing film sound. Physical UI/card sounds remain restrained and replaceable.",
+  "events": {
+    "ui.hover": {
+      "category": "ui",
+      "files": [
+        "res://assets/audio/sfx/interface_select_001.ogg",
+        "res://assets/audio/sfx/interface_select_002.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -25,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "GameAudio._ui_hover: enabled button pointer enter or keyboard focus",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/select_001.ogg",
+        "kenney_interface/Audio/select_002.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "ui.press": {
+      "category": "ui",
+      "files": [
+        "res://assets/audio/sfx/interface_click_001.ogg",
+        "res://assets/audio/sfx/interface_click_002.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -18,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 55,
+      "max_voices": 3,
+      "trigger": "GameAudio._ui_pressed: accepted BaseButton activation",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/click_001.ogg",
+        "kenney_interface/Audio/click_002.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "ui.toggle": {
+      "category": "ui",
+      "files": [
+        "res://assets/audio/sfx/interface_switch_001.ogg",
+        "res://assets/audio/sfx/interface_switch_002.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -18,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 75,
+      "max_voices": 3,
+      "trigger": "GameAudio._ui_pressed: toggle control activation",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/switch_001.ogg",
+        "kenney_interface/Audio/switch_002.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "ui.slider": {
+      "category": "ui",
+      "files": [
+        "res://assets/audio/sfx/interface_tick_001.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -26,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 90,
+      "max_voices": 3,
+      "trigger": "GameAudio._bind_control: user-driven slider step only; 90ms rate limit",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/tick_001.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "ui.select": {
+      "category": "ui",
+      "files": [
+        "res://assets/audio/sfx/interface_select_003.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -20,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 85,
+      "max_voices": 3,
+      "trigger": "GameAudio._bind_control: OptionButton item_selected",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/select_003.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "ui.popup_open": {
+      "category": "ui",
+      "files": [
+        "res://assets/audio/sfx/rpg_cloth1.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -23,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 120,
+      "max_voices": 3,
+      "trigger": "OptionButton activation / ChapterActionMenu.open",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/cloth1.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "ui.popup_close": {
+      "category": "ui",
+      "files": [
+        "res://assets/audio/sfx/rpg_cloth2.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -24,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 3,
+      "trigger": "ChapterActionMenu.close, only visible populated panel",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/cloth2.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "ui.confirm": {
+      "category": "ui",
+      "files": [
+        "res://assets/audio/sfx/interface_confirmation_001.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -20,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": false,
+      "cooldown_ms": 250,
+      "max_voices": 1,
+      "trigger": "SessionOverlay.show_status success / film skip confirmation",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/confirmation_001.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "ui.error": {
+      "category": "ui",
+      "files": [
+        "res://assets/audio/sfx/interface_error_004.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -23,
+      "pitch": [
+        0.95,
+        1
+      ],
+      "loop": false,
+      "cooldown_ms": 300,
+      "max_voices": 1,
+      "trigger": "SessionOverlay.show_status error; only changed message",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/error_004.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "ui.pause": {
+      "category": "ui",
+      "files": [
+        "res://assets/audio/sfx/rpg_cloth3.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -23,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 200,
+      "max_voices": 3,
+      "trigger": "SessionOverlay.set_paused false-to-true transition",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/cloth3.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "ui.resume": {
+      "category": "ui",
+      "files": [
+        "res://assets/audio/sfx/rpg_cloth4.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -23,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 200,
+      "max_voices": 3,
+      "trigger": "SessionOverlay.set_paused true-to-false transition",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/cloth4.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "ui.time_speed": {
+      "category": "ui",
+      "files": [
+        "res://assets/audio/sfx/interface_toggle_002.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -23,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 150,
+      "max_voices": 3,
+      "trigger": "table_app.set_game_speed / set_time_paused when actual mode changes",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/toggle_002.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "book.open": {
+      "category": "book",
+      "files": [
+        "res://assets/audio/sfx/rpg_bookOpen.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -14,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 250,
+      "max_voices": 3,
+      "trigger": "GameJournal.toggle: closed-to-open book animation",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/bookOpen.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "book.close": {
+      "category": "book",
+      "files": [
+        "res://assets/audio/sfx/rpg_bookClose.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -15,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 250,
+      "max_voices": 3,
+      "trigger": "GameJournal.close: only previously open book",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/bookClose.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "book.page": {
+      "category": "book",
+      "files": [
+        "res://assets/audio/sfx/rpg_bookFlip1.ogg",
+        "res://assets/audio/sfx/rpg_bookFlip2.ogg",
+        "res://assets/audio/sfx/rpg_bookFlip3.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -17,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 150,
+      "max_voices": 3,
+      "trigger": "GameJournal page switch; SessionOverlay page navigation; settings category change",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/bookFlip1.ogg",
+        "kenney_rpg/Audio/bookFlip2.ogg",
+        "kenney_rpg/Audio/bookFlip3.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "card.hover": {
+      "category": "card",
+      "files": [
+        "res://assets/audio/sfx/casino_card-slide-1.ogg",
+        "res://assets/audio/sfx/casino_card-slide-2.ogg"
+      ],
+      "bus": "Cards",
+      "gain_db": -31,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 140,
+      "max_voices": 1,
+      "trigger": "TableInteraction._process: pointer enters a different card, never every frame",
+      "source_url": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_casino/Audio/card-slide-1.ogg",
+        "kenney_casino/Audio/card-slide-2.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "card.select": {
+      "category": "card",
+      "files": [
+        "res://assets/audio/sfx/casino_card-shove-1.ogg",
+        "res://assets/audio/sfx/casino_card-shove-2.ogg"
+      ],
+      "bus": "Cards",
+      "gain_db": -23,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 70,
+      "max_voices": 3,
+      "trigger": "TableInteraction._unhandled_input: card pointer-down selection",
+      "source_url": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_casino/Audio/card-shove-1.ogg",
+        "kenney_casino/Audio/card-shove-2.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "card.pick": {
+      "category": "card",
+      "files": [
+        "res://assets/audio/sfx/casino_card-slide-3.ogg",
+        "res://assets/audio/sfx/casino_card-slide-4.ogg",
+        "res://assets/audio/sfx/casino_card-slide-5.ogg"
+      ],
+      "bus": "Cards",
+      "gain_db": -16,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 70,
+      "max_voices": 3,
+      "trigger": "TableInteraction._start_drag_impl: accepted single/whole-stack drag",
+      "source_url": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_casino/Audio/card-slide-3.ogg",
+        "kenney_casino/Audio/card-slide-4.ogg",
+        "kenney_casino/Audio/card-slide-5.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "card.split": {
+      "category": "card",
+      "files": [
+        "res://assets/audio/sfx/casino_card-fan-1.ogg",
+        "res://assets/audio/sfx/casino_card-fan-2.ogg"
+      ],
+      "bus": "Cards",
+      "gain_db": -17,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 85,
+      "max_voices": 3,
+      "trigger": "TableInteraction._start_drag_impl: split from within stack",
+      "source_url": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_casino/Audio/card-fan-1.ogg",
+        "kenney_casino/Audio/card-fan-2.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "card.drop": {
+      "category": "card",
+      "files": [
+        "res://assets/audio/sfx/casino_card-place-1.ogg",
+        "res://assets/audio/sfx/casino_card-place-2.ogg",
+        "res://assets/audio/sfx/casino_card-place-3.ogg"
+      ],
+      "bus": "Cards",
+      "gain_db": -13,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 70,
+      "max_voices": 3,
+      "trigger": "TableInteraction._finish_drag_impl: ordinary board drop",
+      "source_url": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_casino/Audio/card-place-1.ogg",
+        "kenney_casino/Audio/card-place-2.ogg",
+        "kenney_casino/Audio/card-place-3.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "card.stack": {
+      "category": "card",
+      "files": [
+        "res://assets/audio/sfx/casino_card-place-4.ogg",
+        "res://assets/audio/sfx/casino_cards-pack-take-out-1.ogg"
+      ],
+      "bus": "Cards",
+      "gain_db": -17,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 80,
+      "max_voices": 3,
+      "trigger": "TableInteraction._finish_drag_impl: valid merge only",
+      "source_url": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_casino/Audio/card-place-4.ogg",
+        "kenney_casino/Audio/cards-pack-take-out-1.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "card.target": {
+      "category": "card",
+      "files": [
+        "res://assets/audio/sfx/casino_card-shove-3.ogg"
+      ],
+      "bus": "Cards",
+      "gain_db": -28,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 200,
+      "max_voices": 1,
+      "trigger": "TableInteraction._move_drag: enter a new drop target",
+      "source_url": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_casino/Audio/card-shove-3.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "card.reject": {
+      "category": "card",
+      "files": [
+        "res://assets/audio/sfx/interface_error_004.ogg"
+      ],
+      "bus": "Cards",
+      "gain_db": -23,
+      "pitch": [
+        0.9,
+        0.94
+      ],
+      "loop": false,
+      "cooldown_ms": 240,
+      "max_voices": 1,
+      "trigger": "TableInteraction._finish_drag_impl: rejected drop",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/error_004.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "card.cancel": {
+      "category": "card",
+      "files": [
+        "res://assets/audio/sfx/casino_card-slide-6.ogg"
+      ],
+      "bus": "Cards",
+      "gain_db": -24,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 180,
+      "max_voices": 3,
+      "trigger": "TableInteraction.cancel_gesture: return an actual dragged stack",
+      "source_url": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_casino/Audio/card-slide-6.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "card.unfold": {
+      "category": "card",
+      "files": [
+        "res://assets/audio/sfx/casino_cards-pack-open-1.ogg",
+        "res://assets/audio/sfx/casino_cards-pack-open-2.ogg"
+      ],
+      "bus": "Cards",
+      "gain_db": -20,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "TableInteraction._sync_views: newly produced card unfold begins",
+      "source_url": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_casino/Audio/cards-pack-open-1.ogg",
+        "kenney_casino/Audio/cards-pack-open-2.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "card.fly": {
+      "category": "card",
+      "files": [
+        "res://assets/audio/sfx/casino_card-shove-4.ogg"
+      ],
+      "bus": "Cards",
+      "gain_db": -23,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 150,
+      "max_voices": 2,
+      "trigger": "TableInteraction output-flight batch is queued",
+      "source_url": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_casino/Audio/card-shove-4.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "card.land": {
+      "category": "card",
+      "files": [
+        "res://assets/audio/sfx/casino_card-place-1.ogg",
+        "res://assets/audio/sfx/casino_card-place-3.ogg"
+      ],
+      "bus": "Cards",
+      "gain_db": -20,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "TableInteraction._advance_flights: animated output reaches table",
+      "source_url": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_casino/Audio/card-place-1.ogg",
+        "kenney_casino/Audio/card-place-3.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "card.remove": {
+      "category": "card",
+      "files": [
+        "res://assets/audio/sfx/casino_card-slide-7.ogg",
+        "res://assets/audio/sfx/casino_card-slide-8.ogg"
+      ],
+      "bus": "Cards",
+      "gain_db": -24,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 130,
+      "max_voices": 2,
+      "trigger": "TableInteraction._retire_view: consumed/transformed/departing card fades",
+      "source_url": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_casino/Audio/card-slide-7.ogg",
+        "kenney_casino/Audio/card-slide-8.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "animation.paper_unfold": {
+      "category": "animation",
+      "files": [
+        "res://assets/audio/sfx/rpg_clothBelt.ogg",
+        "res://assets/audio/sfx/rpg_cloth1.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -18,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 220,
+      "max_voices": 1,
+      "trigger": "PaperUnfoldPlayer.play: paper reveal begins",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/clothBelt.ogg",
+        "kenney_rpg/Audio/cloth1.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "dialogue.close": {
+      "category": "dialogue",
+      "files": [
+        "res://assets/audio/sfx/rpg_bookClose.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -24,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 250,
+      "max_voices": 1,
+      "trigger": "DialogueOverlay.sync: active dialogue ends",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/bookClose.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "dialogue.choice": {
+      "category": "dialogue",
+      "files": [
+        "res://assets/audio/sfx/interface_confirmation_002.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -23,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": false,
+      "cooldown_ms": 180,
+      "max_voices": 1,
+      "trigger": "DialogueOverlay._choose: valid accepted narrative choice",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/confirmation_002.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "world.trade": {
+      "category": "world",
+      "files": [
+        "res://assets/audio/sfx/rpg_handleCoins.ogg",
+        "res://assets/audio/sfx/rpg_handleCoins2.ogg"
+      ],
+      "bus": "World",
+      "gain_db": -17,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 200,
+      "max_voices": 2,
+      "trigger": "Successful market/card transaction only; rejected purchases stay silent here",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/handleCoins.ogg",
+        "kenney_rpg/Audio/handleCoins2.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "world.shop_toggle": {
+      "category": "world",
+      "files": [
+        "res://assets/audio/sfx/rpg_doorOpen_1.ogg"
+      ],
+      "bus": "World",
+      "gain_db": -20,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 350,
+      "max_voices": 1,
+      "trigger": "Successful shop opening/closing option; chapter module is absent in current snapshot, so this hook is reserved for future content.",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/doorOpen_1.ogg"
+      ],
+      "status": "wired_future_content",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "world.arrival": {
+      "category": "world",
+      "files": [
+        "res://assets/audio/sfx/rpg_doorOpen_2.ogg"
+      ],
+      "bus": "World",
+      "gain_db": -26,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 600,
+      "max_voices": 1,
+      "trigger": "table_app._on_customer_arrived: actual customer arrival, no restore replay",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/doorOpen_2.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "world.departure": {
+      "category": "world",
+      "files": [
+        "res://assets/audio/sfx/rpg_doorClose_1.ogg"
+      ],
+      "bus": "World",
+      "gain_db": -27,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 600,
+      "max_voices": 1,
+      "trigger": "CustomerLane._retire_view: visible customer exit",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/doorClose_1.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "world.work_start": {
+      "category": "world",
+      "files": [
+        "res://assets/audio/sfx/rpg_clothBelt2.ogg"
+      ],
+      "bus": "World",
+      "gain_db": -25,
+      "pitch": [
+        0.97,
+        1.03
+      ],
+      "loop": false,
+      "cooldown_ms": 350,
+      "max_voices": 1,
+      "trigger": "TableInteraction._sync_stack_progress: new work stack appears",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_rpg/Audio/clothBelt2.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "world.craft_complete": {
+      "category": "world",
+      "files": [
+        "res://assets/audio/sfx/interface_glass_003.ogg"
+      ],
+      "bus": "World",
+      "gain_db": -20,
+      "pitch": [
+        0.85,
+        0.9
+      ],
+      "loop": false,
+      "cooldown_ms": 300,
+      "max_voices": 1,
+      "trigger": "ChapterRuntime recipe_completed signal after authoritative receipt; chapter module is absent in current snapshot, so this hook is reserved for future content.",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/glass_003.ogg"
+      ],
+      "status": "wired_future_content",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "world.operation_complete": {
+      "category": "world",
+      "files": [
+        "res://assets/audio/sfx/interface_glass_002.ogg"
+      ],
+      "bus": "World",
+      "gain_db": -22,
+      "pitch": [
+        0.85,
+        0.9
+      ],
+      "loop": false,
+      "cooldown_ms": 300,
+      "max_voices": 1,
+      "trigger": "ChapterRuntime operation_completed after authoritative receipt; chapter module is absent in current snapshot, so this hook is reserved for future content.",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/glass_002.ogg"
+      ],
+      "status": "wired_future_content",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "world.discovery": {
+      "category": "world",
+      "files": [
+        "res://assets/audio/sfx/interface_confirmation_004.ogg"
+      ],
+      "bus": "World",
+      "gain_db": -23,
+      "pitch": [
+        0.85,
+        0.85
+      ],
+      "loop": false,
+      "cooldown_ms": 500,
+      "max_voices": 1,
+      "trigger": "Opening or location exploration yields new cards",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/confirmation_004.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "world.dawn": {
+      "category": "world",
+      "files": [
+        "res://assets/audio/sfx/interface_glass_004.ogg"
+      ],
+      "bus": "World",
+      "gain_db": -26,
+      "pitch": [
+        0.8,
+        0.8
+      ],
+      "loop": false,
+      "cooldown_ms": 1000,
+      "max_voices": 1,
+      "trigger": "DayCycle.day_started after day rollover; never on load",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/glass_004.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "goal.check": {
+      "category": "goal",
+      "files": [
+        "res://assets/audio/sfx/interface_tick_002.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -18,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": false,
+      "cooldown_ms": 200,
+      "max_voices": 1,
+      "trigger": "OnboardingGoalPanel._animate_check: new goal completion animation",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/tick_002.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "goal.complete": {
+      "category": "goal",
+      "files": [
+        "res://assets/audio/sfx/interface_confirmation_003.ogg"
+      ],
+      "bus": "UI",
+      "gain_db": -22,
+      "pitch": [
+        0.85,
+        0.85
+      ],
+      "loop": false,
+      "cooldown_ms": 700,
+      "max_voices": 1,
+      "trigger": "OnboardingGoalPanel._celebrate_stage: stage completion seal",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "original_files": [
+        "kenney_interface/Audio/confirmation_003.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace files or edit only this catalog entry; preserve event ID."
+    },
+    "music.menu": {
+      "category": "music",
+      "files": [
+        "res://assets/audio/music/bgm_menu_old_tower_inn.ogg"
+      ],
+      "bus": "MusicMix",
+      "gain_db": -16,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": true,
+      "cooldown_ms": 0,
+      "max_voices": 2,
+      "trigger": "App main menu, 1.8s crossfade",
+      "source_url": "https://opengameart.org/content/medieval-the-old-tower-inn",
+      "license": "CC0-1.0",
+      "author": "RandomMind",
+      "original_files": [
+        "bgm_menu_old_tower_inn.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace catalog file path; preserve loop intent. Existing Music/SFX controls apply."
+    },
+    "music.day": {
+      "category": "music",
+      "files": [
+        "res://assets/audio/music/bgm_day_bards_tale.ogg"
+      ],
+      "bus": "MusicMix",
+      "gain_db": -14,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": true,
+      "cooldown_ms": 0,
+      "max_voices": 2,
+      "trigger": "Playable table, day progress < 0.72; authored story environment overrides this during current narrative.",
+      "source_url": "https://opengameart.org/content/medieval-the-bards-tale",
+      "license": "CC0-1.0",
+      "author": "RandomMind",
+      "original_files": [
+        "bgm_day_bards_tale.ogg"
+      ],
+      "status": "fallback_context_only",
+      "replaceability": "Replace catalog file path; preserve loop intent. Existing Music/SFX controls apply."
+    },
+    "music.night": {
+      "category": "music",
+      "files": [
+        "res://assets/audio/music/bgm_menu_old_tower_inn.ogg"
+      ],
+      "bus": "MusicMix",
+      "gain_db": -17,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": true,
+      "cooldown_ms": 0,
+      "max_voices": 2,
+      "trigger": "Playable table, day progress >= 0.72; 1.8s crossfade; authored story environment overrides this during current narrative.",
+      "source_url": "https://opengameart.org/content/medieval-the-old-tower-inn",
+      "license": "CC0-1.0",
+      "author": "RandomMind",
+      "original_files": [
+        "bgm_menu_old_tower_inn.ogg"
+      ],
+      "status": "fallback_context_only",
+      "replaceability": "Replace catalog file path; preserve loop intent. Existing Music/SFX controls apply."
+    },
+    "music.story": {
+      "category": "music",
+      "files": [
+        "res://assets/audio/music/bgm_day_bards_tale.ogg"
+      ],
+      "bus": "MusicMix",
+      "gain_db": -24,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": true,
+      "cooldown_ms": 0,
+      "max_voices": 2,
+      "trigger": "Restrained warm motif only after RULES 02 reports dogs diverted; silent throughout EDGE pursuit",
+      "source_url": "https://opengameart.org/content/medieval-the-bards-tale",
+      "license": "CC0-1.0",
+      "author": "RandomMind",
+      "original_files": [
+        "bgm_day_bards_tale.ogg"
+      ],
+      "status": "wired_placeholder",
+      "replaceability": "Replace catalog file path; preserve loop intent. Existing Music/SFX controls apply."
+    },
+    "ambience.day": {
+      "category": "ambience",
+      "files": [
+        "res://assets/audio/ambience/amb_day_meadow_loop.ogg"
+      ],
+      "bus": "AmbienceMix",
+      "gain_db": -2,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": true,
+      "cooldown_ms": 0,
+      "max_voices": 2,
+      "trigger": "Outdoor menu/table day, real birds + filtered breeze; 2.5s crossfade; authored story environment overrides this during current narrative.",
+      "source_url": "https://opengameart.org/content/ambient-bird-sounds | https://opengameart.org/content/park-ambiences",
+      "license": "CC0-1.0",
+      "author": "isaiah658 + Thimras",
+      "original_files": [
+        "amb_day_meadow_loop.ogg"
+      ],
+      "status": "fallback_context_only",
+      "replaceability": "Replace catalog file path; preserve loop intent. Existing Music/SFX controls apply."
+    },
+    "ambience.night": {
+      "category": "ambience",
+      "files": [
+        "res://assets/audio/ambience/amb_night_meadow_loop.ogg"
+      ],
+      "bus": "AmbienceMix",
+      "gain_db": -1,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": true,
+      "cooldown_ms": 0,
+      "max_voices": 2,
+      "trigger": "Outdoor table night, natural crickets + filtered breeze; 2.5s crossfade; authored story environment overrides this during current narrative.",
+      "source_url": "https://opengameart.org/content/crickets-ambient-noise-loopable | https://opengameart.org/content/park-ambiences",
+      "license": "CC0-1.0",
+      "author": "Wolfgang_ (optional credit: Ted Kerr) + Thimras",
+      "original_files": [
+        "amb_night_meadow_loop.ogg"
+      ],
+      "status": "fallback_context_only",
+      "replaceability": "Replace catalog file path; preserve loop intent. Existing Music/SFX controls apply."
+    },
+    "ambience.hearth": {
+      "category": "ambience",
+      "files": [
+        "res://assets/audio/ambience/amb_hearth_loop.ogg"
+      ],
+      "bus": "AmbienceMix",
+      "gain_db": -8,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": true,
+      "cooldown_ms": 0,
+      "max_voices": 1,
+      "trigger": "Prepared only: no indoor hearth scene exists in this snapshot.",
+      "source_url": "https://opengameart.org/content/fire-crackling",
+      "license": "CC0-1.0",
+      "author": "AntumDeluge",
+      "original_files": [
+        "amb_hearth_loop.ogg"
+      ],
+      "status": "prepared_not_triggered",
+      "replaceability": "Future environment can select this event through audio context extension."
+    },
+    "ambience.stream": {
+      "category": "ambience",
+      "files": [
+        "res://assets/audio/ambience/amb_stream_loop.ogg"
+      ],
+      "bus": "AmbienceMix",
+      "gain_db": -8,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": true,
+      "cooldown_ms": 0,
+      "max_voices": 1,
+      "trigger": "Prepared only: no river-specific active audio zone exists in this snapshot.",
+      "source_url": "https://opengameart.org/content/park-ambiences",
+      "license": "CC0-1.0",
+      "author": "Thimras",
+      "original_files": [
+        "amb_stream_loop.ogg"
+      ],
+      "status": "prepared_not_triggered",
+      "replaceability": "Future environment can select this event through audio context extension."
+    },
+    "ambience.snowline": {
+      "category": "narrative_ambience",
+      "files": [
+        "res://assets/audio/narrative/amb_snowline_gusts_loop.ogg"
+      ],
+      "bus": "AmbienceMix",
+      "gain_db": -2,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": true,
+      "cooldown_ms": 0,
+      "max_voices": 2,
+      "trigger": "Naming / EDGE 01–03: cold exposed edge per user snowline direction; crossfade toward shelter",
+      "source_url": "https://opengameart.org/content/park-ambiences",
+      "source_ids": [
+        "park_ambiences"
+      ],
+      "license": "CC0-1.0",
+      "author": "Thimras",
+      "original_files": [
+        "../park_ambience_wind.wav"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "ambience.cold_wood": {
+      "category": "narrative_ambience",
+      "files": [
+        "res://assets/audio/narrative/amb_thorn_forest_cold_loop.ogg"
+      ],
+      "bus": "AmbienceMix",
+      "gain_db": 0,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": true,
+      "cooldown_ms": 0,
+      "max_voices": 2,
+      "trigger": "EDGE 04 onward and RULES: sheltered thawed thorn forest; no birds/crickets/sustained snow",
+      "source_url": "https://opengameart.org/content/park-ambiences",
+      "source_ids": [
+        "park_ambiences"
+      ],
+      "license": "CC0-1.0",
+      "author": "Thimras",
+      "original_files": [
+        "../park_ambience_wind.wav"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "ambience.hidden_creek": {
+      "category": "narrative_ambience",
+      "files": [
+        "res://assets/audio/narrative/amb_creek_hidden_loop.ogg"
+      ],
+      "bus": "AmbienceMix",
+      "gain_db": -8,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": true,
+      "cooldown_ms": 0,
+      "max_voices": 2,
+      "trigger": "Prepared stream location bed; actual wading uses movement.stream_escape",
+      "source_url": "https://opengameart.org/content/40-cc0-water-splash-slime-sfx",
+      "source_ids": [
+        "rubberduck_water"
+      ],
+      "license": "CC0-1.0",
+      "author": "rubberduck",
+      "original_files": [
+        "water_splashes/loop_water_02.ogg"
+      ],
+      "status": "prepared_not_triggered",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "narrative.snow_to_soft_ground": {
+      "category": "narrative_foley",
+      "files": [
+        "res://assets/audio/narrative/snow_to_soft_ground.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": -1,
+      "pitch": [
+        0.99,
+        1.01
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "EDGE 01 at 脚下的地越来越软: finite snow-edge → soft-ground footfalls",
+      "source_url": "https://opengameart.org/content/42-snow-and-gravel-footsteps | https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "source_ids": [
+        "corsica_snow",
+        "fantozzi_steps"
+      ],
+      "license": "CC0-1.0",
+      "author": "Corsica_S; extraction by Iwan Gabovitch + Fantozzi; extracted by qubodup",
+      "original_files": [
+        "ready/step_snow_01.ogg",
+        "ready/step_snow_02.ogg",
+        "ready/step_soft_grass_01.ogg",
+        "ready/step_soft_grass_02.ogg",
+        "ready/step_soft_grass_03.ogg",
+        "ready/step_soft_grass_04.ogg"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "narrative.brush_thorns": {
+      "category": "narrative_foley",
+      "files": [
+        "res://assets/audio/narrative/brush_thorns_01.ogg",
+        "res://assets/audio/narrative/brush_thorns_02.ogg",
+        "res://assets/audio/narrative/brush_thorns_03.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": -2,
+      "pitch": [
+        0.99,
+        1.01
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "Authored foliage contact only, never every dialogue line",
+      "source_url": "https://opengameart.org/content/20-rustles-dry-leaves",
+      "source_ids": [
+        "qubodup_leaves"
+      ],
+      "license": "CC0-1.0",
+      "author": "qubodup",
+      "original_files": [
+        "leaf_rustles/rustle/rustle09.flac",
+        "leaf_rustles/rustle/rustle12.flac",
+        "leaf_rustles/rustle/rustle16.flac"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "narrative.twig_small": {
+      "category": "narrative_foley",
+      "files": [
+        "res://assets/audio/narrative/twig_snap_small.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": -10,
+      "pitch": [
+        0.99,
+        1.01
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "Actual woodland traversal, sparse branch contact; no tree collapse",
+      "source_url": "https://opengameart.org/content/35-wooden-crackshitsdestructions",
+      "source_ids": [
+        "independent_wood"
+      ],
+      "license": "CC0-1.0",
+      "author": "Independent.nu; submitted by qubodup",
+      "original_files": [
+        "wood_cracks/wood_impact/crack07.mp3.flac"
+      ],
+      "status": "prepared_not_triggered",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "narrative.dog_far": {
+      "category": "narrative_foley",
+      "files": [
+        "res://assets/audio/narrative/dog_bark_far.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": 0,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": false,
+      "cooldown_ms": 700,
+      "max_voices": 2,
+      "trigger": "EDGE 01 phrase 一条狗叫: exactly one distant off-axis bark",
+      "source_url": "https://opengameart.org/content/dog-barking-mono",
+      "source_ids": [
+        "brandon_morris_dog"
+      ],
+      "license": "CC0-1.0",
+      "author": "Brandon Morris (HaelDB)",
+      "original_files": [
+        "dog_barks.wav"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "narrative.dog_nearer": {
+      "category": "narrative_foley",
+      "files": [
+        "res://assets/audio/narrative/dog_bark_nearer.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": 0,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": false,
+      "cooldown_ms": 700,
+      "max_voices": 2,
+      "trigger": "EDGE 27 phrase 狗又叫了: same dog timbre, closer but still distant",
+      "source_url": "https://opengameart.org/content/dog-barking-mono",
+      "source_ids": [
+        "brandon_morris_dog"
+      ],
+      "license": "CC0-1.0",
+      "author": "Brandon Morris (HaelDB)",
+      "original_files": [
+        "dog_barks.wav"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "narrative.scarf": {
+      "category": "narrative_foley",
+      "files": [
+        "res://assets/audio/narrative/scarf_cloth_01.ogg",
+        "res://assets/audio/narrative/scarf_cloth_02.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": -2,
+      "pitch": [
+        0.99,
+        1.01
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "Exact coat/sleeve/scarf actions, including selected branches; soft intimate near-field",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "source_ids": [
+        "kenney_rpg"
+      ],
+      "license": "CC0-1.0",
+      "author": "Kenney Vleugels / Kenney",
+      "original_files": [
+        "../kenney_rpg/Audio/cloth1.ogg",
+        "../kenney_rpg/Audio/cloth3.ogg"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "narrative.flask_handover": {
+      "category": "narrative_foley",
+      "files": [
+        "res://assets/audio/narrative/flask_handover.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": -3,
+      "pitch": [
+        0.99,
+        1.01
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "EDGE 19/21 actual flask handoff/receiving; not drinking or pouring",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "source_ids": [
+        "kenney_rpg"
+      ],
+      "license": "CC0-1.0",
+      "author": "Kenney Vleugels / Kenney",
+      "original_files": [
+        "../kenney_rpg/Audio/handleSmallLeather.ogg",
+        "../kenney_rpg/Audio/metalClick.ogg"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "narrative.stone_pickup": {
+      "category": "narrative_foley",
+      "files": [
+        "res://assets/audio/narrative/stone_pickup_small.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": -2,
+      "pitch": [
+        0.99,
+        1.01
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "Only accepted STONE branch when hand grips stone; no throw",
+      "source_url": "https://kenney.nl/assets/rpg-audio | https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "source_ids": [
+        "kenney_rpg",
+        "tinyworlds_steps"
+      ],
+      "license": "CC0-1.0",
+      "author": "Kenney Vleugels / Kenney + TinyWorlds",
+      "original_files": [
+        "../kenney_rpg/Audio/cloth2.ogg",
+        "different_steps/gravel.ogg"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "narrative.berry_pluck": {
+      "category": "narrative_foley",
+      "files": [
+        "res://assets/audio/narrative/berry_leaf_pluck.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": -2,
+      "pitch": [
+        0.99,
+        1.01
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "RULES 07 actual leaf/berry stem action; no eating/crunch",
+      "source_url": "https://opengameart.org/content/20-rustles-dry-leaves",
+      "source_ids": [
+        "qubodup_leaves"
+      ],
+      "license": "CC0-1.0",
+      "author": "qubodup",
+      "original_files": [
+        "leaf_rustles/rustle/rustle10.flac"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "narrative.run_depart": {
+      "category": "narrative_foley",
+      "files": [
+        "res://assets/audio/narrative/run_forest_depart.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": -2,
+      "pitch": [
+        0.99,
+        1.01
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "RULES 17 actual run into forest; finite receding steps",
+      "source_url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "source_ids": [
+        "fantozzi_steps"
+      ],
+      "license": "CC0-1.0",
+      "author": "Fantozzi; extracted by qubodup",
+      "original_files": [
+        "ready/step_soft_grass_01.ogg",
+        "ready/step_soft_grass_02.ogg",
+        "ready/step_soft_grass_03.ogg",
+        "ready/step_soft_grass_04.ogg"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "narrative.wet_arrive": {
+      "category": "narrative_foley",
+      "files": [
+        "res://assets/audio/narrative/wet_steps_arrive.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": -2,
+      "pitch": [
+        0.99,
+        1.01
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "RULES 01 wet-boot arrival after one-hour time jump",
+      "source_url": "https://opengameart.org/content/40-cc0-water-splash-slime-sfx | https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "source_ids": [
+        "rubberduck_water",
+        "tinyworlds_steps"
+      ],
+      "license": "CC0-1.0",
+      "author": "rubberduck + TinyWorlds",
+      "original_files": [
+        "ready/step_shallow_water_01.ogg",
+        "ready/step_shallow_water_02.ogg"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "narrative.soft_steps": {
+      "category": "narrative_foley",
+      "files": [
+        "res://assets/audio/narrative/step_soft_grass_01.ogg",
+        "res://assets/audio/narrative/step_soft_grass_02.ogg",
+        "res://assets/audio/narrative/step_soft_grass_03.ogg",
+        "res://assets/audio/narrative/step_soft_grass_04.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": -1,
+      "pitch": [
+        0.99,
+        1.01
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "Finite approach/receding steps at authored actual movements",
+      "source_url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "source_ids": [
+        "fantozzi_steps"
+      ],
+      "license": "CC0-1.0",
+      "author": "Fantozzi; extracted by qubodup",
+      "original_files": [
+        "grass_steps/Fantozzi-footsteps/flac/Fantozzi-SandL1.flac",
+        "grass_steps/Fantozzi-footsteps/flac/Fantozzi-SandL2.flac",
+        "grass_steps/Fantozzi-footsteps/flac/Fantozzi-SandR1.flac",
+        "grass_steps/Fantozzi-footsteps/flac/Fantozzi-SandR2.flac"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "narrative.wet_step": {
+      "category": "narrative_foley",
+      "files": [
+        "res://assets/audio/narrative/step_wet_earth.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": -3,
+      "pitch": [
+        0.99,
+        1.01
+      ],
+      "loop": false,
+      "cooldown_ms": 100,
+      "max_voices": 2,
+      "trigger": "Prepared wet earth step for future explicit ground movement",
+      "source_url": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "source_ids": [
+        "tinyworlds_steps"
+      ],
+      "license": "CC0-1.0",
+      "author": "TinyWorlds",
+      "original_files": [
+        "different_steps/mud02.ogg"
+      ],
+      "status": "prepared_not_triggered",
+      "replaceability": "Replace this catalog entry; exact narrative line/phrase hooks remain in narrative_cues.json."
+    },
+    "movement.stream_escape": {
+      "category": "narrative_movement",
+      "files": [
+        "res://assets/audio/narrative/movement_stream_escape.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": -2,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": true,
+      "cooldown_ms": 0,
+      "max_voices": 2,
+      "trigger": "Actual 8-second first_forest exploration only; cancel/pause/completion stops locomotion",
+      "source_url": "https://opengameart.org/content/40-cc0-water-splash-slime-sfx | https://opengameart.org/content/20-rustles-dry-leaves",
+      "source_ids": [
+        "rubberduck_water",
+        "qubodup_leaves"
+      ],
+      "license": "CC0-1.0",
+      "author": "rubberduck + qubodup",
+      "original_files": [
+        "movement_stream_escape.ogg"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace loop; lifetime is bound to work state, not dialogue or wall-clock timers."
+    },
+    "movement.wood_path": {
+      "category": "narrative_movement",
+      "files": [
+        "res://assets/audio/narrative/movement_wood_path.ogg"
+      ],
+      "bus": "Narrative",
+      "gain_db": -2,
+      "pitch": [
+        1,
+        1
+      ],
+      "loop": true,
+      "cooldown_ms": 0,
+      "max_voices": 2,
+      "trigger": "Actual badger_track exploration only; finite-work lifetime; stops at standing stones",
+      "source_url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone | https://opengameart.org/content/20-rustles-dry-leaves | https://opengameart.org/content/35-wooden-crackshitsdestructions",
+      "source_ids": [
+        "fantozzi_steps",
+        "qubodup_leaves",
+        "independent_wood"
+      ],
+      "license": "CC0-1.0",
+      "author": "Fantozzi; extracted by qubodup + qubodup + Independent.nu; submitted by qubodup",
+      "original_files": [
+        "movement_wood_path.ogg"
+      ],
+      "status": "wired_narrative_placeholder",
+      "replaceability": "Replace loop; lifetime is bound to work state, not dialogue or wall-clock timers."
+    }
+  },
+  "existing_media": [
+    {
+      "event": "cinematic.opening",
+      "file": "res://assets/video/opening/opening_film.ogv",
+      "trigger": "OpeningFilmView playback; native Vorbis soundtrack retained",
+      "bus": "Cinematic -> Music -> Master",
+      "gain_db": 0,
+      "loop": false,
+      "status": "existing_preserved_rerouted",
+      "license": "User-provided existing asset; original rights provenance unchanged, not newly verified",
+      "source_url": "Existing synchronized project e09ef9eacee0ea9dd9580e86404eef9be347dac6",
+      "notes": "Native soundtrack measured -17.4dB mean / -1.2dB peak; BGM and ambience fade out during movie."
+    }
+  ]
+}

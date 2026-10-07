@@ -86,8 +86,16 @@ func _run() -> void:
 	var board_slab := scene.get_node("BoardThickness") as MeshInstance3D
 	var meadow_material := board_surface.get_surface_override_material(0) as ShaderMaterial
 	var board_material := board_surface.get_surface_override_material(1) as ShaderMaterial
-	_check("plain support slab does not cover the sculpted painted surface", not board_slab.visible)
-	_check("board and meadow retain the current dark forest textures", (board_material.get_shader_parameter("grain") as Texture2D).resource_path.ends_with("earth-tile.png") and (meadow_material.get_shader_parameter("grain") as Texture2D).resource_path.ends_with("forest-floor-tile.png"))
+	# 2026-10-01 用户启用真棋盘：BoardThickness 可见，并沿用原背景棋盘木纹；边框按盒体逐面投影避免拉伸。
+	var slab_material := board_slab.material_override as ShaderMaterial
+	_check("real board slab is visible with the retained board wood", board_slab.visible and slab_material != null and (slab_material.get_shader_parameter("grain") as Texture2D).resource_path == (board_material.get_shader_parameter("grain") as Texture2D).resource_path)
+	_check("real board slab uses per-face box projection", slab_material != null and slab_material.get_shader_parameter("box_projection") == true)
+	var rims_ok := true
+	for side: int in 4:
+		var rim_material := (scene.get_node("WoodRim%d" % side) as MeshInstance3D).material_override as ShaderMaterial
+		rims_ok = rims_ok and rim_material != null and rim_material.get_shader_parameter("box_projection") == true and rim_material.get_shader_parameter("grain_along_z") == (side >= 2)
+	_check("wood rims project per face with grain along their length", rims_ok)
+	_check("board uses the retained wood texture and meadow remains unchanged", (board_material.get_shader_parameter("grain") as Texture2D).resource_path.ends_with("board-wood-retained.png") and (meadow_material.get_shader_parameter("grain") as Texture2D).resource_path.ends_with("forest-floor-tile.png"))
 	_check("board texture is no longer suppressed by a gray blue tint", (board_material.get_shader_parameter("surface_tint") as Color).is_equal_approx(Color.WHITE))
 	print("EDITABLE_ENVIRONMENT_SUITE: %d checks, %d failures" % [checks, failures])
 	quit(0 if failures == 0 else 1)

@@ -1,0 +1,725 @@
+[
+  {
+    "file": "res://assets/audio/narrative/run_forest_depart.ogg",
+    "bytes": 30557,
+    "sha256": "8aadd49cc6486c510aabbf2efc00b3d46207ab4cb73bcfa1406f0d29cd8da259",
+    "runtime_events": [
+      "narrative.run_depart"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/step_soft_grass_02.ogg",
+    "bytes": 11091,
+    "sha256": "55e9f34a32303859d54530b2bc42e064ceb5ab0495d49eacb8d71e1feefeee32",
+    "runtime_events": [
+      "narrative.soft_steps"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/wet_steps_arrive.ogg",
+    "bytes": 28079,
+    "sha256": "ecbd6e3e5516c91dfde8b347892827c53299c5e2b27e90570e124dfe124b7aa7",
+    "runtime_events": [
+      "narrative.wet_arrive"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/step_snow_01.ogg",
+    "bytes": 10953,
+    "sha256": "a586713de2e3994e5c7f648eab38ffd35884f908c6c0f2f06a0b64135bbe525a",
+    "runtime_events": []
+  },
+  {
+    "file": "res://assets/audio/narrative/flask_handover.ogg",
+    "bytes": 11432,
+    "sha256": "04fe2299428872dac8eecc7cf613952501acf226b8418343e57ec19d50742933",
+    "runtime_events": [
+      "narrative.flask_handover"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/movement_wood_path.ogg",
+    "bytes": 66174,
+    "sha256": "c80da263adb2bdf35d2eff847065ea55b004847a9b67a20d4f77c6292ead5253",
+    "runtime_events": [
+      "movement.wood_path"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/step_snow_04.ogg",
+    "bytes": 13805,
+    "sha256": "ba3c0a047aab5906eb2c753c4d5cc770858e16196c54eeb4376c2f714e9e5caa",
+    "runtime_events": []
+  },
+  {
+    "file": "res://assets/audio/narrative/step_snow_03.ogg",
+    "bytes": 13521,
+    "sha256": "61ef4e08aa5679d51123245fecf2ce17e875f576f20e7aa292d00ac4fd1eaa39",
+    "runtime_events": []
+  },
+  {
+    "file": "res://assets/audio/narrative/amb_thorn_forest_cold_loop.ogg",
+    "bytes": 512199,
+    "sha256": "685c1dc6382f0ce8b49d1ad49a97c540db57675673f2c8390e0f5ec46f9aab29",
+    "runtime_events": [
+      "ambience.cold_wood"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/amb_snowline_gusts_loop.ogg",
+    "bytes": 616819,
+    "sha256": "f5932aaa9eaf764d3ff9bb661cb70d653cb3ad5fd74db03b67900c849cac2100",
+    "runtime_events": [
+      "ambience.snowline"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/brush_thorns_02.ogg",
+    "bytes": 18439,
+    "sha256": "baff859f347c843b8b0eacf925cd0f9d426f64e120e42d21266f840134a18f81",
+    "runtime_events": [
+      "narrative.brush_thorns"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/scarf_cloth_01.ogg",
+    "bytes": 15113,
+    "sha256": "75141210425374ea95346268dd940f6c5296648b0732baea52bd26267429d877",
+    "runtime_events": [
+      "narrative.scarf"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/snow_to_soft_ground.ogg",
+    "bytes": 42896,
+    "sha256": "311c1453549c76ef8db6e98a2c36d45f8ccb02f321fd1f9f98dec817ebcc3c45",
+    "runtime_events": [
+      "narrative.snow_to_soft_ground"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/step_soft_grass_01.ogg",
+    "bytes": 11722,
+    "sha256": "38665c9ef634a84a94884c41d52986c93bbe941dd5d84081c18887ea398682a9",
+    "runtime_events": [
+      "narrative.soft_steps"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/brush_thorns_01.ogg",
+    "bytes": 15398,
+    "sha256": "4ffddeb7216f475cf3d888f9ae8381d581aa54f884d688139c0ebe3050c27d30",
+    "runtime_events": [
+      "narrative.brush_thorns"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/dog_bark_far.ogg",
+    "bytes": 7730,
+    "sha256": "37c7de3e42d603075a98f29b1aacdf2d7f8fba16c3f0fa00b6efd331f63d439c",
+    "runtime_events": [
+      "narrative.dog_far"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/step_soft_grass_04.ogg",
+    "bytes": 9552,
+    "sha256": "358c04559f72d6118312b55900cf8bee2a79e28a4e42622f757d01fe946d27aa",
+    "runtime_events": [
+      "narrative.soft_steps"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/berry_leaf_pluck.ogg",
+    "bytes": 11831,
+    "sha256": "c460b45673b26e4e3db1fed6cb55030532a9cc807af692c66a2ddb100091ca9d",
+    "runtime_events": [
+      "narrative.berry_pluck"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/step_shallow_water_01.ogg",
+    "bytes": 13860,
+    "sha256": "72c120c3245dd446d2af22ee890f1e221ffc1bed2f98714c944c9a4a1a35dc25",
+    "runtime_events": []
+  },
+  {
+    "file": "res://assets/audio/narrative/stone_pickup_small.ogg",
+    "bytes": 16542,
+    "sha256": "56b2b789f9be62b057e55d14c2fd1b220fecad35bd2e2f7dd49d42dfef82d6f6",
+    "runtime_events": [
+      "narrative.stone_pickup"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/step_wet_earth.ogg",
+    "bytes": 9908,
+    "sha256": "e5fd0bff81ce2c5c25d11b5d6befaae5d9f9fbc36067c7369415ce09f28aa83a",
+    "runtime_events": [
+      "narrative.wet_step"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/twig_snap_small.ogg",
+    "bytes": 10490,
+    "sha256": "bcec2fc8ac0252f737d502786496dbf4513a0a34cb63384db07070fc6ca89543",
+    "runtime_events": [
+      "narrative.twig_small"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/amb_creek_hidden_loop.ogg",
+    "bytes": 291250,
+    "sha256": "587981c7cc680f2df1904ccdfeb8bb6e689cffe4d8b7936ff4d0f3fd4819c039",
+    "runtime_events": [
+      "ambience.hidden_creek"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/movement_stream_escape.ogg",
+    "bytes": 102393,
+    "sha256": "b78d5bf4643b6515b618316ef78537896ac23fb5576a6cf0b449072ee080c910",
+    "runtime_events": [
+      "movement.stream_escape"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/step_shallow_water_02.ogg",
+    "bytes": 11510,
+    "sha256": "c4a45b2cadd2a0abd67436b6fe0eece355a710238bbead39bfd690b587c026e6",
+    "runtime_events": []
+  },
+  {
+    "file": "res://assets/audio/narrative/scarf_cloth_02.ogg",
+    "bytes": 11741,
+    "sha256": "8b3ccd3a071f6b5556dd145d367ebdc5855c8d5fc19f570c6ba7638d2c0dc707",
+    "runtime_events": [
+      "narrative.scarf"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/step_snow_02.ogg",
+    "bytes": 14132,
+    "sha256": "119fdf0a1961aab77658ae4c75d81e22f1e0a2f65622b0ee81a775cb6101696e",
+    "runtime_events": []
+  },
+  {
+    "file": "res://assets/audio/narrative/dog_bark_nearer.ogg",
+    "bytes": 8702,
+    "sha256": "15a7f17941fa669409c2adc233aae532afa78456e3011c35bc9e2c9bc4266329",
+    "runtime_events": [
+      "narrative.dog_nearer"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/brush_thorns_03.ogg",
+    "bytes": 22105,
+    "sha256": "4bdcf4062f352f03eba38bcb557cbbd174bd594a4348e5ddf695909e586dd522",
+    "runtime_events": [
+      "narrative.brush_thorns"
+    ]
+  },
+  {
+    "file": "res://assets/audio/narrative/step_soft_grass_03.ogg",
+    "bytes": 10105,
+    "sha256": "7970b8f70c3428b975d2e1fca05dfb37e19058d22171ed34178846ef1b7ad813",
+    "runtime_events": [
+      "narrative.soft_steps"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_bookFlip1.ogg",
+    "bytes": 18248,
+    "sha256": "fa81ac2fedc8c641661b87e349630a36c9800e795e0c800e029214efdbe26a7d",
+    "runtime_events": [
+      "book.page"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_clothBelt.ogg",
+    "bytes": 21491,
+    "sha256": "f29560a2aea95bbfeb643e1e8f56ec2b6f7e32f32ce4e140645a36db81de3253",
+    "runtime_events": [
+      "animation.paper_unfold"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-fan-2.ogg",
+    "bytes": 18363,
+    "sha256": "5743373c9dde00c6eee949a2c8e65d75946522768999167e1f5632451630e848",
+    "runtime_events": [
+      "card.split"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_cloth2.ogg",
+    "bytes": 11787,
+    "sha256": "8a7451193c38bc05483aec25dd193e163a15d44cf7fff04ac7912573231b0201",
+    "runtime_events": [
+      "ui.popup_close"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-place-2.ogg",
+    "bytes": 8046,
+    "sha256": "903d5050718595e87864dd755643b476ab1a5533080dcc2dddc72570d33ba9f8",
+    "runtime_events": [
+      "card.drop"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_cloth1.ogg",
+    "bytes": 16508,
+    "sha256": "ddb93a3671233f95da0e0b10367f082f7eb42fa6caaddcf776410aa8833c747d",
+    "runtime_events": [
+      "ui.popup_open",
+      "animation.paper_unfold"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-shove-4.ogg",
+    "bytes": 10875,
+    "sha256": "0a1ad3a2f16bd2ed73349e6342426ca7a59a6e26b7e26e36d51d51c2c2349d6f",
+    "runtime_events": [
+      "card.fly"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_handleCoins.ogg",
+    "bytes": 25394,
+    "sha256": "8a91f969e932df709df80ee124d86a51389eed9b67f22e5e716bc2bbf60d8dab",
+    "runtime_events": [
+      "world.trade"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_bookClose.ogg",
+    "bytes": 9292,
+    "sha256": "81e976532565f4372abd14e83d2684195fa548d0a28d345de221e56052454f32",
+    "runtime_events": [
+      "book.close",
+      "dialogue.close"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_select_003.ogg",
+    "bytes": 6901,
+    "sha256": "9a612fd2f513d52a296906b41071c990f75defe56be3bee60d2d4e2423b51b8b",
+    "runtime_events": [
+      "ui.select"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_doorClose_1.ogg",
+    "bytes": 18564,
+    "sha256": "834d29c60a8a8bfb50b158cdb6b7dfa8f02812a408a1ee9703d038dfab0b1aeb",
+    "runtime_events": [
+      "world.departure"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_switch_002.ogg",
+    "bytes": 7097,
+    "sha256": "6fc395be2ad1f99ce318a5d28f98fb76dbeb676d83a0b28239d8c1fb90736180",
+    "runtime_events": [
+      "ui.toggle"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_cards-pack-open-1.ogg",
+    "bytes": 12715,
+    "sha256": "1214059fdfbf1c396c0702244fc833739cc346d326a71e450b731f456e54d6fb",
+    "runtime_events": [
+      "card.unfold"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_doorOpen_2.ogg",
+    "bytes": 30280,
+    "sha256": "68962fb0458c9bac59dec3adefa9849703c7c89d34712de03dd0075d095e79e9",
+    "runtime_events": [
+      "world.arrival"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_confirmation_004.ogg",
+    "bytes": 12391,
+    "sha256": "568967a3d9f8a8f6af54ea01729c4882284308f2a27d78c07ffd7ee0d6951661",
+    "runtime_events": [
+      "world.discovery"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_select_002.ogg",
+    "bytes": 5463,
+    "sha256": "4cc6ac5341b9b2c86fef80c347de028e9ab9f2e037586ac7d9fa59a403a1c012",
+    "runtime_events": [
+      "ui.hover"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_error_004.ogg",
+    "bytes": 6393,
+    "sha256": "0b574cea597d96507e782ae9764f88482ce49f46e931e57054bf7150047f2d69",
+    "runtime_events": [
+      "ui.error",
+      "card.reject"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_confirmation_002.ogg",
+    "bytes": 14169,
+    "sha256": "33b17a9a9a2397c62b285c52c33a907fdffb476909c99e42dde603f6a7a8b12c",
+    "runtime_events": [
+      "dialogue.choice"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-slide-4.ogg",
+    "bytes": 7912,
+    "sha256": "b9c82bcdbe6b7d00a06e2546bd2683a9ab082ca5fd090a42882f33eddd925b7f",
+    "runtime_events": [
+      "card.pick"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_handleCoins2.ogg",
+    "bytes": 13094,
+    "sha256": "4b857968d64f9ac9336a10ffac6694d7547e1f01566ad6857b30bc8db3ee6c32",
+    "runtime_events": [
+      "world.trade"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_cloth4.ogg",
+    "bytes": 11043,
+    "sha256": "e7ab9a6c4466dea874196c61f59bf1da05cfe58748f42fadd695d441a154a99b",
+    "runtime_events": [
+      "ui.resume"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_click_001.ogg",
+    "bytes": 4876,
+    "sha256": "ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9",
+    "runtime_events": [
+      "ui.press"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_confirmation_001.ogg",
+    "bytes": 8968,
+    "sha256": "063564703b6094d70718a3e787a55cc9141611e4ecd6b6637f8828f79b4a8c3a",
+    "runtime_events": [
+      "ui.confirm"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_glass_002.ogg",
+    "bytes": 4917,
+    "sha256": "08e972c73e53c91d6d310e107e80db60edce78ae47225889a028e628a6f3da49",
+    "runtime_events": [
+      "world.operation_complete"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_confirmation_003.ogg",
+    "bytes": 9535,
+    "sha256": "3091bf0be0497f825769ee0733ca7bdc3bcd59bd6c6e8f2ba8f93d580ff38022",
+    "runtime_events": [
+      "goal.complete"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_glass_003.ogg",
+    "bytes": 5732,
+    "sha256": "9a6f16e3c2eff6fe5d017a4755a28306b14555728831cd00d70308e8f9689566",
+    "runtime_events": [
+      "world.craft_complete"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-slide-2.ogg",
+    "bytes": 9042,
+    "sha256": "e674a1679ec87b507047fe012d068ad2c412125f56186f0e732684705c2a6888",
+    "runtime_events": [
+      "card.hover"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-shove-2.ogg",
+    "bytes": 10445,
+    "sha256": "8e95c1d3ae94b5b91bc663432ad7c3bf4e03a541c22ec10fa51c65fe0e29054b",
+    "runtime_events": [
+      "card.select"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_cards-pack-open-2.ogg",
+    "bytes": 10918,
+    "sha256": "49e02479815c69cd303e0d8f12952c0492d5b3e555838f3485cc25a09818e6fb",
+    "runtime_events": [
+      "card.unfold"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-shove-1.ogg",
+    "bytes": 10690,
+    "sha256": "1ea667aa6795d5f14239192116ebcbd8f3f47eb1c7faaf2ec56844b9067b8b06",
+    "runtime_events": [
+      "card.select"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-slide-5.ogg",
+    "bytes": 9180,
+    "sha256": "8638ab0c17f029aded0e27a4f9b9bb9f8c621b19a6e9975e855cb40ea63e2201",
+    "runtime_events": [
+      "card.pick"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_glass_004.ogg",
+    "bytes": 8323,
+    "sha256": "2379b58f953e3d86982aa8cddcae763022c6258e9820171bf905ce58b4e97766",
+    "runtime_events": [
+      "world.dawn"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-slide-6.ogg",
+    "bytes": 8780,
+    "sha256": "be85da181ac879c20cb667d0f9f156dbdc236d3751737ad27359a15e946430a0",
+    "runtime_events": [
+      "card.cancel"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-shove-3.ogg",
+    "bytes": 9948,
+    "sha256": "399520d483a1466fcaa850b9c407b4edbd5c7f0cbdf17e84dea12e9636326d0d",
+    "runtime_events": [
+      "card.target"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-fan-1.ogg",
+    "bytes": 12489,
+    "sha256": "7a9758ccad8899baef1b9f60b4064e4baa724a548293832fdaea07e6e07e638d",
+    "runtime_events": [
+      "card.split"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-place-1.ogg",
+    "bytes": 9624,
+    "sha256": "d8f26c33a665dcbdcc6f632f6050bc9dd548feb0d4942d4547615926d3926810",
+    "runtime_events": [
+      "card.drop",
+      "card.land"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_cards-pack-take-out-1.ogg",
+    "bytes": 8269,
+    "sha256": "6d38b979f64d20e4153173187ed67b04c6c004767c0a43eddb65c75fa925a1c4",
+    "runtime_events": [
+      "card.stack"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-place-3.ogg",
+    "bytes": 11503,
+    "sha256": "1d988631a6e5201ed1bb0d728f2e43a3ec79401258426858793598044ac95841",
+    "runtime_events": [
+      "card.drop",
+      "card.land"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_doorOpen_1.ogg",
+    "bytes": 22848,
+    "sha256": "4ab93bab96522d8eb109ff96dc57cb6765deb02448fe14c10472084be5bb2a0b",
+    "runtime_events": [
+      "world.shop_toggle"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_click_002.ogg",
+    "bytes": 4275,
+    "sha256": "adcd1f4adc35f1b41bc1b5bbefeff7aa44f2f3f0d96d3199b544140c7c1e761c",
+    "runtime_events": [
+      "ui.press"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-slide-7.ogg",
+    "bytes": 9580,
+    "sha256": "bda2040194f43484d03ee3c65ed6fff57251882ea7227abce4214bfa30bf2705",
+    "runtime_events": [
+      "card.remove"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-slide-8.ogg",
+    "bytes": 9863,
+    "sha256": "95d9aa26f8c63af9934f27a8e3b7e9b583f177640f0bbd6982f12dba52b9ae6b",
+    "runtime_events": [
+      "card.remove"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-place-4.ogg",
+    "bytes": 9618,
+    "sha256": "18e3ba713b7259605fd27cdc048085ed56cf86b32403f070b6cb125019f77183",
+    "runtime_events": [
+      "card.stack"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-slide-1.ogg",
+    "bytes": 8833,
+    "sha256": "006cf9822d15d7063f8899e56041f41646df30adb6fbd8b974ee5d5420012690",
+    "runtime_events": [
+      "card.hover"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_cloth3.ogg",
+    "bytes": 12432,
+    "sha256": "a48632d17a4f1416541d261a32a31612e01267144c407fa3ecab3ff410f0085b",
+    "runtime_events": [
+      "ui.pause"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_tick_001.ogg",
+    "bytes": 4497,
+    "sha256": "9d057b918024c787bbe6c00beed13a7ef72a3fa0c259add3cef36582792f4230",
+    "runtime_events": [
+      "ui.slider"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_bookFlip3.ogg",
+    "bytes": 9077,
+    "sha256": "c85db5dceb3f1df073e960630277eaa88a5afda0477c1ddd68dad707621767be",
+    "runtime_events": [
+      "book.page"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_clothBelt2.ogg",
+    "bytes": 20013,
+    "sha256": "d545b1d9f20e6188140aaf551a96f1e82fe0d15f7ca066fac8b065e1231e0038",
+    "runtime_events": [
+      "world.work_start"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_switch_001.ogg",
+    "bytes": 6753,
+    "sha256": "3b74efad87f1e69dbd1d05c5ad952ab90859b5a3d11da6ec5bd79b4f03b42afa",
+    "runtime_events": [
+      "ui.toggle"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_bookFlip2.ogg",
+    "bytes": 12393,
+    "sha256": "3409042acbfaebc24c1a6327dc073e36f9250841712e96c5040da566a97df73c",
+    "runtime_events": [
+      "book.page"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_tick_002.ogg",
+    "bytes": 4514,
+    "sha256": "869442f54214be902ec7437f79e400dc91c1bfd90d18a6dd2d5b7e41ffbf457b",
+    "runtime_events": [
+      "goal.check"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/rpg_bookOpen.ogg",
+    "bytes": 8273,
+    "sha256": "953390534377222bee89ac8cd9e60a58fdc037c71a4d7c18c43cd647c7f34ba8",
+    "runtime_events": [
+      "book.open"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_select_001.ogg",
+    "bytes": 5468,
+    "sha256": "aec0c31ea934a35936ae0d2ab8fac8123c93aa5647f935853a58dbaf90278b7a",
+    "runtime_events": [
+      "ui.hover"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/interface_toggle_002.ogg",
+    "bytes": 8056,
+    "sha256": "1f564f5520cfa0764028ce245ad97599d3ece8f0ab504554c403af92ac72b900",
+    "runtime_events": [
+      "ui.time_speed"
+    ]
+  },
+  {
+    "file": "res://assets/audio/sfx/casino_card-slide-3.ogg",
+    "bytes": 9164,
+    "sha256": "af2ab62656cb3df73316ce5771b8ee1111a840962b21607e3202151e7413c52c",
+    "runtime_events": [
+      "card.pick"
+    ]
+  },
+  {
+    "file": "res://assets/audio/ambience/amb_hearth_loop.ogg",
+    "bytes": 37586,
+    "sha256": "4b831f48a04ae1afe87b00d67cfda2be42ee9f384a310c252cc201c77a681d5e",
+    "runtime_events": [
+      "ambience.hearth"
+    ]
+  },
+  {
+    "file": "res://assets/audio/ambience/amb_stream_loop.ogg",
+    "bytes": 1020074,
+    "sha256": "54fccba2f2ee05e0d6cd05a4a0738f1e7c9313d6fd1479ab37ade900fabf1d03",
+    "runtime_events": [
+      "ambience.stream"
+    ]
+  },
+  {
+    "file": "res://assets/audio/ambience/amb_night_meadow_loop.ogg",
+    "bytes": 693194,
+    "sha256": "0d90191c3012b93696417e812ac7550221fd4f37d88bcc2f1f320a698eb662d7",
+    "runtime_events": [
+      "ambience.night"
+    ]
+  },
+  {
+    "file": "res://assets/audio/ambience/amb_day_meadow_loop.ogg",
+    "bytes": 517121,
+    "sha256": "105015fd4f63ac0ec052460be1b669b670d1a647ca054aaf8082bd7ca18b1041",
+    "runtime_events": [
+      "ambience.day"
+    ]
+  },
+  {
+    "file": "res://assets/audio/music/bgm_menu_old_tower_inn.ogg",
+    "bytes": 951751,
+    "sha256": "73f81e6cb5aa373071766e5549de110f7ebe41b91cd0dc94b3f797de1b036b34",
+    "runtime_events": [
+      "music.menu",
+      "music.night"
+    ]
+  },
+  {
+    "file": "res://assets/audio/music/bgm_day_bards_tale.ogg",
+    "bytes": 1050012,
+    "sha256": "c6c96ddbf6730c1c5d9e8f2c59135d59e4f1bb06831b79be6eeac7cb2a5c5eb3",
+    "runtime_events": [
+      "music.day",
+      "music.story"
+    ]
+  }
+]

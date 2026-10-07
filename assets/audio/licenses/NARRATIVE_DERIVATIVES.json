@@ -1,0 +1,570 @@
+[
+  {
+    "file": "ready/amb_snowline_gusts_loop.ogg",
+    "originals": [
+      "../park_ambience_wind.wav"
+    ],
+    "source_ids": [
+      "park_ambiences"
+    ],
+    "intended_text_keys": [
+      "OPENING_CHRONICLE_PAGE_2",
+      "OPENING_CHRONICLE_PAGE_5",
+      "DLG_MESSENGER_EDGE_01"
+    ],
+    "modifications": "36s natural open-field wind excerpt with broad gusts, filtered and circular 2s blend. Designed snowline storm bed, not claimed to be a field recording of snowfall. Added 40ms lookaround transient compression (5:1 above 3x RMS; 20ms gain smoothing) before looping to control isolated recording peaks without flattening multi-second gusts.",
+    "loop": true,
+    "duration_seconds": 36.0,
+    "target_rms_dbfs": -25,
+    "source_peak_ceiling_dbfs": -6,
+    "sha256": "f5932aaa9eaf764d3ff9bb661cb70d653cb3ad5fd74db03b67900c849cac2100"
+  },
+  {
+    "file": "ready/amb_thorn_forest_cold_loop.ogg",
+    "originals": [
+      "../park_ambience_wind.wav"
+    ],
+    "source_ids": [
+      "park_ambiences"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_04",
+      "DLG_MESSENGER_EDGE_05"
+    ],
+    "modifications": "32s low-pass sheltered wind, circular 2s blend. No added birds/insects, no magical mist effect. Added 40ms lookaround transient compression (5:1 above 3x RMS; 20ms gain smoothing) before looping to control isolated recording peaks without flattening multi-second gusts.",
+    "loop": true,
+    "duration_seconds": 32.0,
+    "target_rms_dbfs": -34,
+    "source_peak_ceiling_dbfs": -14,
+    "sha256": "685c1dc6382f0ce8b49d1ad49a97c540db57675673f2c8390e0f5ec46f9aab29"
+  },
+  {
+    "file": "ready/amb_creek_hidden_loop.ogg",
+    "originals": [
+      "water_splashes/loop_water_02.ogg"
+    ],
+    "source_ids": [
+      "rubberduck_water"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_29",
+      "action:first_forest"
+    ],
+    "modifications": "Water-only loop repeated four times after circular .35s blend and filtering; use low/distant until entering stream.",
+    "loop": true,
+    "duration_seconds": 26.6565,
+    "target_rms_dbfs": -30,
+    "source_peak_ceiling_dbfs": -10,
+    "sha256": "587981c7cc680f2df1904ccdfeb8bb6e689cffe4d8b7936ff4d0f3fd4819c039"
+  },
+  {
+    "file": "ready/step_snow_01.ogg",
+    "originals": [
+      "snow_steps/Corsica_S-Walking_in_Snow/Corsica_S-Walking_on_snow_covered_gravel_01.flac"
+    ],
+    "source_ids": [
+      "corsica_snow"
+    ],
+    "intended_text_keys": [
+      "snowline_travel",
+      "transition:DLG_MESSENGER_EDGE_01"
+    ],
+    "modifications": "Natural snow-covered gravel/ice footstep, 48kHz conversion, gain and endpoint fades.",
+    "loop": false,
+    "duration_seconds": 0.476875,
+    "target_rms_dbfs": -24,
+    "source_peak_ceiling_dbfs": -9,
+    "sha256": "a586713de2e3994e5c7f648eab38ffd35884f908c6c0f2f06a0b64135bbe525a"
+  },
+  {
+    "file": "ready/step_snow_02.ogg",
+    "originals": [
+      "snow_steps/Corsica_S-Walking_in_Snow/Corsica_S-Walking_on_snow_covered_gravel_02.flac"
+    ],
+    "source_ids": [
+      "corsica_snow"
+    ],
+    "intended_text_keys": [
+      "snowline_travel",
+      "transition:DLG_MESSENGER_EDGE_01"
+    ],
+    "modifications": "Natural snow-covered gravel/ice footstep, 48kHz conversion, gain and endpoint fades.",
+    "loop": false,
+    "duration_seconds": 0.69375,
+    "target_rms_dbfs": -24,
+    "source_peak_ceiling_dbfs": -9,
+    "sha256": "119fdf0a1961aab77658ae4c75d81e22f1e0a2f65622b0ee81a775cb6101696e"
+  },
+  {
+    "file": "ready/step_snow_03.ogg",
+    "originals": [
+      "snow_steps/Corsica_S-Walking_in_Snow/Corsica_S-Walking_on_snow_covered_gravel_03.flac"
+    ],
+    "source_ids": [
+      "corsica_snow"
+    ],
+    "intended_text_keys": [
+      "snowline_travel",
+      "transition:DLG_MESSENGER_EDGE_01"
+    ],
+    "modifications": "Natural snow-covered gravel/ice footstep, 48kHz conversion, gain and endpoint fades.",
+    "loop": false,
+    "duration_seconds": 0.6495625,
+    "target_rms_dbfs": -24,
+    "source_peak_ceiling_dbfs": -9,
+    "sha256": "61ef4e08aa5679d51123245fecf2ce17e875f576f20e7aa292d00ac4fd1eaa39"
+  },
+  {
+    "file": "ready/step_snow_04.ogg",
+    "originals": [
+      "snow_steps/Corsica_S-Walking_in_Snow/Corsica_S-Walking_on_snow_covered_gravel_04.flac"
+    ],
+    "source_ids": [
+      "corsica_snow"
+    ],
+    "intended_text_keys": [
+      "snowline_travel",
+      "transition:DLG_MESSENGER_EDGE_01"
+    ],
+    "modifications": "Natural snow-covered gravel/ice footstep, 48kHz conversion, gain and endpoint fades.",
+    "loop": false,
+    "duration_seconds": 0.6790208333333333,
+    "target_rms_dbfs": -24,
+    "source_peak_ceiling_dbfs": -9,
+    "sha256": "ba3c0a047aab5906eb2c753c4d5cc770858e16196c54eeb4376c2f714e9e5caa"
+  },
+  {
+    "file": "ready/step_soft_grass_01.ogg",
+    "originals": [
+      "grass_steps/Fantozzi-footsteps/flac/Fantozzi-SandL1.flac"
+    ],
+    "source_ids": [
+      "fantozzi_steps"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_01",
+      "DLG_MESSENGER_EDGE_07",
+      "DLG_MESSENGER_RULES_15",
+      "DLG_MESSENGER_RULES_17",
+      "action:badger_track"
+    ],
+    "modifications": "Recorded sand/grass-like single footstep; low-pass to soften brittle edge, gain and endpoint fades.",
+    "loop": false,
+    "duration_seconds": 0.44254166666666667,
+    "target_rms_dbfs": -25,
+    "source_peak_ceiling_dbfs": -10,
+    "sha256": "38665c9ef634a84a94884c41d52986c93bbe941dd5d84081c18887ea398682a9"
+  },
+  {
+    "file": "ready/step_soft_grass_02.ogg",
+    "originals": [
+      "grass_steps/Fantozzi-footsteps/flac/Fantozzi-SandR1.flac"
+    ],
+    "source_ids": [
+      "fantozzi_steps"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_01",
+      "DLG_MESSENGER_EDGE_07",
+      "DLG_MESSENGER_RULES_15",
+      "DLG_MESSENGER_RULES_17",
+      "action:badger_track"
+    ],
+    "modifications": "Recorded sand/grass-like single footstep; low-pass to soften brittle edge, gain and endpoint fades.",
+    "loop": false,
+    "duration_seconds": 0.40577083333333336,
+    "target_rms_dbfs": -25,
+    "source_peak_ceiling_dbfs": -10,
+    "sha256": "55e9f34a32303859d54530b2bc42e064ceb5ab0495d49eacb8d71e1feefeee32"
+  },
+  {
+    "file": "ready/step_soft_grass_03.ogg",
+    "originals": [
+      "grass_steps/Fantozzi-footsteps/flac/Fantozzi-SandL2.flac"
+    ],
+    "source_ids": [
+      "fantozzi_steps"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_01",
+      "DLG_MESSENGER_EDGE_07",
+      "DLG_MESSENGER_RULES_15",
+      "DLG_MESSENGER_RULES_17",
+      "action:badger_track"
+    ],
+    "modifications": "Recorded sand/grass-like single footstep; low-pass to soften brittle edge, gain and endpoint fades.",
+    "loop": false,
+    "duration_seconds": 0.3196041666666667,
+    "target_rms_dbfs": -25,
+    "source_peak_ceiling_dbfs": -10,
+    "sha256": "7970b8f70c3428b975d2e1fca05dfb37e19058d22171ed34178846ef1b7ad813"
+  },
+  {
+    "file": "ready/step_soft_grass_04.ogg",
+    "originals": [
+      "grass_steps/Fantozzi-footsteps/flac/Fantozzi-SandR2.flac"
+    ],
+    "source_ids": [
+      "fantozzi_steps"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_01",
+      "DLG_MESSENGER_EDGE_07",
+      "DLG_MESSENGER_RULES_15",
+      "DLG_MESSENGER_RULES_17",
+      "action:badger_track"
+    ],
+    "modifications": "Recorded sand/grass-like single footstep; low-pass to soften brittle edge, gain and endpoint fades.",
+    "loop": false,
+    "duration_seconds": 0.3401875,
+    "target_rms_dbfs": -25,
+    "source_peak_ceiling_dbfs": -10,
+    "sha256": "358c04559f72d6118312b55900cf8bee2a79e28a4e42622f757d01fe946d27aa"
+  },
+  {
+    "file": "ready/step_wet_earth.ogg",
+    "originals": [
+      "different_steps/mud02.ogg"
+    ],
+    "source_ids": [
+      "tinyworlds_steps"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_01",
+      "DLG_MESSENGER_RULES_01"
+    ],
+    "modifications": "Soft mud/earth contact rather than hard interior footsteps.",
+    "loop": false,
+    "duration_seconds": 0.2599375,
+    "target_rms_dbfs": -25,
+    "source_peak_ceiling_dbfs": -10,
+    "sha256": "e5fd0bff81ce2c5c25d11b5d6befaae5d9f9fbc36067c7369415ce09f28aa83a"
+  },
+  {
+    "file": "ready/brush_thorns_01.ogg",
+    "originals": [
+      "leaf_rustles/rustle/rustle09.flac"
+    ],
+    "source_ids": [
+      "qubodup_leaves"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_04",
+      "DLG_MESSENGER_EDGE_05",
+      "DLG_MESSENGER_RULES_17"
+    ],
+    "modifications": "Selected sub-second foliage-contact recording, gain reduced and endpoint fades.",
+    "loop": false,
+    "duration_seconds": 0.6347083333333333,
+    "target_rms_dbfs": -28,
+    "source_peak_ceiling_dbfs": -13,
+    "sha256": "4ffddeb7216f475cf3d888f9ae8381d581aa54f884d688139c0ebe3050c27d30"
+  },
+  {
+    "file": "ready/brush_thorns_02.ogg",
+    "originals": [
+      "leaf_rustles/rustle/rustle12.flac"
+    ],
+    "source_ids": [
+      "qubodup_leaves"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_04",
+      "DLG_MESSENGER_EDGE_05",
+      "DLG_MESSENGER_RULES_17"
+    ],
+    "modifications": "Selected sub-second foliage-contact recording, gain reduced and endpoint fades.",
+    "loop": false,
+    "duration_seconds": 0.7727708333333333,
+    "target_rms_dbfs": -28,
+    "source_peak_ceiling_dbfs": -13,
+    "sha256": "baff859f347c843b8b0eacf925cd0f9d426f64e120e42d21266f840134a18f81"
+  },
+  {
+    "file": "ready/brush_thorns_03.ogg",
+    "originals": [
+      "leaf_rustles/rustle/rustle16.flac"
+    ],
+    "source_ids": [
+      "qubodup_leaves"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_04",
+      "DLG_MESSENGER_EDGE_05",
+      "DLG_MESSENGER_RULES_17"
+    ],
+    "modifications": "Selected sub-second foliage-contact recording, gain reduced and endpoint fades.",
+    "loop": false,
+    "duration_seconds": 0.9646041666666667,
+    "target_rms_dbfs": -28,
+    "source_peak_ceiling_dbfs": -13,
+    "sha256": "4bdcf4062f352f03eba38bcb557cbbd174bd594a4348e5ddf695909e586dd522"
+  },
+  {
+    "file": "ready/berry_leaf_pluck.ogg",
+    "originals": [
+      "leaf_rustles/rustle/rustle10.flac"
+    ],
+    "source_ids": [
+      "qubodup_leaves"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_RULES_07"
+    ],
+    "modifications": "Short .42s leaf contact for a single sloe pluck; no reward chime.",
+    "loop": false,
+    "duration_seconds": 0.4177708333333333,
+    "target_rms_dbfs": -30,
+    "source_peak_ceiling_dbfs": -16,
+    "sha256": "c460b45673b26e4e3db1fed6cb55030532a9cc807af692c66a2ddb100091ca9d"
+  },
+  {
+    "file": "ready/twig_snap_small.ogg",
+    "originals": [
+      "wood_cracks/wood_impact/crack07.mp3.flac"
+    ],
+    "source_ids": [
+      "independent_wood"
+    ],
+    "intended_text_keys": [
+      "transition:forest_entry",
+      "action:badger_track"
+    ],
+    "modifications": "Small transient extracted from recorded wood crack, high-pass removes heavy construction thump; not a literal twig field recording.",
+    "loop": false,
+    "duration_seconds": 0.27,
+    "target_rms_dbfs": -31,
+    "source_peak_ceiling_dbfs": -17,
+    "sha256": "bcec2fc8ac0252f737d502786496dbf4513a0a34cb63384db07070fc6ca89543"
+  },
+  {
+    "file": "ready/dog_bark_far.ogg",
+    "originals": [
+      "dog_barks.wav"
+    ],
+    "source_ids": [
+      "brandon_morris_dog"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_01"
+    ],
+    "modifications": "Second individual bark extracted (0.45–0.87s) from four-bark source; distance lowpass/gain and faint short reflections; one bark only.",
+    "loop": false,
+    "duration_seconds": 1.12,
+    "target_rms_dbfs": -33,
+    "source_peak_ceiling_dbfs": -23,
+    "sha256": "37c7de3e42d603075a98f29b1aacdf2d7f8fba16c3f0fa00b6efd331f63d439c"
+  },
+  {
+    "file": "ready/dog_bark_nearer.ogg",
+    "originals": [
+      "dog_barks.wav"
+    ],
+    "source_ids": [
+      "brandon_morris_dog"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_27"
+    ],
+    "modifications": "Second individual bark extracted (0.45–0.87s) from four-bark source; distance lowpass/gain and faint short reflections; one bark only.",
+    "loop": false,
+    "duration_seconds": 1.12,
+    "target_rms_dbfs": -26,
+    "source_peak_ceiling_dbfs": -15,
+    "sha256": "15a7f17941fa669409c2adc233aae532afa78456e3011c35bc9e2c9bc4266329"
+  },
+  {
+    "file": "ready/step_shallow_water_01.ogg",
+    "originals": [
+      "water_splashes/splash_12.ogg",
+      "different_steps/mud02.ogg"
+    ],
+    "source_ids": [
+      "rubberduck_water",
+      "tinyworlds_steps"
+    ],
+    "intended_text_keys": [
+      "action:first_forest",
+      "DLG_MESSENGER_RULES_01"
+    ],
+    "modifications": "Restrained small splash + soft mud contact for shallow-water travel. No pouring or drinking.",
+    "loop": false,
+    "duration_seconds": 0.7859583333333333,
+    "target_rms_dbfs": -25,
+    "source_peak_ceiling_dbfs": -10,
+    "sha256": "72c120c3245dd446d2af22ee890f1e221ffc1bed2f98714c944c9a4a1a35dc25"
+  },
+  {
+    "file": "ready/step_shallow_water_02.ogg",
+    "originals": [
+      "water_splashes/splash_14.ogg",
+      "different_steps/mud02.ogg"
+    ],
+    "source_ids": [
+      "rubberduck_water",
+      "tinyworlds_steps"
+    ],
+    "intended_text_keys": [
+      "action:first_forest",
+      "DLG_MESSENGER_RULES_01"
+    ],
+    "modifications": "Restrained small splash + soft mud contact for shallow-water travel. No pouring or drinking.",
+    "loop": false,
+    "duration_seconds": 0.5593541666666667,
+    "target_rms_dbfs": -25,
+    "source_peak_ceiling_dbfs": -10,
+    "sha256": "c4a45b2cadd2a0abd67436b6fe0eece355a710238bbead39bfd690b587c026e6"
+  },
+  {
+    "file": "ready/scarf_cloth_01.ogg",
+    "originals": [
+      "../kenney_rpg/Audio/cloth1.ogg"
+    ],
+    "source_ids": [
+      "kenney_rpg"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_03",
+      "DLG_MESSENGER_EDGE_32",
+      "DLG_MESSENGER_RULES_03",
+      "DLG_MESSENGER_RULES_18"
+    ],
+    "modifications": "Quiet fabric handling, no UI chime.",
+    "loop": false,
+    "duration_seconds": 0.6610416666666666,
+    "target_rms_dbfs": -29,
+    "source_peak_ceiling_dbfs": -14,
+    "sha256": "75141210425374ea95346268dd940f6c5296648b0732baea52bd26267429d877"
+  },
+  {
+    "file": "ready/scarf_cloth_02.ogg",
+    "originals": [
+      "../kenney_rpg/Audio/cloth3.ogg"
+    ],
+    "source_ids": [
+      "kenney_rpg"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_03",
+      "DLG_MESSENGER_EDGE_32",
+      "DLG_MESSENGER_RULES_03",
+      "DLG_MESSENGER_RULES_18"
+    ],
+    "modifications": "Quiet fabric handling, no UI chime.",
+    "loop": false,
+    "duration_seconds": 0.4765625,
+    "target_rms_dbfs": -29,
+    "source_peak_ceiling_dbfs": -14,
+    "sha256": "8b3ccd3a071f6b5556dd145d367ebdc5855c8d5fc19f570c6ba7638d2c0dc707"
+  },
+  {
+    "file": "ready/flask_handover.ogg",
+    "originals": [
+      "../kenney_rpg/Audio/metalClick.ogg",
+      "../kenney_rpg/Audio/handleSmallLeather.ogg"
+    ],
+    "source_ids": [
+      "kenney_rpg"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_19",
+      "DLG_MESSENGER_EDGE_21"
+    ],
+    "modifications": "Soft leather/hand contact with subdued brass tick. No cork, liquid pour, gulp or invented drinking.",
+    "loop": false,
+    "duration_seconds": 0.49083333333333334,
+    "target_rms_dbfs": -30,
+    "source_peak_ceiling_dbfs": -17,
+    "sha256": "04fe2299428872dac8eecc7cf613952501acf226b8418343e57ec19d50742933"
+  },
+  {
+    "file": "ready/stone_pickup_small.ogg",
+    "originals": [
+      "different_steps/gravel.ogg",
+      "../kenney_rpg/Audio/cloth2.ogg"
+    ],
+    "source_ids": [
+      "tinyworlds_steps",
+      "kenney_rpg"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_CHOICE_STONE_1"
+    ],
+    "modifications": "Low-level gravel/fabric contact for gripping a small stone; no projectile or impact.",
+    "loop": false,
+    "duration_seconds": 0.7039166666666666,
+    "target_rms_dbfs": -31,
+    "source_peak_ceiling_dbfs": -18,
+    "sha256": "56b2b789f9be62b057e55d14c2fd1b220fecad35bd2e2f7dd49d42dfef82d6f6"
+  },
+  {
+    "file": "ready/run_forest_depart.ogg",
+    "originals": [
+      "ready/step_soft_grass_01.ogg",
+      "ready/step_soft_grass_02.ogg",
+      "ready/step_soft_grass_03.ogg",
+      "ready/step_soft_grass_04.ogg",
+      "ready/step_soft_grass_01.ogg",
+      "ready/step_soft_grass_02.ogg",
+      "ready/step_soft_grass_03.ogg"
+    ],
+    "source_ids": [
+      "fantozzi_steps"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_RULES_17"
+    ],
+    "modifications": "Five quick grass/soft-earth steps attenuate with distance and stop; no continuing loop under dialogue.",
+    "loop": false,
+    "duration_seconds": 1.95,
+    "target_rms_dbfs": -26,
+    "source_peak_ceiling_dbfs": -11,
+    "sha256": "8aadd49cc6486c510aabbf2efc00b3d46207ab4cb73bcfa1406f0d29cd8da259"
+  },
+  {
+    "file": "ready/wet_steps_arrive.ogg",
+    "originals": [
+      "ready/step_shallow_water_01.ogg",
+      "ready/step_shallow_water_02.ogg",
+      "ready/step_shallow_water_01.ogg"
+    ],
+    "source_ids": [
+      "rubberduck_water",
+      "tinyworlds_steps"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_RULES_01"
+    ],
+    "modifications": "Short irregular-feeling movement sequence; departing run attenuates away. Stops after the beat, never loops under waiting dialogue.",
+    "loop": false,
+    "duration_seconds": 1.7932916666666667,
+    "target_rms_dbfs": -26,
+    "source_peak_ceiling_dbfs": -11,
+    "sha256": "ecbd6e3e5516c91dfde8b347892827c53299c5e2b27e90570e124dfe124b7aa7"
+  },
+  {
+    "file": "ready/snow_to_soft_ground.ogg",
+    "originals": [
+      "ready/step_snow_01.ogg",
+      "ready/step_snow_02.ogg",
+      "ready/step_soft_grass_03.ogg",
+      "ready/step_soft_grass_04.ogg",
+      "ready/step_soft_grass_01.ogg",
+      "ready/step_soft_grass_02.ogg",
+      "ready/step_soft_grass_03.ogg"
+    ],
+    "source_ids": [
+      "corsica_snow",
+      "fantozzi_steps"
+    ],
+    "intended_text_keys": [
+      "DLG_MESSENGER_EDGE_01"
+    ],
+    "modifications": "Short irregular-feeling movement sequence; departing run attenuates away. Stops after the beat, never loops under waiting dialogue.",
+    "loop": false,
+    "duration_seconds": 2.5269375,
+    "target_rms_dbfs": -26,
+    "source_peak_ceiling_dbfs": -11,
+    "sha256": "311c1453549c76ef8db6e98a2c36d45f8ccb02f321fd1f9f98dec817ebcc3c45"
+  }
+]

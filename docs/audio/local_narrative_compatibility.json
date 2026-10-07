@@ -1,0 +1,899 @@
+{
+  "active_latest_entries": 79,
+  "retained_exact_entries": 21,
+  "disabled_old_entries": [
+    {
+      "text_key": "DLG_MESSENGER_EDGE_01",
+      "reasons": [
+        "cue_phrase_absent",
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "肺里像着了火。脚下的地越来越软。身后某处，一条狗叫了一声，又停了。",
+      "latest_quote": "你拨开刺枝钻了进去。脚下的地越来越软。身后某处，一根树枝咔地断了。你屏住呼吸，直到确定那只是树皮冻裂的声音。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_02",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "树缝里有灯。也可能只是水面映着月亮。你已经分不清了。",
+      "latest_quote": "树缝里有光。是灯，还是水面映着月亮？你已经分不清了。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_STONE_1",
+      "reasons": [
+        "cue_phrase_absent",
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "你的手握住一块石头。冰凉，小得派不上用场。",
+      "latest_quote": "你的手摸到一块石头，攥紧了。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_10",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "送信的活儿派我来的。没人派我去追人。我跑得不够快，吓不着谁。",
+      "latest_quote": "派我？大概是送信这份差事吧。信又不会自己走路，真可惜。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_11",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "他越过你，望向你来的方向。笑意淡了些。",
+      "latest_quote": "他把你打量了一遍：头发上的霜，靴子的惨状。笑意收了些，换成一种小心。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_12",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "不过，倒是有人派了他们。",
+      "latest_quote": "你是从雪里走出来的？靠两条腿？"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_13",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "他们？",
+      "latest_quote": "……那又怎样？"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_14",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "那些灯。在河边。雾一起，他们就丢了你的踪迹。天一亮，他们会再找到的。",
+      "latest_quote": "不怎样。只是从那边来的人，多半走不到这儿。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_15",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "你没有回头。你信不过自己。",
+      "latest_quote": "他等着你往下说。可你没有接下去。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_16",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "你一直在跑。",
+      "latest_quote": "迷路了？"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_17",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "你也是。",
+      "latest_quote": "……差不多吧。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_18",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "我跑是有工钱的。你看起来像是一停下来就要付出代价。",
+      "latest_quote": "啊，那正好。找到这地方最好的法子就是迷路。没人是特意来的。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_NO_1",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "嗯。没有。见过的话，我会记得。",
+      "latest_quote": "嗯……那大概是我认错人了。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_NOT_SURE_1",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "那就是你长了一张让人觉得眼熟的脸。",
+      "latest_quote": "不知道？行吧，你想留点神秘，那就留着。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_PULL_AWAY_1",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "他由着你。他没有不高兴，倒像是把什么事默默记下了。",
+      "latest_quote": "他由着你，也没有不高兴，只是把自己的手收了回去。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_27",
+      "reasons": [
+        "cue_phrase_absent",
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "远远的身后，狗又叫了。比刚才近。",
+      "latest_quote": "你回头望向来的方向。只有树，和树后面的一片白。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_28",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "好。听我的。",
+      "latest_quote": "在等人？"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_29",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "那几棵树后面有条小溪。走在水里，别走岸上，一直走到林子变稀。",
+      "latest_quote": "没有。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_30",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "那你呢？",
+      "latest_quote": "那就好。我只有这一只水壶。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_31",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "给我一样你贴身穿过的东西。",
+      "latest_quote": "好了。你不能在这儿过夜，就算在雪线这一边，夜里的寒气也要人命。前面不远就有个叫背风地的村子。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_32",
+      "reasons": [
+        "cue_phrase_absent",
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "你把围巾递给他。他一句话没说，绕在了自己脖子上。",
+      "latest_quote": "我得先给烧炭的老芬恩送封信。你顺着溪水的方向走，走不出一里地我就追上你。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_33",
+      "reasons": [
+        "latest_prose_changed_or_removed"
+      ],
+      "patch_quote": "我带它们往反方向跑一里地，再回来追上你。走。",
+      "latest_quote": "你还没来得及说你什么都没答应，他已经消失在树丛里了。水壶还在你手里。"
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_01",
+      "reasons": [
+        "cue_phrase_absent",
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "一个钟头后，他追了上来，膝盖以下全湿透了，一脸得意。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_02",
+      "reasons": [
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "它们往反方向去了。狗最爱围巾。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_03",
+      "reasons": [
+        "cue_phrase_absent",
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "他把围巾还给你。围巾被他的脖子捂得还是暖的。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_04",
+      "reasons": [
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "好了。既然没人告诉过你，有两件事你得知道。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_05",
+      "reasons": [
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "第一，在背风地，没人问你是从哪儿来的。你也别问他们。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_06",
+      "reasons": [
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "第二，别一个人进村。那里的人见过兵。在路边的立石那儿等我，我带你进去。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_07",
+      "reasons": [
+        "cue_phrase_absent",
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "他在一丛黑刺李边蹲下，摘了一颗果子，皱眉看了看，放进你掌心。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_08",
+      "reasons": [
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "留着。现在还涩。等下过第一场霜，就值点东西了。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_09",
+      "reasons": [
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "背风地是什么地方？",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_10",
+      "reasons": [
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "冬天吞掉他们的城镇以后，逃难的人在这儿停了脚。这么远的地方，帝国懒得来找。看你这样子，正合适。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_11",
+      "reasons": [
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "往北有一条獾踩出来的小路，顺着走就到立石。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_12",
+      "reasons": [
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "你不一起走？",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_13",
+      "reasons": [
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "我跑得快。我先去背风地，告诉他们有人要来。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_14",
+      "reasons": [
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "他们会先让你吃饱，再问你别的。这是规矩。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_15",
+      "reasons": [
+        "cue_phrase_absent",
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "他已经倒退着走开了，咧着嘴笑。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_16",
+      "reasons": [
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "别一脸担心。你到的时候，我会在那儿。我一向都在。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_17",
+      "reasons": [
+        "cue_phrase_absent",
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "然后他转身跑进了林子。",
+      "latest_quote": ""
+    },
+    {
+      "text_key": "DLG_MESSENGER_RULES_18",
+      "reasons": [
+        "cue_phrase_absent",
+        "latest_prose_changed_or_removed",
+        "marker_changed_or_removed",
+        "not_in_latest_active_story"
+      ],
+      "patch_quote": "你把围巾重新绕回脖子上。上面还有他的体温。",
+      "latest_quote": ""
+    }
+  ],
+  "unmapped_latest_entries": [
+    {
+      "text_key": "DLG_HERO_THAW_01",
+      "quote_zh": "哈……哈……不行了。真不行了，一步也走不动了。",
+      "story_id": "story.hero.thaw_edge",
+      "line_index": 0,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.thaw_edge:0::0"
+    },
+    {
+      "text_key": "DLG_HERO_THAW_02",
+      "quote_zh": "天啊，好累……多久没合眼了？两夜？还是三夜？",
+      "story_id": "story.hero.thaw_edge",
+      "line_index": 1,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.thaw_edge:1::0"
+    },
+    {
+      "text_key": "DLG_HERO_THAW_03",
+      "quote_zh": "脚……我已经感觉不到自己的脚了。",
+      "story_id": "story.hero.thaw_edge",
+      "line_index": 2,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.thaw_edge:2::0"
+    },
+    {
+      "text_key": "DLG_HERO_THAW_04",
+      "quote_zh": "狗叫声也听不见了。也许……跟丢了？不。他们不会停下的。",
+      "story_id": "story.hero.thaw_edge",
+      "line_index": 3,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.thaw_edge:3::0"
+    },
+    {
+      "text_key": "DLG_HERO_THAW_05",
+      "quote_zh": "……嗯？",
+      "story_id": "story.hero.thaw_edge",
+      "line_index": 4,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.thaw_edge:4::0"
+    },
+    {
+      "text_key": "DLG_HERO_THAW_06",
+      "quote_zh": "等等。等一下，这是——",
+      "story_id": "story.hero.thaw_edge",
+      "line_index": 5,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.thaw_edge:5::0"
+    },
+    {
+      "text_key": "DLG_HERO_THAW_07",
+      "quote_zh": "是地。黑泥，枯草，湿头发似的贴在地上。……是草啊。",
+      "story_id": "story.hero.thaw_edge",
+      "line_index": 6,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.thaw_edge:6::0"
+    },
+    {
+      "text_key": "DLG_HERO_THAW_08",
+      "quote_zh": "雪……到这儿就停了？不可能。雪从来只进不退。",
+      "story_id": "story.hero.thaw_edge",
+      "line_index": 7,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.thaw_edge:7::0"
+    },
+    {
+      "text_key": "DLG_HERO_THAW_09",
+      "quote_zh": "啊……这是什么地方？我到底跑到哪儿来了？",
+      "story_id": "story.hero.thaw_edge",
+      "line_index": 8,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.thaw_edge:8::0"
+    },
+    {
+      "text_key": "DLG_HERO_DOUBT_01",
+      "quote_zh": "……树。",
+      "story_id": "story.hero.wood_doubt",
+      "line_index": 0,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.wood_doubt:0::0"
+    },
+    {
+      "text_key": "DLG_HERO_DOUBT_02",
+      "quote_zh": "这灌木……密得像堵墙，底下黑得像口井。",
+      "story_id": "story.hero.wood_doubt",
+      "line_index": 1,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.wood_doubt:1::0"
+    },
+    {
+      "text_key": "DLG_HERO_DOUBT_03",
+      "quote_zh": "马……应该钻不进去吧？狗呢？地这么湿，它们还闻得出我的气味吗？",
+      "story_id": "story.hero.wood_doubt",
+      "line_index": 2,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.wood_doubt:2::0"
+    },
+    {
+      "text_key": "DLG_HERO_DOUBT_05",
+      "quote_zh": "天知道里头有什么。",
+      "story_id": "story.hero.wood_doubt",
+      "line_index": 3,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.wood_doubt:3::0"
+    },
+    {
+      "text_key": "DLG_HERO_DOUBT_06",
+      "quote_zh": "不过……要是我能钻进去呢？",
+      "story_id": "story.hero.wood_doubt",
+      "line_index": 4,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.wood_doubt:4::0"
+    },
+    {
+      "text_key": "DLG_HERO_DOUBT_07",
+      "quote_zh": "说不定，他们就找不着我了。说不定。",
+      "story_id": "story.hero.wood_doubt",
+      "line_index": 5,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.wood_doubt:5::0"
+    },
+    {
+      "text_key": "DLG_HERO_DOUBT_08",
+      "quote_zh": "……怎么样？要不要试一试？",
+      "story_id": "story.hero.wood_doubt",
+      "line_index": 6,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.hero.wood_doubt:6::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_01",
+      "quote_zh": "你拨开刺枝钻了进去。脚下的地越来越软。身后某处，一根树枝咔地断了。你屏住呼吸，直到确定那只是树皮冻裂的声音。",
+      "story_id": "story.messenger.edge",
+      "line_index": 0,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:0::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_02",
+      "quote_zh": "树缝里有光。是灯，还是水面映着月亮？你已经分不清了。",
+      "story_id": "story.messenger.edge",
+      "line_index": 1,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:1::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_STONE_1",
+      "quote_zh": "你的手摸到一块石头，攥紧了。",
+      "story_id": "story.messenger.edge",
+      "line_index": 6,
+      "branch_choice": "stone",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:6:stone:0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_10",
+      "quote_zh": "派我？大概是送信这份差事吧。信又不会自己走路，真可惜。",
+      "story_id": "story.messenger.edge",
+      "line_index": 10,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:10::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_11",
+      "quote_zh": "他把你打量了一遍：头发上的霜，靴子的惨状。笑意收了些，换成一种小心。",
+      "story_id": "story.messenger.edge",
+      "line_index": 11,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:11::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_12",
+      "quote_zh": "你是从雪里走出来的？靠两条腿？",
+      "story_id": "story.messenger.edge",
+      "line_index": 12,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:12::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_13",
+      "quote_zh": "……那又怎样？",
+      "story_id": "story.messenger.edge",
+      "line_index": 13,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:13::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_14",
+      "quote_zh": "不怎样。只是从那边来的人，多半走不到这儿。",
+      "story_id": "story.messenger.edge",
+      "line_index": 14,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:14::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_15",
+      "quote_zh": "他等着你往下说。可你没有接下去。",
+      "story_id": "story.messenger.edge",
+      "line_index": 15,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:15::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_16",
+      "quote_zh": "迷路了？",
+      "story_id": "story.messenger.edge",
+      "line_index": 16,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:16::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_17",
+      "quote_zh": "……差不多吧。",
+      "story_id": "story.messenger.edge",
+      "line_index": 17,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:17::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_18",
+      "quote_zh": "啊，那正好。找到这地方最好的法子就是迷路。没人是特意来的。",
+      "story_id": "story.messenger.edge",
+      "line_index": 18,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:18::0"
+    },
+    {
+      "text_key": "DIALOGUE_CHOOSE_REPLY",
+      "quote_zh": "你会怎么说？",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 12,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:12::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_NO_1",
+      "quote_zh": "嗯……那大概是我认错人了。",
+      "story_id": "story.messenger.edge",
+      "line_index": 27,
+      "branch_choice": "no",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:27:no:0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_NOT_SURE_1",
+      "quote_zh": "不知道？行吧，你想留点神秘，那就留着。",
+      "story_id": "story.messenger.edge",
+      "line_index": 27,
+      "branch_choice": "not_sure",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:27:not_sure:0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_PULL_AWAY_1",
+      "quote_zh": "他由着你，也没有不高兴，只是把自己的手收了回去。",
+      "story_id": "story.messenger.edge",
+      "line_index": 27,
+      "branch_choice": "pull_away",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:27:pull_away:0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_27",
+      "quote_zh": "你回头望向来的方向。只有树，和树后面的一片白。",
+      "story_id": "story.messenger.edge",
+      "line_index": 28,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:28::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_28",
+      "quote_zh": "在等人？",
+      "story_id": "story.messenger.edge",
+      "line_index": 29,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:29::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_29",
+      "quote_zh": "没有。",
+      "story_id": "story.messenger.edge",
+      "line_index": 30,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:30::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_30",
+      "quote_zh": "那就好。我只有这一只水壶。",
+      "story_id": "story.messenger.edge",
+      "line_index": 31,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:31::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_31",
+      "quote_zh": "好了。你不能在这儿过夜，就算在雪线这一边，夜里的寒气也要人命。前面不远就有个叫背风地的村子。",
+      "story_id": "story.messenger.edge",
+      "line_index": 32,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:32::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_32",
+      "quote_zh": "我得先给烧炭的老芬恩送封信。你顺着溪水的方向走，走不出一里地我就追上你。",
+      "story_id": "story.messenger.edge",
+      "line_index": 33,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:33::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_EDGE_33",
+      "quote_zh": "你还没来得及说你什么都没答应，他已经消失在树丛里了。水壶还在你手里。",
+      "story_id": "story.messenger.edge",
+      "line_index": 34,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:34::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_01",
+      "quote_zh": "不到一个钟头，他追了上来，膝盖以下全湿透了，一脸得意。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 0,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:0::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_02",
+      "quote_zh": "你在这儿啊。冻成那样的人，走得倒不慢。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 1,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:1::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_03",
+      "quote_zh": "前面的树稀了。树后面升着炊烟，炊烟底下是一片屋顶。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 2,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:2::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_04",
+      "quote_zh": "看见了吧。那就是背风地。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 3,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:3::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_05",
+      "quote_zh": "这种地方也有人住？",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 4,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:4::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_06",
+      "quote_zh": "现在有了。白老妇吞掉他们的城镇以后，逃难的人就在这儿停了脚。这么远的地方，帝国懒得来找。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 5,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:5::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_07",
+      "quote_zh": "地方不大。一座磨坊，一口井，羊比人多。可雪从来没到过这儿。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 6,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:6::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_08",
+      "quote_zh": "从来没有？",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 7,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:7::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_09",
+      "quote_zh": "还没有。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 8,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:8::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_10",
+      "quote_zh": "不过你别一个人进村。那里的人见过兵，对生面孔不客气。跟着我走。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 9,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:9::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_11",
+      "quote_zh": "他迈开步子，又猛地站住，你差点撞到他背上。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 10,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:10::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_12",
+      "quote_zh": "圣徒在上。我跟你说了这么半天，连你叫什么都没问。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 11,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:11::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_CHOICE_TELL_1",
+      "quote_zh": "你把名字告诉了他。他跟着念了一遍。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 12,
+      "branch_choice": "tell",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:12:tell:0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_CHOICE_TELL_2",
+      "quote_zh": "我叫奥辛。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 12,
+      "branch_choice": "tell",
+      "branch_index": 1,
+      "marker": "story.messenger.catch_up:12:tell:1"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_1",
+      "quote_zh": "行，公平。我叫奥辛。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 12,
+      "branch_choice": "you_first",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:12:you_first:0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_2",
+      "quote_zh": "他等着。你把名字告诉了他。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 12,
+      "branch_choice": "you_first",
+      "branch_index": 1,
+      "marker": "story.messenger.catch_up:12:you_first:1"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_CHOICE_SILENT_1",
+      "quote_zh": "不想说也行。我叫奥辛，等你想说了再告诉我。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 12,
+      "branch_choice": "silent",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:12:silent:0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_13",
+      "quote_zh": "走吧。他们会先让你吃饱，再问你别的。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 13,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:13::0"
+    },
+    {
+      "text_key": "DLG_MESSENGER_CATCH_14",
+      "quote_zh": "你跟着他，朝炊烟走去。",
+      "story_id": "story.messenger.catch_up",
+      "line_index": 14,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.catch_up:14::0"
+    }
+  ],
+  "movement_hooks_omitted": "Old opening stream_escape and badger_track were not transferred to latest first_forest/stream-path mechanism.",
+  "conflict_resolution": "Keep _scene_delay = 0.6 and latest conditional flights, replace only synthetic stack cue by world.discovery.",
+  "concurrent_change_audit": "Parallel localization, story draft and content-builder edits preserved; all 21 retained cue quotes/markers revalidated with zero conflicts."
+}

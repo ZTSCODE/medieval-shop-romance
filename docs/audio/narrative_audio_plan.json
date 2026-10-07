@@ -1,0 +1,4799 @@
+{
+  "schema_version": 1,
+  "updated_utc": "2026-10-06",
+  "scope": "Verified active Chinese content in exact Godot snapshot; cue directions are prose-evidenced, with snowline wind explicitly provided by user.",
+  "authoritative_sources": [
+    "data/content.json",
+    "localization/game.csv",
+    "data/onboarding_goals.json"
+  ],
+  "active_content_summary": {
+    "stories": 2,
+    "main_dialogue_lines_including_prompts": 53,
+    "branch_reply_lines": 8,
+    "choice_labels": 6,
+    "opening_fallback_pages": 5,
+    "tutorial_hints": 3,
+    "onboarding_rows": 12,
+    "film_captions": 37,
+    "locations": 3,
+    "chapter_manifest_present": false
+  },
+  "design_merge_status": "curated_overlay_merged_and_event_ids_bound_to_audio_implementation_contract",
+  "runtime_contract": {
+    "legacy_dialogue": {
+      "owner": "scripts/model/dialogue_flow.gd",
+      "current_line_method": "current_line()",
+      "line_fields": [
+        "speaker",
+        "text_key"
+      ],
+      "identity_method": "presentation_info().marker",
+      "marker_format": "{story_id}:{zero_based_line_index}:{branch_choice_or_empty}:{zero_based_branch_index}",
+      "example_main": "story.messenger.edge:0::0",
+      "example_branch": "story.messenger.edge:6:stone:0",
+      "choice_semantics": "Only selected branch lines play; choice-label display, hover, and other options do not trigger literal scene actions."
+    },
+    "module_dialogue": {
+      "owner": "scripts/content/module_dialogue_flow.gd",
+      "identity_method": "presentation_info().marker",
+      "marker_format": "{story_id}:{node_id}",
+      "status": "implementation exists; current snapshot has no active module manifest or chapter prose",
+      "choice_semantics": "choice nodes return generic DIALOGUE_CHOOSE_REPLY and presentation_info choices, so text_key alone cannot identify a module choice node"
+    },
+    "presentation": {
+      "owner": "scripts/ui/dialogue_overlay.gd",
+      "entry_gate": "sync(): marker != _shown_key",
+      "forbidden_entry_points": [
+        "_layout()",
+        "typewriter every-character loop without per-entry cue token",
+        "translation notification when marker is unchanged",
+        "name update when marker is unchanged",
+        "choice hover or focus",
+        "card hover or tooltip display"
+      ],
+      "deduplication": "One true line-entry token per marker visit. Trigger zero or more planned cues once under that token; never replay on typewriter reflow. Revisiting same marker in a deliberate new session can start a new visit.",
+      "phrase_timing": "Optional exact localized phrase anchor may schedule a once-per-line cue. Bind schedule at true entry; do not make each revealed character an audio event. Skip can reveal pending cue once; changing line cancels old pending cues.",
+      "pause": "Freeze scheduled narrative cue clock while menu paused. Resume cannot retrigger entry.",
+      "save_restore": "Restore scene bed from saved narrative position without replaying one-shot dog/cloth/flask unless presentation genuinely restarts that line. Reset transient audio cue state on new session; never mutate story save schema for audio.",
+      "restore_scene_resolution": "Every dialogue row carries absolute environment ID (not just inherit), so restore can establish current bed directly without replaying prior cues.",
+      "cue_delay_contract": "A cue with delay_seconds > 0 schedules from its once-per-line phrase threshold. Two soft_steps on one phrase use independent cue_id tokens and 0.42-second spacing. Composite footstep takes run once; do not repeat their internal step count.",
+      "environment_and_scene": "environment stores catalog ambience ID for direct restore; scene stores narrative mood profile. Empty music means deliberate score silence; music.story starts on RULES_03 after RULES_02 confirmed diversion, gain -24 dB."
+    },
+    "film": {
+      "owner": "scripts/ui/opening_film_view.gd",
+      "mode": "preserve_embedded",
+      "gameplay_audio": "mute or stop gameplay beds and BGM from lead-in until film ends/skips",
+      "source_video": "res://assets/video/opening/opening_film.ogv",
+      "caption_advance": "Subtitle changes are not dialogue line entries and must not dispatch added SFX",
+      "active_version": "v7; rejected v9 is not active",
+      "version_evidence": "docs/knowledge/opening-pv-score-and-narration.md final paragraphs; docs/knowledge/opening-film-in-game.md"
+    }
+  },
+  "dialogue": {
+    "DLG_MESSENGER_EDGE_01": {
+      "text_key": "DLG_MESSENGER_EDGE_01",
+      "kind": "dialogue_line",
+      "text_zh": "肺里像着了火。脚下的地越来越软。身后某处，一条狗叫了一声，又停了。",
+      "text_en": "Your lungs burn. The ground goes soft underfoot, then softer. Somewhere behind you a dog barks once, and stops.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/0",
+        "content_lines": [
+          123
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 218,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.snowline",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.snow_to_soft_ground",
+          "event_binding": "curated_catalog_id",
+          "phrase": "脚下的地越来越软",
+          "phrases": {
+            "zh_CN": "脚下的地越来越软",
+            "en": "The ground goes soft"
+          },
+          "character_offsets": {
+            "zh_CN": 7,
+            "en": 17
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "sequence": "finite uneven steps, wet/slushy earth to damp grass, never deep-snow crunch",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "snow_to_soft_ground.ogg"
+          ],
+          "finite_composite_take": true,
+          "cue_id": "DLG_MESSENGER_EDGE_01:0"
+        },
+        {
+          "event": "narrative.dog_far",
+          "event_binding": "curated_catalog_id",
+          "phrase": "一条狗叫了一声",
+          "phrases": {
+            "zh_CN": "一条狗叫了一声",
+            "en": "a dog barks once"
+          },
+          "character_offsets": {
+            "zh_CN": 21,
+            "en": 83
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "spatial": "distant behind",
+          "repeat": false,
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "dog_bark_far.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_01:1"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 0,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:0::0",
+      "speaker": "narrator",
+      "npc_hidden": true,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "hunted, exhausted, exposed",
+      "direction": "One finite snow/slush-to-soft-ground step take, exactly one distant rear dog bark; no breath asset added.",
+      "constraint": "No cozy music; snowline is latest user direction, dampening ground is exact runtime text.",
+      "scene": "cold_edge",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_02": {
+      "text_key": "DLG_MESSENGER_EDGE_02",
+      "kind": "dialogue_line",
+      "text_zh": "树缝里有灯。也可能只是水面映着月亮。你已经分不清了。",
+      "text_en": "Lanterns between the trees. Or water catching the moon. You can't tell any more.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/1",
+        "content_lines": [
+          127
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 219,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.snowline",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 1,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:1::0",
+      "speaker": "narrator",
+      "npc_hidden": true,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "hunted, exhausted, exposed",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "cold_edge",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_03": {
+      "text_key": "DLG_MESSENGER_EDGE_03",
+      "kind": "dialogue_line",
+      "text_zh": "你的左手抖个不停。你把它塞进外套里按住，像按住别人的手。",
+      "text_en": "Your left hand won't stop shaking. You push it into your coat and hold it there, as if it belonged to someone else.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/2",
+        "content_lines": [
+          131
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 220,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.snowline",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.scarf",
+          "event_binding": "curated_catalog_id",
+          "phrase": "你把它塞进外套里",
+          "phrases": {
+            "zh_CN": "你把它塞进外套里",
+            "en": "You push it into your coat"
+          },
+          "character_offsets": {
+            "zh_CN": 9,
+            "en": 35
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "spatial": "close sleeve",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "scarf_cloth_01.ogg",
+            "scarf_cloth_02.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_03:0"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 2,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:2::0",
+      "speaker": "narrator",
+      "npc_hidden": true,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "hunted, exhausted, exposed",
+      "direction": "one close coat-sleeve movement",
+      "constraint": "No added heartbeat/magic.",
+      "scene": "cold_edge",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_04": {
+      "text_key": "DLG_MESSENGER_EDGE_04",
+      "kind": "dialogue_line",
+      "text_zh": "然后树木合拢过来，一片白雾横在你面前，低低的，一动不动。",
+      "text_en": "Then the trees close in, and a bank of white mist lies across your path, low and still.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/3",
+        "content_lines": [
+          135
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 221,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.brush_thorns",
+          "event_binding": "curated_catalog_id",
+          "phrase": "然后树木合拢过来",
+          "phrases": {
+            "zh_CN": "然后树木合拢过来",
+            "en": "Then the trees close in"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "sequence": "short damp brush; optional tiny twig tick, no crash",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "brush_thorns_01.ogg",
+            "brush_thorns_02.ogg",
+            "brush_thorns_03.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_04:0"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 3,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:3::0",
+      "speaker": "narrator",
+      "npc_hidden": true,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "wary encounter",
+      "direction": "reduce open wind; short damp foliage brush, optional very small twig tick",
+      "constraint": "Mist and trees are ordinary, no supernatural whoosh or tree collapse.",
+      "scene": "sheltered_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_05": {
+      "text_key": "DLG_MESSENGER_EDGE_05",
+      "kind": "dialogue_line",
+      "text_zh": "前方的雾里有东西在动。你停下。它也停下。",
+      "text_en": "Something moves in the mist ahead. You stop. So does it.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/4",
+        "content_lines": [
+          139
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 222,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.brush_thorns",
+          "event_binding": "curated_catalog_id",
+          "phrase": "前方的雾里有东西在动",
+          "phrases": {
+            "zh_CN": "前方的雾里有东西在动",
+            "en": "Something moves in the mist ahead"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "spatial": "brief movement ahead",
+          "stop_phrase": {
+            "zh_CN": "你停下",
+            "en": "You stop"
+          },
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "brush_thorns_01.ogg",
+            "brush_thorns_02.ogg",
+            "brush_thorns_03.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_05:0"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 4,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:4::0",
+      "speaker": "narrator",
+      "npc_hidden": true,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "held breath, uncertainty",
+      "direction": "brief movement ahead then stop all locomotion gestures",
+      "constraint": "Hold quiet; do not keep hero or stranger footsteps looping.",
+      "audio_control": "Stop any locomotion cue by You stop; no repeating hero/stranger footsteps while still.",
+      "scene": "still_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_06": {
+      "text_key": "DLG_MESSENGER_EDGE_06",
+      "kind": "dialogue_line",
+      "text_zh": "一个人那么高的影子。腰间闪过一点黄铜。",
+      "text_en": "A shape, man-high. A glint of brass at its belt.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/5",
+        "content_lines": [
+          143
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 223,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 5,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:5::0",
+      "speaker": "narrator",
+      "npc_hidden": true,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "held breath, uncertainty",
+      "direction": "none",
+      "constraint": "Glint of brass is visual, not a metal strike.",
+      "scene": "still_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_PROMPT_WHAT_DO_YOU_DO": {
+      "text_key": "DLG_PROMPT_WHAT_DO_YOU_DO",
+      "kind": "choice_prompt",
+      "text_zh": "你会怎么做？",
+      "text_en": "What do you do?",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/6",
+        "content_lines": [
+          147
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 217,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 6,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:6::0",
+      "speaker": "hero",
+      "npc_hidden": true,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "held breath, uncertainty",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "still_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_1": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_1",
+      "kind": "branch_reply",
+      "text_zh": "你把自己缩得很小。没什么用。",
+      "text_en": "You make yourself very small. It doesn't help.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/6/choices/0/lines/0",
+        "content_lines": [
+          155
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 225,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.scarf",
+          "event_binding": "curated_catalog_id",
+          "phrase": "你把自己缩得很小",
+          "phrases": {
+            "zh_CN": "你把自己缩得很小",
+            "en": "You make yourself very small"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "gain_direction": "faint",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "scarf_cloth_01.ogg",
+            "scarf_cloth_02.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_1:0",
+          "gain_offset_db": -5.0
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 6,
+      "branch_choice": "hold_still",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:6:hold_still:0",
+      "speaker": "narrator",
+      "npc_hidden": true,
+      "literal_foley_policy": "Only selected branch entry can cue the branch action; never anticipate other branches.",
+      "mood": "held breath, uncertainty",
+      "direction": "one faint cloth contraction",
+      "constraint": "Do not trigger on choice hover.",
+      "scene": "still_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_2": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_2",
+      "kind": "branch_reply",
+      "text_zh": "你知道吧，我看得见你。",
+      "text_en": "I can see you, you know.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/6/choices/0/lines/1",
+        "content_lines": [
+          159
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 226,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 6,
+      "branch_choice": "hold_still",
+      "branch_index": 1,
+      "marker": "story.messenger.edge:6:hold_still:1",
+      "speaker": "npc",
+      "npc_hidden": true,
+      "literal_foley_policy": "Only selected branch entry can cue the branch action; never anticipate other branches.",
+      "mood": "held breath, uncertainty",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "still_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_STONE_1": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_STONE_1",
+      "kind": "branch_reply",
+      "text_zh": "你的手握住一块石头。冰凉，小得派不上用场。",
+      "text_en": "Your hand closes on a stone. Cold, and too small to matter.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/6/choices/1/lines/0",
+        "content_lines": [
+          169
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 228,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.stone_pickup",
+          "event_binding": "curated_catalog_id",
+          "phrase": "你的手握住一块石头",
+          "phrases": {
+            "zh_CN": "你的手握住一块石头",
+            "en": "Your hand closes on a stone"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "sequence": "one tiny pickup scrape/contact; never thrown impact",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "stone_pickup_small.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_CHOICE_STONE_1:0"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 6,
+      "branch_choice": "stone",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:6:stone:0",
+      "speaker": "narrator",
+      "npc_hidden": true,
+      "literal_foley_policy": "Only selected branch entry can cue the branch action; never anticipate other branches.",
+      "mood": "held breath, uncertainty",
+      "direction": "one small stone pickup scrape/contact",
+      "constraint": "Never a throw or landing impact; do not trigger on choice hover.",
+      "scene": "still_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_STONE_2": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_STONE_2",
+      "kind": "branch_reply",
+      "text_zh": "求你别。我今天已经够累了。",
+      "text_en": "Please don't. I've had a long day.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/6/choices/1/lines/1",
+        "content_lines": [
+          173
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 229,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 6,
+      "branch_choice": "stone",
+      "branch_index": 1,
+      "marker": "story.messenger.edge:6:stone:1",
+      "speaker": "npc",
+      "npc_hidden": true,
+      "literal_foley_policy": "Only selected branch entry can cue the branch action; never anticipate other branches.",
+      "mood": "held breath, uncertainty",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "still_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_CALL_OUT_1": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_CALL_OUT_1",
+      "kind": "branch_reply",
+      "text_zh": "一个不值得你扔石头的人。",
+      "text_en": "Nobody worth throwing anything at.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/6/choices/2/lines/0",
+        "content_lines": [
+          183
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 231,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 6,
+      "branch_choice": "call_out",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:6:call_out:0",
+      "speaker": "npc",
+      "npc_hidden": true,
+      "literal_foley_policy": "Only selected branch entry can cue the branch action; never anticipate other branches.",
+      "mood": "held breath, uncertainty",
+      "direction": "none",
+      "constraint": "Spoken mention of throwing is not a throw.",
+      "scene": "still_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_07": {
+      "text_key": "DLG_MESSENGER_EDGE_07",
+      "kind": "dialogue_line",
+      "text_zh": "一个年轻人从雾里走出来，喘着粗气。头发上别着月桂，腰间挎着信包。",
+      "text_en": "A young man steps out of the mist, breathing hard. Laurel in his hair, a satchel of letters at his hip.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/7",
+        "content_lines": [
+          191
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 232,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.soft_steps",
+          "event_binding": "curated_catalog_id",
+          "phrase": "从雾里走出来",
+          "phrases": {
+            "zh_CN": "从雾里走出来",
+            "en": "steps out of the mist"
+          },
+          "character_offsets": {
+            "zh_CN": 5,
+            "en": 12
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "spatial": "approaches then stops",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "step_soft_grass_01.ogg",
+            "step_soft_grass_02.ogg",
+            "step_soft_grass_03.ogg",
+            "step_soft_grass_04.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_07:0"
+        },
+        {
+          "event": "narrative.soft_steps",
+          "event_binding": "curated_catalog_id",
+          "phrase": "从雾里走出来",
+          "phrases": {
+            "zh_CN": "从雾里走出来",
+            "en": "steps out of the mist"
+          },
+          "character_offsets": {
+            "zh_CN": 5,
+            "en": 12
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "spatial": "approaches then stops",
+          "delay_seconds": 0.42,
+          "source_filenames": [
+            "step_soft_grass_01.ogg",
+            "step_soft_grass_02.ogg",
+            "step_soft_grass_03.ogg",
+            "step_soft_grass_04.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_07:1"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 7,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:7::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "wary encounter",
+      "direction": "Two finite damp approach steps; no breath asset added. Stranger stops once arrived.",
+      "constraint": "Movement stops once stranger arrives.",
+      "scene": "sheltered_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_08": {
+      "text_key": "DLG_MESSENGER_EDGE_08",
+      "kind": "dialogue_line",
+      "text_zh": "哦。不是鹿啊。",
+      "text_en": "Oh. You're not a deer.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/8",
+        "content_lines": [
+          195
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 233,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 8,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:8::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "wary encounter",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_09": {
+      "text_key": "DLG_MESSENGER_EDGE_09",
+      "kind": "dialogue_line",
+      "text_zh": "谁派你来的？",
+      "text_en": "Who sent you?",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/9",
+        "content_lines": [
+          199
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 234,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 9,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:9::0",
+      "speaker": "hero",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "wary encounter",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_10": {
+      "text_key": "DLG_MESSENGER_EDGE_10",
+      "kind": "dialogue_line",
+      "text_zh": "送信的活儿派我来的。没人派我去追人。我跑得不够快，吓不着谁。",
+      "text_en": "The post sent me. Nobody sends me after people. I'm not fast enough to be frightening.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/10",
+        "content_lines": [
+          203
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 235,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 10,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:10::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "wary encounter",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_11": {
+      "text_key": "DLG_MESSENGER_EDGE_11",
+      "kind": "dialogue_line",
+      "text_zh": "他越过你，望向你来的方向。笑意淡了些。",
+      "text_en": "He looks past you, back the way you came. His smile thins.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/11",
+        "content_lines": [
+          207
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 236,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 11,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:11::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "wary encounter",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_12": {
+      "text_key": "DLG_MESSENGER_EDGE_12",
+      "kind": "dialogue_line",
+      "text_zh": "不过，倒是有人派了他们。",
+      "text_en": "Someone sent them, though.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/12",
+        "content_lines": [
+          211
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 237,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 12,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:12::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "wary encounter",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_13": {
+      "text_key": "DLG_MESSENGER_EDGE_13",
+      "kind": "dialogue_line",
+      "text_zh": "他们？",
+      "text_en": "Them?",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/13",
+        "content_lines": [
+          215
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 238,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 13,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:13::0",
+      "speaker": "hero",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "wary encounter",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_14": {
+      "text_key": "DLG_MESSENGER_EDGE_14",
+      "kind": "dialogue_line",
+      "text_zh": "那些灯。在河边。雾一起，他们就丢了你的踪迹。天一亮，他们会再找到的。",
+      "text_en": "The lamps. Down by the river. They lost your trail when the mist came up. They'll find it again by first light.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/14",
+        "content_lines": [
+          219
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 239,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 14,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:14::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "wary encounter",
+      "direction": "optional very distant river bed, otherwise inherit",
+      "constraint": "River is distant; no player entering water.",
+      "scene": "sheltered_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_15": {
+      "text_key": "DLG_MESSENGER_EDGE_15",
+      "kind": "dialogue_line",
+      "text_zh": "你没有回头。你信不过自己。",
+      "text_en": "You don't turn round. You don't trust yourself to.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/15",
+        "content_lines": [
+          223
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 240,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 15,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:15::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "wary encounter",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_16": {
+      "text_key": "DLG_MESSENGER_EDGE_16",
+      "kind": "dialogue_line",
+      "text_zh": "你一直在跑。",
+      "text_en": "You've been running.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/16",
+        "content_lines": [
+          227
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 241,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 16,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:16::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "wary encounter",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_17": {
+      "text_key": "DLG_MESSENGER_EDGE_17",
+      "kind": "dialogue_line",
+      "text_zh": "你也是。",
+      "text_en": "So have you.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/17",
+        "content_lines": [
+          231
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 242,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 17,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:17::0",
+      "speaker": "hero",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "wary encounter",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_18": {
+      "text_key": "DLG_MESSENGER_EDGE_18",
+      "kind": "dialogue_line",
+      "text_zh": "我跑是有工钱的。你看起来像是一停下来就要付出代价。",
+      "text_en": "I'm paid to. You look like stopping would cost you.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/18",
+        "content_lines": [
+          235
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 243,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 18,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:18::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "wary encounter",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_thicket",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_19": {
+      "text_key": "DLG_MESSENGER_EDGE_19",
+      "kind": "dialogue_line",
+      "text_zh": "他递过来一只水壶，壶身上錾着一对黄铜翅膀。",
+      "text_en": "He holds out a flask worked with a pair of brass wings.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/19",
+        "content_lines": [
+          239
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 244,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.flask_handover",
+          "event_binding": "curated_catalog_id",
+          "phrase": "他递过来一只水壶",
+          "phrases": {
+            "zh_CN": "他递过来一只水壶",
+            "en": "He holds out a flask"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "sequence": "dull flask handling; tiny enclosed slosh optional",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "flask_handover.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_19:0"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 19,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:19::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "guarded intimacy without announced romance/revelation",
+      "direction": "dull small flask movement and tiny enclosed slosh",
+      "constraint": "No pouring, uncorking, drinking, toast, or wing sound.",
+      "scene": "quiet_contact",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_20": {
+      "text_key": "DLG_MESSENGER_EDGE_20",
+      "kind": "dialogue_line",
+      "text_zh": "喝吧。还是热的。",
+      "text_en": "Drink. It's still warm.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/20",
+        "content_lines": [
+          243
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 245,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 20,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:20::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "guarded intimacy without announced romance/revelation",
+      "direction": "none",
+      "constraint": "Invitation to drink is not confirmed drinking.",
+      "scene": "quiet_contact",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_21": {
+      "text_key": "DLG_MESSENGER_EDGE_21",
+      "kind": "dialogue_line",
+      "text_zh": "你接过来。手指冷得厉害，黄铜摸上去竟有点烫。",
+      "text_en": "You take it. Your fingers are so cold the brass almost burns.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/21",
+        "content_lines": [
+          247
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 246,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.flask_handover",
+          "event_binding": "curated_catalog_id",
+          "phrase": "你接过来",
+          "phrases": {
+            "zh_CN": "你接过来",
+            "en": "You take it"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "sequence": "restrained receiving contact, not full repeated handoff",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "flask_handover.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_21:0",
+          "gain_offset_db": -4.0
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 21,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:21::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "guarded intimacy without announced romance/revelation",
+      "direction": "one subtle brass flask receiving/contact",
+      "constraint": "Complement previous handoff rather than replay entire action.",
+      "scene": "quiet_contact",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_22": {
+      "text_key": "DLG_MESSENGER_EDGE_22",
+      "kind": "dialogue_line",
+      "text_zh": "他注意到了。不等你缩手，他的手就覆上来，连你的手一起握住壶身。",
+      "text_en": "He notices. Before you can pull away, his hand closes over yours on the flask.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/22",
+        "content_lines": [
+          251
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 247,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.scarf",
+          "event_binding": "curated_catalog_id",
+          "phrase": "他的手就覆上来",
+          "phrases": {
+            "zh_CN": "他的手就覆上来",
+            "en": "his hand closes over yours"
+          },
+          "character_offsets": {
+            "zh_CN": 12,
+            "en": 38
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "gain_direction": "very soft",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "scarf_cloth_01.ogg",
+            "scarf_cloth_02.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_22:0",
+          "gain_offset_db": -5.0
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 22,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:22::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "guarded intimacy without announced romance/revelation",
+      "direction": "soft sleeve touch, optional extremely soft flask contact",
+      "constraint": "No bright metal ping.",
+      "scene": "quiet_contact",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_23": {
+      "text_key": "DLG_MESSENGER_EDGE_23",
+      "kind": "dialogue_line",
+      "text_zh": "圣徒在上。你冷得像块冰。",
+      "text_en": "Saints. You're freezing.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/23",
+        "content_lines": [
+          255
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 248,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 23,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:23::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "guarded intimacy without announced romance/revelation",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "quiet_contact",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_24": {
+      "text_key": "DLG_MESSENGER_EDGE_24",
+      "kind": "dialogue_line",
+      "text_zh": "他的手带着赶路的热度。他一直握着，直到水壶不再发抖。",
+      "text_en": "His hand is hot from the road. He holds on until the flask stops shaking.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/24",
+        "content_lines": [
+          259
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 249,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 24,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:24::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "guarded intimacy without announced romance/revelation",
+      "direction": "faint rattle, if already present, diminishes and stops",
+      "constraint": "Silence preferable to a conspicuous invented rattle.",
+      "audio_control": "If any prior flask motion tail is audible, let it diminish to quiet; do not start a new rattle.",
+      "scene": "quiet_contact",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_25": {
+      "text_key": "DLG_MESSENGER_EDGE_25",
+      "kind": "dialogue_line",
+      "text_zh": "然后他第一次认真地看你。看你的脸，像是想认出什么。",
+      "text_en": "Then he looks at you properly, for the first time. At your face, as if he were trying to place it.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/25",
+        "content_lines": [
+          263
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 250,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 25,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:25::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "guarded intimacy without announced romance/revelation",
+      "direction": "none",
+      "constraint": "Keep gaze/recollection unresolved; no reveal sting.",
+      "scene": "quiet_contact",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_26": {
+      "text_key": "DLG_MESSENGER_EDGE_26",
+      "kind": "dialogue_line",
+      "text_zh": "我们见过吗？",
+      "text_en": "Have we met?",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/26",
+        "content_lines": [
+          267
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 251,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 26,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:26::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "guarded intimacy without announced romance/revelation",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "quiet_contact",
+      "music_gain_db": -24.0
+    },
+    "DIALOGUE_CHOOSE_REPLY": {
+      "text_key": "DIALOGUE_CHOOSE_REPLY",
+      "kind": "choice_prompt",
+      "text_zh": "你会怎么说？",
+      "text_en": "What do you say?",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/27",
+        "content_lines": [
+          271
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 27,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 27,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:27::0",
+      "speaker": "hero",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "guarded intimacy without announced romance/revelation",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "quiet_contact",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_NO_1": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_NO_1",
+      "kind": "branch_reply",
+      "text_zh": "嗯。没有。见过的话，我会记得。",
+      "text_en": "No. I'd remember.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/27/choices/0/lines/0",
+        "content_lines": [
+          279
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 253,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 27,
+      "branch_choice": "no",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:27:no:0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "Only selected branch entry can cue the branch action; never anticipate other branches.",
+      "mood": "guarded intimacy without announced romance/revelation",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "quiet_contact",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_NOT_SURE_1": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_NOT_SURE_1",
+      "kind": "branch_reply",
+      "text_zh": "那就是你长了一张让人觉得眼熟的脸。",
+      "text_en": "Then you've got one of those faces.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/27/choices/1/lines/0",
+        "content_lines": [
+          289
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 255,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 27,
+      "branch_choice": "not_sure",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:27:not_sure:0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "Only selected branch entry can cue the branch action; never anticipate other branches.",
+      "mood": "guarded intimacy without announced romance/revelation",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "quiet_contact",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_PULL_AWAY_1": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_PULL_AWAY_1",
+      "kind": "branch_reply",
+      "text_zh": "他由着你。他没有不高兴，倒像是把什么事默默记下了。",
+      "text_en": "He lets you. He doesn't look offended. He looks like a man filing something away for later.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/27/choices/2/lines/0",
+        "content_lines": [
+          299
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 257,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.scarf",
+          "event_binding": "curated_catalog_id",
+          "phrase": "他由着你",
+          "phrases": {
+            "zh_CN": "他由着你",
+            "en": "He lets you"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "evidence_choice_key": "DLG_MESSENGER_EDGE_CHOICE_PULL_AWAY",
+          "evidence_choice_zh": "（把手抽回来。）",
+          "sequence": "sleeve withdrawal, not rejection cue",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "scarf_cloth_01.ogg",
+            "scarf_cloth_02.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_CHOICE_PULL_AWAY_1:0"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 27,
+      "branch_choice": "pull_away",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:27:pull_away:0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "Only selected branch entry can cue the branch action; never anticipate other branches.",
+      "mood": "guarded intimacy without announced romance/revelation",
+      "direction": "one sleeve withdrawal",
+      "constraint": "No failure/rejection cue.",
+      "scene": "quiet_contact",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_27": {
+      "text_key": "DLG_MESSENGER_EDGE_27",
+      "kind": "dialogue_line",
+      "text_zh": "远远的身后，狗又叫了。比刚才近。",
+      "text_en": "Far behind you, the dogs again. Closer than before.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/28",
+        "content_lines": [
+          307
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 258,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.dog_nearer",
+          "event_binding": "curated_catalog_id",
+          "phrase": "狗又叫了",
+          "phrases": {
+            "zh_CN": "狗又叫了",
+            "en": "the dogs again"
+          },
+          "character_offsets": {
+            "zh_CN": 6,
+            "en": 16
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "spatial": "still behind and far away; nearer/drier than opening bark",
+          "repeat": false,
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "dog_bark_nearer.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_27:0"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 28,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:28::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "danger returns",
+      "direction": "one rear dog bark from same source family, louder/clearer/drier than 01",
+      "constraint": "Still distant; no sudden near-ear bark or roaming stereo.",
+      "scene": "renewed_threat",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_28": {
+      "text_key": "DLG_MESSENGER_EDGE_28",
+      "kind": "dialogue_line",
+      "text_zh": "好。听我的。",
+      "text_en": "Right. Here's what we'll do.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/29",
+        "content_lines": [
+          311
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 259,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 29,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:29::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "danger returns",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "renewed_threat",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_29": {
+      "text_key": "DLG_MESSENGER_EDGE_29",
+      "kind": "dialogue_line",
+      "text_zh": "那几棵树后面有条小溪。走在水里，别走岸上，一直走到林子变稀。",
+      "text_en": "There's a stream past those trees. Walk in it, not beside it, and keep going until the wood thins.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/30",
+        "content_lines": [
+          315
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 260,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 30,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:30::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "danger returns",
+      "direction": "none",
+      "constraint": "Stream route is an instruction, locomotion starts only with real exploration.",
+      "scene": "renewed_threat",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_30": {
+      "text_key": "DLG_MESSENGER_EDGE_30",
+      "kind": "dialogue_line",
+      "text_zh": "那你呢？",
+      "text_en": "And you?",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/31",
+        "content_lines": [
+          319
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 261,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 31,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:31::0",
+      "speaker": "hero",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "danger returns",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "renewed_threat",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_31": {
+      "text_key": "DLG_MESSENGER_EDGE_31",
+      "kind": "dialogue_line",
+      "text_zh": "给我一样你贴身穿过的东西。",
+      "text_en": "Give me something you've been wearing.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/32",
+        "content_lines": [
+          323
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 262,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 32,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:32::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "danger returns",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "renewed_threat",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_32": {
+      "text_key": "DLG_MESSENGER_EDGE_32",
+      "kind": "dialogue_line",
+      "text_zh": "你把围巾递给他。他一句话没说，绕在了自己脖子上。",
+      "text_en": "You hand him your scarf. He winds it round his own neck without a word.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/33",
+        "content_lines": [
+          327
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 263,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.scarf",
+          "event_binding": "curated_catalog_id",
+          "phrase": "你把围巾递给他",
+          "phrases": {
+            "zh_CN": "你把围巾递给他",
+            "en": "You hand him your scarf"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "sequence": "one short handoff/wrap gesture",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "scarf_cloth_01.ogg",
+            "scarf_cloth_02.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_EDGE_32:0"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 33,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:33::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "danger returns",
+      "direction": "short soft scarf handoff and wrapping gesture",
+      "constraint": "Cloth not armor; no unexplained fastener.",
+      "scene": "renewed_threat",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_EDGE_33": {
+      "text_key": "DLG_MESSENGER_EDGE_33",
+      "kind": "dialogue_line",
+      "text_zh": "我带它们往反方向跑一里地，再回来追上你。走。",
+      "text_en": "I'll take the dogs a mile the other way, then catch you up. Go.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/34",
+        "content_lines": [
+          331
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 264,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 34,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.edge:34::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "urgent decision to move",
+      "direction": "none until actual exploration",
+      "constraint": "Promise to run is not already running; no indefinite chase loop.",
+      "scene": "awaiting_escape",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_01": {
+      "text_key": "DLG_MESSENGER_RULES_01",
+      "kind": "dialogue_line",
+      "text_zh": "一个钟头后，他追了上来，膝盖以下全湿透了，一脸得意。",
+      "text_en": "An hour later he catches you up, soaked to the knee and pleased with himself.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/0",
+        "content_lines": [
+          347
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 265,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [
+        {
+          "event": "narrative.wet_arrive",
+          "event_binding": "curated_catalog_id",
+          "phrase": "他追了上来",
+          "phrases": {
+            "zh_CN": "他追了上来",
+            "en": "he catches you up"
+          },
+          "character_offsets": {
+            "zh_CN": 6,
+            "en": 14
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "spatial": "approaching then stops",
+          "sequence": "wet boots, not exaggerated knee-deep splash",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "wet_steps_arrive.ogg"
+          ],
+          "finite_composite_take": true,
+          "cue_id": "DLG_MESSENGER_RULES_01:0"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 0,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:0::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "short approaching wet-boot sequence, light wet clothing",
+      "constraint": "One-hour time jump; no continuous dog chase or exaggerated wading.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_02": {
+      "text_key": "DLG_MESSENGER_RULES_02",
+      "kind": "dialogue_line",
+      "text_zh": "它们往反方向去了。狗最爱围巾。",
+      "text_en": "They went the wrong way. Dogs love a scarf.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/1",
+        "content_lines": [
+          351
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 266,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 1,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:1::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "none",
+      "constraint": "Dogs diverted is a past report; remove dog ambience. Tentative calm theme may fade in after this beat.",
+      "audio_control": "Past diversion report; ensure no pursuit bark loop. Optional restrained warm motif can begin only hereafter.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_03": {
+      "text_key": "DLG_MESSENGER_RULES_03",
+      "kind": "dialogue_line",
+      "text_zh": "他把围巾还给你。围巾被他的脖子捂得还是暖的。",
+      "text_en": "He gives you back your scarf. It is still warm from his neck.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/2",
+        "content_lines": [
+          355
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 267,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [
+        {
+          "event": "narrative.scarf",
+          "event_binding": "curated_catalog_id",
+          "phrase": "他把围巾还给你",
+          "phrases": {
+            "zh_CN": "他把围巾还给你",
+            "en": "He gives you back your scarf"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "sequence": "one handback",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "scarf_cloth_01.ogg",
+            "scarf_cloth_02.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_RULES_03:0"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 2,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:2::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "one close soft scarf handback",
+      "constraint": "Do not add romance chime.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_04": {
+      "text_key": "DLG_MESSENGER_RULES_04",
+      "kind": "dialogue_line",
+      "text_zh": "好了。既然没人告诉过你，有两件事你得知道。",
+      "text_en": "So. Two things, since nobody's told you.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/3",
+        "content_lines": [
+          359
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 268,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 3,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:3::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_05": {
+      "text_key": "DLG_MESSENGER_RULES_05",
+      "kind": "dialogue_line",
+      "text_zh": "第一，在背风地，没人问你是从哪儿来的。你也别问他们。",
+      "text_en": "One. In the Lee, nobody asks where you came from. Don't ask them either.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/4",
+        "content_lines": [
+          363
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 269,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 4,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:4::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_06": {
+      "text_key": "DLG_MESSENGER_RULES_06",
+      "kind": "dialogue_line",
+      "text_zh": "第二，别一个人进村。那里的人见过兵。在路边的立石那儿等我，我带你进去。",
+      "text_en": "Two. Don't walk into the village alone. They've had soldiers there before. Wait at the stones by the track, and I'll bring you in.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/5",
+        "content_lines": [
+          367
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 270,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 5,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:5::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_07": {
+      "text_key": "DLG_MESSENGER_RULES_07",
+      "kind": "dialogue_line",
+      "text_zh": "他在一丛黑刺李边蹲下，摘了一颗果子，皱眉看了看，放进你掌心。",
+      "text_en": "He crouches by a blackthorn, picks a sloe, frowns at it, and drops it into your palm.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/6",
+        "content_lines": [
+          371
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 271,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [
+        {
+          "event": "narrative.berry_pluck",
+          "event_binding": "curated_catalog_id",
+          "phrase": "摘了一颗果子",
+          "phrases": {
+            "zh_CN": "摘了一颗果子",
+            "en": "picks a sloe"
+          },
+          "character_offsets": {
+            "zh_CN": 11,
+            "en": 29
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "sequence": "tiny foliage/stem release with sleeve movement; not whole branch break",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "berry_leaf_pluck.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_RULES_07:0"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 6,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:6::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "soft crouch clothing, leaves, tiny berry-stem pluck and handoff",
+      "constraint": "Not breaking a whole branch or eating fruit.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_08": {
+      "text_key": "DLG_MESSENGER_RULES_08",
+      "kind": "dialogue_line",
+      "text_zh": "留着。现在还涩。等下过第一场霜，就值点东西了。",
+      "text_en": "Keep those. Bitter now. After the first frost, they're worth something.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/7",
+        "content_lines": [
+          375
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 272,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 7,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:7::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_09": {
+      "text_key": "DLG_MESSENGER_RULES_09",
+      "kind": "dialogue_line",
+      "text_zh": "背风地是什么地方？",
+      "text_en": "What is the Lee?",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/8",
+        "content_lines": [
+          379
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 273,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 8,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:8::0",
+      "speaker": "hero",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_10": {
+      "text_key": "DLG_MESSENGER_RULES_10",
+      "kind": "dialogue_line",
+      "text_zh": "冬天吞掉他们的城镇以后，逃难的人在这儿停了脚。这么远的地方，帝国懒得来找。看你这样子，正合适。",
+      "text_en": "A place people stopped running, when the winter took their towns. It's too far out for the Empire to bother with. Which, by the look of you, is the right place.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/9",
+        "content_lines": [
+          383
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 274,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 9,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:9::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_11": {
+      "text_key": "DLG_MESSENGER_RULES_11",
+      "kind": "dialogue_line",
+      "text_zh": "往北有一条獾踩出来的小路，顺着走就到立石。",
+      "text_en": "North of here there's a badger track. Follow it to the stones.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/10",
+        "content_lines": [
+          387
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 275,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 10,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:10::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_12": {
+      "text_key": "DLG_MESSENGER_RULES_12",
+      "kind": "dialogue_line",
+      "text_zh": "你不一起走？",
+      "text_en": "You're not coming?",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/11",
+        "content_lines": [
+          391
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 276,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 11,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:11::0",
+      "speaker": "hero",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_13": {
+      "text_key": "DLG_MESSENGER_RULES_13",
+      "kind": "dialogue_line",
+      "text_zh": "我跑得快。我先去背风地，告诉他们有人要来。",
+      "text_en": "I'm faster. I'll run ahead and tell the Lee someone's coming.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/12",
+        "content_lines": [
+          395
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 277,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 12,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:12::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_14": {
+      "text_key": "DLG_MESSENGER_RULES_14",
+      "kind": "dialogue_line",
+      "text_zh": "他们会先让你吃饱，再问你别的。这是规矩。",
+      "text_en": "They'll feed you before they ask you anything. That's the custom.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/13",
+        "content_lines": [
+          399
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 278,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 13,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:13::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_15": {
+      "text_key": "DLG_MESSENGER_RULES_15",
+      "kind": "dialogue_line",
+      "text_zh": "他已经倒退着走开了，咧着嘴笑。",
+      "text_en": "He's already walking backwards, grinning.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/14",
+        "content_lines": [
+          403
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 279,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [
+        {
+          "event": "narrative.soft_steps",
+          "event_binding": "curated_catalog_id",
+          "phrase": "他已经倒退着走开了",
+          "phrases": {
+            "zh_CN": "他已经倒退着走开了",
+            "en": "He's already walking backwards"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "spatial": "receding",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "step_soft_grass_01.ogg",
+            "step_soft_grass_02.ogg",
+            "step_soft_grass_03.ogg",
+            "step_soft_grass_04.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_RULES_15:0"
+        },
+        {
+          "event": "narrative.soft_steps",
+          "event_binding": "curated_catalog_id",
+          "phrase": "他已经倒退着走开了",
+          "phrases": {
+            "zh_CN": "他已经倒退着走开了",
+            "en": "He's already walking backwards"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "spatial": "receding",
+          "delay_seconds": 0.42,
+          "source_filenames": [
+            "step_soft_grass_01.ogg",
+            "step_soft_grass_02.ogg",
+            "step_soft_grass_03.ogg",
+            "step_soft_grass_04.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_RULES_15:1"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 14,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:14::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "two soft receding backward footsteps",
+      "constraint": "Finite gesture.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_16": {
+      "text_key": "DLG_MESSENGER_RULES_16",
+      "kind": "dialogue_line",
+      "text_zh": "别一脸担心。你到的时候，我会在那儿。我一向都在。",
+      "text_en": "Don't look so worried. I'll be there when you arrive. I always am.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/15",
+        "content_lines": [
+          407
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 280,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 15,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:15::0",
+      "speaker": "npc",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "Retain scene bed; no new literal one-shot.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_17": {
+      "text_key": "DLG_MESSENGER_RULES_17",
+      "kind": "dialogue_line",
+      "text_zh": "然后他转身跑进了林子。",
+      "text_en": "Then he turns and runs into the trees.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/16",
+        "content_lines": [
+          411
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 281,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [
+        {
+          "event": "narrative.run_depart",
+          "event_binding": "curated_catalog_id",
+          "phrase": "转身跑进了林子",
+          "phrases": {
+            "zh_CN": "转身跑进了林子",
+            "en": "turns and runs into the trees"
+          },
+          "character_offsets": {
+            "zh_CN": 3,
+            "en": 8
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "sequence": "finite accelerating steps with light foliage",
+          "spatial": "recede then stop",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "run_forest_depart.ogg"
+          ],
+          "finite_composite_take": true,
+          "cue_id": "DLG_MESSENGER_RULES_17:0"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 16,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:16::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "3–5 accelerating forest footsteps, brief leaf brush, recede then stop",
+      "constraint": "No infinite loop, no doorway exit sound.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    },
+    "DLG_MESSENGER_RULES_18": {
+      "text_key": "DLG_MESSENGER_RULES_18",
+      "kind": "dialogue_line",
+      "text_zh": "你把围巾重新绕回脖子上。上面还有他的体温。",
+      "text_en": "You wind the scarf back round your neck. It still holds the warmth of him.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.thorn_rules/lines/17",
+        "content_lines": [
+          415
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 282,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.cold_wood",
+      "music": "music.story",
+      "music_intensity": 0.18,
+      "cues": [
+        {
+          "event": "narrative.scarf",
+          "event_binding": "curated_catalog_id",
+          "phrase": "你把围巾重新绕回脖子上",
+          "phrases": {
+            "zh_CN": "你把围巾重新绕回脖子上",
+            "en": "You wind the scarf back round your neck"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "trigger": "phrase_start_once_per_true_line_visit",
+          "count": 1,
+          "optional": false,
+          "sequence": "one close wrap",
+          "delay_seconds": 0.0,
+          "source_filenames": [
+            "scarf_cloth_01.ogg",
+            "scarf_cloth_02.ogg"
+          ],
+          "cue_id": "DLG_MESSENGER_RULES_18:0"
+        }
+      ],
+      "status": "active",
+      "story_id": "story.messenger.thorn_rules",
+      "line_index": 17,
+      "branch_choice": "",
+      "branch_index": 0,
+      "marker": "story.messenger.thorn_rules:17::0",
+      "speaker": "narrator",
+      "npc_hidden": false,
+      "literal_foley_policy": "No new foley unless curated cue explicitly cites present action in this line.",
+      "mood": "tentative safety, companionable warmth",
+      "direction": "one close soft scarf wrap",
+      "constraint": "Physical intimacy through spatial detail, not a reward jingle.",
+      "scene": "sheltered_wood",
+      "music_gain_db": -24.0
+    }
+  },
+  "choices": {
+    "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL",
+      "kind": "choice_label",
+      "text_zh": "（一动不动。）",
+      "text_en": "[Hold still.]",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/6/choices/0",
+        "content_lines": [
+          151
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 224,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "inherit",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 6,
+      "choice_id": "hold_still",
+      "parent_marker": "story.messenger.edge:6::0",
+      "cue_trigger": "never_on_label_display_or_hover",
+      "selected_branch_keys": [
+        "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_1",
+        "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_2"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_STONE": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_STONE",
+      "kind": "choice_label",
+      "text_zh": "（摸起一块石头。）",
+      "text_en": "[Pick up a stone.]",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/6/choices/1",
+        "content_lines": [
+          165
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 227,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "inherit",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 6,
+      "choice_id": "stone",
+      "parent_marker": "story.messenger.edge:6::0",
+      "cue_trigger": "never_on_label_display_or_hover",
+      "selected_branch_keys": [
+        "DLG_MESSENGER_EDGE_CHOICE_STONE_1",
+        "DLG_MESSENGER_EDGE_CHOICE_STONE_2"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_CALL_OUT": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_CALL_OUT",
+      "kind": "choice_label",
+      "text_zh": "“谁在那儿？”",
+      "text_en": "“Who's there?”",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/6/choices/2",
+        "content_lines": [
+          179
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 230,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "inherit",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 6,
+      "choice_id": "call_out",
+      "parent_marker": "story.messenger.edge:6::0",
+      "cue_trigger": "never_on_label_display_or_hover",
+      "selected_branch_keys": [
+        "DLG_MESSENGER_EDGE_CHOICE_CALL_OUT_1"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_NO": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_NO",
+      "kind": "choice_label",
+      "text_zh": "“没有。”",
+      "text_en": "“No.”",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/27/choices/0",
+        "content_lines": [
+          275
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 252,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "inherit",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 27,
+      "choice_id": "no",
+      "parent_marker": "story.messenger.edge:27::0",
+      "cue_trigger": "never_on_label_display_or_hover",
+      "selected_branch_keys": [
+        "DLG_MESSENGER_EDGE_CHOICE_NO_1"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_NOT_SURE": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_NOT_SURE",
+      "kind": "choice_label",
+      "text_zh": "“我不知道。”",
+      "text_en": "“I don't know.”",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/27/choices/1",
+        "content_lines": [
+          285
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 254,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "inherit",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 27,
+      "choice_id": "not_sure",
+      "parent_marker": "story.messenger.edge:27::0",
+      "cue_trigger": "never_on_label_display_or_hover",
+      "selected_branch_keys": [
+        "DLG_MESSENGER_EDGE_CHOICE_NOT_SURE_1"
+      ]
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_PULL_AWAY": {
+      "text_key": "DLG_MESSENGER_EDGE_CHOICE_PULL_AWAY",
+      "kind": "choice_label",
+      "text_zh": "（把手抽回来。）",
+      "text_en": "[Take your hand back.]",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/stories/story.messenger.edge/lines/27/choices/2",
+        "content_lines": [
+          295
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 256,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "inherit",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "story_id": "story.messenger.edge",
+      "line_index": 27,
+      "choice_id": "pull_away",
+      "parent_marker": "story.messenger.edge:27::0",
+      "cue_trigger": "never_on_label_display_or_hover",
+      "selected_branch_keys": [
+        "DLG_MESSENGER_EDGE_CHOICE_PULL_AWAY_1"
+      ]
+    }
+  },
+  "opening_pages": {
+    "OPENING_CHRONICLE_PAGE_1": {
+      "text_key": "OPENING_CHRONICLE_PAGE_1",
+      "kind": "fallback_chronicle_page",
+      "text_zh": "帝国出现之前，世上没有帝国。\n只有一座座自由城镇：各有各的城墙，各有各的田地，各有各的纷争，除了自己，不奉任何人为主。",
+      "text_en": "Before the Empire, there was no empire.\nThere were the free towns: each with its own walls, its own fields, its own quarrels, and no master but itself.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/pages/0",
+        "content_lines": [
+          434
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 201,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active_fallback_only_when_film_disabled_or_unavailable",
+      "page_index": 0,
+      "trigger": "opening:intro:0",
+      "mood": "historical chronicle",
+      "direction": "Conservative environmental bed only; never add unsupported literal events from historical nouns."
+    },
+    "OPENING_CHRONICLE_PAGE_2": {
+      "text_key": "OPENING_CHRONICLE_PAGE_2",
+      "kind": "fallback_chronicle_page",
+      "text_zh": "然后，白冬来了。春天不化的雪，直到盛夏仍是一片白的田野。\n它年复一年向这片土地蔓延，每一年都走得更远一点，夺走得更多一点。",
+      "text_en": "Then came the White Winter. Snow that would not melt in spring. Fields that lay white into midsummer.\nAnd every year it crept a little further across the land, and took a little more.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/pages/1",
+        "content_lines": [
+          435
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 204,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.snowline",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active_fallback_only_when_film_disabled_or_unavailable",
+      "page_index": 1,
+      "trigger": "opening:intro:1",
+      "mood": "historical chronicle",
+      "direction": "Conservative environmental bed only; never add unsupported literal events from historical nouns."
+    },
+    "OPENING_CHRONICLE_PAGE_3": {
+      "text_key": "OPENING_CHRONICLE_PAGE_3",
+      "kind": "fallback_chronicle_page",
+      "text_zh": "有一个人看懂了这场冬天能拿来做什么。雪落到哪里，他就带着运粮车和长矛跟到哪里。\n饥饿的城镇为面包打开城门，他便把它们的名字写上自己的地图。",
+      "text_en": "One man understood what the winter was for. Wherever the snow fell, he followed it with grain wagons and spears.\nStarving towns opened their gates for bread, and he wrote their names upon his map.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/pages/2",
+        "content_lines": [
+          436
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 207,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.snowline",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active_fallback_only_when_film_disabled_or_unavailable",
+      "page_index": 2,
+      "trigger": "opening:intro:2",
+      "mood": "historical chronicle",
+      "direction": "Conservative environmental bed only; never add unsupported literal events from historical nouns."
+    },
+    "OPENING_CHRONICLE_PAGE_4": {
+      "text_key": "OPENING_CHRONICLE_PAGE_4",
+      "kind": "fallback_chronicle_page",
+      "text_zh": "一座又一座，地图被填满了。那人为自己加冕，称帝。\n从那以后，白冬一直在为他的家族效力：帝国的粮食到不了的地方，什么也长不出来。",
+      "text_en": "Town by town, the map was filled. The man crowned himself Emperor.\nAnd the White Winter has served his house ever since: where the Empire's grain does not go, nothing grows.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/pages/3",
+        "content_lines": [
+          437
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 210,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.snowline",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active_fallback_only_when_film_disabled_or_unavailable",
+      "page_index": 3,
+      "trigger": "opening:intro:3",
+      "mood": "historical chronicle",
+      "direction": "Conservative environmental bed only; never add unsupported literal events from historical nouns."
+    },
+    "OPENING_CHRONICLE_PAGE_5": {
+      "text_key": "OPENING_CHRONICLE_PAGE_5",
+      "kind": "fallback_chronicle_page",
+      "text_zh": "如今，在那张地图参差的边缘，一个人正在逃命，身后是四十个骑手和他们的猎狗。\n他找到了一条线索，指向帝国唯一不能容许的东西：对抗白冬的方法。",
+      "text_en": "Now, at the ragged edge of that map, a man runs for his life, with forty riders and their dogs behind him.\nHe has found a clue to the one thing the Empire cannot allow: a way to stand against the White Winter.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/pages/4",
+        "content_lines": [
+          438
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 213,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "ambience.snowline",
+      "music": "",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active_fallback_only_when_film_disabled_or_unavailable",
+      "page_index": 4,
+      "trigger": "opening:intro:4",
+      "mood": "historical chronicle",
+      "direction": "Conservative environmental bed only; never add unsupported literal events from historical nouns."
+    }
+  },
+  "tutorials": {
+    "OPENING_HINT_WALK_WOOD": {
+      "text_key": "OPENING_HINT_WALK_WOOD",
+      "kind": "tutorial_instruction",
+      "text_zh": "把“你”拖到黑刺李林上，走进去。",
+      "text_en": "Drag yourself onto Blackthorn Wood.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/tutorials/0",
+        "content_lines": [
+          466
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 214,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "inherit",
+      "music": "inherit",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "visibility_condition": {
+        "key": "OPENING_HINT_WALK_WOOD",
+        "until_stage": "complete"
+      },
+      "cue_trigger": "never_on_hint_display",
+      "literal_foley_policy": "Action sound follows actual exploration start/progress/finish, not the instruction text."
+    },
+    "OPENING_HINT_MEET_MESSENGER": {
+      "text_key": "OPENING_HINT_MEET_MESSENGER",
+      "kind": "tutorial_instruction",
+      "text_zh": "信使追上来了。把“你”拖到他身上。",
+      "text_en": "The Messenger has caught you up. Drag yourself onto him.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/tutorials/1",
+        "content_lines": [
+          470
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 215,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "inherit",
+      "music": "inherit",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "visibility_condition": {
+        "key": "OPENING_HINT_MEET_MESSENGER",
+        "until_story": "story.messenger.thorn_rules"
+      },
+      "cue_trigger": "never_on_hint_display",
+      "literal_foley_policy": "Action sound follows actual exploration start/progress/finish, not the instruction text."
+    },
+    "OPENING_HINT_FOLLOW_TRACK": {
+      "text_key": "OPENING_HINT_FOLLOW_TRACK",
+      "kind": "tutorial_instruction",
+      "text_zh": "顺着獾道走：把“你”拖到獾道上。",
+      "text_en": "Follow the track: drag yourself onto Badger Track.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/tutorials/2",
+        "content_lines": [
+          474
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 216,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "inherit",
+      "music": "inherit",
+      "music_intensity": 0.0,
+      "cues": [],
+      "status": "active",
+      "visibility_condition": {
+        "key": "OPENING_HINT_FOLLOW_TRACK",
+        "until_kind_gone": "badger_track"
+      },
+      "cue_trigger": "never_on_hint_display",
+      "literal_foley_policy": "Action sound follows actual exploration start/progress/finish, not the instruction text."
+    }
+  },
+  "onboarding": {
+    "ONBOARD_STAGE_INTO_MIST": {
+      "text_key": "ONBOARD_STAGE_INTO_MIST",
+      "text_zh": "走进雾里",
+      "text_en": "Into the Mist",
+      "stage_id": "into_mist",
+      "id": "into_mist",
+      "event": "",
+      "source": {
+        "content_file": "data/onboarding_goals.json",
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 295,
+          "column": "zh_CN"
+        }
+      },
+      "cues": [],
+      "cue_trigger": "No narrative foley on objective display; neutral completion UI only after actual goal event."
+    },
+    "ONBOARD_GOAL_WALK_WOOD": {
+      "text_key": "ONBOARD_GOAL_WALK_WOOD",
+      "text_zh": "走进黑刺李林",
+      "text_en": "Walk into Blackthorn Wood",
+      "stage_id": "into_mist",
+      "id": "walk_wood",
+      "event": "opening_explored",
+      "source": {
+        "content_file": "data/onboarding_goals.json",
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 296,
+          "column": "zh_CN"
+        }
+      },
+      "cues": [],
+      "cue_trigger": "No narrative foley on objective display; neutral completion UI only after actual goal event."
+    },
+    "ONBOARD_GOAL_MEET_MESSENGER": {
+      "text_key": "ONBOARD_GOAL_MEET_MESSENGER",
+      "text_zh": "听信使讲讲林子的规矩",
+      "text_en": "Hear the Messenger out",
+      "stage_id": "into_mist",
+      "id": "meet_messenger",
+      "event": "story_completed:story.messenger.thorn_rules",
+      "source": {
+        "content_file": "data/onboarding_goals.json",
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 297,
+          "column": "zh_CN"
+        }
+      },
+      "cues": [],
+      "cue_trigger": "No narrative foley on objective display; neutral completion UI only after actual goal event."
+    },
+    "ONBOARD_GOAL_FOLLOW_TRACK": {
+      "text_key": "ONBOARD_GOAL_FOLLOW_TRACK",
+      "text_zh": "沿着獾道走到立石",
+      "text_en": "Follow the track to the stones",
+      "stage_id": "into_mist",
+      "id": "follow_track",
+      "event": "explore_completed:card.loc.badger_track",
+      "source": {
+        "content_file": "data/onboarding_goals.json",
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 298,
+          "column": "zh_CN"
+        }
+      },
+      "cues": [],
+      "cue_trigger": "No narrative foley on objective display; neutral completion UI only after actual goal event."
+    },
+    "ONBOARD_STAGE_TABLE_BASICS": {
+      "text_key": "ONBOARD_STAGE_TABLE_BASICS",
+      "text_zh": "熟悉你的桌面",
+      "text_en": "Know Your Table",
+      "stage_id": "table_basics",
+      "id": "table_basics",
+      "event": "",
+      "source": {
+        "content_file": "data/onboarding_goals.json",
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 189,
+          "column": "zh_CN"
+        }
+      },
+      "cues": [],
+      "cue_trigger": "No narrative foley on objective display; neutral completion UI only after actual goal event."
+    },
+    "ONBOARD_GOAL_PAN_TABLE": {
+      "text_key": "ONBOARD_GOAL_PAN_TABLE",
+      "text_zh": "按住右键拖动桌面，四处看看",
+      "text_en": "Hold right mouse and drag to look around",
+      "stage_id": "table_basics",
+      "id": "pan_table",
+      "event": "camera_panned",
+      "source": {
+        "content_file": "data/onboarding_goals.json",
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 191,
+          "column": "zh_CN"
+        }
+      },
+      "cues": [],
+      "cue_trigger": "No narrative foley on objective display; neutral completion UI only after actual goal event."
+    },
+    "ONBOARD_GOAL_ZOOM_TABLE": {
+      "text_key": "ONBOARD_GOAL_ZOOM_TABLE",
+      "text_zh": "滚动鼠标滚轮，拉近或拉远",
+      "text_en": "Scroll the mouse wheel to zoom",
+      "stage_id": "table_basics",
+      "id": "zoom_table",
+      "event": "camera_zoomed",
+      "source": {
+        "content_file": "data/onboarding_goals.json",
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 192,
+          "column": "zh_CN"
+        }
+      },
+      "cues": [],
+      "cue_trigger": "No narrative foley on objective display; neutral completion UI only after actual goal event."
+    },
+    "ONBOARD_GOAL_FOCUS_HERO": {
+      "text_key": "ONBOARD_GOAL_FOCUS_HERO",
+      "text_zh": "点击右下角头像，找到自己",
+      "text_en": "Click your portrait to find yourself",
+      "stage_id": "table_basics",
+      "id": "focus_hero",
+      "event": "hero_focused",
+      "source": {
+        "content_file": "data/onboarding_goals.json",
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 193,
+          "column": "zh_CN"
+        }
+      },
+      "cues": [],
+      "cue_trigger": "No narrative foley on objective display; neutral completion UI only after actual goal event."
+    },
+    "ONBOARD_STAGE_SHOP_TOOLS": {
+      "text_key": "ONBOARD_STAGE_SHOP_TOOLS",
+      "text_zh": "打理时间与手账",
+      "text_en": "Time and Journal",
+      "stage_id": "shop_tools",
+      "id": "shop_tools",
+      "event": "",
+      "source": {
+        "content_file": "data/onboarding_goals.json",
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 190,
+          "column": "zh_CN"
+        }
+      },
+      "cues": [],
+      "cue_trigger": "No narrative foley on objective display; neutral completion UI only after actual goal event."
+    },
+    "ONBOARD_GOAL_CHANGE_TIME": {
+      "text_key": "ONBOARD_GOAL_CHANGE_TIME",
+      "text_zh": "点击时间按钮，切换流速",
+      "text_en": "Click the time button to change speed",
+      "stage_id": "shop_tools",
+      "id": "change_time",
+      "event": "time_mode_changed",
+      "source": {
+        "content_file": "data/onboarding_goals.json",
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 194,
+          "column": "zh_CN"
+        }
+      },
+      "cues": [],
+      "cue_trigger": "No narrative foley on objective display; neutral completion UI only after actual goal event."
+    },
+    "ONBOARD_GOAL_OPEN_RECIPES": {
+      "text_key": "ONBOARD_GOAL_OPEN_RECIPES",
+      "text_zh": "翻开配方手账（R）",
+      "text_en": "Open the recipe journal (R)",
+      "stage_id": "shop_tools",
+      "id": "open_recipes",
+      "event": "journal_recipes_opened",
+      "source": {
+        "content_file": "data/onboarding_goals.json",
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 195,
+          "column": "zh_CN"
+        }
+      },
+      "cues": [],
+      "cue_trigger": "No narrative foley on objective display; neutral completion UI only after actual goal event."
+    },
+    "ONBOARD_GOAL_OPEN_RELATIONSHIPS": {
+      "text_key": "ONBOARD_GOAL_OPEN_RELATIONSHIPS",
+      "text_zh": "查看人物关系（N）",
+      "text_en": "Check your relationships (N)",
+      "stage_id": "shop_tools",
+      "id": "open_relationships",
+      "event": "journal_npcs_opened",
+      "source": {
+        "content_file": "data/onboarding_goals.json",
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 196,
+          "column": "zh_CN"
+        }
+      },
+      "cues": [],
+      "cue_trigger": "No narrative foley on objective display; neutral completion UI only after actual goal event."
+    }
+  },
+  "film_captions": {
+    "OPENING_FILM_LINE_01": {
+      "text_key": "OPENING_FILM_LINE_01",
+      "kind": "film_caption",
+      "text_zh": "很久以前，这片土地上没有国王，",
+      "text_en": "Long ago this country had no king.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/0",
+        "content_lines": [
+          528
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 303,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 0.8,
+      "end_seconds": 3.39,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_02": {
+      "text_key": "OPENING_FILM_LINE_02",
+      "kind": "film_caption",
+      "text_zh": "只有城镇：",
+      "text_en": "It had towns:",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/1",
+        "content_lines": [
+          533
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 304,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 3.8,
+      "end_seconds": 5.39,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_03": {
+      "text_key": "OPENING_FILM_LINE_03",
+      "kind": "film_caption",
+      "text_zh": "织工的城，铸钟人的城，",
+      "text_en": "towns of weavers and bell-founders,",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/2",
+        "content_lines": [
+          538
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 305,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 6.15,
+      "end_seconds": 8.4,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_04": {
+      "text_key": "OPENING_FILM_LINE_04",
+      "kind": "film_caption",
+      "text_zh": "盐商的城，养马人的城。",
+      "text_en": "of salt-traders and horse-breeders,",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/3",
+        "content_lines": [
+          543
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 306,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 8.45,
+      "end_seconds": 11.05,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_05": {
+      "text_key": "OPENING_FILM_LINE_05",
+      "kind": "film_caption",
+      "text_zh": "每一座都有自己的城墙，每一座都认定自己最好。",
+      "text_en": "each behind its own wall, and each quite sure it was the best of them.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/4",
+        "content_lines": [
+          548
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 307,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 11.09,
+      "end_seconds": 16.45,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_06": {
+      "text_key": "OPENING_FILM_LINE_06",
+      "kind": "film_caption",
+      "text_zh": "他们为过路钱和界石吵架，",
+      "text_en": "They quarrelled over tolls and boundary stones,",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/5",
+        "content_lines": [
+          553
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 308,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 17.25,
+      "end_seconds": 20.5,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_07": {
+      "text_key": "OPENING_FILM_LINE_07",
+      "kind": "film_caption",
+      "text_zh": "吵完了又互相嫁娶；",
+      "text_en": "and married across the quarrel;",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/6",
+        "content_lines": [
+          558
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 309,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 20.54,
+      "end_seconds": 22.4,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_08": {
+      "text_key": "OPENING_FILM_LINE_08",
+      "kind": "film_caption",
+      "text_zh": "每到收获的时候，总要去赶彼此的集市。",
+      "text_en": "and at every harvest they came to one another's fairs.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/7",
+        "content_lines": [
+          563
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 310,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 22.44,
+      "end_seconds": 26.36,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_09": {
+      "text_key": "OPENING_FILM_LINE_09",
+      "kind": "film_caption",
+      "text_zh": "后来有一年秋天，雪早早地从北方下来了。",
+      "text_en": "Then one autumn the snow came early out of the north.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/8",
+        "content_lines": [
+          568
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 311,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 36.14,
+      "end_seconds": 40.65,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_10": {
+      "text_key": "OPENING_FILM_LINE_10",
+      "kind": "film_caption",
+      "text_zh": "它盖过了春天，",
+      "text_en": "It lay through the spring,",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/9",
+        "content_lines": [
+          573
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 312,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 48.74,
+      "end_seconds": 50.39,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_11": {
+      "text_key": "OPENING_FILM_LINE_11",
+      "kind": "film_caption",
+      "text_zh": "又盖过了随后的夏天。",
+      "text_en": "and through the summer after.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/10",
+        "content_lines": [
+          578
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 313,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 50.43,
+      "end_seconds": 52.56,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_12": {
+      "text_key": "OPENING_FILM_LINE_12",
+      "kind": "film_caption",
+      "text_zh": "人们吃掉了种粮，",
+      "text_en": "They ate the seed corn,",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/11",
+        "content_lines": [
+          583
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 314,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 52.6,
+      "end_seconds": 54.69,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_13": {
+      "text_key": "OPENING_FILM_LINE_13",
+      "kind": "film_caption",
+      "text_zh": "然后吃掉了马。",
+      "text_en": "and then the horses.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/12",
+        "content_lines": [
+          588
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 315,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 55.98,
+      "end_seconds": 57.77,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_14": {
+      "text_key": "OPENING_FILM_LINE_14",
+      "kind": "film_caption",
+      "text_zh": "到第三年，钟已经不再为死者敲响，",
+      "text_en": "By the third year the bells had stopped ringing for the dead,",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/13",
+        "content_lines": [
+          593
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 316,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 63.68,
+      "end_seconds": 66.96,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_15": {
+      "text_key": "OPENING_FILM_LINE_15",
+      "kind": "film_caption",
+      "text_zh": "因为死的人太多了。",
+      "text_en": "because there were too many.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/14",
+        "content_lines": [
+          598
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 317,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 67.0,
+      "end_seconds": 69.36,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_16": {
+      "text_key": "OPENING_FILM_LINE_16",
+      "kind": "film_caption",
+      "text_zh": "就在那一年，运粮的车队从南方来了，",
+      "text_en": "That was the year the grain wagons came up from the south,",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/15",
+        "content_lines": [
+          603
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 318,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 72.98,
+      "end_seconds": 76.29,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_17": {
+      "text_key": "OPENING_FILM_LINE_17",
+      "kind": "film_caption",
+      "text_zh": "打着一面谁也没见过的旗。",
+      "text_en": "under a banner no one knew.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/16",
+        "content_lines": [
+          608
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 319,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 76.33,
+      "end_seconds": 79.06,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_18": {
+      "text_key": "OPENING_FILM_LINE_18",
+      "kind": "film_caption",
+      "text_zh": "哪座城肯打开城门、挂上这面旗，哪座城就有面包吃；",
+      "text_en": "There was bread for any town that would open its gates and hang that banner;",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/17",
+        "content_lines": [
+          613
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 320,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 79.33,
+      "end_seconds": 84.42,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_19": {
+      "text_key": "OPENING_FILM_LINE_19",
+      "kind": "film_caption",
+      "text_zh": "而每一座开了门的城，都得连钟和种粮一起交出去，",
+      "text_en": "and every town that did gave up its bell and its seed corn with it,",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/18",
+        "content_lines": [
+          618
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 321,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 84.88,
+      "end_seconds": 88.88,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_20": {
+      "text_key": "OPENING_FILM_LINE_20",
+      "kind": "film_caption",
+      "text_zh": "从此再也养不活自己。",
+      "text_en": "and could never again feed itself.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/19",
+        "content_lines": [
+          623
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 322,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 90.38,
+      "end_seconds": 92.92,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_21": {
+      "text_key": "OPENING_FILM_LINE_21",
+      "kind": "film_caption",
+      "text_zh": "最后一座不肯低头的城，被攻了下来。",
+      "text_en": "The last town that held out was taken by storm.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/20",
+        "content_lines": [
+          628
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 323,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 95.09,
+      "end_seconds": 98.69,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_22": {
+      "text_key": "OPENING_FILM_LINE_22",
+      "kind": "film_caption",
+      "text_zh": "守城的人被吊死在自家的城墙上，",
+      "text_en": "Its defenders were hanged from their own walls,",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/21",
+        "content_lines": [
+          633
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 324,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 113.31,
+      "end_seconds": 116.37,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_23": {
+      "text_key": "OPENING_FILM_LINE_23",
+      "kind": "film_caption",
+      "text_zh": "城里的人被赶进了雪地。",
+      "text_en": "and its people turned out into the snow.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/22",
+        "content_lines": [
+          638
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 325,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 116.41,
+      "end_seconds": 120.03,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_24": {
+      "text_key": "OPENING_FILM_LINE_24",
+      "kind": "film_caption",
+      "text_zh": "帝国就是这样开始的；",
+      "text_en": "That was the beginning of the Empire;",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/23",
+        "content_lines": [
+          643
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 326,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 120.56,
+      "end_seconds": 123.82,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_25": {
+      "text_key": "OPENING_FILM_LINE_25",
+      "kind": "film_caption",
+      "text_zh": "帝国靠这场冬天统治。",
+      "text_en": "and the Empire rules by the winter.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/24",
+        "content_lines": [
+          648
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 327,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 123.86,
+      "end_seconds": 126.24,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_26": {
+      "text_key": "OPENING_FILM_LINE_26",
+      "kind": "film_caption",
+      "text_zh": "交出儿子、交出劳力的村子，",
+      "text_en": "The village that gives up its sons and its labour",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/25",
+        "content_lines": [
+          653
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 328,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 126.66,
+      "end_seconds": 130.17,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_27": {
+      "text_key": "OPENING_FILM_LINE_27",
+      "kind": "film_caption",
+      "text_zh": "粮车会来。",
+      "text_en": "is sent grain.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/26",
+        "content_lines": [
+          658
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 329,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 130.21,
+      "end_seconds": 131.79,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_28": {
+      "text_key": "OPENING_FILM_LINE_28",
+      "kind": "film_caption",
+      "text_zh": "藏了一把种粮的、跪得慢了的村子，什么也得不到：",
+      "text_en": "The village that hides a handful of seed, or is slow to kneel, is sent none:",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/27",
+        "content_lines": [
+          663
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 330,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 134.63,
+      "end_seconds": 140.27,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_29": {
+      "text_key": "OPENING_FILM_LINE_29",
+      "kind": "film_caption",
+      "text_zh": "粮车就绕过去，",
+      "text_en": "the wagons pass it by,",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/28",
+        "content_lines": [
+          668
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 331,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 140.31,
+      "end_seconds": 142.25,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_30": {
+      "text_key": "OPENING_FILM_LINE_30",
+      "kind": "film_caption",
+      "text_zh": "剩下的事，交给雪。",
+      "text_en": "and the snow does the rest.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/29",
+        "content_lines": [
+          673
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 332,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 142.43,
+      "end_seconds": 145.04,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_31": {
+      "text_key": "OPENING_FILM_LINE_31",
+      "kind": "film_caption",
+      "text_zh": "一百年来都是如此。",
+      "text_en": "So it has gone for a hundred years.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/30",
+        "content_lines": [
+          678
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 333,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 148.99,
+      "end_seconds": 152.41,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_32": {
+      "text_key": "OPENING_FILM_LINE_32",
+      "kind": "film_caption",
+      "text_zh": "可是今夜，帝国每一座城的钟都在响，",
+      "text_en": "But tonight the bells are ringing in every town of the Empire,",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/31",
+        "content_lines": [
+          683
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 334,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 158.91,
+      "end_seconds": 162.28,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_33": {
+      "text_key": "OPENING_FILM_LINE_33",
+      "kind": "film_caption",
+      "text_zh": "道路全都封了。",
+      "text_en": "and the roads are closed.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/32",
+        "content_lines": [
+          688
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 335,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 163.03,
+      "end_seconds": 164.97,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_34": {
+      "text_key": "OPENING_FILM_LINE_34",
+      "kind": "film_caption",
+      "text_zh": "帝国看守的一样东西被人拿走了：",
+      "text_en": "Something has been taken from the Empire's keeping:",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/33",
+        "content_lines": [
+          693
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 336,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 165.85,
+      "end_seconds": 168.87,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_35": {
+      "text_key": "OPENING_FILM_LINE_35",
+      "kind": "film_caption",
+      "text_zh": "抵挡白冬的秘密。",
+      "text_en": "the secret of how the winter may be withstood.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/34",
+        "content_lines": [
+          698
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 337,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 168.91,
+      "end_seconds": 172.38,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_36": {
+      "text_key": "OPENING_FILM_LINE_36",
+      "kind": "film_caption",
+      "text_zh": "帝国要把它找回来，",
+      "text_en": "And the Empire will have it back,",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/35",
+        "content_lines": [
+          703
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 338,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 172.42,
+      "end_seconds": 174.66,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    },
+    "OPENING_FILM_LINE_37": {
+      "text_key": "OPENING_FILM_LINE_37",
+      "kind": "film_caption",
+      "text_zh": "哪怕把每一户人家都翻个底朝天。",
+      "text_en": "if it must turn out every house to find it.",
+      "source": {
+        "content_file": "data/content.json",
+        "json_pointer": "/opening/film/captions/36",
+        "content_lines": [
+          708
+        ],
+        "localization": {
+          "file": "localization/game.csv",
+          "record_end_line": 339,
+          "column": "zh_CN"
+        }
+      },
+      "environment": "embedded_film",
+      "music": "embedded_film",
+      "music_intensity": "native_mix",
+      "cues": [],
+      "status": "active",
+      "start_seconds": 174.7,
+      "end_seconds": 177.04,
+      "audio_policy": "preserve_embedded",
+      "literal_foley_policy": "Do not add gameplay FX from subtitle keywords."
+    }
+  },
+  "locations": {
+    "card.loc.first_forest": {
+      "kind": "first_forest",
+      "name_key": "CARD_BLACKTHORN_WOOD_TITLE",
+      "name_zh": "黑刺李林",
+      "detail_key": "CARD_BLACKTHORN_WOOD_DETAIL",
+      "detail_zh": "又湿又密，够黑，藏得住人。",
+      "source": "data/content.json",
+      "source_lines": [
+        24,
+        25
+      ],
+      "explore": null,
+      "audio_policy": "Location-specific bed only when gameplay movement/activity establishes arrival; no magical tone from stone/wood/place names."
+    },
+    "card.loc.badger_track": {
+      "kind": "badger_track",
+      "name_key": "CARD_BADGER_TRACK_TITLE",
+      "name_zh": "獾道",
+      "detail_key": "CARD_BADGER_TRACK_DETAIL",
+      "detail_zh": "獾先来的，它们希望你记住这一点。",
+      "source": "data/content.json",
+      "source_lines": [
+        66,
+        67
+      ],
+      "explore": {
+        "duration": 6.0,
+        "consumes": true,
+        "outputs": [
+          {
+            "kind": "the_stones"
+          }
+        ]
+      },
+      "audio_policy": "Location-specific bed only when gameplay movement/activity establishes arrival; no magical tone from stone/wood/place names."
+    },
+    "card.loc.the_stones": {
+      "kind": "the_stones",
+      "name_key": "CARD_STONES_TITLE",
+      "name_zh": "立石",
+      "detail_key": "CARD_STONES_DETAIL",
+      "detail_zh": "在这儿等他。",
+      "source": "data/content.json",
+      "source_lines": [
+        87,
+        88
+      ],
+      "explore": null,
+      "audio_policy": "Location-specific bed only when gameplay movement/activity establishes arrival; no magical tone from stone/wood/place names."
+    }
+  },
+  "transitions": [
+    {
+      "id": "film_to_naming",
+      "trigger": "opening film finished or skipped, opening stage intro completed",
+      "environment": "cold exposed night wind begins only after film gives up audio ownership",
+      "source": "scripts/model/opening_flow.gd finish_intro(); opening.name_entry_page=5",
+      "music": "",
+      "environment_event": "ambience.snowline"
+    },
+    {
+      "id": "edge_enter",
+      "trigger": "story.messenger.edge:0::0",
+      "environment": "exposed cold night; ground soft, pursuer distant",
+      "music": "",
+      "environment_event": "ambience.snowline"
+    },
+    {
+      "id": "trees_close",
+      "trigger": "story.messenger.edge:3::0",
+      "environment": "sheltered damp foggy wood; wind attenuates",
+      "music": "",
+      "environment_event": "ambience.cold_wood"
+    },
+    {
+      "id": "stream_instruction",
+      "trigger": "story.messenger.edge:30::0",
+      "environment": "retain wood; only a distant stream may become audible, no entering water yet",
+      "music": "",
+      "environment_event": "ambience.cold_wood"
+    },
+    {
+      "id": "walk_wood_start",
+      "trigger": "OpeningFlow.work_stack_id() becomes nonempty while stage explore",
+      "required_kinds": [
+        "hero",
+        "first_forest"
+      ],
+      "environment": "wet blackthorn wood; user follows instructed stream route",
+      "activity_cues": [
+        "water steps while actual exploration is progressing",
+        "sparse branch/grass contact; stop on unstack or pause"
+      ],
+      "music": "",
+      "duration_seconds": 8.0,
+      "source": "data/content.json /opening/explore; DLG_MESSENGER_EDGE_29",
+      "environment_event": "ambience.hidden_creek",
+      "activity_events": [
+        "narrative.wet_step",
+        "narrative.brush_thorns"
+      ]
+    },
+    {
+      "id": "walk_wood_finish",
+      "trigger": "OpeningFlow.outputs_created/revealed; opening_explored event",
+      "environment": "sheltered wet wood",
+      "stop_activity_cues": true,
+      "source": "data/content.json /opening/explore",
+      "environment_event": "ambience.cold_wood",
+      "music": ""
+    },
+    {
+      "id": "messenger_returns",
+      "trigger": "story.messenger.thorn_rules:0::0",
+      "environment": "sheltered wood one hour later; dogs successfully diverted",
+      "music": "",
+      "source": "DLG_MESSENGER_RULES_01; _02",
+      "environment_event": "ambience.cold_wood"
+    },
+    {
+      "id": "follow_track_start",
+      "trigger": "actual LocationExploration work starts with hero + badger_track",
+      "environment": "damp woodland track, away from running water",
+      "activity_cues": [
+        "soft grass/mud footsteps only while exploration progresses",
+        "occasional subdued foliage contact"
+      ],
+      "duration_seconds": 6.0,
+      "music": "music.story",
+      "source": "data/content.json /cards/card.loc.badger_track/explore",
+      "environment_event": "ambience.cold_wood",
+      "activity_events": [
+        "narrative.soft_steps",
+        "narrative.brush_thorns",
+        "narrative.twig_small"
+      ],
+      "music_gain_db": -24.0,
+      "constraints": "Twig contact only during real physical exploration, sparse and finite; never on stationary mist/standing stones."
+    },
+    {
+      "id": "arrive_stones",
+      "trigger": "explore_completed:card.loc.badger_track and the_stones card created",
+      "environment": "quiet woodland bed retained; stop footsteps",
+      "music": "music.story",
+      "source": "card.loc.the_stones detail: 在这儿等他。",
+      "literal_foley_policy": "No villagers, fire, shop, sunrise birds, stone magic, or future drafted scene audio.",
+      "environment_event": "ambience.cold_wood",
+      "music_gain_db": -24.0
+    }
+  ],
+  "excluded_drafts": [
+    {
+      "file": "docs/story/opening-scenes-v2-draft.md",
+      "status": "English-only review draft, not wired into runtime",
+      "do_not_trigger": [
+        "alternate draft escape/action beats",
+        "unimplemented arrival scene",
+        "unimplemented village scene"
+      ]
+    },
+    {
+      "file": "docs/story/prologue-outline.md",
+      "status": "proposal includes later parts 4–8 not active",
+      "do_not_trigger": [
+        "parts 4–8 proposal scenes; no automatic resurrection of removed or unapproved content"
+      ]
+    },
+    {
+      "file": "data/modules/chapter_01/module.json",
+      "status": "absent from snapshot; references in generic engine/tests do not activate chapter prose"
+    },
+    {
+      "file": "docs/story/opening-cg-film-v4-storyboard.md",
+      "status": "storyboard reference; exact timings in active opening.film captions win; its v9 insertion note is superseded by final v9 rejection in score-and-narration doc"
+    }
+  ],
+  "evidence_caveats": [
+    {
+      "topic": "snowline_and_blizzard",
+      "evidence_type": "explicit user scene context, not verbatim active dialogue",
+      "user_quote": "不要这么粗糙的选，要根据文案选，比如刚开始在雪线附近就有暴风、雪、踩草丛、树枝等等的声音。根据文案配",
+      "direction": "Use exposed winter-wind/snow-hiss weather layer at opening, then shelter it as trees close. Do not pretend current line says hero is walking on deep snow; it says ground increasingly soft."
+    },
+    {
+      "topic": "water",
+      "source_keys": [
+        "DLG_MESSENGER_EDGE_02",
+        "DLG_MESSENGER_EDGE_14",
+        "DLG_MESSENGER_EDGE_29"
+      ],
+      "direction": "Moonlit surface/riverside lights and stream advice support distant water; actual wading belongs to exploration after direction is acted on, not the spoken instruction."
+    },
+    {
+      "topic": "flask",
+      "source_keys": [
+        "DLG_MESSENGER_EDGE_19",
+        "DLG_MESSENGER_EDGE_20",
+        "DLG_MESSENGER_EDGE_21",
+        "DLG_MESSENGER_EDGE_22",
+        "DLG_MESSENGER_EDGE_24"
+      ],
+      "direction": "Brass-winged hot flask, not modern vacuum thermos. Handling and diminishing tremble are explicit; no cap twist, pouring, kettle whistle, drinking or gulp asserted."
+    },
+    {
+      "topic": "dogs",
+      "source_keys": [
+        "DLG_MESSENGER_EDGE_01",
+        "DLG_MESSENGER_EDGE_27",
+        "DLG_MESSENGER_RULES_02"
+      ],
+      "direction": "One bark then stops; later nearer bark. No continuous pack looping. RULES_02 is report of prior diversion, not present barking."
+    },
+    {
+      "topic": "negative_literal_evidence",
+      "direction": "Glint, white fog, recognition, warmth, and standing stones do not imply magic sounds. A badger track does not imply a nearby audible badger. Day-cycle engine state does not override explicit narrative night."
+    },
+    {
+      "topic": "sheltered_wood_not_deep_winter",
+      "source_keys": [
+        "DLG_MESSENGER_RULES_08"
+      ],
+      "source_excerpt": "留着。现在还涩。等下过第一场霜，就值点东西了。",
+      "direction": "First frost is still future in this local wood; transition away from dense blizzard/snowfall after exposed edge."
+    },
+    {
+      "topic": "breath_asset_absent",
+      "source_keys": [
+        "DLG_MESSENGER_EDGE_01",
+        "DLG_MESSENGER_EDGE_07"
+      ],
+      "direction": "Breathing is text-supported but no verified human breath asset was supplied; omit rather than synthesize substitute noise or use invented voice."
+    }
+  ],
+  "scene_profiles": {
+    "cold_edge": {
+      "environment_description": "Snowline-adjacent exposed cold night, decreasingly firm ground; restrained winter gusts and snow hiss outside the wood.",
+      "mood": "hunted, exhausted, exposed",
+      "ambience": "cold exposed wind; no birds/insects",
+      "music": "",
+      "music_intensity": 0.0,
+      "environment_event": "ambience.snowline"
+    },
+    "sheltered_thicket": {
+      "environment_description": "Damp trees and low still fog soften the outer wind; water, if audible, is far off.",
+      "mood": "wary encounter",
+      "ambience": "quieter sheltered damp wood wind",
+      "music": "",
+      "music_intensity": 0.0,
+      "environment_event": "ambience.cold_wood"
+    },
+    "still_thicket": {
+      "environment_description": "Both figures have stopped moving in fog. Retain only a thin, quiet sheltered bed.",
+      "mood": "held breath, uncertainty",
+      "ambience": "very quiet sheltered wood",
+      "music": "",
+      "music_intensity": 0.0,
+      "environment_event": "ambience.cold_wood"
+    },
+    "quiet_contact": {
+      "environment_description": "Stopped together in the wood; near hand/sleeve/flask details against a lowered wind floor.",
+      "mood": "guarded intimacy without announced romance/revelation",
+      "ambience": "sheltered wood lowered below quiet contact",
+      "music": "",
+      "music_intensity": 0.0,
+      "environment_event": "ambience.cold_wood"
+    },
+    "renewed_threat": {
+      "environment_description": "Same wood, a renewed but still distant canine threat behind the hero.",
+      "mood": "danger returns",
+      "ambience": "sheltered wind; no dog loop",
+      "music": "",
+      "music_intensity": 0.0,
+      "environment_event": "ambience.cold_wood"
+    },
+    "awaiting_escape": {
+      "environment_description": "Final instruction, not yet movement. Wait for actual player exploration.",
+      "mood": "urgent decision to move",
+      "ambience": "same sheltered wind, no walking loop",
+      "music": "",
+      "music_intensity": 0.0,
+      "environment_event": "ambience.cold_wood"
+    },
+    "sheltered_wood": {
+      "environment_description": "An hour later, sheltered damp woodland beyond the diversion. Do not retain storm-strength snow; first frost is still spoken of as future.",
+      "mood": "tentative safety, companionable warmth",
+      "ambience": "subdued damp woodland, no present pursuit",
+      "music": "",
+      "music_intensity": 0.0,
+      "optional_music_after": "DLG_MESSENGER_RULES_02 only, restrained warm continuous motif if an appropriate approved asset exists; retain silence rather than introduce jaunty unrelated tavern tune.",
+      "environment_event": "ambience.cold_wood"
+    }
+  },
+  "music_direction": {
+    "edge": "No cozy Bards Tale; prefer environmental tension and silence, particularly EDGE_05, EDGE_24–27",
+    "rules": "After RULES_02, one restrained warm instrumental theme can fade in; hold continuity through track",
+    "cinematic": "Preserve native v7 sound; do not double-play caption cues or reinterpret rejected v9"
+  },
+  "interactive_direction": {
+    "opening.explore": {
+      "start": "real player-initiated 8-second exploration after EDGE_33",
+      "sound": "damp grass/mud footsteps into shallow stream wading; running water; occasional foliage",
+      "stop": "stop locomotion on cancel, pause, completion, menu or load; do not imply motion while idle"
+    },
+    "badger_track.explore": {
+      "start": "real player-initiated 6-second exploration",
+      "sound": "soft earth/grass path footsteps, sparse leaf/twig contact, not water/snow",
+      "end": "steps stop at standing stones; sheltered ambience, no magic chime"
+    }
+  },
+  "event_sources": {
+    "narrative.snow_to_soft_ground": [
+      "snow_to_soft_ground.ogg"
+    ],
+    "narrative.brush_thorns": [
+      "brush_thorns_01.ogg",
+      "brush_thorns_02.ogg",
+      "brush_thorns_03.ogg"
+    ],
+    "narrative.twig_small": [
+      "twig_snap_small.ogg"
+    ],
+    "narrative.dog_far": [
+      "dog_bark_far.ogg"
+    ],
+    "narrative.dog_nearer": [
+      "dog_bark_nearer.ogg"
+    ],
+    "narrative.scarf": [
+      "scarf_cloth_01.ogg",
+      "scarf_cloth_02.ogg"
+    ],
+    "narrative.flask_handover": [
+      "flask_handover.ogg"
+    ],
+    "narrative.stone_pickup": [
+      "stone_pickup_small.ogg"
+    ],
+    "narrative.berry_pluck": [
+      "berry_leaf_pluck.ogg"
+    ],
+    "narrative.run_depart": [
+      "run_forest_depart.ogg"
+    ],
+    "narrative.wet_arrive": [
+      "wet_steps_arrive.ogg"
+    ],
+    "narrative.soft_steps": [
+      "step_soft_grass_01.ogg",
+      "step_soft_grass_02.ogg",
+      "step_soft_grass_03.ogg",
+      "step_soft_grass_04.ogg"
+    ],
+    "narrative.wet_step": [
+      "step_shallow_water_01.ogg",
+      "step_shallow_water_02.ogg"
+    ],
+    "ambience.snowline": [
+      "amb_snowline_gusts_loop.ogg"
+    ],
+    "ambience.cold_wood": [
+      "amb_thorn_forest_cold_loop.ogg"
+    ],
+    "ambience.hidden_creek": [
+      "amb_creek_hidden_loop.ogg"
+    ]
+  },
+  "validation": {
+    "all_active_line_markers_covered": true,
+    "dialogue_rows": 61,
+    "cue_instances": 22,
+    "action_lines_with_cues": 19,
+    "all_localized_phrase_offsets_exact": true,
+    "all_bound_cue_source_filenames_exist": true,
+    "all_cue_ids_unique": true,
+    "film_cues_empty_and_preserved": true,
+    "choice_label_cues_empty": true,
+    "chapter_module_active": false,
+    "reviewed_sources": "all current opening/stories/choices/tutorials/onboarding/film captions and storyboard version notes",
+    "runtime_playback_verified_by_this_research": "not attempted; implementation owner owns runtime verification"
+  }
+}

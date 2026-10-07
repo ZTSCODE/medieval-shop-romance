@@ -1,0 +1,132 @@
+{
+  "engine": "4.7.1.stable.official.a13da4feb",
+  "snapshot": "e09ef9eacee0ea9dd9580e86404eef9be347dac6",
+  "audio_driver": "Dummy",
+  "desktop_renderer": "OpenGL Compatibility / Mesa llvmpipe",
+  "audibility": "No ALSA output device available. Real event paths, source decoding and waveform metrics verified; no cloud speaker/headphone audition claimed.",
+  "source_scope": "68 event IDs; 61 active dialogue rows; 22 finite narrative cues across 19 lines, one stillness stop command",
+  "suites": [
+    {
+      "suite": "audio_service_suite",
+      "summary": [
+        "AUDIO_SERVICE_RESULT checks=124 failures=0"
+      ],
+      "log": "work/audio-qa/service-final.log",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "suite": "narrative_audio_suite",
+      "summary": [
+        "NARRATIVE_AUDIO_RESULT checks=110 failures=0"
+      ],
+      "log": "work/audio-qa/narrative-final.log",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "suite": "audio_gameplay_suite",
+      "summary": [
+        "AUDIO_GAMEPLAY_RESULT checks=9 failures=0"
+      ],
+      "log": "work/audio-qa/gameplay-final.log",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "suite": "settings_volume_interaction_test",
+      "summary": [
+        "SETTINGS_VOLUME_TEST checks=14 failures=0"
+      ],
+      "log": "work/audio-qa/settings_volume_interaction_test.log",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "suite": "settings_motion_test",
+      "summary": [
+        "SETTINGS_MOTION failures=0"
+      ],
+      "log": "work/audio-qa/settings_motion_test.log",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "suite": "game_cursor_suite",
+      "summary": [
+        "GAME_CURSOR_FAILURES=0"
+      ],
+      "log": "work/audio-qa/game_cursor_suite.log",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "suite": "opening_film_suite",
+      "summary": [
+        "OPENING_FILM_SUITE: 18 checks, 0 failures"
+      ],
+      "log": "work/audio-qa/opening_film_suite.log",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "suite": "day_cycle_suite",
+      "summary": [
+        "DAY_CYCLE_SUITE: 11 checks, 0 failures"
+      ],
+      "log": "work/audio-qa/day_cycle_suite.log",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "suite": "onboarding_goals_suite",
+      "summary": [
+        "ONBOARDING_GOALS failures=0"
+      ],
+      "log": "work/audio-qa/onboarding_goals_suite.log",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "suite": "model_suite",
+      "summary": [
+        "MODEL_SUITE: 159 checks, 0 failures"
+      ],
+      "log": "work/audio-qa/model_suite.log",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "suite": "opening_story_suite",
+      "summary": [
+        "OPENING_STORY_SUITE: 55 checks, 0 failures"
+      ],
+      "log": "work/audio-qa/opening_story_suite.log",
+      "status": "pass_with_existing_test_cleanup_warning",
+      "errors": [
+        "ERROR: 3 resources still in use at exit (run with --verbose for details)."
+      ]
+    }
+  ],
+  "preview_validation": [
+    {
+      "filename": "narrative_snowline_to_thornwood_76s.mp3",
+      "seconds": 76.0,
+      "peak_dbfs": -14.690508197723586,
+      "rms_dbfs": -37.17079193145155,
+      "kind": "offline_catalog_audition_not_game_capture"
+    },
+    {
+      "filename": "ui_card_book_sampler_40s.mp3",
+      "seconds": 40.0,
+      "peak_dbfs": -18.01286838316512,
+      "rms_dbfs": -52.56895857707705,
+      "kind": "offline_catalog_audition_not_game_capture"
+    }
+  ],
+  "limitations": [
+    "Original opening_story_suite creates ShopSession/DayCycle Nodes without freeing them, producing cleanup warnings after 55 passing checks. Its original source was not changed.",
+    "Visual gameplay exercised on cloud desktop; scripted final audio integration and narrative tests run headlessly.",
+    "All added sounds remain replaceable placeholders; subjective timing/mix should be auditioned on an audio-capable device."
+  ]
+}

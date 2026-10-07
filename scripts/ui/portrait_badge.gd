@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 func _draw() -> void:
-	var art := GameArt.portrait(subject_id)
+	var art := GameArt.card_face(subject_id)
 	if art != null:
 		var placement := get_portrait_placement()
 		var destination: Rect2 = placement.destination
@@ -36,7 +36,7 @@ func get_frame_rect() -> Rect2:
 
 
 func get_portrait_placement() -> Dictionary:
-	var art := GameArt.portrait(subject_id)
+	var art := GameArt.card_face(subject_id)
 	if art == null:
 		return {"source": Rect2(), "destination": Rect2()}
 	var region := get_portrait_region()
@@ -47,10 +47,9 @@ func get_portrait_placement() -> Dictionary:
 
 
 func get_portrait_region() -> Rect2:
-	var definition := ContentCatalog.npc_definition(subject_id)
-	if definition.is_empty():
-		definition = ContentCatalog.card_definition(ContentCatalog.card_id_for_kind(StringName(subject_id)))
-	var region: Variant = definition.get("portrait_region", [])
+	var npc := ContentCatalog.npc_definition(subject_id)
+	var definition := ContentCatalog.card_definition(String(npc.get("card_id", ContentCatalog.card_id_for_kind(StringName(subject_id)))))
+	var region: Variant = definition.get("art_region", [])
 	if not region is Array or region.size() != 4:
 		return Rect2(0.0, 0.0, 1.0, 1.0)
 	for value: Variant in region:

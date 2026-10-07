@@ -4,6 +4,8 @@ extends RefCounted
 signal changed
 signal outputs_created(card_ids: Array[String], source_id: StringName)
 signal revealed
+# 某段剧情读完后才上桌的卡（opening.arrivals）已经放到牌桌上。
+signal arrivals_created(card_ids: Array[String])
 
 const STAGES := ["inactive", "intro", "explore", "complete"]
 
@@ -61,6 +63,55 @@ func advance_intro() -> void:
 		if stage == &"complete":
 			revealed.emit()
 	changed.emit()
+
+
+# 一次读完序幕剩下的全部页面：开场动画播完或被跳过时用，结果与逐页读完相同。
+func finish_intro() -> void:
+	if stage != &"intro":
+		return
+	intro_index = maxi(intro_page_count() - 1, 0)
+	advance_intro()
+
+
+# 剧情读完时调用：把 opening.arrivals 里等这段剧情的卡放上牌桌。
+# 只在剧情读完的那一刻调用一次；先在副本上验证，放不下就一张也不放。
+# 位置以主角的卡为准：写了 offset 的放在主角旁边那个位置（被占了就找最近的空位），没写的自动排在主角周围。
+func deliver_arrivals(story_id: String) -> Array[String]:
+	var created: Array[String] = []
+	if stage == &"inactive" or stage == &"intro" or state == null or story_id.is_empty():
+		return created
+	var due: Array[Dictionary] = []
+	for entry: Dictionary in ContentCatalog.opening_definition().get("arrivals", []):
+		if String(entry.get("after_story", "")) == story_id:
+			due.append(entry)
+	if due.is_empty():
+		return created
+	var preview := state.fork_empty()
+	preview.restore(state.snapshot())
+	for entry: Dictionary in due:
+		if preview.create_typed(StringName(entry.kind), _placement_bounds().get_center()).is_empty():
+			return created
+	if not preview.validate().is_empty():
+		return created
+	var anchor := _placement_bounds().get_center()
+	for id: String in state.cards:
+		if state.card_kind(id) == &"hero":
+			anchor = state.card_position(id)
+	for index in due.size():
+		var entry: Dictionary = due[index]
+		var at := _output_position(anchor, index)
+		if entry.has("offset"):
+			var lower := TableState.WORLD_BOUNDS.grow(-20.0)
+			var placed := (anchor + Vector2(float(entry.offset[0]), float(entry.offset[1]))).clamp(lower.position, lower.end - TableState.CARD_SIZE)
+			if _is_clear(placed):
+				at = placed
+		var id := _create_entry(entry, at)
+		if not id.is_empty():
+			created.append(id)
+	if not created.is_empty():
+		arrivals_created.emit(created)
+		changed.emit()
+	return created
 
 
 func advance(delta: float, suspended: bool = false) -> void:
@@ -141,14 +192,21 @@ static func validate_data(data: Variant, table: TableState) -> String:
 	if definition.is_empty() or not _definition_valid(definition):
 		return "Opening definition is unavailable"
 	if data.stage != "complete":
+		# 开局的卡必须都在；等剧情读完才上桌的卡（arrivals）可以还没到。
 		var expected: Array = []
+		var optional: Array = []
 		for entry: Dictionary in definition.get("initial_cards", []):
 			expected.append(String(entry.kind))
+		for entry: Dictionary in definition.get("arrivals", []):
+			optional.append(String(entry.kind))
 		for id: String in table.cards:
 			var kind := String(table.card_kind(id))
-			if not kind in expected or table.cards[id].zone != &"board":
+			if table.cards[id].zone != &"board" or (not kind in expected and not kind in optional):
 				return "Opening card set is invalid"
-			expected.erase(kind)
+			if kind in expected:
+				expected.erase(kind)
+			else:
+				optional.erase(kind)
 		if not expected.is_empty():
 			return "Opening card count is invalid"
 	match data.stage:
@@ -246,7 +304,8 @@ static func _definition_valid(definition: Dictionary) -> bool:
 	var pages: Variant = definition.get("pages", [])
 	var initial: Variant = definition.get("initial_cards", [])
 	var exploration: Variant = definition.get("explore", {})
-	if not pages is Array or not initial is Array or not exploration is Dictionary or initial.size() > TableState.MAX_CARDS:
+	var arrivals: Variant = definition.get("arrivals", [])
+	if not pages is Array or not initial is Array or not arrivals is Array or not exploration is Dictionary or initial.size() + arrivals.size() > TableState.MAX_CARDS:
 		return false
 	for page: Variant in pages:
 		if not page is String or page.is_empty():
@@ -259,7 +318,10 @@ static func _definition_valid(definition: Dictionary) -> bool:
 	if required.size() > TableState.MAX_STACK or (not exploration.is_empty() and (required.is_empty() or not _number(exploration.get("duration"), 0.001, 86400.0))):
 		return false
 	var available: Array = []
-	for entry: Variant in initial + outputs:
+	for entry: Variant in arrivals:
+		if not entry is Dictionary or not entry.get("after_story") is String or ContentCatalog.story_definition(entry.after_story).is_empty():
+			return false
+	for entry: Variant in initial + arrivals + outputs:
 		if not entry is Dictionary or not entry.get("kind") is String or not entry.get("metadata", {}) is Dictionary:
 			return false
 		if ContentCatalog.card_definition(ContentCatalog.card_id_for_kind(StringName(entry.kind))).is_empty():
@@ -267,7 +329,7 @@ static func _definition_valid(definition: Dictionary) -> bool:
 		var offset: Variant = entry.get("offset", [0.0, 0.0])
 		if not offset is Array or offset.size() != 2 or not _number(offset[0], -100000.0, 100000.0) or not _number(offset[1], -100000.0, 100000.0):
 			return false
-	for entry: Dictionary in initial:
+	for entry: Dictionary in initial + arrivals:
 		available.append(String(entry.kind))
 	for kind: Variant in required:
 		if not kind is String or not kind in available:
@@ -278,7 +340,7 @@ static func _definition_valid(definition: Dictionary) -> bool:
 		if not kind is String or not kind in available:
 			return false
 		available.erase(kind)
-	return initial.size() - consumed.size() + outputs.size() <= TableState.MAX_CARDS
+	return initial.size() + arrivals.size() - consumed.size() + outputs.size() <= TableState.MAX_CARDS
 
 
 func _create_entry(entry: Dictionary, at: Vector2) -> String:

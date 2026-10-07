@@ -1,0 +1,49 @@
+THIRD-PARTY AUDIO CREDITS
+Verified 6 October 2026. All selected audio sources below are licensed CC0 1.0 Universal.
+License: https://creativecommons.org/publicdomain/zero/1.0/
+Attribution is not mandatory for these CC0 sources; these courtesy credits preserve provenance.
+No accounts, payments or subscription were used.
+
+Casino Audio 1.1 — Kenney Vleugels / Kenney
+https://kenney.nl/assets/casino-audio
+License: CC0 1.0 Universal. Attribution required: no.
+
+RPG Audio — Kenney Vleugels / Kenney
+https://kenney.nl/assets/rpg-audio
+License: CC0 1.0 Universal. Attribution required: no.
+
+Interface Sounds 1.0 — Kenney
+https://kenney.nl/assets/interface-sounds
+License: CC0 1.0 Universal. Attribution required: no.
+
+Medieval: The Bard's Tale — RandomMind
+https://opengameart.org/content/medieval-the-bards-tale
+License: CC0 1.0 Universal. Attribution required: no.
+
+Medieval: The Old Tower Inn — RandomMind
+https://opengameart.org/content/medieval-the-old-tower-inn
+License: CC0 1.0 Universal. Attribution required: no.
+
+Forest Ambience — TinyWorlds
+https://opengameart.org/content/forest-ambience
+License: CC0 1.0 Universal. Attribution required: no.
+
+Ambient Bird Sounds — isaiah658
+https://opengameart.org/content/ambient-bird-sounds
+License: CC0 1.0 Universal. Attribution required: no.
+
+Crickets Ambient Noise - loopable — Wolfgang_ (optional credit: Ted Kerr)
+https://opengameart.org/content/crickets-ambient-noise-loopable
+License: CC0 1.0 Universal. Attribution required: no.
+
+Fire Crackling — AntumDeluge
+https://opengameart.org/content/fire-crackling
+License: CC0 1.0 Universal. Attribution required: no.
+
+Park ambiences — Thimras
+https://opengameart.org/content/park-ambiences
+License: CC0 1.0 Universal. Attribution required: no.
+
+DERIVATIVES
+Ready ambience files use trimming, circular seam crossfades, filtering, mixing and gain adjustment as recorded in AUDIO_SOURCE_MANIFEST.json. Music derivatives preserve author-supplied loop duration and use Vorbis conversion plus gain adjustment.
+Only list the works actually used in the final project credits. Forest Ambience is a downloaded alternative, not part of the preferred ready set.

@@ -5,6 +5,8 @@ signal changed
 signal outputs_created(ids: Array[String], source_position: Vector2, source_id: String)
 signal market_outputs_created(ids: Array[String], source_id: String)
 signal recipe_completed(recipe_id: String)
+signal operation_completed(operation_id: String)
+signal shop_state_changed(is_open: bool)
 signal npc_encountered(npc_id: String)
 signal failed(reason: String)
 
@@ -361,6 +363,7 @@ func begin_option(option: Dictionary, stack_id: String, already_checked: bool = 
 		if shop_id.is_empty():
 			return {"ok": false, "error": "chapter_shop_missing"}
 		table.cards[shop_id].metadata.chapter_open = not shop_open()
+		shop_state_changed.emit(shop_open())
 		changed.emit()
 		return {"ok": true, "is_open": shop_open()}
 	elif option.kind == "operation":
@@ -672,6 +675,8 @@ func _settle_receipt(receipt: Dictionary) -> void:
 		outputs_created.emit(ids, source_position, str(receipt.get("source_id", receipt.get("source_instance_id", ""))))
 	if receipt.has("recipe_id"):
 		recipe_completed.emit(receipt.recipe_id)
+	elif receipt.has("operation_id"):
+		operation_completed.emit(str(receipt.operation_id))
 	var node: Dictionary = world.story.current_node()
 	if node.get("type") == "action" and package.action_bindings.has(node.action_id):
 		var binding: Dictionary = package.action_bindings[node.action_id]

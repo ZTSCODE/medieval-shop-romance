@@ -10,6 +10,7 @@ func _ready() -> void:
 	_paper.texture = atlas
 	_paper.stretch_mode = TextureRect.STRETCH_SCALE
 	_paper.material.shader = preload("res://scripts/ui/main_menu_paper.gdshader")
+	_paper.material.set_shader_parameter("linear_canvas", get_viewport().use_hdr_2d)
 	_paper.material.set_shader_parameter("selected_color", preload("res://scripts/ui/ui_paper_palette.gd").SELECTED_PIGMENT)
 	var shadow := TextureRect.new()
 	shadow.name = "MainButtonShadow"

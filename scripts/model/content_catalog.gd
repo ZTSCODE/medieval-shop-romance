@@ -212,26 +212,38 @@ static func _ensure_loaded() -> void:
 	if _loaded:
 		return
 	_loaded = true
+	var error := _read_base()
+	if not error.is_empty():
+		push_error(error)
+
+
+# 开发用（--live，见 docs/knowledge/dev-live-reload.md）：游戏运行中重新读取 data/content.json。
+# 文件有错就保留原来的内容并返回原因；启用了内容模块（章节模式）时不重读。
+static func reload_base() -> String:
+	_ensure_loaded()
+	if _registry != null and not _registry.module_ids().is_empty():
+		return "Content modules are enabled"
+	return _read_base()
+
+
+# 读取并校验基础内容；通过才替换现有内容。返回错误说明，成功时为空。
+static func _read_base() -> String:
 	if not FileAccess.file_exists(DATA_PATH):
-		push_error("Content catalog file is missing.")
-		return
+		return "Content catalog file is missing."
 	var json := JSON.new()
 	if json.parse(FileAccess.get_file_as_string(DATA_PATH)) != OK:
-		push_error("Content catalog JSON is invalid.")
-		return
+		return "Content catalog JSON is invalid."
 	if not json.data is Dictionary:
-		push_error("Content catalog root must be a dictionary.")
-		return
+		return "Content catalog root must be a dictionary."
 	for section: String in ["cards", "recipes", "npcs"]:
 		if not json.data.get(section) is Dictionary:
-			push_error("Content catalog section is missing: " + section)
-			return
+			return "Content catalog section is missing: " + section
 	var candidate: RefCounted = MODULE_REGISTRY_SCRIPT.new()
 	var result: Dictionary = candidate.configure_base(json.data)
 	if not result.ok:
-		push_error("Content catalog validation failed: " + String(result.error))
-		return
+		return "Content catalog validation failed: " + String(result.error)
 	_base_data = json.data.duplicate(true)
 	_registry = candidate
 	_data = candidate.catalog()
 	_revision += 1
+	return ""

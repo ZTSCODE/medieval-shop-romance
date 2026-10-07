@@ -132,7 +132,7 @@ NEW_JOURNEY_CONFIRM_BODY,重新经历开场？当前进度和自动存档将被�
 WINDOW_CLOSE,关闭,Close
 WINDOW_DRAG_HINT,拖动标题栏移动窗口,Drag the title bar to move this window.
 DIALOGUE_CONTINUE,继续,Continue
-DIALOGUE_FINISH,结束交谈,End conversation
+DIALOGUE_FINISH,结束对话,End conversation
 DIALOGUE_HINT,点击文字框或按空格继续,Click the text box or press Space to continue
 MAIN_MENU_CONTINUE,继续旅程,Continue
 MAIN_MENU_LOAD,读取旅程,Load journey
@@ -185,3 +185,200 @@ MARKET_QUOTE,{give} → {receive},{give} → {receive}
 MARKET_REMAINING,{count} orders left today,今日还收 {count} 份
 MARKET_SELECT,Click to browse · drag cards to trade,点击切换 · 拖入卡牌交易
 MARKET_SEPARATOR, + , + 
+ONBOARD_PANEL_TITLE,新手目标,First Steps
+ONBOARD_STAGE_TABLE_BASICS,熟悉你的桌面,Know Your Table
+ONBOARD_STAGE_SHOP_TOOLS,打理时间与手账,Time and Journal
+ONBOARD_GOAL_PAN_TABLE,按住右键拖动桌面，四处看看,Hold right mouse and drag to look around
+ONBOARD_GOAL_ZOOM_TABLE,滚动鼠标滚轮，拉近或拉远,Scroll the mouse wheel to zoom
+ONBOARD_GOAL_FOCUS_HERO,点击右下角头像，找到自己,Click your portrait to find yourself
+ONBOARD_GOAL_CHANGE_TIME,点击时间按钮，切换流速,Click the time button to change speed
+ONBOARD_GOAL_OPEN_RECIPES,翻开配方手账（R）,Open the recipe journal (R)
+ONBOARD_GOAL_OPEN_RELATIONSHIPS,查看人物关系（N）,Check your relationships (N)
+ONBOARD_STAGE_DONE,达成,Done
+ONBOARD_ALL_DONE,出师,Ready
+GAME_NAME,融雪之前,Before the Thaw
+OPENING_FILM_SKIP,长按跳过,Hold to skip
+OPENING_FILM_LINE_01,很久以前，这片土地上没有国王，,Long ago this country had no king.
+OPENING_FILM_LINE_02,只有城镇：,It had towns:
+OPENING_FILM_LINE_03,织工的城，铸钟人的城，,"towns of weavers and bell-founders,"
+OPENING_FILM_LINE_04,盐商的城，养马人的城。,"of salt-traders and horse-breeders,"
+OPENING_FILM_LINE_05,每一座都有自己的城墙，每一座都认定自己最好。,"each behind its own wall, and each quite sure it was the best of them."
+OPENING_FILM_LINE_06,他们为过路钱和界石吵架，,"They quarrelled over tolls and boundary stones,"
+OPENING_FILM_LINE_07,吵完了又互相嫁娶；,and married across the quarrel;
+OPENING_FILM_LINE_08,每到收获的时候，总要去赶彼此的集市。,and at every harvest they came to one another's fairs.
+OPENING_FILM_LINE_09,后来有一年秋天，雪早早地从北方下来了。,Then one autumn the snow came early out of the north.
+OPENING_FILM_LINE_10,它盖过了春天，,"It lay through the spring,"
+OPENING_FILM_LINE_11,又盖过了随后的夏天。,and through the summer after.
+OPENING_FILM_LINE_12,人们吃掉了种粮，,"They ate the seed corn,"
+OPENING_FILM_LINE_13,然后吃掉了马。,and then the horses.
+OPENING_FILM_LINE_14,到第三年，钟已经不再为死者敲响，,"By the third year the bells had stopped ringing for the dead,"
+OPENING_FILM_LINE_15,因为死的人太多了。,because there were too many.
+OPENING_FILM_LINE_16,就在那一年，运粮的车队从南方来了，,"That was the year the grain wagons came up from the south,"
+OPENING_FILM_LINE_17,打着一面谁也没见过的旗。,under a banner no one knew.
+OPENING_FILM_LINE_18,哪座城肯打开城门、挂上这面旗，哪座城就有面包吃；,There was bread for any town that would open its gates and hang that banner;
+OPENING_FILM_LINE_19,而每一座开了门的城，都得连钟和种粮一起交出去，,"and every town that did gave up its bell and its seed corn with it,"
+OPENING_FILM_LINE_20,从此再也养不活自己。,and could never again feed itself.
+OPENING_FILM_LINE_21,最后一座不肯低头的城，被攻了下来。,The last town that held out was taken by storm.
+OPENING_FILM_LINE_22,守城的人被吊死在自家的城墙上，,"Its defenders were hanged from their own walls,"
+OPENING_FILM_LINE_23,城里的人被赶进了雪地。,and its people turned out into the snow.
+OPENING_FILM_LINE_24,帝国就是这样开始的；,That was the beginning of the Empire;
+OPENING_FILM_LINE_25,帝国靠这场冬天统治。,and the Empire rules by the winter.
+OPENING_FILM_LINE_26,交出儿子、交出劳力的村子，,The village that gives up its sons and its labour
+OPENING_FILM_LINE_27,粮车会来。,is sent grain.
+OPENING_FILM_LINE_28,藏了一把种粮的、跪得慢了的村子，什么也得不到：,"The village that hides a handful of seed, or is slow to kneel, is sent none:"
+OPENING_FILM_LINE_29,粮车就绕过去，,"the wagons pass it by,"
+OPENING_FILM_LINE_30,剩下的事，交给雪。,and the snow does the rest.
+OPENING_FILM_LINE_31,一百年来都是如此。,So it has gone for a hundred years.
+OPENING_FILM_LINE_32,可是今夜，帝国每一座城的钟都在响，,"But tonight the bells are ringing in every town of the Empire,"
+OPENING_FILM_LINE_33,道路全都封了。,and the roads are closed.
+OPENING_FILM_LINE_34,帝国看守的一样东西被人拿走了：,Something has been taken from the Empire's keeping:
+OPENING_FILM_LINE_35,抵挡白冬的秘密。,the secret of how the winter may be withstood.
+OPENING_FILM_LINE_36,帝国要把它找回来，,"And the Empire will have it back,"
+OPENING_FILM_LINE_37,哪怕把每一户人家都翻个底朝天。,if it must turn out every house to find it.
+OPENING_CHRONICLE_PAGE_1,"帝国出现之前，世上没有帝国。
+只有一座座自由城镇：各有各的城墙，各有各的田地，各有各的纷争，除了自己，不奉任何人为主。","Before the Empire, there was no empire.
+There were the free towns: each with its own walls, its own fields, its own quarrels, and no master but itself."
+OPENING_CHRONICLE_PAGE_2,"然后，白冬来了。春天不化的雪，直到盛夏仍是一片白的田野。
+它年复一年向这片土地蔓延，每一年都走得更远一点，夺走得更多一点。","Then came the White Winter. Snow that would not melt in spring. Fields that lay white into midsummer.
+And every year it crept a little further across the land, and took a little more."
+OPENING_CHRONICLE_PAGE_3,"有一个人看懂了这场冬天能拿来做什么。雪落到哪里，他就带着运粮车和长矛跟到哪里。
+饥饿的城镇为面包打开城门，他便把它们的名字写上自己的地图。","One man understood what the winter was for. Wherever the snow fell, he followed it with grain wagons and spears.
+Starving towns opened their gates for bread, and he wrote their names upon his map."
+OPENING_CHRONICLE_PAGE_4,"一座又一座，地图被填满了。那人为自己加冕，称帝。
+从那以后，白冬一直在为他的家族效力：帝国的粮食到不了的地方，什么也长不出来。","Town by town, the map was filled. The man crowned himself Emperor.
+And the White Winter has served his house ever since: where the Empire's grain does not go, nothing grows."
+OPENING_CHRONICLE_PAGE_5,"如今，在那张地图参差的边缘，一个人正在逃命，身后是骑手和他们的猎狗。
+他身上带着一样从帝国手里拿走的东西，帝国非把它找回来不可。","Now, at the ragged edge of that map, a man runs for his life, with riders and their dogs behind him.
+He carries something taken from the Empire's keeping, and the Empire means to have it back."
+OPENING_HINT_WALK_WOOD,把“你”拖到黑刺李林上，走进去。,Drag yourself onto Blackthorn Wood.
+OPENING_HINT_MEET_MESSENGER,林子里有人。把“你”拖到他身上。,Someone is in the wood. Drag yourself onto him.
+OPENING_HINT_FOLLOW_STREAM,顺着溪水走：把“你”拖到溪边小道上。,Follow the stream: drag yourself onto Brookside.
+OPENING_HINT_CATCH_UP,信使追上来了。把“你”拖到他身上。,The Messenger has caught you up. Drag yourself onto him.
+DLG_PROMPT_WHAT_DO_YOU_DO,你会怎么做？,What do you do?
+DLG_HERO_THAW_01,哈……哈……不行了。真不行了，一步也走不动了。,Hah… hah… No. No more. Not one more step.
+DLG_HERO_THAW_02,天啊，好累……多久没合眼了？两夜？还是三夜？,"God, I'm tired. …How long since I slept? Two nights? Three?"
+DLG_HERO_THAW_03,脚……我已经感觉不到自己的脚了。,My feet… I can't feel my feet any more.
+DLG_HERO_THAW_04,狗叫声也听不见了。也许……跟丢了？不。他们不会停下的。,"Can't hear the dogs any more, either. Maybe… they've lost me? No. They won't stop."
+DLG_HERO_THAW_05,……嗯？,…Hm?
+DLG_HERO_THAW_06,等等。等一下，这是——,"Wait. Wait, that's—"
+DLG_HERO_THAW_07,是地。黑泥，枯草，湿头发似的贴在地上。……是草啊。,"Ground. Black mud. Dead grass, flat as wet hair. …Grass."
+DLG_HERO_THAW_08,雪……到这儿就停了？不可能。雪从来只进不退。,The snow… it stops here? It can't. The snow never gives ground.
+DLG_HERO_THAW_09,啊……这是什么地方？我到底跑到哪儿来了？,Ah… what is this place? Where have I run to?
+DLG_HERO_DOUBT_01,……树。,…Trees.
+DLG_HERO_DOUBT_02,这灌木……密得像堵墙，底下黑得像口井。,"These thorns… thick as a wall, and black as a well underneath."
+DLG_HERO_DOUBT_03,马……应该钻不进去吧？狗呢？地这么湿，它们还闻得出我的气味吗？,"A horse… couldn't get through that, could it? And the dogs? Ground this wet, could they still pick up my scent?"
+DLG_HERO_DOUBT_04,,
+DLG_HERO_DOUBT_05,天知道里头有什么。,God knows what's in there.
+DLG_HERO_DOUBT_06,不过……要是我能钻进去呢？,Still… what if I could get in?
+DLG_HERO_DOUBT_07,说不定，他们就找不着我了。说不定。,They might lose me. They just might.
+DLG_HERO_DOUBT_08,……怎么样？要不要试一试？,…Well? Do I chance it?
+DLG_MESSENGER_EDGE_01,你拨开刺枝钻了进去。脚下的地越来越软。身后某处，一根树枝咔地断了。你屏住呼吸，直到确定那只是树皮冻裂的声音。,"You push in through the thorn. The ground goes soft underfoot, then softer. Somewhere behind you a branch cracks. You stop breathing until you are sure it was only bark splitting in the frost."
+DLG_MESSENGER_EDGE_02,树缝里有光。是灯，还是水面映着月亮？你已经分不清了。,"Light between the trees. Lanterns, or water catching the moon? You can't tell any more."
+DLG_MESSENGER_EDGE_03,你的左手抖个不停。你把它塞进外套里按住，像按住别人的手。,"Your left hand won't stop shaking. You push it into your coat and hold it there, as if it belonged to someone else."
+DLG_MESSENGER_EDGE_04,然后树木合拢过来，一片白雾横在你面前，低低的，一动不动。,"Then the trees close in, and a bank of white mist lies across your path, low and still."
+DLG_MESSENGER_EDGE_05,前方的雾里有东西在动。你停下。它也停下。,Something moves in the mist ahead. You stop. So does it.
+DLG_MESSENGER_EDGE_06,一个人那么高的影子。腰间闪过一点黄铜。,"A shape, man-high. A glint of brass at its belt."
+DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL,一动不动。,Hold still.
+DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_1,你把自己缩得很小。没什么用。,You make yourself very small. It doesn't help.
+DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_2,你知道吧，我看得见你。,"I can see you, you know."
+DLG_MESSENGER_EDGE_CHOICE_STONE,摸起一块石头。,Pick up a stone.
+DLG_MESSENGER_EDGE_CHOICE_STONE_1,你的手摸到一块石头，攥紧了。,Your hand finds a stone and closes on it.
+DLG_MESSENGER_EDGE_CHOICE_STONE_2,求你别。我今天已经够累了。,Please don't. I've had a long day.
+DLG_MESSENGER_EDGE_CHOICE_CALL_OUT,“谁在那儿？”,“Who's there?”
+DLG_MESSENGER_EDGE_CHOICE_CALL_OUT_1,一个不值得你扔石头的人。,Nobody worth throwing anything at.
+DLG_MESSENGER_EDGE_07,一个年轻人从雾里走出来，喘着粗气。头发上别着月桂，腰间挎着信包。,"A young man steps out of the mist, breathing hard. Laurel in his hair, a satchel of letters at his hip."
+DLG_MESSENGER_EDGE_08,哦。不是鹿啊。,Oh. You're not a deer.
+DLG_MESSENGER_EDGE_09,谁派你来的？,Who sent you?
+DLG_MESSENGER_EDGE_10,派我？大概是送信这份差事吧。信又不会自己走路，真可惜。,"Sent me? The post, I suppose. Letters don't walk by themselves, more's the pity."
+DLG_MESSENGER_EDGE_11,他把你打量了一遍：头发上的霜，靴子的惨状。笑意收了些，换成一种小心。,"He looks you over: the frost in your hair, the state of your boots. His smile thins into something more careful."
+DLG_MESSENGER_EDGE_12,你是从雪里走出来的？靠两条腿？,You've come out of the snow? On foot?
+DLG_MESSENGER_EDGE_13,……那又怎样？,…What of it?
+DLG_MESSENGER_EDGE_14,不怎样。只是从那边来的人，多半走不到这儿。,Nothing of it. Only that people who come that way don't usually arrive.
+DLG_MESSENGER_EDGE_15,他等着你往下说。可你没有接下去。,"He waits for you to go on, but you leave it there."
+DLG_MESSENGER_EDGE_16,迷路了？,Lost?
+DLG_MESSENGER_EDGE_17,……差不多吧。,…Something like that.
+DLG_MESSENGER_EDGE_18,啊，那正好。找到这地方最好的法子就是迷路。没人是特意来的。,"Ah, well. Best way to find the place. Nobody gets here on purpose."
+DLG_MESSENGER_EDGE_19,他递过来一只水壶，壶身上錾着一对黄铜翅膀。,He holds out a flask worked with a pair of brass wings.
+DLG_MESSENGER_EDGE_20,喝吧。还是热的。,Drink. It's still warm.
+DLG_MESSENGER_EDGE_21,你接过来。手指冷得厉害，黄铜摸上去竟有点烫。,You take it. Your fingers are so cold the brass almost burns.
+DLG_MESSENGER_EDGE_22,他注意到了。不等你缩手，他的手就覆上来，连你的手一起握住壶身。,"He notices. Before you can pull away, his hand closes over yours on the flask."
+DLG_MESSENGER_EDGE_23,圣徒在上。你冷得像块冰。,Saints. You're freezing.
+DLG_MESSENGER_EDGE_24,他的手带着赶路的热度。他一直握着，直到水壶不再发抖。,His hand is hot from the road. He holds on until the flask stops shaking.
+DLG_MESSENGER_EDGE_25,然后他第一次认真地看你。看你的脸，像是想认出什么。,"Then he looks at you properly, for the first time. At your face, as if he were trying to place it."
+DLG_MESSENGER_EDGE_26,我们见过吗？,Have we met?
+DLG_MESSENGER_EDGE_CHOICE_NO,“没有。”,“No.”
+DLG_MESSENGER_EDGE_CHOICE_NO_1,嗯……那大概是我认错人了。,"Hm… no, I suppose not. My mistake."
+DLG_MESSENGER_EDGE_CHOICE_NOT_SURE,“我不知道。”,“I don't know.”
+DLG_MESSENGER_EDGE_CHOICE_NOT_SURE_1,不知道？行吧，你想留点神秘，那就留着。,"You don't know? All right. Keep your mystery, then."
+DLG_MESSENGER_EDGE_CHOICE_PULL_AWAY,把手抽回来。,Take your hand back.
+DLG_MESSENGER_EDGE_CHOICE_PULL_AWAY_1,他由着你，也没有不高兴，只是把自己的手收了回去。,He lets you. He doesn't seem to mind; he just takes his own hand back.
+DLG_MESSENGER_EDGE_27,你回头望向来的方向。只有树，和树后面的一片白。,"You look back the way you came. Only trees, and the white beyond them."
+DLG_MESSENGER_EDGE_28,在等人？,Expecting company?
+DLG_MESSENGER_EDGE_29,没有。,No.
+DLG_MESSENGER_EDGE_30,那就好。我只有这一只水壶。,Good. I've only the one flask.
+DLG_MESSENGER_EDGE_31,好了。你不能在这儿过夜，就算在雪线这一边，夜里的寒气也要人命。前面不远就有个叫背风地的村子。,Right. You can't sleep out here. The cold comes down at night even this side of the snow. Not far on there's a village called the Lee.
+DLG_MESSENGER_EDGE_32,我得先给烧炭的老芬恩送封信。你顺着溪水的方向走，走不出一里地我就追上你。,"I've a letter for old Finn the charcoal-burner first. Keep to the way the stream runs, and I'll catch you up before you've gone a mile."
+DLG_MESSENGER_EDGE_33,你还没来得及说你什么都没答应，他已经消失在树丛里了。水壶还在你手里。,He is gone between the trees before you can say you never agreed to anything. You are still holding his flask.
+DLG_MESSENGER_CATCH_01,不到一个钟头，他追了上来，膝盖以下全湿透了，一脸得意。,"Within the hour he catches you up, soaked to the knee and pleased with himself."
+DLG_MESSENGER_CATCH_02,你在这儿啊。冻成那样的人，走得倒不慢。,"There you are. You walk fast, for a man in that state."
+DLG_MESSENGER_CATCH_03,前面的树稀了。树后面升着炊烟，炊烟底下是一片屋顶。,"Ahead the trees thin. Beyond them smoke is rising, and under the smoke there are roofs."
+DLG_MESSENGER_CATCH_04,看见了吧。那就是背风地。,There. That's the Lee.
+DLG_MESSENGER_CATCH_05,这儿……为什么没有雪？,Why… is there no snow here?
+DLG_MESSENGER_CATCH_06,雪？还没到这儿呢。,Snow? It hasn't come this far yet.
+DLG_MESSENGER_CATCH_07,再往南走，一辈子没见过雪的人多的是。,Go further south and there are plenty of folk who've never seen it in their lives.
+DLG_MESSENGER_CATCH_08,你低头看着脚下的泥地，半天没有说话。,"You look down at the bare mud under your feet, and for a long moment you say nothing."
+DLG_MESSENGER_CATCH_09,走吧。再往前一点，草是绿的。,"Come on. A little further on, the grass is green."
+DLG_MESSENGER_CATCH_10,不过你别一个人进村。大家都怕帝国找到这儿，冷不丁见了生面孔会慌。跟着我走。,"Only don't walk in on your own. Everyone's afraid of the Empire finding this place, and a strange face out of nowhere would frighten them. Stay with me."
+DLG_MESSENGER_CATCH_11,他迈开步子，又猛地站住，你差点撞到他背上。他转过身，一只手扶住你的胳膊，就那么搭着没拿开。,"He sets off, then stops so suddenly that you nearly walk into his back. He turns, catches your arm to steady you, and leaves his hand there."
+DLG_MESSENGER_CATCH_12,圣徒在上。我跟你说了这么半天，连你叫什么都没问。,Saints. I've been talking at you all this while and never asked your name.
+DLG_MESSENGER_CATCH_CHOICE_TELL,告诉他你的名字。,Tell him your name.
+DLG_MESSENGER_CATCH_CHOICE_TELL_1,{name}。,{name}.
+DLG_MESSENGER_CATCH_CHOICE_TELL_2,{name}……好听。人也好看。,"{name}… I like it. You're good-looking, too."
+DLG_MESSENGER_CATCH_CHOICE_TELL_3,我叫奥辛。,I'm Oisín.
+DLG_MESSENGER_CATCH_CHOICE_TELL_4,他的手还搭在你胳膊上。隔着袖子，你也觉得出那只手是热的。,His hand is still on your arm. Even through the sleeve you can feel the heat of it.
+DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST,“你先说。”,“You first.”
+DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_1,行，那我先来。奥辛。,"All right, me first. Oisín."
+DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_2,他说着凑过来，离你的脸不到一掌远，认认真真地看。,"As he says it he leans in, a hand's breadth from your face, and looks at you in earnest."
+DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_3,怪了。我还是觉得在哪儿见过你。,Odd. I still think I've seen you somewhere.
+DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_4,{name}。,{name}.
+DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_5,{name}……没听过。那就是真没见过。,"{name}… No, never heard it. So I haven't, then."
+DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_6,他这才直起身来。,Only then does he straighten up.
+DLG_MESSENGER_CATCH_CHOICE_SILENT,往后退半步。,Step back half a pace.
+DLG_MESSENGER_CATCH_CHOICE_SILENT_1,你往后退了半步。他跟着迈上来半步，手还搭在你胳膊上。,"You step back half a pace. He steps forward half a pace after you, his hand still on your arm."
+DLG_MESSENGER_CATCH_CHOICE_SILENT_2,嗯？怎么了，站不稳？,"Hm? What is it, are your legs going?"
+DLG_MESSENGER_CATCH_CHOICE_SILENT_3,……{name}。,…{name}.
+DLG_MESSENGER_CATCH_CHOICE_SILENT_4,{name}。我叫奥辛。……你耳朵都冻红了。,{name}. I'm Oisín. …Your ears have gone red with the cold.
+DLG_MESSENGER_CATCH_CHOICE_SILENT_5,他伸出两只手，把你的耳朵捂住了。,He puts up both hands and covers your ears.
+DLG_MESSENGER_CATCH_13,你们沿着溪水并排走了一段。,For a while you walk side by side along the stream.
+DLG_MESSENGER_CATCH_14,到了村里，你要找谁？,"Who is it you're looking for, in the village?"
+DLG_MESSENGER_CATCH_15,……不找谁。,…No one.
+DLG_MESSENGER_CATCH_16,那是路过？往南去？,"Passing through, then? Heading south?"
+DLG_MESSENGER_CATCH_17,你想了想南边。关于南边，你什么也不知道。,You think about the south. You know nothing at all about the south.
+DLG_MESSENGER_CATCH_18,我没有要去的地方。,I've nowhere I'm going.
+DLG_MESSENGER_CATCH_19,他没有马上说话。有一阵子，只听得见溪水。,He doesn't speak at once. For a while there is only the sound of the stream.
+DLG_MESSENGER_CATCH_20,磨坊后头有间屋子，空了两年了。屋顶漏雨，门倒还结实。,"There's a house behind the mill that's stood empty two years. The roof lets the rain in. The door's sound, though."
+DLG_MESSENGER_CATCH_21,你要是不嫌弃，先住那儿。别的，等你睡够了再说。,"If you can put up with it, stay there for now. The rest can wait until you've slept."
+DLG_MESSENGER_CATCH_22,你跟着他，朝炊烟走去。,You follow him toward the smoke.
+CARD_CHARACTER_CATEGORY,人物,Person
+CARD_YOU_TITLE,你,You
+CARD_YOU_DETAIL,在逃。,On the run.
+CARD_BLACKTHORN_WOOD_TITLE,黑刺李林,Blackthorn Wood
+CARD_BLACKTHORN_WOOD_DETAIL,又湿又密，够黑，藏得住人。,"Wet, thorny, and dark enough to hide in."
+CARD_MESSENGER_TITLE,信使,Messenger
+CARD_MESSENGER_DETAIL,比消息跑得还快。,Faster than the news.
+DLG_MESSENGER_RULES_03,,
+DLG_MESSENGER_RULES_04,,
+DLG_MESSENGER_RULES_05,,
+CARD_SEED_TITLE,老妇的种子,Her Seed
+CARD_SEED_DETAIL,人人都说它是她的。全国的路都为它封了。,They say it is hers. Every road in the country is closed for it.
+CARD_STREAM_PATH_TITLE,溪边小道,Brookside
+CARD_STREAM_PATH_DETAIL,顺着水走，迟早走到有人的地方。,"Follow water and you come to people, sooner or later."
+CARD_THE_LEE_TITLE,背风地,The Lee
+CARD_THE_LEE_DETAIL,雪还没有到过这里。,The snow has not reached it. Not yet.
+NPC_MESSENGER_DESCRIPTION,在背风地和外面之间跑信。认得沼泽里的每一条路。,Runs letters between the Lee and the world outside. Knows every path through the bog.
+ONBOARD_STAGE_INTO_MIST,走进林子,Into the Wood
+ONBOARD_GOAL_WALK_WOOD,把“你”拖到黑刺李林上,Drag yourself onto Blackthorn Wood
+ONBOARD_GOAL_DRAG_CARD,左键拖动单张卡牌，右键拖动整个组合,Left-drag one card; right-drag a whole stack
+ONBOARD_GOAL_MEET_MESSENGER,和林子里的人说话,Talk to the man in the wood
+ONBOARD_GOAL_FOLLOW_STREAM,沿着溪边小道走,Follow the brookside path
+ONBOARD_GOAL_HEAR_LEE,听信使讲讲背风地,Hear about the Lee

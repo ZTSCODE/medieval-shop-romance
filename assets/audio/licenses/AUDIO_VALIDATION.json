@@ -1,0 +1,83 @@
+{
+  "decoded_file_count": 223,
+  "decode_errors": [],
+  "ready_signal_metrics": [
+    {
+      "path": "ready/amb_breeze_loop.ogg",
+      "duration_seconds": 60.0,
+      "rms_dbfs": -28.207494337962224,
+      "peak_dbfs": -8.896710395812988,
+      "endpoint_jump_linear_max": 0.007362132892012596
+    },
+    {
+      "path": "ready/amb_breeze_short_loop.ogg",
+      "duration_seconds": 32.0,
+      "rms_dbfs": -30.236807866872386,
+      "peak_dbfs": -12.842370986938477,
+      "endpoint_jump_linear_max": 0.006176162511110306
+    },
+    {
+      "path": "ready/amb_day_birds_loop.ogg",
+      "duration_seconds": 29.68825,
+      "rms_dbfs": -27.617871801557456,
+      "peak_dbfs": -2.931319236755371,
+      "endpoint_jump_linear_max": 0.0025134417228400707
+    },
+    {
+      "path": "ready/amb_day_meadow_loop.ogg",
+      "duration_seconds": 29.68825,
+      "rms_dbfs": -30.837226612084777,
+      "peak_dbfs": -6.1032609939575195,
+      "endpoint_jump_linear_max": 0.0012859287671744823
+    },
+    {
+      "path": "ready/amb_hearth_loop.ogg",
+      "duration_seconds": 2.620625,
+      "rms_dbfs": -28.031401700259686,
+      "peak_dbfs": -4.850251197814941,
+      "endpoint_jump_linear_max": 0.002383895218372345
+    },
+    {
+      "path": "ready/amb_night_crickets_loop.ogg",
+      "duration_seconds": 11.052083333333334,
+      "rms_dbfs": -28.52099137511036,
+      "peak_dbfs": -12.7343168258667,
+      "endpoint_jump_linear_max": 0.020868699997663498
+    },
+    {
+      "path": "ready/amb_night_meadow_loop.ogg",
+      "duration_seconds": 33.15625,
+      "rms_dbfs": -29.562478230403574,
+      "peak_dbfs": -13.919268608093262,
+      "endpoint_jump_linear_max": 0.018822453916072845
+    },
+    {
+      "path": "ready/amb_stream_loop.ogg",
+      "duration_seconds": 60.0,
+      "rms_dbfs": -26.2863820691534,
+      "peak_dbfs": -9.962156295776367,
+      "endpoint_jump_linear_max": 0.005465909838676453
+    },
+    {
+      "path": "ready/bgm_day_bards_tale.ogg",
+      "duration_seconds": 57.729875,
+      "rms_dbfs": -19.999918658892508,
+      "peak_dbfs": -5.63755464553833,
+      "endpoint_jump_linear_max": 0.0021014553494751453,
+      "first_sample_absolute_max": 0.0001314477703999728,
+      "last_sample_absolute_max": 0.0021789211314171553,
+      "sample_count": 2771034
+    },
+    {
+      "path": "ready/bgm_menu_old_tower_inn.ogg",
+      "duration_seconds": 49.951395833333336,
+      "rms_dbfs": -20.730258640938928,
+      "peak_dbfs": -3.4009406566619873,
+      "endpoint_jump_linear_max": 6.333677447400987e-05,
+      "first_sample_absolute_max": 8.21923604235053e-05,
+      "last_sample_absolute_max": 0.00012821191921830177,
+      "sample_count": 2397667
+    }
+  ],
+  "subjective_audition": "not performed; final in-game headphone listening recommended"
+}

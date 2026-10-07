@@ -222,6 +222,8 @@ func _create_view(id: String, index: int) -> void:
 
 
 func _retire_view(id: String) -> void:
+	if visible:
+		AudioEvents.play_event("world.departure")
 	var view: TableCardView = views[id]
 	views.erase(id)
 	_content_tickets.erase(id)

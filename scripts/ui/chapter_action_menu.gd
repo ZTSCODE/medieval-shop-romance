@@ -37,11 +37,14 @@ func open(options: Array[Dictionary], screen_position: Vector2) -> void:
 	panel.size = Vector2(width, 0)
 	panel.position = screen_position.clamp(area.position + Vector2(24, 24), area.end - panel.get_combined_minimum_size() - Vector2(24, 24))
 	panel.show()
+	AudioEvents.play_event("ui.popup_open")
 
 
 func close() -> void:
 	if panel == null:
 		return
+	if panel.visible and not _options.is_empty():
+		AudioEvents.play_event("ui.popup_close")
 	panel.hide()
 	_options.clear()
 	for child: Node in list.get_children():

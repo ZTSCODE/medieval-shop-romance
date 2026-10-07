@@ -31,6 +31,8 @@ var _presentation := 0.0
 var _presentation_target := 0.0
 var _speaker_blend := 0.0
 var _hero_speaking := false
+var _narrating := false
+var _narration_blend := 0.0
 var _leaf: TextureRect
 var _divider: ColorRect
 var _speaker_tab: Panel
@@ -95,7 +97,7 @@ func _ready() -> void:
 	_content.gui_input.connect(_on_text_input)
 	_root.add_child(_content)
 	story_label = Rail.label("DialogueSubtitle", BODY_FONT_SIZE)
-	story_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	story_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	story_label.visible_characters_behavior = TextServer.VC_CHARS_AFTER_SHAPING
 	_content.add_child(story_label)
 	_choice_scroll = ScrollContainer.new()
@@ -126,20 +128,25 @@ func _ready() -> void:
 	_root.add_child(_page_label)
 	continue_button = Button.new()
 	continue_button.name = "DialogueContinue"
+	continue_button.set_meta("audio_event", "")
 	continue_button.z_index = 10
 	Rail.setup_button(continue_button)
-	for state: String in ["normal", "hover", "pressed", "disabled", "focus"]:
+	for state: String in ["normal", "hover", "pressed", "disabled", "focus", "hover_pressed"]:
 		continue_button.add_theme_stylebox_override(state, StyleBoxEmpty.new())
 	preload("res://scripts/ui/paper_button_feedback.gd").bind(continue_button)
 	continue_button.add_theme_color_override("font_color", Color("e5d6b4"))
 	continue_button.add_theme_color_override("font_hover_color", Color("fff0d1"))
 	continue_button.pressed.connect(advance)
 	_root.add_child(continue_button)
+	preload("res://scripts/ui/dialogue_hover_paper.gd").bind(continue_button)
+	continue_button.add_theme_color_override("font_pressed_color", Color("fff0d1"))
 	for text_control: Control in [speaker_label, story_label, continue_button]:
 		text_control.add_theme_font_override("font", preload("res://scripts/ui/forest_ui_typography.gd").regular())
 	continue_button.draw.connect(func() -> void:
 		var end := Vector2(continue_button.size.x - 5, continue_button.size.y * 0.5)
-		continue_button.draw_colored_polygon(PackedVector2Array([end + Vector2(-8, -9), end, end + Vector2(-8, 9)]), Color("d5c6a4"))
+		var hover_paper := continue_button.get_node_or_null("DialogueHoverPaper") as Control
+		var ink := Color("d5c6a4").lerp(Color("eadfc7"), hover_paper.modulate.a if hover_paper != null else 0.0)
+		continue_button.draw_colored_polygon(PackedVector2Array([end + Vector2(-8, -9), end, end + Vector2(-8, 9)]), ink)
 	)
 	_hint.hide()
 	_page_label.hide()
@@ -167,6 +174,9 @@ func sync() -> void:
 	if not is_node_ready() or flow == null:
 		return
 	if not flow.is_active():
+		if not _shown_key.is_empty():
+			AudioEvents.play_event("dialogue.close")
+			AudioEvents.end_line()
 		_presentation_target = 0.0
 		_shown_key = ""
 		return
@@ -181,10 +191,15 @@ func sync() -> void:
 	var npc_definition := ContentCatalog.npc_definition(flow.active_npc_id)
 	var info: Dictionary = flow.call("presentation_info") if flow.has_method("presentation_info") else {}
 	var narrator: bool = info.get("narrator", false)
+	_narrating = narrator
+	if entering:
+		_narration_blend = 1.0 if narrator else 0.0
 	speaker_label.text = tr("DIALOGUE_NARRATOR") if narrator else ((player_name if not player_name.is_empty() else tr("PLAYER_DEFAULT_NAME")) if hero_speaking else tr(String(npc_definition.get("name_key", ""))))
 	story_label.text = tr(String(line.get("text_key", "")))
 	var marker: String = info.get("marker", flow.story_id + ":" + str(flow.line_index))
 	_sync_choices(info)
+	# Idempotent director also restores the bed when loading the same displayed line.
+	AudioEvents.enter_line(String(line.get("text_key", "")), marker, story_label.text)
 	if marker != _shown_key:
 		_characters = 0.0
 		story_label.visible_characters = 0
@@ -193,7 +208,7 @@ func sync() -> void:
 	hero_portrait.texture = _close_portrait(GameArt.portrait("hero"))
 	npc_portrait.texture = _close_portrait(GameArt.portrait(flow.active_npc_id))
 	hero_portrait.show()
-	npc_portrait.show()
+	npc_portrait.visible = not bool(info.get("npc_hidden", false))
 	var total: int = int(info.get("total", 0)) if not info.is_empty() else ContentCatalog.story_definition(flow.story_id).lines.size()
 	_page_label.text = tr("OPENING_PAGE_FORMAT") % [flow.line_index + 1, total]
 	var last_line: bool = info.get("last_line", flow.line_index == total - 1)
@@ -208,6 +223,7 @@ func _process(delta: float) -> void:
 		return
 	_presentation = move_toward(_presentation, _presentation_target, delta / PRESENTATION_DURATION)
 	_speaker_blend = move_toward(_speaker_blend, 1.0 if _hero_speaking else 0.0, delta / 0.24)
+	_narration_blend = move_toward(_narration_blend, 1.0 if _narrating else 0.0, delta / 0.24)
 	_layout()
 	if _presentation_target == 0.0 and _presentation <= 0.0:
 		_root.hide()
@@ -217,6 +233,7 @@ func _process(delta: float) -> void:
 		return
 	_characters += delta * 38.0
 	story_label.visible_characters = mini(int(_characters), story_label.get_total_character_count())
+	AudioEvents.reveal_line(story_label.visible_characters)
 
 func is_presenting() -> bool:
 	return _presentation_target > 0.0 or _presentation > 0.0
@@ -227,6 +244,7 @@ func advance() -> void:
 	if story_label.visible_characters >= 0 and story_label.visible_characters < story_label.get_total_character_count():
 		_characters = story_label.get_total_character_count()
 		story_label.visible_characters = -1
+		AudioEvents.reveal_line(story_label.get_total_character_count())
 	else:
 		flow.advance()
 
@@ -263,8 +281,8 @@ func _layout() -> void:
 	choices_view_height = minf(choices_view_height, maxf(0.0, rect.size.y - body_top - 60 * scale - minf(text_height, 84 * scale)))
 	text_panel.position = rect.position
 	text_panel.size = rect.size
-	_speaker_tab.position = rect.position + rect.size * Vector2(0.055, 0.069)
-	_speaker_tab.size = rect.size * Vector2(0.237, 0.205)
+	_speaker_tab.position = rect.position + rect.size * Vector2(0.057, 0.014)
+	_speaker_tab.size = rect.size * Vector2(0.174, 0.245)
 	speaker_label.add_theme_font_size_override("font_size", roundi(23 * scale))
 	speaker_label.add_theme_color_override("font_color", Color("eadfc7"))
 	speaker_label.position = _speaker_tab.position + Vector2(10, 0) * scale
@@ -297,13 +315,14 @@ func _layout() -> void:
 		portrait_view.size = Vector2(portrait_height * aspect, portrait_height)
 		portrait_view.position = Vector2(0.0 if index == 0 else stage_height * (hero_aspect - overlap_aspect), stage_height - portrait_height)
 		portrait_view.pivot_offset = Vector2(portrait_view.size.x * 0.5, portrait_height)
-		var speaking := smoothstep(0.0, 1.0, _speaker_blend if index == 0 else 1.0 - _speaker_blend)
+		# 旁白时两侧人物一同退暗，不让任何一方看起来在说话。
+		var speaking := smoothstep(0.0, 1.0, _speaker_blend if index == 0 else 1.0 - _speaker_blend) * (1.0 - smoothstep(0.0, 1.0, _narration_blend))
 		portrait_view.scale = Vector2.ONE * lerpf(0.95, 1.06, speaking)
 		portrait_view.modulate = Color.WHITE * lerpf(0.55, 1.0, speaking)
 		portrait_view.modulate.a = 1.0
 	continue_button.add_theme_font_size_override("font_size", roundi(22 * scale))
-	continue_button.position = Vector2(rect.end.x - 115 * scale, rect.end.y - 57 * scale)
-	continue_button.size = Vector2(92 * scale, 32 * scale)
+	continue_button.position = Vector2(rect.end.x - 184 * scale, rect.end.y - 76 * scale)
+	continue_button.size = Vector2(160 * scale, 54 * scale)
 	continue_button.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	var eased := smoothstep(0.0, 1.0, _presentation)
 	_root.modulate.a = eased
@@ -335,6 +354,7 @@ func _sync_choices(info: Dictionary) -> void:
 			button.name = "Choice_" + String(choice.id)
 			var locked := String(info.get("locked_choice_id", ""))
 			button.set_meta("replay_locked", not locked.is_empty() and locked != choice.id)
+			button.set_meta("audio_event", "")
 			button.pressed.connect(_choose.bind(String(choice.id)))
 			_choice_root.add_child(button)
 			_choice_buttons.append(button)
@@ -347,7 +367,9 @@ func _sync_choices(info: Dictionary) -> void:
 func _choose(choice_id: String) -> void:
 	if _menu_paused or flow == null or not flow.has_method("choose"):
 		return
-	flow.call("choose", choice_id)
+	var result: Dictionary = flow.call("choose", choice_id)
+	if result.get("ok", false):
+		AudioEvents.play_event("dialogue.choice")
 
 func _on_text_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

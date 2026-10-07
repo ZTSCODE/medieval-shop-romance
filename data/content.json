@@ -1,11 +1,922 @@
 {
   "version": 1,
-  "content_generation": "reset_20260924",
-  "cards": {},
+  "content_generation": "opening_20261006",
+  "cards": {
+    "card.hero": {
+      "id": "card.hero",
+      "kind": "hero",
+      "category": "character",
+      "name_key": "CARD_YOU_TITLE",
+      "category_key": "CARD_CHARACTER_CATEGORY",
+      "detail_key": "CARD_YOU_DETAIL",
+      "accent": "768caa",
+      "art_path": "res://assets/art/cards/painted_20261004/hero.png",
+      "portrait_path": "res://assets/art/opening/hero.png",
+      "art_is_portrait": false,
+      "art_fit": "cover",
+      "art_region": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ]
+    },
+    "card.loc.first_forest": {
+      "id": "card.loc.first_forest",
+      "kind": "first_forest",
+      "category": "location",
+      "name_key": "CARD_BLACKTHORN_WOOD_TITLE",
+      "category_key": "CARD_LOCATION_CATEGORY",
+      "detail_key": "CARD_BLACKTHORN_WOOD_DETAIL",
+      "accent": "6f8a78",
+      "art_path": "res://assets/art/cards/painted_20261004/first_forest.png",
+      "art_fit": "cover",
+      "unique": true
+    },
+    "card.npc.messenger": {
+      "id": "card.npc.messenger",
+      "kind": "messenger",
+      "category": "character",
+      "name_key": "CARD_MESSENGER_TITLE",
+      "category_key": "CARD_CHARACTER_CATEGORY",
+      "detail_key": "CARD_MESSENGER_DETAIL",
+      "accent": "b0703f",
+      "art_path": "res://assets/art/cards/painted_20261004/messenger.png",
+      "art_is_portrait": false,
+      "art_fit": "cover",
+      "art_region": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "unique": true
+    },
+    "card.res.winter_seed": {
+      "id": "card.res.winter_seed",
+      "kind": "winter_seed",
+      "category": "resource",
+      "name_key": "CARD_SEED_TITLE",
+      "category_key": "CARD_RESOURCE_CATEGORY",
+      "detail_key": "CARD_SEED_DETAIL",
+      "accent": "b89a54",
+      "art_path": "res://assets/art/cards/painted_20261004/winter_seed.png",
+      "art_fit": "cover",
+      "unique": true
+    },
+    "card.loc.stream_path": {
+      "id": "card.loc.stream_path",
+      "kind": "stream_path",
+      "category": "location",
+      "name_key": "CARD_STREAM_PATH_TITLE",
+      "category_key": "CARD_LOCATION_CATEGORY",
+      "detail_key": "CARD_STREAM_PATH_DETAIL",
+      "accent": "6f8fa0",
+      "art_path": "res://assets/art/cards/painted_20261004/stream_path.png",
+      "art_fit": "cover",
+      "unique": true,
+      "explore": {
+        "duration": 6.0,
+        "consumes": true,
+        "blocked_by": [
+          "messenger"
+        ],
+        "outputs": [
+          {
+            "kind": "messenger",
+            "metadata": {
+              "npc_id": "npc.messenger"
+            }
+          },
+          {
+            "kind": "the_lee"
+          }
+        ]
+      }
+    },
+    "card.loc.the_lee": {
+      "id": "card.loc.the_lee",
+      "kind": "the_lee",
+      "category": "location",
+      "name_key": "CARD_THE_LEE_TITLE",
+      "category_key": "CARD_LOCATION_CATEGORY",
+      "detail_key": "CARD_THE_LEE_DETAIL",
+      "accent": "a08a6c",
+      "art_path": "res://assets/art/cards/painted_20261004/the_lee.png",
+      "art_fit": "cover",
+      "unique": true
+    }
+  },
   "recipes": {},
-  "npcs": {},
-  "stories": {},
-  "events": {},
-  "opening": {},
+  "npcs": {
+    "npc.messenger": {
+      "id": "npc.messenger",
+      "card_id": "card.npc.messenger",
+      "name_key": "CARD_MESSENGER_TITLE",
+      "description_key": "NPC_MESSENGER_DESCRIPTION",
+      "portrait_path": "res://assets/art/opening/messenger.png",
+      "story_ids": [
+        "story.messenger.edge",
+        "story.messenger.catch_up"
+      ]
+    }
+  },
+  "stories": {
+    "story.hero.thaw_edge": {
+      "id": "story.hero.thaw_edge",
+      "npc_id": "",
+      "solo": true,
+      "lines": [
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_THAW_01"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_THAW_02"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_THAW_03"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_THAW_04"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_THAW_05"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_THAW_06"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_THAW_07"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_THAW_08"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_THAW_09"
+        }
+      ]
+    },
+    "story.hero.wood_doubt": {
+      "id": "story.hero.wood_doubt",
+      "npc_id": "",
+      "solo": true,
+      "requires_completed": [
+        "story.hero.thaw_edge"
+      ],
+      "lines": [
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_DOUBT_01"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_DOUBT_02"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_DOUBT_03"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_DOUBT_05"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_DOUBT_06"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_DOUBT_07"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_HERO_DOUBT_08"
+        }
+      ]
+    },
+    "story.messenger.edge": {
+      "id": "story.messenger.edge",
+      "npc_id": "npc.messenger",
+      "npc_hidden_until": 7,
+      "consequences": [
+        "event.messenger.goes_ahead"
+      ],
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_01"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_02"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_03"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_04"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_05"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_06"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_PROMPT_WHAT_DO_YOU_DO",
+          "choices": [
+            {
+              "id": "hold_still",
+              "text_key": "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL",
+              "lines": [
+                {
+                  "speaker": "narrator",
+                  "text_key": "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_1"
+                },
+                {
+                  "speaker": "npc",
+                  "text_key": "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_2"
+                }
+              ]
+            },
+            {
+              "id": "stone",
+              "text_key": "DLG_MESSENGER_EDGE_CHOICE_STONE",
+              "lines": [
+                {
+                  "speaker": "narrator",
+                  "text_key": "DLG_MESSENGER_EDGE_CHOICE_STONE_1"
+                },
+                {
+                  "speaker": "npc",
+                  "text_key": "DLG_MESSENGER_EDGE_CHOICE_STONE_2"
+                }
+              ]
+            },
+            {
+              "id": "call_out",
+              "text_key": "DLG_MESSENGER_EDGE_CHOICE_CALL_OUT",
+              "lines": [
+                {
+                  "speaker": "npc",
+                  "text_key": "DLG_MESSENGER_EDGE_CHOICE_CALL_OUT_1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_07"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_EDGE_08"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_MESSENGER_EDGE_09"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_EDGE_10"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_11"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_EDGE_12"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_MESSENGER_EDGE_13"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_EDGE_14"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_15"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_EDGE_16"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_MESSENGER_EDGE_17"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_EDGE_18"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_19"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_EDGE_20"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_21"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_22"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_EDGE_23"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_24"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_25"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_EDGE_26"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DIALOGUE_CHOOSE_REPLY",
+          "choices": [
+            {
+              "id": "no",
+              "text_key": "DLG_MESSENGER_EDGE_CHOICE_NO",
+              "lines": [
+                {
+                  "speaker": "npc",
+                  "text_key": "DLG_MESSENGER_EDGE_CHOICE_NO_1"
+                }
+              ]
+            },
+            {
+              "id": "not_sure",
+              "text_key": "DLG_MESSENGER_EDGE_CHOICE_NOT_SURE",
+              "lines": [
+                {
+                  "speaker": "npc",
+                  "text_key": "DLG_MESSENGER_EDGE_CHOICE_NOT_SURE_1"
+                }
+              ]
+            },
+            {
+              "id": "pull_away",
+              "text_key": "DLG_MESSENGER_EDGE_CHOICE_PULL_AWAY",
+              "lines": [
+                {
+                  "speaker": "narrator",
+                  "text_key": "DLG_MESSENGER_EDGE_CHOICE_PULL_AWAY_1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_27"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_EDGE_28"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_MESSENGER_EDGE_29"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_EDGE_30"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_EDGE_31"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_EDGE_32"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_EDGE_33"
+        }
+      ]
+    },
+    "story.messenger.catch_up": {
+      "id": "story.messenger.catch_up",
+      "npc_id": "npc.messenger",
+      "requires_completed": [
+        "story.messenger.edge"
+      ],
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_CATCH_01"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_CATCH_02"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_CATCH_03"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_CATCH_04"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_MESSENGER_CATCH_05"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_CATCH_06"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_CATCH_07"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_CATCH_08"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_CATCH_09"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_CATCH_10"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_CATCH_11"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_CATCH_12"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DIALOGUE_CHOOSE_REPLY",
+          "choices": [
+            {
+              "id": "tell",
+              "text_key": "DLG_MESSENGER_CATCH_CHOICE_TELL",
+              "lines": [
+                {
+                  "speaker": "hero",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_TELL_1"
+                },
+                {
+                  "speaker": "npc",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_TELL_2"
+                },
+                {
+                  "speaker": "npc",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_TELL_3"
+                },
+                {
+                  "speaker": "narrator",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_TELL_4"
+                }
+              ]
+            },
+            {
+              "id": "you_first",
+              "text_key": "DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST",
+              "lines": [
+                {
+                  "speaker": "npc",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_1"
+                },
+                {
+                  "speaker": "narrator",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_2"
+                },
+                {
+                  "speaker": "npc",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_3"
+                },
+                {
+                  "speaker": "hero",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_4"
+                },
+                {
+                  "speaker": "npc",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_5"
+                },
+                {
+                  "speaker": "narrator",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_YOU_FIRST_6"
+                }
+              ]
+            },
+            {
+              "id": "silent",
+              "text_key": "DLG_MESSENGER_CATCH_CHOICE_SILENT",
+              "lines": [
+                {
+                  "speaker": "narrator",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_SILENT_1"
+                },
+                {
+                  "speaker": "npc",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_SILENT_2"
+                },
+                {
+                  "speaker": "hero",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_SILENT_3"
+                },
+                {
+                  "speaker": "npc",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_SILENT_4"
+                },
+                {
+                  "speaker": "narrator",
+                  "text_key": "DLG_MESSENGER_CATCH_CHOICE_SILENT_5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_CATCH_13"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_CATCH_14"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_MESSENGER_CATCH_15"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_CATCH_16"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_CATCH_17"
+        },
+        {
+          "speaker": "hero",
+          "text_key": "DLG_MESSENGER_CATCH_18"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_CATCH_19"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_CATCH_20"
+        },
+        {
+          "speaker": "npc",
+          "text_key": "DLG_MESSENGER_CATCH_21"
+        },
+        {
+          "speaker": "narrator",
+          "text_key": "DLG_MESSENGER_CATCH_22"
+        }
+      ]
+    }
+  },
+  "events": {
+    "event.messenger.goes_ahead": {
+      "id": "event.messenger.goes_ahead",
+      "type": "depart_npc",
+      "npc_id": "npc.messenger",
+      "returns": true
+    }
+  },
+  "opening": {
+    "pages": [
+      "OPENING_CHRONICLE_PAGE_1",
+      "OPENING_CHRONICLE_PAGE_2",
+      "OPENING_CHRONICLE_PAGE_3",
+      "OPENING_CHRONICLE_PAGE_4",
+      "OPENING_CHRONICLE_PAGE_5"
+    ],
+    "page_layouts": [
+      {
+        "style": "chronicle",
+        "art": "res://assets/art/opening/chronicle-free-towns.png"
+      },
+      {
+        "style": "chronicle",
+        "art": "res://assets/art/opening/chronicle-3.png"
+      },
+      {
+        "style": "chronicle",
+        "art": "res://assets/art/opening/chronicle-gates.png"
+      },
+      {
+        "style": "chronicle",
+        "art": "res://assets/art/opening/chronicle-5.png"
+      },
+      {
+        "style": "chronicle",
+        "art": "res://assets/art/opening/chronicle-6.png"
+      }
+    ],
+    "name_entry_page": 5,
+    "scenes": [
+      {
+        "story": "story.hero.thaw_edge"
+      },
+      {
+        "story": "story.hero.wood_doubt"
+      }
+    ],
+    "tutorials": [
+      {
+        "key": "OPENING_HINT_WALK_WOOD",
+        "after_story": "story.hero.wood_doubt",
+        "until_stage": "complete"
+      },
+      {
+        "key": "OPENING_HINT_MEET_MESSENGER",
+        "until_story": "story.messenger.edge"
+      },
+      {
+        "key": "OPENING_HINT_FOLLOW_STREAM",
+        "until_kind_gone": "stream_path"
+      },
+      {
+        "key": "OPENING_HINT_CATCH_UP",
+        "until_story": "story.messenger.catch_up"
+      }
+    ],
+    "initial_cards": [
+      {
+        "kind": "winter_seed",
+        "offset": [
+          -304,
+          -118
+        ]
+      },
+      {
+        "kind": "hero",
+        "offset": [
+          -84,
+          -118
+        ]
+      }
+    ],
+    "arrivals": [
+      {
+        "kind": "first_forest",
+        "after_story": "story.hero.thaw_edge",
+        "offset": [
+          220,
+          0
+        ]
+      }
+    ],
+    "explore": {
+      "required_kinds": [
+        "hero",
+        "first_forest"
+      ],
+      "consumed_kinds": [
+        "first_forest"
+      ],
+      "outputs": [
+        {
+          "kind": "messenger",
+          "metadata": {
+            "npc_id": "npc.messenger"
+          }
+        },
+        {
+          "kind": "stream_path"
+        }
+      ],
+      "duration": 8.0
+    },
+    "film": {
+      "video": "res://assets/video/opening/opening_film.ogv",
+      "lead_in": 0.0,
+      "skip_key": "OPENING_FILM_SKIP",
+      "title": {
+        "start": 180.97,
+        "fade": 1.8,
+        "key": "GAME_NAME"
+      },
+      "captions": [
+        {
+          "start": 0.8,
+          "end": 3.39,
+          "key": "OPENING_FILM_LINE_01"
+        },
+        {
+          "start": 3.8,
+          "end": 5.39,
+          "key": "OPENING_FILM_LINE_02"
+        },
+        {
+          "start": 6.15,
+          "end": 8.4,
+          "key": "OPENING_FILM_LINE_03"
+        },
+        {
+          "start": 8.45,
+          "end": 11.05,
+          "key": "OPENING_FILM_LINE_04"
+        },
+        {
+          "start": 11.09,
+          "end": 16.45,
+          "key": "OPENING_FILM_LINE_05"
+        },
+        {
+          "start": 17.25,
+          "end": 20.5,
+          "key": "OPENING_FILM_LINE_06"
+        },
+        {
+          "start": 20.54,
+          "end": 22.4,
+          "key": "OPENING_FILM_LINE_07"
+        },
+        {
+          "start": 22.44,
+          "end": 26.36,
+          "key": "OPENING_FILM_LINE_08"
+        },
+        {
+          "start": 36.14,
+          "end": 40.65,
+          "key": "OPENING_FILM_LINE_09"
+        },
+        {
+          "start": 48.74,
+          "end": 50.39,
+          "key": "OPENING_FILM_LINE_10"
+        },
+        {
+          "start": 50.43,
+          "end": 52.56,
+          "key": "OPENING_FILM_LINE_11"
+        },
+        {
+          "start": 52.6,
+          "end": 54.69,
+          "key": "OPENING_FILM_LINE_12"
+        },
+        {
+          "start": 55.98,
+          "end": 57.77,
+          "key": "OPENING_FILM_LINE_13"
+        },
+        {
+          "start": 63.68,
+          "end": 66.96,
+          "key": "OPENING_FILM_LINE_14"
+        },
+        {
+          "start": 67.0,
+          "end": 69.36,
+          "key": "OPENING_FILM_LINE_15"
+        },
+        {
+          "start": 72.98,
+          "end": 76.29,
+          "key": "OPENING_FILM_LINE_16"
+        },
+        {
+          "start": 76.33,
+          "end": 79.06,
+          "key": "OPENING_FILM_LINE_17"
+        },
+        {
+          "start": 79.33,
+          "end": 84.42,
+          "key": "OPENING_FILM_LINE_18"
+        },
+        {
+          "start": 84.88,
+          "end": 88.88,
+          "key": "OPENING_FILM_LINE_19"
+        },
+        {
+          "start": 90.38,
+          "end": 92.92,
+          "key": "OPENING_FILM_LINE_20"
+        },
+        {
+          "start": 95.09,
+          "end": 98.69,
+          "key": "OPENING_FILM_LINE_21"
+        },
+        {
+          "start": 113.31,
+          "end": 116.37,
+          "key": "OPENING_FILM_LINE_22"
+        },
+        {
+          "start": 116.41,
+          "end": 120.03,
+          "key": "OPENING_FILM_LINE_23"
+        },
+        {
+          "start": 120.56,
+          "end": 123.82,
+          "key": "OPENING_FILM_LINE_24"
+        },
+        {
+          "start": 123.86,
+          "end": 126.24,
+          "key": "OPENING_FILM_LINE_25"
+        },
+        {
+          "start": 126.66,
+          "end": 130.17,
+          "key": "OPENING_FILM_LINE_26"
+        },
+        {
+          "start": 130.21,
+          "end": 131.79,
+          "key": "OPENING_FILM_LINE_27"
+        },
+        {
+          "start": 134.63,
+          "end": 140.27,
+          "key": "OPENING_FILM_LINE_28"
+        },
+        {
+          "start": 140.31,
+          "end": 142.25,
+          "key": "OPENING_FILM_LINE_29"
+        },
+        {
+          "start": 142.43,
+          "end": 145.04,
+          "key": "OPENING_FILM_LINE_30"
+        },
+        {
+          "start": 148.99,
+          "end": 152.41,
+          "key": "OPENING_FILM_LINE_31"
+        },
+        {
+          "start": 158.91,
+          "end": 162.28,
+          "key": "OPENING_FILM_LINE_32"
+        },
+        {
+          "start": 163.03,
+          "end": 164.97,
+          "key": "OPENING_FILM_LINE_33"
+        },
+        {
+          "start": 165.85,
+          "end": 168.87,
+          "key": "OPENING_FILM_LINE_34"
+        },
+        {
+          "start": 168.91,
+          "end": 172.38,
+          "key": "OPENING_FILM_LINE_35"
+        },
+        {
+          "start": 172.42,
+          "end": 174.66,
+          "key": "OPENING_FILM_LINE_36"
+        },
+        {
+          "start": 174.7,
+          "end": 177.04,
+          "key": "OPENING_FILM_LINE_37"
+        }
+      ]
+    }
+  },
   "initial_cards": []
 }

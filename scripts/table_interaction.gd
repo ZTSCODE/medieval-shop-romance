@@ -3,6 +3,9 @@ extends Node
 
 signal dialogue_requested(npc_id: String)
 signal stack_combined(stack_id: String)
+signal camera_gesture(kind: StringName, amount: float)
+# 玩家拖起了卡：whole 为真是整叠（右键或 Shift），否则是从这张往上的部分（左键）。
+signal card_dragged(whole: bool)
 
 var chapter_runtime: ChapterRuntime
 
@@ -41,6 +44,7 @@ var simulation_paused := false
 var pointer_blocked := Callable()
 var shop: ShopSession
 var opening: OpeningFlow
+var exploration: LocationExploration
 var progress: PlayerProgress
 var full_table_mode := false
 var customer_lane: CustomerLane
@@ -53,6 +57,7 @@ var drop_action: StringName = &"stack"
 var combination_targets: Dictionary = {}
 var flights: Dictionary = {}
 var _pending_flights: Dictionary = {}
+var _audio_work_stacks: Dictionary = {}
 var player_name: String = "":
 	set(value):
 		if player_name == value:
@@ -102,7 +107,10 @@ func _process(delta: float) -> void:
 	if not dragging_id.is_empty():
 		_move_drag(mouse_screen)
 	elif not panning:
-		hovered_id = pick_card(mouse_screen) if _is_board_point(mouse_screen) else ""
+		var next_hover := pick_card(mouse_screen) if _is_board_point(mouse_screen) else ""
+		if next_hover != hovered_id and not next_hover.is_empty():
+			sound.play_cue(&"hover")
+		hovered_id = next_hover
 	_update_view_flags()
 	drag_velocity = drag_velocity.lerp(Vector2.ZERO, 1.0 - exp(-12.0 * delta))
 
@@ -181,6 +189,7 @@ func _input(event: InputEvent) -> void:
 		mouse_screen = event.position
 		if panning:
 			camera.pan(event.relative)
+			camera_gesture.emit(&"pan", event.relative.length())
 			get_viewport().set_input_as_handled()
 		elif not pressed_id.is_empty():
 			if dragging_id.is_empty() and press_at.distance_to(event.position) >= DRAG_THRESHOLD:
@@ -210,6 +219,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP or event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			camera.zoom_at(event.position, 1.12 if event.button_index == MOUSE_BUTTON_WHEEL_UP else 1.0 / 1.12)
+			camera_gesture.emit(&"zoom", 1.0)
 		elif event.button_index == MOUSE_BUTTON_MIDDLE or (event.button_index == MOUSE_BUTTON_LEFT and Input.is_key_pressed(KEY_SPACE)):
 			_begin_pan(event.button_index)
 		elif event.button_index in [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGHT]:
@@ -223,6 +233,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					selected_id = ""
 			else:
 				selected_id = card
+				sound.play_cue(&"select")
 				pressed_id = card
 				press_button = event.button_index
 				press_at = event.position
@@ -274,6 +285,7 @@ func _start_drag_impl() -> void:
 	_drag_screen_scale = _card_screen_scale(first_pos)
 	_drag_screen_offset = press_at - _card_screen_origin(first_pos, _drag_screen_scale)
 	dragging_id = state.take_from(pressed_id, press_whole)
+	card_dragged.emit(press_whole)
 	if not conversation_preparation.is_empty() and _conversation_stack().is_empty():
 		conversation_preparation.clear()
 	_lift_drag_views()
@@ -294,7 +306,10 @@ func _move_drag(at: Vector2) -> void:
 	var blocked := pointer_blocked.is_valid() and bool(pointer_blocked.call(at))
 	market_target = market.slot_at(at) if market != null and not blocked else &""
 	customer_target = customer_lane.customer_at(at) if customer_lane != null and not blocked else ""
+	var previous_target := target_id
 	target_id = find_drop_target() if customer_target.is_empty() and market_target.is_empty() and _is_board_point(at) else ""
+	if target_id != previous_target and not target_id.is_empty():
+		sound.play_cue(&"target")
 	target_card = customer_target
 	if not target_id.is_empty():
 		target_card = state.stacks[target_id].cards.back()
@@ -383,6 +398,8 @@ func _finish_drag_impl(at: Vector2) -> void:
 		cancel_gesture()
 		_prepare_conversation(conversation_npc, hero_id, npc_card, true)
 		return
+	if drop_action == &"reject":
+		sound.play_cue(&"reject")
 	if drop_action == &"reject" or (not _is_board_point(at) and customer_target.is_empty() and market_target.is_empty()):
 		cancel_gesture()
 		return
@@ -398,7 +415,7 @@ func _finish_drag_impl(at: Vector2) -> void:
 		market.confirm(market_target)
 		_clear_gesture()
 		_sync_views()
-		sound.play_cue(&"stack")
+		AudioEvents.play_event("world.trade")
 		return
 	if shop != null and drop_action in [&"toggle_shop", &"buy", &"sell", &"liquidate"]:
 		var return_position: Vector2 = pressed_snapshot.position
@@ -574,6 +591,7 @@ func _clear_gesture(sync_targets: bool = true) -> void:
 func cancel_gesture() -> void:
 	var probe_started := HitchProbe.stamp()
 	if not dragging_id.is_empty() and not pressed_snapshot.is_empty():
+		AudioEvents.play_event("card.cancel")
 		var original_id: String = pressed_snapshot.id
 		if dragging_id != original_id:
 			state.stacks.erase(dragging_id)
@@ -622,6 +640,7 @@ func _sync_views(instant: bool = false) -> void:
 					flight.advance(view, camera.to_screen(state.card_position(card) + TableState.CARD_SIZE * 0.5), _card_screen_scale(state.card_position(card)), 0.0, reduced_motion)
 					view.reduced_motion = reduced_motion
 					view.play_unfold()
+					AudioEvents.play_event("card.unfold")
 				else:
 					_pending_flights.erase(card)
 					world.add_child(view)
@@ -768,8 +787,16 @@ func _sync_stack_progress() -> void:
 			progress = clampf(float(conversation_preparation.elapsed) / CONVERSATION_PREPARE_SECONDS, 0.0, 1.0)
 	if not id.is_empty():
 		rows.append({"stack_id": id, "progress": progress})
+	if exploration != null:
+		rows.append_array(exploration.work_progress())
 	if chapter_runtime != null:
 		rows.append_array(chapter_runtime.work_progress())
+	var active_audio_work := {}
+	for row: Dictionary in rows:
+		active_audio_work[String(row.stack_id)] = true
+		if not _audio_work_stacks.has(String(row.stack_id)):
+			AudioEvents.play_event("world.work_start")
+	_audio_work_stacks = active_audio_work
 	while _extra_stack_progress.size() < maxi(0, rows.size() - 1):
 		var extra := StackProgressView.new()
 		stack_progress.get_parent().add_child(extra)
@@ -792,7 +819,7 @@ func _set_work_progress(view: StackProgressView, id: String, progress: float) ->
 		view.clear()
 		return
 	var screen_scale := _card_screen_scale(state.stacks[id].position)
-	var height := clampf(12.0 * screen_scale, 7.0, 20.0)
+	var height := clampf(18.0 * screen_scale, 10.0, 30.0)
 	var gap := clampf(8.0 * screen_scale, 5.0, 14.0)
 	var progress_rect := Rect2(Vector2(rect.position.x, rect.position.y - height - gap), Vector2(rect.size.x, height))
 	view.set_progress(id, progress, progress_rect)
@@ -825,6 +852,7 @@ func _lower_drag_views() -> void:
 
 
 func _retire_view(view: TableCardView) -> void:
+	sound.play_cue(&"remove")
 	view.target_position = view.position
 	view.dragging = false
 	view.hovered = false
@@ -858,6 +886,8 @@ func queue_world_output_flights(card_ids: Array[String], source_position: Vector
 
 
 func queue_screen_output_flights(card_ids: Array[String], origin: Vector2, source_id: String) -> void:
+	if not card_ids.is_empty():
+		AudioEvents.play_event("card.fly")
 	for index in card_ids.size():
 		if state.cards.has(card_ids[index]) and state.cards[card_ids[index]].zone == &"board":
 			_pending_flights[card_ids[index]] = CardFlight.new(origin, StringName(source_id), index)
@@ -878,6 +908,7 @@ func _advance_flights(delta: float) -> void:
 			view.scale = Vector2.ONE
 			view.snap_to(destination)
 			view.land()
+			AudioEvents.play_event("card.land")
 			_sync_targets()
 
 

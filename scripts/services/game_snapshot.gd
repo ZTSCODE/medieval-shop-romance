@@ -68,7 +68,7 @@ static func decode(payload: Variant) -> Dictionary:
 	var opening_error := OpeningFlow.validate_data(opening_data, state)
 	if not opening_error.is_empty():
 		return _failure("Invalid opening: " + opening_error)
-	if opening_data.stage == "inactive" and not ContentCatalog.card_ids().is_empty() and _count_kind(state, &"shop") != 1:
+	if opening_data.stage == "inactive" and not ContentCatalog.card_id_for_kind(&"shop").is_empty() and _count_kind(state, &"shop") != 1:
 		return _failure("Missing required shop location")
 	var shop_result := _validate_shop(payload.shop, state)
 	if not shop_result.ok:
@@ -110,7 +110,7 @@ static func decode(payload: Variant) -> Dictionary:
 		var limit := TableState.WORLD_BOUNDS.size * 0.225
 		var migrated_center := old_center.clamp(-limit, limit)
 		camera.center = [migrated_center.x, migrated_center.y]
-	return {"ok": true, "session_mode": "legacy", "state": state, "shop": payload.shop.duplicate(true), "day": day.duplicate(true), "camera": camera.duplicate(true), "progress": payload.progress.duplicate(true), "opening": opening_data.duplicate(true), "dialogue": dialogue_data.duplicate(true), "identity": identity_data.duplicate(true), "error_key": ""}
+	return {"ok": true, "session_mode": "legacy", "state": state, "shop": payload.shop.duplicate(true), "day": day.duplicate(true), "camera": camera.duplicate(true), "progress": payload.progress.duplicate(true), "opening": opening_data.duplicate(true), "dialogue": dialogue_data.duplicate(true), "identity": identity_data.duplicate(true), "onboarding": OnboardingGoals.sanitize(payload.get("onboarding")), "error_key": ""}
 
 
 static func capture_chapter(state: TableState, day_data: Dictionary, camera_data: Dictionary, progress_data: Dictionary, opening_data: Dictionary, identity_data: Dictionary, checkpoint: Dictionary, director: Dictionary) -> Dictionary:
@@ -141,7 +141,9 @@ static func _decode_table(raw: Dictionary, state_version: int = STATE_VERSION) -
 		if definition.is_empty():
 			return _failure("Unknown card definition", "SAVE_UNSUPPORTED_VERSION")
 		var kind: StringName = StringName(definition.get("kind", ""))
-		if kind.is_empty() or not TableState.CATEGORIES.has(kind):
+		# 类别以内容目录中的卡牌定义为准（目录加载时已校验），不依赖旧版写死的种类表。
+		var category := StringName(definition.get("category", ""))
+		if kind.is_empty() or category.is_empty():
 			return _failure("Unsupported card kind")
 		if entry.get("zone") not in ["board", "queue"] or not entry.get("metadata") is Dictionary or not _plain_is_valid(entry.metadata):
 			return _failure("Invalid card metadata")
@@ -151,7 +153,7 @@ static func _decode_table(raw: Dictionary, state_version: int = STATE_VERSION) -
 		elif kind == &"customer":
 			return _failure("Customer is outside the queue")
 		hero_count += int(kind == &"hero")
-		state.cards[String(id)] = {"kind": kind, "category": TableState.CATEGORIES[kind], "zone": StringName(entry.zone), "metadata": entry.metadata.duplicate(true)}
+		state.cards[String(id)] = {"kind": kind, "category": category, "zone": StringName(entry.zone), "metadata": entry.metadata.duplicate(true)}
 	if hero_count != (0 if ContentCatalog.card_ids().is_empty() else 1):
 		return _failure("Missing required character")
 	for id: Variant in raw.stacks:

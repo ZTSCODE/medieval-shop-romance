@@ -1,0 +1,20 @@
+﻿time_seconds,duration_seconds,event,text_key,quote_zh,pan,catalog_gain_db,offset_db,purpose
+0,15.0,ambience.snowline,,,0,-2,0,User snowline context: exposed gusts retreat as trees shelter the player
+1.2,2.527,narrative.snow_to_soft_ground,DLG_MESSENGER_EDGE_01,肺里像着了火。脚下的地越来越软。身后某处，一条狗叫了一声，又停了。,0.0,-1,0,脚下的地越来越软
+4.1,1.12,narrative.dog_far,DLG_MESSENGER_EDGE_01,肺里像着了火。脚下的地越来越软。身后某处，一条狗叫了一声，又停了。,-0.28,0,0,一条狗叫了一声
+9.0,0.658,narrative.scarf,DLG_MESSENGER_EDGE_03,你的左手抖个不停。你把它塞进外套里按住，像按住别人的手。,0.12,-2,0.0,Exact configured narrative phrase: 你把它塞进外套里
+12,64.0,ambience.cold_wood,,,0,0,0,Thawed thornwood; no added bird/cricket chorus
+13.0,0.632,narrative.brush_thorns,DLG_MESSENGER_EDGE_04,然后树木合拢过来，一片白雾横在你面前，低低的，一动不动。,0.0,-2,0.0,Exact configured narrative phrase: 然后树木合拢过来
+20.0,0.44,narrative.soft_steps,DLG_MESSENGER_EDGE_07,一个年轻人从雾里走出来，喘着粗气。头发上别着月桂，腰间挎着信包。,0.0,-1,0.0,Exact configured narrative phrase: 从雾里走出来
+20.42,0.403,narrative.soft_steps,DLG_MESSENGER_EDGE_07,一个年轻人从雾里走出来，喘着粗气。头发上别着月桂，腰间挎着信包。,0.0,-1,0.0,Exact configured narrative phrase: 从雾里走出来
+25.5,0.488,narrative.flask_handover,DLG_MESSENGER_EDGE_19,他递过来一只水壶，壶身上錾着一对黄铜翅膀。,0.12,-3,0.0,Exact configured narrative phrase: 他递过来一只水壶
+32.0,0.488,narrative.flask_handover,DLG_MESSENGER_EDGE_21,你接过来。手指冷得厉害，黄铜摸上去竟有点烫。,0.12,-3,-3.0,Exact configured narrative phrase: 你接过来
+37.5,1.12,narrative.dog_nearer,DLG_MESSENGER_EDGE_27,远远的身后，狗又叫了。比刚才近。,-0.28,0,0.0,Exact configured narrative phrase: 狗又叫了
+41.0,0.474,narrative.scarf,DLG_MESSENGER_EDGE_32,你把围巾递给他。他一句话没说，绕在了自己脖子上。,0.12,-2,0.0,Exact configured narrative phrase: 你把围巾递给他
+44,8.0,movement.stream_escape,opening.explore,实际叠卡探索黑刺李林，走入溪水避开追踪,0,-2,0,"Actual player action, never EDGE29 instruction"
+53.0,1.793,narrative.wet_arrive,DLG_MESSENGER_RULES_01,一个钟头后，他追了上来，膝盖以下全湿透了，一脸得意。,0.0,-2,0.0,Exact configured narrative phrase: 他追了上来
+57.0,0.658,narrative.scarf,DLG_MESSENGER_RULES_03,他把围巾还给你。围巾被他的脖子捂得还是暖的。,0.12,-2,0.0,Exact configured narrative phrase: 他把围巾还给你
+57,19.0,music.story,DLG_MESSENGER_RULES_03,,0,-24,0,Restrained warmth only after dogs were diverted; actual -24dB trim
+61.5,0.415,narrative.berry_pluck,DLG_MESSENGER_RULES_07,他在一丛黑刺李边蹲下，摘了一颗果子，皱眉看了看，放进你掌心。,0.0,-2,0.0,Exact configured narrative phrase: 摘了一颗果子
+66.5,1.95,narrative.run_depart,DLG_MESSENGER_RULES_17,然后他转身跑进了林子。,0.0,-2,0.0,Exact configured narrative phrase: 转身跑进了林子
+72.0,0.474,narrative.scarf,DLG_MESSENGER_RULES_18,你把围巾重新绕回脖子上。上面还有他的体温。,0.12,-2,0.0,Exact configured narrative phrase: 你把围巾重新绕回脖子上

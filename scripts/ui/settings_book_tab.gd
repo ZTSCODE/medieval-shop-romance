@@ -11,6 +11,7 @@ var _spring_to := 0.0
 
 
 func _ready() -> void:
+	set_meta("audio_event", "book.page")
 	# 书签纸面由整页统一绘制，底端藏在正文页后，不再作为浮动按钮。
 	for state: String in ["normal", "hover", "pressed", "hover_pressed", "disabled", "focus"]:
 		add_theme_stylebox_override(state, StyleBoxEmpty.new())

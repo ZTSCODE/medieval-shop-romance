@@ -1,7 +1,7 @@
 class_name TableState
 extends RefCounted
 
-const CARD_SIZE := Vector2(168.0, 258.0)
+const CARD_SIZE := Vector2(168.0, 236.0)
 const STACK_STEP := 26.0
 const MAX_STACK := 20
 const MAX_CARDS := 160

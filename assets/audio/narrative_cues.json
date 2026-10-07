@@ -1,0 +1,477 @@
+{
+  "schema_version": 1,
+  "cue_policy": "Exact text-key + phrase entry; finite actions once per true line visit. Restore establishes bed without replay. No literal actions on choice hover, instruction-only speech, film captions, or UI reflow.",
+  "lines": {
+    "DLG_MESSENGER_EDGE_03": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [
+        {
+          "event": "narrative.scarf",
+          "phrase": "你把它塞进外套里",
+          "phrases": {
+            "zh_CN": "你把它塞进外套里",
+            "en": "You push it into your coat"
+          },
+          "character_offsets": {
+            "zh_CN": 9,
+            "en": 35
+          },
+          "cue_id": "DLG_MESSENGER_EDGE_03:0",
+          "delay_seconds": 0.0,
+          "position": 0.32142857142857145,
+          "pan": 0.12,
+          "gain_offset_db": 0.0
+        }
+      ],
+      "quote_zh": "你的左手抖个不停。你把它塞进外套里按住，像按住别人的手。",
+      "marker": "story.messenger.edge:2::0",
+      "scene": "cold_edge",
+      "rationale": "one close coat-sleeve movement",
+      "quotes": {
+        "zh_CN": "你的左手抖个不停。你把它塞进外套里按住，像按住别人的手。",
+        "en": "Your left hand won't stop shaking. You push it into your coat and hold it there, as if it belonged to someone else."
+      }
+    },
+    "DLG_MESSENGER_EDGE_04": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [
+        {
+          "event": "narrative.brush_thorns",
+          "phrase": "然后树木合拢过来",
+          "phrases": {
+            "zh_CN": "然后树木合拢过来",
+            "en": "Then the trees close in"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "cue_id": "DLG_MESSENGER_EDGE_04:0",
+          "delay_seconds": 0.0,
+          "position": 0.0,
+          "pan": 0.0,
+          "gain_offset_db": 0.0
+        }
+      ],
+      "quote_zh": "然后树木合拢过来，一片白雾横在你面前，低低的，一动不动。",
+      "marker": "story.messenger.edge:3::0",
+      "scene": "sheltered_thicket",
+      "rationale": "reduce open wind; short damp foliage brush, optional very small twig tick",
+      "quotes": {
+        "zh_CN": "然后树木合拢过来，一片白雾横在你面前，低低的，一动不动。",
+        "en": "Then the trees close in, and a bank of white mist lies across your path, low and still."
+      }
+    },
+    "DLG_MESSENGER_EDGE_05": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [
+        {
+          "event": "narrative.brush_thorns",
+          "phrase": "前方的雾里有东西在动",
+          "phrases": {
+            "zh_CN": "前方的雾里有东西在动",
+            "en": "Something moves in the mist ahead"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "cue_id": "DLG_MESSENGER_EDGE_05:0",
+          "delay_seconds": 0.0,
+          "position": 0.0,
+          "pan": 0.0,
+          "gain_offset_db": 0.0
+        }
+      ],
+      "quote_zh": "前方的雾里有东西在动。你停下。它也停下。",
+      "marker": "story.messenger.edge:4::0",
+      "scene": "still_thicket",
+      "rationale": "brief movement ahead then stop all locomotion gestures",
+      "stops": [
+        {
+          "phrase": "你停下",
+          "phrases": {
+            "zh_CN": "你停下",
+            "en": "You stop"
+          },
+          "position": 0.38,
+          "events": [
+            "narrative.snow_to_soft_ground",
+            "narrative.soft_steps",
+            "narrative.brush_thorns"
+          ],
+          "fade_seconds": 0.06
+        }
+      ],
+      "quotes": {
+        "zh_CN": "前方的雾里有东西在动。你停下。它也停下。",
+        "en": "Something moves in the mist ahead. You stop. So does it."
+      }
+    },
+    "DLG_MESSENGER_EDGE_06": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [],
+      "quote_zh": "一个人那么高的影子。腰间闪过一点黄铜。",
+      "marker": "story.messenger.edge:5::0",
+      "scene": "still_thicket",
+      "rationale": "none",
+      "quotes": {
+        "zh_CN": "一个人那么高的影子。腰间闪过一点黄铜。",
+        "en": "A shape, man-high. A glint of brass at its belt."
+      }
+    },
+    "DLG_PROMPT_WHAT_DO_YOU_DO": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [],
+      "quote_zh": "你会怎么做？",
+      "marker": "story.messenger.edge:6::0",
+      "scene": "still_thicket",
+      "rationale": "Retain scene bed; no new literal one-shot.",
+      "quotes": {
+        "zh_CN": "你会怎么做？",
+        "en": "What do you do?"
+      }
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_1": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [
+        {
+          "event": "narrative.scarf",
+          "phrase": "你把自己缩得很小",
+          "phrases": {
+            "zh_CN": "你把自己缩得很小",
+            "en": "You make yourself very small"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "cue_id": "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_1:0",
+          "delay_seconds": 0.0,
+          "position": 0.0,
+          "pan": 0.12,
+          "gain_offset_db": 0.0
+        }
+      ],
+      "quote_zh": "你把自己缩得很小。没什么用。",
+      "marker": "story.messenger.edge:6:hold_still:0",
+      "scene": "still_thicket",
+      "rationale": "one faint cloth contraction",
+      "quotes": {
+        "zh_CN": "你把自己缩得很小。没什么用。",
+        "en": "You make yourself very small. It doesn't help."
+      }
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_HOLD_STILL_2": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [],
+      "quote_zh": "你知道吧，我看得见你。",
+      "marker": "story.messenger.edge:6:hold_still:1",
+      "scene": "still_thicket",
+      "rationale": "Retain scene bed; no new literal one-shot.",
+      "quotes": {
+        "zh_CN": "你知道吧，我看得见你。",
+        "en": "I can see you, you know."
+      }
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_STONE_2": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [],
+      "quote_zh": "求你别。我今天已经够累了。",
+      "marker": "story.messenger.edge:6:stone:1",
+      "scene": "still_thicket",
+      "rationale": "Retain scene bed; no new literal one-shot.",
+      "quotes": {
+        "zh_CN": "求你别。我今天已经够累了。",
+        "en": "Please don't. I've had a long day."
+      }
+    },
+    "DLG_MESSENGER_EDGE_CHOICE_CALL_OUT_1": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [],
+      "quote_zh": "一个不值得你扔石头的人。",
+      "marker": "story.messenger.edge:6:call_out:0",
+      "scene": "still_thicket",
+      "rationale": "none",
+      "quotes": {
+        "zh_CN": "一个不值得你扔石头的人。",
+        "en": "Nobody worth throwing anything at."
+      }
+    },
+    "DLG_MESSENGER_EDGE_07": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [
+        {
+          "event": "narrative.soft_steps",
+          "phrase": "从雾里走出来",
+          "phrases": {
+            "zh_CN": "从雾里走出来",
+            "en": "steps out of the mist"
+          },
+          "character_offsets": {
+            "zh_CN": 5,
+            "en": 12
+          },
+          "cue_id": "DLG_MESSENGER_EDGE_07:0",
+          "delay_seconds": 0.0,
+          "position": 0.15625,
+          "pan": 0.0,
+          "gain_offset_db": 0.0
+        },
+        {
+          "event": "narrative.soft_steps",
+          "phrase": "从雾里走出来",
+          "phrases": {
+            "zh_CN": "从雾里走出来",
+            "en": "steps out of the mist"
+          },
+          "character_offsets": {
+            "zh_CN": 5,
+            "en": 12
+          },
+          "cue_id": "DLG_MESSENGER_EDGE_07:1",
+          "delay_seconds": 0.42,
+          "position": 0.15625,
+          "pan": 0.0,
+          "gain_offset_db": 0.0
+        }
+      ],
+      "quote_zh": "一个年轻人从雾里走出来，喘着粗气。头发上别着月桂，腰间挎着信包。",
+      "marker": "story.messenger.edge:7::0",
+      "scene": "sheltered_thicket",
+      "rationale": "Two finite damp approach steps; no breath asset added. Stranger stops once arrived.",
+      "quotes": {
+        "zh_CN": "一个年轻人从雾里走出来，喘着粗气。头发上别着月桂，腰间挎着信包。",
+        "en": "A young man steps out of the mist, breathing hard. Laurel in his hair, a satchel of letters at his hip."
+      }
+    },
+    "DLG_MESSENGER_EDGE_08": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [],
+      "quote_zh": "哦。不是鹿啊。",
+      "marker": "story.messenger.edge:8::0",
+      "scene": "sheltered_thicket",
+      "rationale": "Retain scene bed; no new literal one-shot.",
+      "quotes": {
+        "zh_CN": "哦。不是鹿啊。",
+        "en": "Oh. You're not a deer."
+      }
+    },
+    "DLG_MESSENGER_EDGE_09": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [],
+      "quote_zh": "谁派你来的？",
+      "marker": "story.messenger.edge:9::0",
+      "scene": "sheltered_thicket",
+      "rationale": "Retain scene bed; no new literal one-shot.",
+      "quotes": {
+        "zh_CN": "谁派你来的？",
+        "en": "Who sent you?"
+      }
+    },
+    "DLG_MESSENGER_EDGE_19": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [
+        {
+          "event": "narrative.flask_handover",
+          "phrase": "他递过来一只水壶",
+          "phrases": {
+            "zh_CN": "他递过来一只水壶",
+            "en": "He holds out a flask"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "cue_id": "DLG_MESSENGER_EDGE_19:0",
+          "delay_seconds": 0.0,
+          "position": 0.0,
+          "pan": 0.12,
+          "gain_offset_db": 0.0
+        }
+      ],
+      "quote_zh": "他递过来一只水壶，壶身上錾着一对黄铜翅膀。",
+      "marker": "story.messenger.edge:19::0",
+      "scene": "quiet_contact",
+      "rationale": "dull small flask movement and tiny enclosed slosh",
+      "quotes": {
+        "zh_CN": "他递过来一只水壶，壶身上錾着一对黄铜翅膀。",
+        "en": "He holds out a flask worked with a pair of brass wings."
+      }
+    },
+    "DLG_MESSENGER_EDGE_20": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [],
+      "quote_zh": "喝吧。还是热的。",
+      "marker": "story.messenger.edge:20::0",
+      "scene": "quiet_contact",
+      "rationale": "none",
+      "quotes": {
+        "zh_CN": "喝吧。还是热的。",
+        "en": "Drink. It's still warm."
+      }
+    },
+    "DLG_MESSENGER_EDGE_21": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [
+        {
+          "event": "narrative.flask_handover",
+          "phrase": "你接过来",
+          "phrases": {
+            "zh_CN": "你接过来",
+            "en": "You take it"
+          },
+          "character_offsets": {
+            "zh_CN": 0,
+            "en": 0
+          },
+          "cue_id": "DLG_MESSENGER_EDGE_21:0",
+          "delay_seconds": 0.0,
+          "position": 0.0,
+          "pan": 0.12,
+          "gain_offset_db": -3.0
+        }
+      ],
+      "quote_zh": "你接过来。手指冷得厉害，黄铜摸上去竟有点烫。",
+      "marker": "story.messenger.edge:21::0",
+      "scene": "quiet_contact",
+      "rationale": "one subtle brass flask receiving/contact",
+      "quotes": {
+        "zh_CN": "你接过来。手指冷得厉害，黄铜摸上去竟有点烫。",
+        "en": "You take it. Your fingers are so cold the brass almost burns."
+      }
+    },
+    "DLG_MESSENGER_EDGE_22": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [
+        {
+          "event": "narrative.scarf",
+          "phrase": "他的手就覆上来",
+          "phrases": {
+            "zh_CN": "他的手就覆上来",
+            "en": "his hand closes over yours"
+          },
+          "character_offsets": {
+            "zh_CN": 12,
+            "en": 38
+          },
+          "cue_id": "DLG_MESSENGER_EDGE_22:0",
+          "delay_seconds": 0.0,
+          "position": 0.3870967741935484,
+          "pan": 0.12,
+          "gain_offset_db": -3.0
+        }
+      ],
+      "quote_zh": "他注意到了。不等你缩手，他的手就覆上来，连你的手一起握住壶身。",
+      "marker": "story.messenger.edge:22::0",
+      "scene": "quiet_contact",
+      "rationale": "soft sleeve touch, optional extremely soft flask contact",
+      "quotes": {
+        "zh_CN": "他注意到了。不等你缩手，他的手就覆上来，连你的手一起握住壶身。",
+        "en": "He notices. Before you can pull away, his hand closes over yours on the flask."
+      }
+    },
+    "DLG_MESSENGER_EDGE_23": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [],
+      "quote_zh": "圣徒在上。你冷得像块冰。",
+      "marker": "story.messenger.edge:23::0",
+      "scene": "quiet_contact",
+      "rationale": "Retain scene bed; no new literal one-shot.",
+      "quotes": {
+        "zh_CN": "圣徒在上。你冷得像块冰。",
+        "en": "Saints. You're freezing."
+      }
+    },
+    "DLG_MESSENGER_EDGE_24": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [],
+      "quote_zh": "他的手带着赶路的热度。他一直握着，直到水壶不再发抖。",
+      "marker": "story.messenger.edge:24::0",
+      "scene": "quiet_contact",
+      "rationale": "faint rattle, if already present, diminishes and stops",
+      "quotes": {
+        "zh_CN": "他的手带着赶路的热度。他一直握着，直到水壶不再发抖。",
+        "en": "His hand is hot from the road. He holds on until the flask stops shaking."
+      }
+    },
+    "DLG_MESSENGER_EDGE_25": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [],
+      "quote_zh": "然后他第一次认真地看你。看你的脸，像是想认出什么。",
+      "marker": "story.messenger.edge:25::0",
+      "scene": "quiet_contact",
+      "rationale": "none",
+      "quotes": {
+        "zh_CN": "然后他第一次认真地看你。看你的脸，像是想认出什么。",
+        "en": "Then he looks at you properly, for the first time. At your face, as if he were trying to place it."
+      }
+    },
+    "DLG_MESSENGER_EDGE_26": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [],
+      "quote_zh": "我们见过吗？",
+      "marker": "story.messenger.edge:26::0",
+      "scene": "quiet_contact",
+      "rationale": "Retain scene bed; no new literal one-shot.",
+      "quotes": {
+        "zh_CN": "我们见过吗？",
+        "en": "Have we met?"
+      }
+    },
+    "DIALOGUE_CHOOSE_REPLY": {
+      "environment": "ambience.cold_wood",
+      "music": "",
+      "cues": [],
+      "quote_zh": "你会怎么说？",
+      "marker": "story.messenger.edge:27::0",
+      "scene": "quiet_contact",
+      "rationale": "Retain scene bed; no new literal one-shot.",
+      "quotes": {
+        "zh_CN": "你会怎么说？",
+        "en": "What do you say?"
+      }
+    }
+  },
+  "session_contexts": [
+    {
+      "opening_stages": [
+        "complete"
+      ],
+      "environment": "ambience.cold_wood",
+      "music": ""
+    },
+    {
+      "opening_stages": [
+        "explore"
+      ],
+      "environment": "ambience.snowline",
+      "music": ""
+    }
+  ],
+  "local_compatibility": {
+    "policy": "Exact latest quote and exact marker; no offset fallback. Modified or newly added prose is intentionally unmapped. Old dog-pursuit and thorn-rules storyline is never restored.",
+    "retained": 21,
+    "disabled_old_entries": 40
+  }
+}

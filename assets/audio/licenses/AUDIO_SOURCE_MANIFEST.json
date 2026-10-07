@@ -1,0 +1,3081 @@
+{
+  "verified_date": "2026-10-06",
+  "scope": "Source staging only; game project unchanged by audio sourcing task.",
+  "license_summary": "All downloaded selected sources are offered as CC0-1.0 on inspected author/publisher asset pages. Commercial use and modifications permitted; no mandatory attribution stated. Retain courtesy credits and provenance.",
+  "audition_status": "Files are technically decoded/probed and author descriptions inspected. This sourcing pass does not claim a human headphone audition; final subjective mix remains a listening QA task.",
+  "sources": [
+    {
+      "id": "kenney_casino",
+      "title": "Casino Audio 1.1",
+      "author": "Kenney Vleugels / Kenney",
+      "source_url": "https://kenney.nl/assets/casino-audio",
+      "download_urls": [
+        "https://kenney.nl/media/pages/assets/casino-audio/2472606a04-1721639069/kenney_casino-audio.zip"
+      ],
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "license_file": "kenney_casino/License.txt",
+      "evidence_file": "kenney_casino-source.html",
+      "verified_date": "2026-10-06",
+      "notes": "Paper card handling: use slide, place, fan, shove, shuffle; chip sounds are secondary inventory candidates.",
+      "originals": [
+        {
+          "path": "kenney_casino.zip",
+          "bytes": 876839,
+          "sha256": "f36250766ac5bc378c13708ddf12a23a8e54a3251f8d482c7536e51b5dbafa18"
+        }
+      ]
+    },
+    {
+      "id": "kenney_rpg",
+      "title": "RPG Audio",
+      "author": "Kenney Vleugels / Kenney",
+      "source_url": "https://kenney.nl/assets/rpg-audio",
+      "download_urls": [
+        "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip"
+      ],
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "license_file": "kenney_rpg/License.txt",
+      "evidence_file": "kenney_rpg-source.html",
+      "verified_date": "2026-10-06",
+      "notes": "Physical book, leather, coins, door, creak and footsteps. Prefer these organic cues to electronic UI effects.",
+      "originals": [
+        {
+          "path": "kenney_rpg.zip",
+          "bytes": 964837,
+          "sha256": "6dbeaf8544da958d8f2adcb4a4a4b76c1ade34a05f8ab9edccd327da7375f38b"
+        }
+      ]
+    },
+    {
+      "id": "kenney_interface",
+      "title": "Interface Sounds 1.0",
+      "author": "Kenney",
+      "source_url": "https://kenney.nl/assets/interface-sounds",
+      "download_urls": [
+        "https://kenney.nl/media/pages/assets/interface-sounds/fa43c1dd4d-1677589452/kenney_interface-sounds.zip"
+      ],
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "license_file": "kenney_interface/License.txt",
+      "evidence_file": "kenney_interface-source.html",
+      "verified_date": "2026-10-06",
+      "notes": "Restrained click/tick/pluck/toggle/back/confirmation choices; avoid glitch and loud error variants for this art direction.",
+      "originals": [
+        {
+          "path": "kenney_interface.zip",
+          "bytes": 834536,
+          "sha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232"
+        }
+      ]
+    },
+    {
+      "id": "bards_tale",
+      "title": "Medieval: The Bard's Tale",
+      "author": "RandomMind",
+      "source_url": "https://opengameart.org/content/medieval-the-bards-tale",
+      "download_urls": [
+        "https://opengameart.org/sites/default/files/Loop_The_Bards_Tale.wav"
+      ],
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "license_file": null,
+      "evidence_file": "bards_tale-source.html",
+      "verified_date": "2026-10-06",
+      "notes": "Author-supplied looping peaceful medieval lute/flute instrumental. Suggested day gameplay theme.",
+      "originals": [
+        {
+          "path": "Loop_The_Bards_Tale.wav",
+          "bytes": 10183830,
+          "sha256": "6d0852a758dc41a763cd33b0693fa878e36d7f1d0149f7674bc82241a7a90de1"
+        }
+      ]
+    },
+    {
+      "id": "old_tower_inn",
+      "title": "Medieval: The Old Tower Inn",
+      "author": "RandomMind",
+      "source_url": "https://opengameart.org/content/medieval-the-old-tower-inn",
+      "download_urls": [
+        "https://opengameart.org/sites/default/files/Loop_The_Old_Tower_Inn.wav"
+      ],
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "license_file": null,
+      "evidence_file": "old_tower_inn-source.html",
+      "verified_date": "2026-10-06",
+      "notes": "Author-supplied looping medieval instrumental. Suggested menu/shop theme.",
+      "originals": [
+        {
+          "path": "Loop_The_Old_Tower_Inn.wav",
+          "bytes": 8811712,
+          "sha256": "e18b497fb0edde74a745c4b5a0b90b3fc346c44555f33e3a1485411bbcc171bc"
+        }
+      ]
+    },
+    {
+      "id": "forest_ambience",
+      "title": "Forest Ambience",
+      "author": "TinyWorlds",
+      "source_url": "https://opengameart.org/content/forest-ambience",
+      "download_urls": [
+        "https://opengameart.org/sites/default/files/Forest_Ambience.mp3"
+      ],
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "license_file": null,
+      "evidence_file": "forest_ambience-source.html",
+      "verified_date": "2026-10-06",
+      "notes": "Alternative ambient MUSIC, not verified as a pure natural field recording; not included in preferred ready ambience.",
+      "originals": [
+        {
+          "path": "Forest_Ambience.mp3",
+          "bytes": 716670,
+          "sha256": "9850aa1d0d5d66bd9c5daf8bb77c6d852e01f2f4de22f283bd5621e8bed13b75"
+        }
+      ]
+    },
+    {
+      "id": "day_birds",
+      "title": "Ambient Bird Sounds",
+      "author": "isaiah658",
+      "source_url": "https://opengameart.org/content/ambient-bird-sounds",
+      "download_urls": [
+        "https://opengameart.org/sites/default/files/birds-isaiah658_0.ogg"
+      ],
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "license_file": null,
+      "evidence_file": "ambient-bird-sounds-source.html",
+      "verified_date": "2026-10-06",
+      "notes": "Recorded bird ambience; author says cleaned with Audacity. Credit appreciated but explicitly not required.",
+      "originals": [
+        {
+          "path": "day_birds.ogg",
+          "bytes": 544669,
+          "sha256": "359e4e3f9da9d75aac64cede511c7e3ef8b461f9d9f8c230f8f80e44c4b3e35f"
+        }
+      ]
+    },
+    {
+      "id": "night_crickets",
+      "title": "Crickets Ambient Noise - loopable",
+      "author": "Wolfgang_ (optional credit: Ted Kerr)",
+      "source_url": "https://opengameart.org/content/crickets-ambient-noise-loopable",
+      "download_urls": [
+        "https://opengameart.org/sites/default/files/crickets_1.mp3"
+      ],
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "license_file": null,
+      "evidence_file": "crickets-ambient-noise-loopable-source.html",
+      "verified_date": "2026-10-06",
+      "notes": "Author describes the 11-second clip as loopable and explicitly marks Ted Kerr attribution optional.",
+      "originals": [
+        {
+          "path": "night_crickets.mp3",
+          "bytes": 184393,
+          "sha256": "5b5bd1f744087888c5623543c3ff80be9c2ce106093993e7c8a8492b0280b2c0"
+        }
+      ]
+    },
+    {
+      "id": "fire_crackle",
+      "title": "Fire Crackling",
+      "author": "AntumDeluge",
+      "source_url": "https://opengameart.org/content/fire-crackling",
+      "download_urls": [
+        "https://opengameart.org/sites/default/files/fire-1.wav"
+      ],
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "license_file": null,
+      "evidence_file": "fire-crackling-source.html",
+      "verified_date": "2026-10-06",
+      "notes": "Short 2.87-second mono fireplace crackle. Optional quiet interior texture; its repetition may be noticeable.",
+      "originals": [
+        {
+          "path": "fire_crackle.wav",
+          "bytes": 253232,
+          "sha256": "26702de8a195bcbafeae72034861d875a1b7917168a25106f4e1957ecdddf7e5"
+        }
+      ]
+    },
+    {
+      "id": "park_ambiences",
+      "title": "Park ambiences",
+      "author": "Thimras",
+      "source_url": "https://opengameart.org/content/park-ambiences",
+      "download_urls": [
+        "https://opengameart.org/sites/default/files/park_ambience_river.wav",
+        "https://opengameart.org/sites/default/files/park_ambience_wind.wav"
+      ],
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution_required": false,
+      "license_file": null,
+      "evidence_file": "park-ambiences-source.html",
+      "verified_date": "2026-10-06",
+      "notes": "Natural field recordings of small river/wildlife and open-field wind in Adelaide. Wind is filtered and attenuated in derivatives; river should be used only where water fits the scene.",
+      "originals": [
+        {
+          "path": "park_ambience_river.wav",
+          "bytes": 99072736,
+          "sha256": "da0c0c9b1249a83a1611cc116d5737b0864a8db9f45f1ae8dcc079d0f7c0bbbf"
+        },
+        {
+          "path": "park_ambience_wind.wav",
+          "bytes": 73960096,
+          "sha256": "5c381856745b4706e7eba55eb9271a61a530e90c05df8126adb2db89ecfa6c5a"
+        }
+      ]
+    }
+  ],
+  "derived_files": [
+    {
+      "path": "ready/bgm_menu_old_tower_inn.ogg",
+      "original": "Loop_The_Old_Tower_Inn.wav",
+      "source_id": "old_tower_inn",
+      "duration_seconds": 49.951395833333336,
+      "channels": 2,
+      "sample_rate": 48000,
+      "rms_dbfs_target": -20,
+      "gain_db": -0.9199821843258946,
+      "modifications": "Author-supplied loop duration preserved exactly at output sample rate; resampled 48kHz stereo; normalized toward -20dBFS RMS with -3.5dBFS source peak ceiling; 12ms raised-cosine fade-in/out de-click at endpoints; OGG Vorbis quality 5. No overlap or shortening, so musical meter is preserved.",
+      "sha256": "73f81e6cb5aa373071766e5549de110f7ebe41b91cd0dc94b3f797de1b036b34",
+      "loop": true
+    },
+    {
+      "path": "ready/bgm_day_bards_tale.ogg",
+      "original": "Loop_The_Bards_Tale.wav",
+      "source_id": "bards_tale",
+      "duration_seconds": 57.729875,
+      "channels": 2,
+      "sample_rate": 48000,
+      "rms_dbfs_target": -20,
+      "gain_db": -5.399494597329931,
+      "modifications": "Author-supplied loop duration preserved exactly at output sample rate; resampled 48kHz stereo; normalized toward -20dBFS RMS with -3.5dBFS source peak ceiling; 12ms raised-cosine fade-in/out de-click at endpoints; OGG Vorbis quality 5. No overlap or shortening, so musical meter is preserved.",
+      "sha256": "c6c96ddbf6730c1c5d9e8f2c59135d59e4f1bb06831b79be6eeac7cb2a5c5eb3",
+      "loop": true
+    },
+    {
+      "path": "ready/amb_day_birds_loop.ogg",
+      "original": "day_birds.ogg",
+      "source_id": "day_birds",
+      "duration_seconds": 29.68825,
+      "channels": 2,
+      "sample_rate": 48000,
+      "rms_dbfs_target": -26,
+      "gain_db": 3.1871431878827012,
+      "modifications": "Circular 1-second tail/head overlap for continuous ambience. Adjusted gain with peak ceiling -3 dBFS.",
+      "sha256": "902e2ebf599dbb01512a1796172aec0f744915b9398d7f870b4fddfa983b7490",
+      "loop": true
+    },
+    {
+      "path": "ready/amb_night_crickets_loop.ogg",
+      "original": "night_crickets.mp3",
+      "source_id": "night_crickets",
+      "duration_seconds": 11.052083333333334,
+      "channels": 2,
+      "sample_rate": 48000,
+      "rms_dbfs_target": -28,
+      "gain_db": 5.8348873137443675,
+      "modifications": "Author described as loopable; circular 0.4-second seam blend. Adjusted gain with peak ceiling -3 dBFS.",
+      "sha256": "5a9e153d83ccdb852504efaa831f927bf22d6aa6594ebedec52825d5d84013ff",
+      "loop": true
+    },
+    {
+      "path": "ready/amb_stream_loop.ogg",
+      "original": "park_ambience_river.wav",
+      "source_id": "park_ambiences",
+      "duration_seconds": 60.0,
+      "channels": 2,
+      "sample_rate": 48000,
+      "rms_dbfs_target": -26,
+      "gain_db": 17.079094484054885,
+      "modifications": "62-second excerpt starting at 20s; circular 2-second seam blend. Adjusted gain with peak ceiling -3 dBFS.",
+      "sha256": "54fccba2f2ee05e0d6cd05a4a0738f1e7c9313d6fd1479ab37ade900fabf1d03",
+      "loop": true
+    },
+    {
+      "path": "ready/amb_breeze_loop.ogg",
+      "original": "park_ambience_wind.wav",
+      "source_id": "park_ambiences",
+      "duration_seconds": 60.0,
+      "channels": 2,
+      "sample_rate": 48000,
+      "rms_dbfs_target": -28,
+      "gain_db": 24.030258699868984,
+      "modifications": "62-second excerpt starting at 35s; high-pass 100Hz, low-pass 5500Hz, circular 2-second seam blend. Adjusted gain with peak ceiling -3 dBFS.",
+      "sha256": "a4892e4824c6b3af361ae0f993b143e522597df7513796a681ecb692e477357c",
+      "loop": true
+    },
+    {
+      "path": "ready/amb_hearth_loop.ogg",
+      "original": "fire_crackle.wav",
+      "source_id": "fire_crackle",
+      "duration_seconds": 2.620625,
+      "channels": 2,
+      "sample_rate": 48000,
+      "rms_dbfs_target": -28,
+      "gain_db": 6.1202899553795564,
+      "modifications": "Short source, circular .25-second seam blend. Use quietly as interior texture, or replace if repetitive. Adjusted gain with peak ceiling -3 dBFS.",
+      "sha256": "4b831f48a04ae1afe87b00d67cfda2be42ee9f384a310c252cc201c77a681d5e",
+      "loop": true
+    },
+    {
+      "path": "ready/amb_breeze_short_loop.ogg",
+      "originals": [
+        "park_ambience_wind.wav"
+      ],
+      "source_ids": [
+        "park_ambiences"
+      ],
+      "duration_seconds": 32.0,
+      "channels": 2,
+      "sample_rate": 48000,
+      "modifications": "34-second excerpt from 35s; circular 2-second seam blend, highpass 180Hz, lowpass 4200Hz, normalized -30dBFS RMS, -6dB peak ceiling.",
+      "sha256": "21f153e251c71c69a9a5f02a43ce3aed00c3a30b535d1d236e0f716fe3e94cab",
+      "loop": true
+    },
+    {
+      "path": "ready/amb_day_meadow_loop.ogg",
+      "originals": [
+        "day_birds.ogg",
+        "park_ambience_wind.wav"
+      ],
+      "source_ids": [
+        "day_birds",
+        "park_ambiences"
+      ],
+      "duration_seconds": 29.68825,
+      "channels": 2,
+      "sample_rate": 48000,
+      "modifications": "Day birds loop mixed with -42dBFS RMS filtered wind bed; circular seam blends and final -27dBFS RMS, -6dB peak ceiling.",
+      "sha256": "105015fd4f63ac0ec052460be1b669b670d1a647ca054aaf8082bd7ca18b1041",
+      "loop": true
+    },
+    {
+      "path": "ready/amb_night_meadow_loop.ogg",
+      "originals": [
+        "night_crickets.mp3",
+        "park_ambience_wind.wav"
+      ],
+      "source_ids": [
+        "night_crickets",
+        "park_ambiences"
+      ],
+      "duration_seconds": 33.15625,
+      "channels": 2,
+      "sample_rate": 48000,
+      "modifications": "Three cricket loops mixed with -42dBFS RMS filtered wind bed; circular seam blends and final -29dBFS RMS, -6dB peak ceiling.",
+      "sha256": "0d90191c3012b93696417e812ac7550221fd4f37d88bcc2f1f320a698eb662d7",
+      "loop": true
+    }
+  ],
+  "recommended_event_mapping": {
+    "card_pickup": [
+      "kenney_casino/Audio/card-slide-1.ogg",
+      "kenney_casino/Audio/card-slide-2.ogg"
+    ],
+    "card_place": [
+      "kenney_casino/Audio/card-place-1.ogg",
+      "kenney_casino/Audio/card-place-2.ogg"
+    ],
+    "card_stack": [
+      "kenney_casino/Audio/card-shove-1.ogg"
+    ],
+    "card_split": [
+      "kenney_casino/Audio/card-fan-1.ogg"
+    ],
+    "card_shuffle": [
+      "kenney_casino/Audio/card-shuffle.ogg"
+    ],
+    "card_deal": [
+      "kenney_casino/Audio/card-slide-3.ogg"
+    ],
+    "card_flip": [
+      "kenney_casino/Audio/card-fan-2.ogg"
+    ],
+    "pack_open": [
+      "kenney_casino/Audio/cards-pack-open-1.ogg"
+    ],
+    "pack_reveal": [
+      "kenney_casino/Audio/cards-pack-take-out-1.ogg"
+    ],
+    "ui_hover": [
+      "kenney_interface/Audio/tick_001.ogg"
+    ],
+    "ui_click": [
+      "kenney_interface/Audio/click_001.ogg"
+    ],
+    "ui_confirm": [
+      "kenney_interface/Audio/confirmation_001.ogg"
+    ],
+    "ui_back": [
+      "kenney_interface/Audio/back_001.ogg"
+    ],
+    "ui_toggle": [
+      "kenney_interface/Audio/toggle_001.ogg"
+    ],
+    "ui_slider": [
+      "kenney_interface/Audio/scroll_001.ogg"
+    ],
+    "ui_error": [
+      "kenney_interface/Audio/error_001.ogg"
+    ],
+    "book_open": [
+      "kenney_rpg/Audio/bookOpen.ogg"
+    ],
+    "book_close": [
+      "kenney_rpg/Audio/bookClose.ogg"
+    ],
+    "book_page": [
+      "kenney_rpg/Audio/bookFlip1.ogg",
+      "kenney_rpg/Audio/bookFlip2.ogg",
+      "kenney_rpg/Audio/bookFlip3.ogg"
+    ],
+    "inventory_pickup": [
+      "kenney_rpg/Audio/handleSmallLeather.ogg"
+    ],
+    "inventory_place": [
+      "kenney_rpg/Audio/dropLeather.ogg"
+    ],
+    "coins_trade": [
+      "kenney_rpg/Audio/handleCoins.ogg",
+      "kenney_rpg/Audio/handleCoins2.ogg"
+    ],
+    "customer_arrival": [
+      "kenney_rpg/Audio/doorOpen_1.ogg"
+    ],
+    "customer_leave": [
+      "kenney_rpg/Audio/doorClose_1.ogg"
+    ],
+    "wood_creak": [
+      "kenney_rpg/Audio/creak1.ogg"
+    ],
+    "footsteps": [
+      "kenney_rpg/Audio/footstep00.ogg",
+      "kenney_rpg/Audio/footstep01.ogg"
+    ],
+    "animation_soft_accent": [
+      "kenney_interface/Audio/pluck_001.ogg"
+    ],
+    "achievement_magic": [
+      "kenney_interface/Audio/glass_002.ogg"
+    ],
+    "ambience_day": [
+      "ready/amb_day_meadow_loop.ogg"
+    ],
+    "ambience_night": [
+      "ready/amb_night_meadow_loop.ogg"
+    ],
+    "ambience_breeze_only": [
+      "ready/amb_breeze_short_loop.ogg"
+    ],
+    "ambience_stream": [
+      "ready/amb_stream_loop.ogg"
+    ],
+    "ambience_hearth_optional": [
+      "ready/amb_hearth_loop.ogg"
+    ],
+    "music_menu": [
+      "ready/bgm_menu_old_tower_inn.ogg"
+    ],
+    "music_gameplay": [
+      "ready/bgm_day_bards_tale.ogg"
+    ]
+  },
+  "inventory": [
+    {
+      "path": "kenney_casino/Audio/card-fan-1.ogg",
+      "duration_seconds": 0.720816,
+      "bytes": 12489,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-fan-2.ogg",
+      "duration_seconds": 1.306508,
+      "bytes": 18363,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-place-1.ogg",
+      "duration_seconds": 0.689116,
+      "bytes": 9624,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-place-2.ogg",
+      "duration_seconds": 0.459388,
+      "bytes": 8046,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-place-3.ogg",
+      "duration_seconds": 0.883492,
+      "bytes": 11503,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-place-4.ogg",
+      "duration_seconds": 0.600771,
+      "bytes": 9618,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-shove-1.ogg",
+      "duration_seconds": 0.765873,
+      "bytes": 10690,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-shove-2.ogg",
+      "duration_seconds": 0.766848,
+      "bytes": 10445,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-shove-3.ogg",
+      "duration_seconds": 0.692834,
+      "bytes": 9948,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-shove-4.ogg",
+      "duration_seconds": 0.809297,
+      "bytes": 10875,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-shuffle.ogg",
+      "duration_seconds": 3.063492,
+      "bytes": 30002,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-slide-1.ogg",
+      "duration_seconds": 0.600771,
+      "bytes": 8833,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-slide-2.ogg",
+      "duration_seconds": 0.584082,
+      "bytes": 9042,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-slide-3.ogg",
+      "duration_seconds": 0.598118,
+      "bytes": 9164,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-slide-4.ogg",
+      "duration_seconds": 0.45941,
+      "bytes": 7912,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-slide-5.ogg",
+      "duration_seconds": 0.600748,
+      "bytes": 9180,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-slide-6.ogg",
+      "duration_seconds": 0.600771,
+      "bytes": 8780,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-slide-7.ogg",
+      "duration_seconds": 0.636122,
+      "bytes": 9580,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/card-slide-8.ogg",
+      "duration_seconds": 0.671429,
+      "bytes": 9863,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/cards-pack-open-1.ogg",
+      "duration_seconds": 0.937392,
+      "bytes": 12715,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/cards-pack-open-2.ogg",
+      "duration_seconds": 0.732041,
+      "bytes": 10918,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/cards-pack-take-out-1.ogg",
+      "duration_seconds": 0.495578,
+      "bytes": 8269,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/cards-pack-take-out-2.ogg",
+      "duration_seconds": 0.630726,
+      "bytes": 9424,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chip-lay-1.ogg",
+      "duration_seconds": 0.172494,
+      "bytes": 5720,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chip-lay-2.ogg",
+      "duration_seconds": 0.229977,
+      "bytes": 6123,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chip-lay-3.ogg",
+      "duration_seconds": 0.244354,
+      "bytes": 6327,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-collide-1.ogg",
+      "duration_seconds": 0.258753,
+      "bytes": 6356,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-collide-2.ogg",
+      "duration_seconds": 0.229977,
+      "bytes": 5987,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-collide-3.ogg",
+      "duration_seconds": 0.258753,
+      "bytes": 6301,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-collide-4.ogg",
+      "duration_seconds": 0.215624,
+      "bytes": 6038,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-handle-1.ogg",
+      "duration_seconds": 0.616259,
+      "bytes": 9374,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-handle-2.ogg",
+      "duration_seconds": 0.546213,
+      "bytes": 8639,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-handle-3.ogg",
+      "duration_seconds": 0.23,
+      "bytes": 6261,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-handle-4.ogg",
+      "duration_seconds": 0.359342,
+      "bytes": 7347,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-handle-5.ogg",
+      "duration_seconds": 0.833719,
+      "bytes": 11273,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-handle-6.ogg",
+      "duration_seconds": 0.459977,
+      "bytes": 8909,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-stack-1.ogg",
+      "duration_seconds": 0.287483,
+      "bytes": 6469,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-stack-2.ogg",
+      "duration_seconds": 0.172494,
+      "bytes": 5642,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-stack-3.ogg",
+      "duration_seconds": 0.373719,
+      "bytes": 7203,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-stack-4.ogg",
+      "duration_seconds": 0.23,
+      "bytes": 6095,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-stack-5.ogg",
+      "duration_seconds": 0.186871,
+      "bytes": 5749,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/chips-stack-6.ogg",
+      "duration_seconds": 0.186871,
+      "bytes": 5821,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/dice-grab-1.ogg",
+      "duration_seconds": 0.704354,
+      "bytes": 10278,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/dice-grab-2.ogg",
+      "duration_seconds": 0.826576,
+      "bytes": 11437,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/dice-shake-1.ogg",
+      "duration_seconds": 1.480567,
+      "bytes": 19388,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/dice-shake-2.ogg",
+      "duration_seconds": 1.379932,
+      "bytes": 19976,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/dice-shake-3.ogg",
+      "duration_seconds": 1.523696,
+      "bytes": 19722,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/dice-throw-1.ogg",
+      "duration_seconds": 0.632472,
+      "bytes": 9523,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/dice-throw-2.ogg",
+      "duration_seconds": 0.402472,
+      "bytes": 7545,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/dice-throw-3.ogg",
+      "duration_seconds": 0.574989,
+      "bytes": 9231,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/die-throw-1.ogg",
+      "duration_seconds": 0.531859,
+      "bytes": 8410,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/die-throw-2.ogg",
+      "duration_seconds": 0.646871,
+      "bytes": 9824,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/die-throw-3.ogg",
+      "duration_seconds": 0.733084,
+      "bytes": 10018,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_casino/Audio/die-throw-4.ogg",
+      "duration_seconds": 0.474376,
+      "bytes": 8159,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/back_001.ogg",
+      "duration_seconds": 0.063878,
+      "bytes": 6997,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/back_002.ogg",
+      "duration_seconds": 0.069841,
+      "bytes": 7029,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/back_003.ogg",
+      "duration_seconds": 0.09288,
+      "bytes": 7208,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/back_004.ogg",
+      "duration_seconds": 0.072993,
+      "bytes": 6923,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/bong_001.ogg",
+      "duration_seconds": 0.122834,
+      "bytes": 4848,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/click_001.ogg",
+      "duration_seconds": 0.100023,
+      "bytes": 4876,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/click_002.ogg",
+      "duration_seconds": 0.010023,
+      "bytes": 4275,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/click_003.ogg",
+      "duration_seconds": 0.010023,
+      "bytes": 4371,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/click_004.ogg",
+      "duration_seconds": 0.010023,
+      "bytes": 4486,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/click_005.ogg",
+      "duration_seconds": 0.010023,
+      "bytes": 4410,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/close_001.ogg",
+      "duration_seconds": 0.147778,
+      "bytes": 9915,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/close_002.ogg",
+      "duration_seconds": 0.313787,
+      "bytes": 14752,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/close_003.ogg",
+      "duration_seconds": 0.313787,
+      "bytes": 15648,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/close_004.ogg",
+      "duration_seconds": 0.32288,
+      "bytes": 16263,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/confirmation_001.ogg",
+      "duration_seconds": 0.289841,
+      "bytes": 8968,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/confirmation_002.ogg",
+      "duration_seconds": 0.539002,
+      "bytes": 14169,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/confirmation_003.ogg",
+      "duration_seconds": 0.322018,
+      "bytes": 9535,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/confirmation_004.ogg",
+      "duration_seconds": 0.490408,
+      "bytes": 12391,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/drop_001.ogg",
+      "duration_seconds": 0.109819,
+      "bytes": 5859,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/drop_002.ogg",
+      "duration_seconds": 0.191088,
+      "bytes": 6411,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/drop_003.ogg",
+      "duration_seconds": 0.191088,
+      "bytes": 6288,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/drop_004.ogg",
+      "duration_seconds": 0.286689,
+      "bytes": 7230,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/error_001.ogg",
+      "duration_seconds": 0.164558,
+      "bytes": 7373,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/error_002.ogg",
+      "duration_seconds": 0.164558,
+      "bytes": 7369,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/error_003.ogg",
+      "duration_seconds": 0.533469,
+      "bytes": 12256,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/error_004.ogg",
+      "duration_seconds": 0.102698,
+      "bytes": 6393,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/error_005.ogg",
+      "duration_seconds": 0.500045,
+      "bytes": 7266,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/error_006.ogg",
+      "duration_seconds": 0.500045,
+      "bytes": 8288,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/error_007.ogg",
+      "duration_seconds": 0.191995,
+      "bytes": 10225,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/error_008.ogg",
+      "duration_seconds": 0.13932,
+      "bytes": 9215,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/glass_001.ogg",
+      "duration_seconds": 0.278435,
+      "bytes": 6103,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/glass_002.ogg",
+      "duration_seconds": 0.125306,
+      "bytes": 4917,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/glass_003.ogg",
+      "duration_seconds": 0.123673,
+      "bytes": 5732,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/glass_004.ogg",
+      "duration_seconds": 0.692268,
+      "bytes": 8323,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/glass_005.ogg",
+      "duration_seconds": 0.110794,
+      "bytes": 6206,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/glass_006.ogg",
+      "duration_seconds": 0.110794,
+      "bytes": 6956,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/glitch_001.ogg",
+      "duration_seconds": 0.020023,
+      "bytes": 5121,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/glitch_002.ogg",
+      "duration_seconds": 0.030023,
+      "bytes": 5473,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/glitch_003.ogg",
+      "duration_seconds": 0.010023,
+      "bytes": 4915,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/glitch_004.ogg",
+      "duration_seconds": 0.022902,
+      "bytes": 5225,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/maximize_001.ogg",
+      "duration_seconds": 0.25839,
+      "bytes": 12111,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/maximize_002.ogg",
+      "duration_seconds": 0.258277,
+      "bytes": 9915,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/maximize_003.ogg",
+      "duration_seconds": 0.211859,
+      "bytes": 11748,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/maximize_004.ogg",
+      "duration_seconds": 0.417959,
+      "bytes": 17723,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/maximize_005.ogg",
+      "duration_seconds": 0.526372,
+      "bytes": 20900,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/maximize_006.ogg",
+      "duration_seconds": 0.379955,
+      "bytes": 11618,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/maximize_007.ogg",
+      "duration_seconds": 0.18576,
+      "bytes": 8097,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/maximize_008.ogg",
+      "duration_seconds": 0.225351,
+      "bytes": 9085,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/maximize_009.ogg",
+      "duration_seconds": 0.224785,
+      "bytes": 7650,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/minimize_001.ogg",
+      "duration_seconds": 0.25839,
+      "bytes": 11924,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/minimize_002.ogg",
+      "duration_seconds": 0.258277,
+      "bytes": 9441,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/minimize_003.ogg",
+      "duration_seconds": 0.211859,
+      "bytes": 11739,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/minimize_004.ogg",
+      "duration_seconds": 0.417959,
+      "bytes": 17099,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/minimize_005.ogg",
+      "duration_seconds": 0.526372,
+      "bytes": 19501,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/minimize_006.ogg",
+      "duration_seconds": 0.379955,
+      "bytes": 11292,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/minimize_007.ogg",
+      "duration_seconds": 0.18576,
+      "bytes": 7677,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/minimize_008.ogg",
+      "duration_seconds": 0.225351,
+      "bytes": 9298,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/minimize_009.ogg",
+      "duration_seconds": 0.224785,
+      "bytes": 7665,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/open_001.ogg",
+      "duration_seconds": 0.147778,
+      "bytes": 9834,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/open_002.ogg",
+      "duration_seconds": 0.313787,
+      "bytes": 14975,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/open_003.ogg",
+      "duration_seconds": 0.313787,
+      "bytes": 15046,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/open_004.ogg",
+      "duration_seconds": 0.32288,
+      "bytes": 15879,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/pluck_001.ogg",
+      "duration_seconds": 0.102426,
+      "bytes": 6317,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/pluck_002.ogg",
+      "duration_seconds": 0.164558,
+      "bytes": 6941,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/question_001.ogg",
+      "duration_seconds": 0.49068,
+      "bytes": 11700,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/question_002.ogg",
+      "duration_seconds": 0.332517,
+      "bytes": 9455,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/question_003.ogg",
+      "duration_seconds": 0.332494,
+      "bytes": 8233,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/question_004.ogg",
+      "duration_seconds": 0.332472,
+      "bytes": 9821,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/scratch_001.ogg",
+      "duration_seconds": 0.13932,
+      "bytes": 8989,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/scratch_002.ogg",
+      "duration_seconds": 0.13932,
+      "bytes": 9319,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/scratch_003.ogg",
+      "duration_seconds": 0.123424,
+      "bytes": 8849,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/scratch_004.ogg",
+      "duration_seconds": 0.325079,
+      "bytes": 16478,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/scratch_005.ogg",
+      "duration_seconds": 0.325079,
+      "bytes": 15824,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/scroll_001.ogg",
+      "duration_seconds": 1.000023,
+      "bytes": 21633,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/scroll_002.ogg",
+      "duration_seconds": 1.000023,
+      "bytes": 24628,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/scroll_003.ogg",
+      "duration_seconds": 1.000023,
+      "bytes": 29488,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/scroll_004.ogg",
+      "duration_seconds": 1.000023,
+      "bytes": 20348,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/scroll_005.ogg",
+      "duration_seconds": 1.000023,
+      "bytes": 20448,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/select_001.ogg",
+      "duration_seconds": 0.043288,
+      "bytes": 5468,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/select_002.ogg",
+      "duration_seconds": 0.043288,
+      "bytes": 5463,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/select_003.ogg",
+      "duration_seconds": 0.382766,
+      "bytes": 6901,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/select_004.ogg",
+      "duration_seconds": 0.382766,
+      "bytes": 6909,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/select_005.ogg",
+      "duration_seconds": 0.382766,
+      "bytes": 6767,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/select_006.ogg",
+      "duration_seconds": 1.943923,
+      "bytes": 8101,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/select_007.ogg",
+      "duration_seconds": 0.046939,
+      "bytes": 6580,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/select_008.ogg",
+      "duration_seconds": 0.046939,
+      "bytes": 6339,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/switch_001.ogg",
+      "duration_seconds": 0.617664,
+      "bytes": 6753,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/switch_002.ogg",
+      "duration_seconds": 0.610952,
+      "bytes": 7097,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/switch_003.ogg",
+      "duration_seconds": 0.5,
+      "bytes": 9653,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/switch_004.ogg",
+      "duration_seconds": 0.5,
+      "bytes": 7248,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/switch_005.ogg",
+      "duration_seconds": 0.611927,
+      "bytes": 7814,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/switch_006.ogg",
+      "duration_seconds": 0.610544,
+      "bytes": 7873,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/switch_007.ogg",
+      "duration_seconds": 0.614354,
+      "bytes": 7921,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/tick_001.ogg",
+      "duration_seconds": 0.02322,
+      "bytes": 4497,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/tick_002.ogg",
+      "duration_seconds": 0.02322,
+      "bytes": 4514,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/tick_004.ogg",
+      "duration_seconds": 0.054807,
+      "bytes": 5031,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/toggle_001.ogg",
+      "duration_seconds": 0.13932,
+      "bytes": 7369,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/toggle_002.ogg",
+      "duration_seconds": 0.13932,
+      "bytes": 8056,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/toggle_003.ogg",
+      "duration_seconds": 0.13932,
+      "bytes": 8654,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_interface/Audio/toggle_004.ogg",
+      "duration_seconds": 0.066168,
+      "bytes": 6695,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/beltHandle1.ogg",
+      "duration_seconds": 0.276708,
+      "bytes": 10820,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/beltHandle2.ogg",
+      "duration_seconds": 0.476563,
+      "bytes": 15410,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/bookClose.ogg",
+      "duration_seconds": 0.230604,
+      "bytes": 9292,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/bookFlip1.ogg",
+      "duration_seconds": 0.768646,
+      "bytes": 18248,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/bookFlip2.ogg",
+      "duration_seconds": 0.430438,
+      "bytes": 12393,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/bookFlip3.ogg",
+      "duration_seconds": 0.230604,
+      "bytes": 9077,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/bookOpen.ogg",
+      "duration_seconds": 0.153729,
+      "bytes": 8273,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/bookPlace1.ogg",
+      "duration_seconds": 0.276708,
+      "bytes": 9901,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/bookPlace2.ogg",
+      "duration_seconds": 0.353583,
+      "bytes": 11185,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/bookPlace3.ogg",
+      "duration_seconds": 0.261333,
+      "bytes": 9570,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/chop.ogg",
+      "duration_seconds": 0.24025,
+      "bytes": 9370,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/cloth1.ogg",
+      "duration_seconds": 0.661042,
+      "bytes": 16508,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/cloth2.ogg",
+      "duration_seconds": 0.415063,
+      "bytes": 11787,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/cloth3.ogg",
+      "duration_seconds": 0.476563,
+      "bytes": 12432,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/cloth4.ogg",
+      "duration_seconds": 0.384333,
+      "bytes": 11043,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/clothBelt.ogg",
+      "duration_seconds": 0.722521,
+      "bytes": 21491,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/clothBelt2.ogg",
+      "duration_seconds": 0.753292,
+      "bytes": 20013,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/creak1.ogg",
+      "duration_seconds": 0.661042,
+      "bytes": 15761,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/creak2.ogg",
+      "duration_seconds": 0.830146,
+      "bytes": 19012,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/creak3.ogg",
+      "duration_seconds": 0.338208,
+      "bytes": 10408,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/doorClose_1.ogg",
+      "duration_seconds": 0.675042,
+      "bytes": 18564,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/doorClose_2.ogg",
+      "duration_seconds": 0.612479,
+      "bytes": 17598,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/doorClose_3.ogg",
+      "duration_seconds": 0.713938,
+      "bytes": 20889,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/doorClose_4.ogg",
+      "duration_seconds": 0.603375,
+      "bytes": 16902,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/doorOpen_1.ogg",
+      "duration_seconds": 0.918958,
+      "bytes": 22848,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/doorOpen_2.ogg",
+      "duration_seconds": 1.413313,
+      "bytes": 30280,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/drawKnife1.ogg",
+      "duration_seconds": 0.399708,
+      "bytes": 11134,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/drawKnife2.ogg",
+      "duration_seconds": 0.445833,
+      "bytes": 12395,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/drawKnife3.ogg",
+      "duration_seconds": 0.476563,
+      "bytes": 12726,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/dropLeather.ogg",
+      "duration_seconds": 0.415083,
+      "bytes": 11695,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/footstep00.ogg",
+      "duration_seconds": 0.248854,
+      "bytes": 9475,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/footstep01.ogg",
+      "duration_seconds": 0.282479,
+      "bytes": 9900,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/footstep02.ogg",
+      "duration_seconds": 0.242146,
+      "bytes": 9528,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/footstep03.ogg",
+      "duration_seconds": 0.269021,
+      "bytes": 10559,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/footstep04.ogg",
+      "duration_seconds": 0.322833,
+      "bytes": 11303,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/footstep05.ogg",
+      "duration_seconds": 0.275771,
+      "bytes": 10288,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/footstep06.ogg",
+      "duration_seconds": 0.242125,
+      "bytes": 9885,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/footstep07.ogg",
+      "duration_seconds": 0.255583,
+      "bytes": 10264,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/footstep08.ogg",
+      "duration_seconds": 0.255583,
+      "bytes": 9242,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/footstep09.ogg",
+      "duration_seconds": 0.215229,
+      "bytes": 9356,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/handleCoins.ogg",
+      "duration_seconds": 0.845521,
+      "bytes": 25394,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/handleCoins2.ogg",
+      "duration_seconds": 0.338208,
+      "bytes": 13094,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/handleSmallLeather.ogg",
+      "duration_seconds": 0.338208,
+      "bytes": 10492,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/handleSmallLeather2.ogg",
+      "duration_seconds": 0.307479,
+      "bytes": 10028,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/knifeSlice.ogg",
+      "duration_seconds": 0.599542,
+      "bytes": 15532,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/knifeSlice2.ogg",
+      "duration_seconds": 0.568792,
+      "bytes": 15099,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/metalClick.ogg",
+      "duration_seconds": 0.445833,
+      "bytes": 13615,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/metalLatch.ogg",
+      "duration_seconds": 0.261333,
+      "bytes": 10208,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/metalPot1.ogg",
+      "duration_seconds": 1.460458,
+      "bytes": 31619,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/metalPot2.ogg",
+      "duration_seconds": 0.937771,
+      "bytes": 22471,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "kenney_rpg/Audio/metalPot3.ogg",
+      "duration_seconds": 0.907,
+      "bytes": 23142,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "ready/amb_breeze_loop.ogg",
+      "duration_seconds": 60.0,
+      "bytes": 1032616,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "ready/amb_breeze_short_loop.ogg",
+      "duration_seconds": 32.0,
+      "bytes": 551031,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "ready/amb_day_birds_loop.ogg",
+      "duration_seconds": 29.68825,
+      "bytes": 497823,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "ready/amb_day_meadow_loop.ogg",
+      "duration_seconds": 29.68825,
+      "bytes": 517121,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "ready/amb_hearth_loop.ogg",
+      "duration_seconds": 2.620625,
+      "bytes": 37586,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "ready/amb_night_crickets_loop.ogg",
+      "duration_seconds": 11.052083,
+      "bytes": 239601,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "ready/amb_night_meadow_loop.ogg",
+      "duration_seconds": 33.15625,
+      "bytes": 693194,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "ready/amb_stream_loop.ogg",
+      "duration_seconds": 60.0,
+      "bytes": 1020074,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "ready/bgm_day_bards_tale.ogg",
+      "duration_seconds": 57.729875,
+      "bytes": 1050012,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "ready/bgm_menu_old_tower_inn.ogg",
+      "duration_seconds": 49.951396,
+      "bytes": 951751,
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    }
+  ]
+}

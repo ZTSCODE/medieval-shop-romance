@@ -112,8 +112,9 @@ func _ready() -> void:
 	close()
 
 
-func open(initial_name: String = "", restoring: bool = false) -> void:
+func open(initial_name: String = "", restoring: bool = false, cancelable: bool = true) -> void:
 	_restoring = restoring
+	cancel_button.visible = cancelable
 	_error_key = ""
 	name_input.text = initial_name
 	visible = true

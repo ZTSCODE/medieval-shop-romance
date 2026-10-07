@@ -40,8 +40,6 @@ func _run() -> void:
 	_check("runtime camera consumes the shared preview geometry", stage.camera_3d.transform.is_equal_approx(TableCameraGeometry.gameplay_transform(800.0, 1.0, Vector2.ZERO)))
 	var plugin_source := FileAccess.get_file_as_string("res://addons/grass_painter/plugin.gd")
 	_check("grass painter exposes a locked live game camera view", plugin_source.contains("Game View") and plugin_source.contains("get_editor_viewport_3d") and plugin_source.contains("_sync_editor_camera"))
-	var generator_source := FileAccess.get_file_as_string("res://tools/build_editable_table_scene.gd")
-	_check("future editable scene rebuilds retain the preview rig", generator_source.contains("_build_editor_preview") and generator_source.contains("EditorGamePreviewCamera"))
 
 	print("EDITOR_GAME_PREVIEW_SUITE: %d checks, %d failures" % [checks, failures])
 	quit(0 if failures == 0 else 1)
